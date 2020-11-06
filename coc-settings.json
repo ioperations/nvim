@@ -72,7 +72,7 @@
                 "client": {
                     "snippetSupport": true
                 },
-                "highlighting": {
+                "highlight": {
                     "lsRanges": true
                 }
             }

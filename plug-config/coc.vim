@@ -35,7 +35,8 @@ let g:coc_global_extensions = ['coc-python',
 			\'coc-docker',
 			\'coc-db',
 			\'coc-vetur',
-			\'coc-browser']
+			\'coc-browser',
+			\'coc-perl']
 
 let lua_lsp = glob('~/.config/nvim/autoload/plugged/lua-language-server/', 0, 1)
 if len(lua_lsp)
