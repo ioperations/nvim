@@ -21,7 +21,7 @@
     "translator.maxsize": 5000,
     "translator.window.maxWidth": 999,
     "translator.window.maxHeight": 999,
-    "clangd.semanticHighlighting":true,
+    "clangd.semanticHighlighting": true,
     "suggest.completionItemKindLabels": {
         "text": "t",
         "method": "m",
@@ -37,8 +37,10 @@
         "yaml",
         "json",
         "python",
-        "java"
-
+        "java",
+        "c",
+        "cpp",
+        "go"
     ],
     "coc.preferences.hoverTarget": "float",
     "suggest.detailMaxLength": 60,
@@ -52,8 +54,17 @@
     "languageserver": {
         "ccls": {
             "command": "ccls",
-            "filetypes": ["c", "cpp", "cuda", "objc", "objcpp"],
-            "rootPatterns": [".ccls-root", "compile_commands.json"],
+            "filetypes": [
+                "c",
+                "cpp",
+                "cuda",
+                "objc",
+                "objcpp"
+            ],
+            "rootPatterns": [
+                ".ccls-root",
+                "compile_commands.json"
+            ],
             "initializationOptions": {
                 "cache": {
                     "directory": ".ccls-cache"
@@ -61,7 +72,9 @@
                 "client": {
                     "snippetSupport": true
                 },
-                "highlighting":{"lsRanges" :true}
+                "highlighting": {
+                    "lsRanges": true
+                }
             }
         },
         "golang": {
@@ -94,22 +107,6 @@
             "initializationOptions": {
                 "buildDirectory": "build"
             }
-        },
-        "lua": {
-            "cwd": "/home/tablinux/.config/lua-lsp/lua-language-server",
-            "command": "/home/tablinux/.config/lua-lsp/lua-language-server/bin/Linux/lua-language-server",
-            "args": [
-                "-E",
-                "-e",
-                "LANG=en",
-                "/home/tablinux/.config/lua-lsp/lua-language-server/main.lua"
-            ],
-            "rootPatterns": [
-                ".git/"
-            ],
-            "filetypes": [
-                "lua"
-            ]
         }
     },
     "snippets.ultisnips.directories": [
@@ -119,4 +116,3 @@
     ],
     "java.errors.incompleteClasspath.severity": "ignore"
 }
-
