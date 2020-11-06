@@ -7,6 +7,6 @@ autoload/
 tmp/
 .netrwhist
 _machine_specific.vim
-.ccls-cache
+.ccls-cache/
 coc-settings.json
 

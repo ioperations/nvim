@@ -1,0 +1,122 @@
+{
+    "yank.enableCompletion": true,
+    "diagnostic-languageserver.trace.server": "verbose",
+    "translator.toLang": "zh",
+    "explorer.width": 30,
+    "java.trace.server": "verbose",
+    "java.home": "/usr/lib/jvm/java-14-openjdk-amd64",
+    "java.configuration.runtimes": [
+        {
+            "name": "JavaSE-14",
+            "path": "/usr/lib/jvm/java-14-openjdk-amd64",
+            "default": true
+        }
+    ],
+    "java.autobuild.enabled": true,
+    "translator.engines": [
+        "bing",
+        "youdao"
+    ],
+    "translator.enableHover": false,
+    "translator.maxsize": 5000,
+    "translator.window.maxWidth": 999,
+    "translator.window.maxHeight": 999,
+    "clangd.semanticHighlighting":true,
+    "suggest.completionItemKindLabels": {
+        "text": "t",
+        "method": "m",
+        "function": "f"
+    },
+    "diagnostic.virtualText": false,
+    "coc.preferences.formatOnSaveFiletypes": [
+        "css",
+        "markdown",
+        "javascript",
+        "graphql",
+        "html",
+        "yaml",
+        "json",
+        "python",
+        "java"
+
+    ],
+    "coc.preferences.hoverTarget": "float",
+    "suggest.detailMaxLength": 60,
+    "suggest.triggerAfterInsertEnter": true,
+    "suggest.enablePreview": true,
+    "suggest.snippetIndicator": "⭐︎",
+    "tslint.trace.server": "verbose",
+    "python.jediEnabled": false,
+    "tsserver.trace.server": "verbose",
+    "javascript.validate.enable": false,
+    "languageserver": {
+        "ccls": {
+            "command": "ccls",
+            "filetypes": ["c", "cpp", "cuda", "objc", "objcpp"],
+            "rootPatterns": [".ccls-root", "compile_commands.json"],
+            "initializationOptions": {
+                "cache": {
+                    "directory": ".ccls-cache"
+                },
+                "client": {
+                    "snippetSupport": true
+                },
+                "highlighting":{"lsRanges" :true}
+            }
+        },
+        "golang": {
+            "command": "gopls",
+            "rootPatterns": [
+                "go.mod"
+            ],
+            "filetypes": [
+                "go"
+            ]
+        },
+        "bash": {
+            "command": "bash-language-server",
+            "args": [
+                "start"
+            ],
+            "filetypes": [
+                "sh"
+            ],
+            "ignoredRootPaths": []
+        },
+        "cmake": {
+            "command": "cmake-language-server",
+            "filetypes": [
+                "cmake"
+            ],
+            "rootPatterns": [
+                "build/"
+            ],
+            "initializationOptions": {
+                "buildDirectory": "build"
+            }
+        },
+        "lua": {
+            "cwd": "/home/tablinux/.config/lua-lsp/lua-language-server",
+            "command": "/home/tablinux/.config/lua-lsp/lua-language-server/bin/Linux/lua-language-server",
+            "args": [
+                "-E",
+                "-e",
+                "LANG=en",
+                "/home/tablinux/.config/lua-lsp/lua-language-server/main.lua"
+            ],
+            "rootPatterns": [
+                ".git/"
+            ],
+            "filetypes": [
+                "lua"
+            ]
+        }
+    },
+    "snippets.ultisnips.directories": [
+        "UltiSnips",
+        "$HOME/.config/nvim/UltiSnips",
+        "$HOME/.config/nvim/autoload/plugged/vim-snippets/UltiSnips/"
+    ],
+    "java.errors.incompleteClasspath.severity": "ignore"
+}
+
