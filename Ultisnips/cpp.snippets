@@ -1,0 +1,44 @@
+snippet inp "include cpp"
+#include <${1:iostream>}
+endsnippet
+
+snippet fora " for auto ptr"
+for(auto ${1:ptr} = ${2:a}.begin(); $1 != $2.end(); $1++){
+	std::cout<< *$1 << std::endl ;
+}
+endsnippet
+
+snippet usi "using namespace"
+using namespace ${1:std};
+endsnippet
+
+snippet sort " for auto ptr"
+sort(${1:a}.begin(),$1.end());
+endsnippet
+
+
+snippet find " for auto ptr"
+find(${1:a}.begin(),$1.end(),${2:1});
+endsnippet
+
+snippet forj "for loop"
+for(int ${1:i}=0; $1!=${2:count}; $1++){
+
+}
+endsnippet
+
+snippet gtest "gtest framework"
+#include <iostream>
+#include <gtest/gtest.h>
+
+TEST(${1:testName},${2:testNum}){
+
+}
+
+int main(int argc, char *argv[])
+{
+	testing::InitGoogleTest(&argc,argv);
+	return RUN_ALL_TESTS();
+}
+
+endsnippet
