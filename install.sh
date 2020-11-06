@@ -116,7 +116,7 @@ installondebian() { \
   sudo apt install ccls clangd -y
   sudo npm install -g neovim bash-language-server dockerfile-language-server-nodejs
   sudo gem install solargraph
-  sudo pip3 install ueberzug neovim-remote cmake-languager-server
+  sudo pip3 install ueberzug neovim-remote cmake-language-server
 }
 
 
