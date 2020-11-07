@@ -3,7 +3,7 @@ snippet inp "include cpp"
 endsnippet
 
 snippet fora " for auto ptr"
-for(auto ${1:ptr} = ${2:a}.begin(); $1 != $2.end(); $1++){
+for(auto ${1:ptr} : ${2:vector}){
 	std::cout<< *$1 << std::endl ;
 }
 endsnippet
@@ -41,4 +41,12 @@ int main(int argc, char *argv[])
 	return RUN_ALL_TESTS();
 }
 
+endsnippet
+
+snippet walkarray "遍历数组"
+for(int i=0;i<${1:Row},i++){
+	for(int j=0;j<${2:Col},j++){
+		*((int*)${3:Array} +i*$2 + j) == 0;
+	}
+}
 endsnippet

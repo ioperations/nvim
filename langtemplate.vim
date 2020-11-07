@@ -70,6 +70,24 @@ function! SetupCppTest()
 				\ "}",])
 endfunction
 
+function! SetupGoTest()
+	call append(0,[ "",
+				\"import (",
+				\"     \"testing\"",
+				\")",
+				\"",
+				\"",
+				\"func TestExample(t *testing.T) {",
+				\"",
+				\"      t.Errorf(\"not ok\")",
+				\"}",
+				\"",
+				\"",
+				\"func TestMain(t *testing.M) {",
+				\"      t.Run()",
+				\"}",])
+endfunction
+
 function! SetupCppBench()
 	call append(0,["#include <benchmark/benchmark.h>",
 				\ "",
@@ -100,4 +118,5 @@ autocmd BufNewFile *_bench.cpp call SetupCppBench()
 autocmd BufNewFile *.sh call Setupshell()
 autocmd BufNewFile Makefile call Setupmake()
 autocmd BufNewFile *.py call Setuppython()
+autocmd BufNewFile *_test.go call SetupGoTest()
 autocmd Filetype markdown call Setupmarkdown()
