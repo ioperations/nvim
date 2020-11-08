@@ -36,11 +36,7 @@
         "html",
         "yaml",
         "json",
-        "python",
-        "java",
-        "c",
-        "cpp",
-        "go"
+        "python"
     ],
     "coc.preferences.hoverTarget": "float",
     "suggest.detailMaxLength": 60,
