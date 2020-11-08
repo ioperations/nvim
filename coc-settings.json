@@ -105,10 +105,11 @@
             }
         }
     },
+    "snippets.shortcut": "J",
     "snippets.ultisnips.directories": [
-        "UltiSnips",
-        "$HOME/.config/nvim/UltiSnips",
-        "$HOME/.config/nvim/autoload/plugged/vim-snippets/UltiSnips/"
+        "$HOME/.config/nvim/autoload/plugged/vim-snippets/UltiSnips/",
+        "$HOME/.config/nvim/UltiSnips"
     ],
+    "snippets.userSnippetsDirectory": "~/.config/nvim/Ultisnips",
     "java.errors.incompleteClasspath.severity": "ignore"
 }
