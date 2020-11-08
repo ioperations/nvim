@@ -107,7 +107,8 @@ noremap <C-p> :FZF<cr>
 " find file based on the content
 noremap <C-g> :Rg<cr>
 
-noremap <C-l> :TagbarToggle<cr>
+" noremap <C-l> :TagbarToggle<cr>
+noremap <c-l> :Vista coc<cr>
 
 noremap Q :q!<cr>
 noremap S :w!<cr>

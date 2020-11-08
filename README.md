@@ -14,6 +14,8 @@ bash <(curl -sLf https://git.io/JTvvG)
 ```
 #### Install manually by __[DetailInstalltion](./doc.md)__
 
+<img align="right" src="./res/overview.png">
+
 
 #### Basic navigation
 - [line & char] __h__,__j__,__k__,__l__ for __left__, __down__ ,__up__, __right__

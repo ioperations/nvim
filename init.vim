@@ -53,6 +53,7 @@ else
     source $HOME/.config/nvim/plug-config/autoformat.vim
     source $HOME/.config/nvim/plug-config/ultisnips.vim
     source $HOME/.config/nvim/plug-config/vim-db.vim
+    source $HOME/.config/nvim/plug-config/vista.vim
     luafile $HOME/.config/nvim/lua/plug-colorizer.lua
     source $HOME/.config/nvim/plug-config/coc.vim
 

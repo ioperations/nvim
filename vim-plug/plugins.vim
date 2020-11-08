@@ -81,8 +81,8 @@ else
     " Start Screen
     Plug 'mhinz/vim-startify'
     " Vista
-    " Plug 'liuchengxu/vista.vim'
-    Plug 'preservim/tagbar'
+    Plug 'liuchengxu/vista.vim'
+    " Plug 'preservim/tagbar'
     " See what keys do like in emacs
     Plug 'liuchengxu/vim-which-key'
     " Zen mode
