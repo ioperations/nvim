@@ -7,14 +7,7 @@
 
  ```
 
-<style>
-
-@font-face{
-    font-family: 'agave Nerd Font';
-    src : url('./res/agavenerdfont.ttf');
-}
-
-</style>
+<link rel="stylesheet" type="text/css" herf="./res/style.css">
 
 
 <font face="agave Nerd Font">
