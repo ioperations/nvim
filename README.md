@@ -7,6 +7,19 @@
 
  ```
 
+<style>
+
+@font-face{
+    font-family: 'agave Nerd Font';
+    src : url('./res/agavenerdfont.ttf');
+}
+
+</style>
+
+
+<font face="agave Nerd Font">
+<b>
+<i>
 
 #### Installation
 ```bash
@@ -61,4 +74,19 @@ bash <(curl -sLf https://git.io/JTvvG)
 #### Others cool staff
 - __`<leader>lv`__ for language translation provided by __[coc.nvim](https://github.com/neoclide/coc.nvim)__
 
+
 <img align="center" width=320px src="./res/translate.gif">
+
+#### Suggestion
+
+</i></b>
+</font>
+
+<font face="agave Nerd Font" size=3>
+<p> 
+<b><i>
+不同的字体对于编程的体验有非常大的区别,好的字体能够对自己写代码有促进作用，根据自己对 [Nerd　Font](https://github.com/ryanoasis/nerd-fonts) 的尝试，我采用的是agave Nerd Font Bold Italic
+</i></b>
+</p>
+</font>
+<img align="center" width=380px src="./res/font.gif">
