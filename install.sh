@@ -114,6 +114,7 @@ installondebian() { \
   sudo apt install ripgrep fzf ranger ruby ruby-dev gem libxext-dev -y
   sudo apt install zlib1g-dev python-dev python3-dev libxtst-dev -y
   sudo apt install ccls clangd -y
+  sudo apt install texlive-extra-utils texlive-lang-chinese mupdf -y
   sudo npm install -g neovim bash-language-server dockerfile-language-server-nodejs
   sudo gem install solargraph
   sudo pip3 install ueberzug neovim-remote cmake-language-server

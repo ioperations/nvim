@@ -173,6 +173,10 @@ else
     " Plug 'mhinz/vim-signify'
     " Plug 'easymotion/vim-easymotion'
     " Plug 'preservim/nerdcommenter'
+    "latex
+    " A Vim Plugin for Lively Previewing LaTeX PDF Output
+    Plug 'conornewton/vim-latex-preview'
+    " Plug 'xuhdev/vim-latex-live-preview'
     " Plug 'brooth/far.vim'
     " Plug 'atishay/far.vim'
     "

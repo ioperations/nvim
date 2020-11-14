@@ -53,3 +53,24 @@ for(int i=0;i<${1:Row};i++){
 	}
 }
 endsnippet
+
+snippet little_endian "check if the system is little_endian"
+union {
+    int i;
+    char c[sizeof(int)];
+} x;
+
+x.i = 0x0001;
+// big endian
+// | 00000001 | 00000002 | 00000003 |0000004 |
+// |        0 |        0 |        0 |      1 |
+//
+// little endian
+// | 00000001 | 00000002 | 00000003 |0000004 |
+// |        1 |        0 |        0 |      0 |
+
+//little_endian
+if(x.c[0] == 1){
+    ${1://TODO}
+}
+endsnippet
