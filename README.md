@@ -10,7 +10,7 @@
 <link rel="stylesheet" type="text/css" herf="./res/style.css">
 
 
-<font face="agave Nerd Font" size=5>
+<font face="agave Nerd Font" size=5px>
 <b>
 <i>
 
@@ -76,12 +76,11 @@ bash <(curl -sLf https://git.io/JTvvG)
 </i></b>
 </font>
 
-<font face="agave Nerd Font" size=5>
-<p> 
+<font size=5px>
 <b><i>
-不同的字体对于编程的体验有非常大的区别,好的字体能够对自己写代码有促进作用，根据自己对 [Nerd　Font](https://github.com/ryanoasis/nerd-fonts) 的尝试，我采用的是agave Nerd Font Bold Italic
+- the font i personly use is agave nerd font
 </i></b>
-</p>
 </font>
+
 <img align="center" width=380px src="./res/font.gif">
 

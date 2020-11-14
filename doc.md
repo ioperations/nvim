@@ -1,7 +1,5 @@
 # NVCode
 
-![NVCode pic](./utils/images/nvim.png)
-
 ## Install in one command
 
 The following will install this config if you have an existing config it will move it to `~/.config/nvim.old`
@@ -40,6 +38,7 @@ bash <(curl -s https://git.io/JTvvG)
 
 ```
 git clone https://github.com/ioperations/nvim.git ~/.config/nvim
+nvim +PlugInstall
 ```
 
 ## Install python & node support
@@ -55,7 +54,7 @@ npm i -g neovim bash-language-server
 ## Install Neovim remote
 
 ```
-pip install neovim-remote
+pip3 install neovim-remote
 ```
 
 This will install `nvr` to `~/.local/bin` so you will need to add the following to your `bashrc` or `zshrc`
@@ -153,41 +152,6 @@ To use **vim-gists** you will need to configure the following:
 git config --global github.user <username>
 ```
 
-## VSCodium & Neo Vim Extension
-
-[VSCodium](https://github.com/VSCodium/vscodium) contains build files to generate free release binaries of Microsoft's VS Code.
-
-You can install it on multiple platforms:
-
-- Mac
-
-  ```
-  brew cask install vscodium
-  ```
-
-- Arch
-
-  ```
-  yay -s vscodium-bin
-  ```
-
-- Snap
-
-  ```
-  snap install codium
-  ```
-
-[The Neo Vim Extension](https://github.com/asvetliakov/vscode-neovim) is available in the VSCode marketplace
-
-I recommend using this alongside the VSCode `which-key` extension
-
-Along with some of my config files you can find in `utils/vscode_config`
-
-## TODO
-
-- Better Documentation
-- Improve VSCode which-key config
-
 ## CoC extensions to check out
 
 - coc-fzf
@@ -196,7 +160,3 @@ Along with some of my config files you can find in `utils/vscode_config`
 - coc-actions
 - coc-bookmark
 
-## 0.5
-
-- native lsp
-- treesitter
