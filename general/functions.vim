@@ -6,42 +6,43 @@ augroup auto_spellcheck
 augroup END
 
 nnoremap <f10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
-	  \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
-	  \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<cr>
+      \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+      \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<cr>
 
 func! CompileRunGcc()
   exec "w"
   if &filetype == 'c'
-	exec "!gcc % -lgtest -lbenchmark -pthread -o %<"
-	exec "!timeout 30 %<"
+    exec "!gcc % -lgtest -lbenchmark -pthread -o %<"
+    exec "!timeout 30 %<"
   elseif &filetype == 'cpp'
-	set splitbelow
-	exec "!g++ -std=c++11 %  -fsanitize=address -lgtest -lbenchmark -lcrypto -pthread -Wall -o %<"
-	exec "!timeout 30  ./%<"
+    set splitbelow
+    exec "!g++ -std=c++11 %  -fsanitize=address -lgtest -lbenchmark -lcrypto -pthread -Wall -o %<"
+    exec "!timeout 30  ./%<"
   elseif &filetype == 'java'
-	exec "!javac -encoding utf8 %"
-	exec "!time java %<"
+    exec "!javac -encoding utf8 %"
+    exec "!time java %<"
   elseif &filetype == 'sh'
-	:!time bash %
+    :!time bash %
   elseif &filetype == 'python'
-	exec "!time python3 %"
+    exec "!time python3 %"
   elseif &filetype == 'html'
-	"silent! exec "!chromium % &"
-	silent! exec "!/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome % "
+    "silent! exec "!chromium % &"
+    silent! exec "!/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome % "
   elseif &filetype == 'javascript'
-	exec "!node %"
+    exec "!node %"
   elseif &filetype == 'typescript'
-	exec "!node %"
+    exec "!node %"
   elseif &filetype == 'markdown'
-	exec "MarkdownPreview"
+    exec "MarkdownPreview"
   elseif &filetype == 'tex'
-	silent! exec "!pdflatex %"
-	silent! exec "!echo 'done'"
-	"silent! exec "VimtexCompile"
+    :StartLatexPreview
+    " silent! exec "!pdflatex %"
+    " silent! exec "!echo 'done'"
+    "silent! exec "VimtexCompile"
   elseif &filetype == 'go'
-	exec "!go run %"
+    exec "!go run %"
   elseif &filetype == 'lua'
-	exec "!lua %"
+    exec "!lua %"
   endif
 endfunc
 
