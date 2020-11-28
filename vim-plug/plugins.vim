@@ -43,7 +43,7 @@ else
     " Plug 'nvim-treesitter/nvim-treesitter'
     "Plug 'sheerun/vim-polyglot'
     " Cool Icons
-    "Plug 'ryanoasis/vim-devicons'
+    Plug 'ryanoasis/vim-devicons'
     " Auto pairs for '(' '[' '{'
     Plug 'jiangmiao/auto-pairs'
     Plug 'gcmt/wildfire.vim'
@@ -123,7 +123,7 @@ else
     Plug 'norcalli/nvim-colorizer.lua'
     Plug 'sumneko/lua-language-server' ,{'dir':'~/.config/nvim/autoload/plugged/lua-language-server/','do':'git submodule update --init --recursive && cd 3rd/luamake && ninja -f ninja/linux.ninja && cd ../..  && ./3rd/luamake/luamake rebuild'}
     " Rainbow brackets
-    " Plug 'luochen1990/rainbow'
+    Plug 'luochen1990/rainbow'
     " Async Linting Engine
     " TODO make sure to add ale config before plugin
     " Plug 'dense-analysis/ale'
@@ -137,7 +137,10 @@ else
     " Plug 'maxmellon/vim-jsx-pretty'
     " Plug 'jelera/vim-javascript-syntax'
     " Plugin Graveyard
+  
+    "swift
 
+    Plug 'lilyball/vim-swift'
 
     Plug 'morhetz/gruvbox'
 

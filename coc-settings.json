@@ -103,8 +103,15 @@
             "initializationOptions": {
                 "buildDirectory": "build"
             }
+        },
+        "sourcekit-lsp": {
+            "filetypes": [
+                "swift"
+            ],
+            "command": "sourcekit-lsp"
         }
     },
+    "sourcekit.commandPath": "/home/tablinux/swift/usr/bin/sourcekit-lsp",
     "snippets.shortcut": "J",
     "snippets.ultisnips.directories": [
         "$HOME/.config/nvim/autoload/plugged/vim-snippets/UltiSnips/",

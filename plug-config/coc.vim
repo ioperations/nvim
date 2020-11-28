@@ -36,7 +36,7 @@ let g:coc_global_extensions = ['coc-python',
 		  \'coc-db',
 		  \'coc-vetur',
 		  \'coc-browser',
-		  \'coc-perl']
+		  \'coc-sourcekit']
 
 let g:go_doc_popup_window = 1
 let lua_lsp = glob('~/.config/nvim/autoload/plugged/lua-language-server/', 0, 1)
