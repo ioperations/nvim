@@ -36,11 +36,7 @@
         "html",
         "yaml",
         "json",
-        "python",
-        "java",
-        "c",
-        "cpp",
-        "go"
+        "python"
     ],
     "coc.preferences.hoverTarget": "float",
     "suggest.detailMaxLength": 60,
@@ -107,12 +103,20 @@
             "initializationOptions": {
                 "buildDirectory": "build"
             }
+        },
+        "sourcekit-lsp": {
+            "filetypes": [
+                "swift"
+            ],
+            "command": "sourcekit-lsp"
         }
     },
+    "sourcekit.commandPath": "/home/tablinux/swift/usr/bin/sourcekit-lsp",
+    "snippets.shortcut": "J",
     "snippets.ultisnips.directories": [
-        "UltiSnips",
-        "$HOME/.config/nvim/UltiSnips",
-        "$HOME/.config/nvim/autoload/plugged/vim-snippets/UltiSnips/"
+        "$HOME/.config/nvim/autoload/plugged/vim-snippets/UltiSnips/",
+        "$HOME/.config/nvim/UltiSnips"
     ],
+    "snippets.userSnippetsDirectory": "~/.config/nvim/Ultisnips",
     "java.errors.incompleteClasspath.severity": "ignore"
 }
