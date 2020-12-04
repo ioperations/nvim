@@ -20,9 +20,9 @@ endfunction
 
 func! Setupshell()
 	call append(0,["#!/usr/bin/env sh",
-				\ "ccred=\"\\033[0;31m\"", 
-				\ "ccgreen=\"\\033[0;32m\"",    
-				\ "ccyellow=\"\\033[0;33m\"",   
+				\ "ccred=\"\\033[0;31m\"",
+				\ "ccgreen=\"\\033[0;32m\"",
+				\ "ccyellow=\"\\033[0;33m\"",
 				\ "ccwhite=\"\\033[0;37m\"",    ])
 endfunction
 
@@ -52,7 +52,7 @@ endfunction
 
 function! Setuppython()
 	call append(0,["#!/usr/bin/env python3"])
-	
+
 endfunction
 
 function! SetupCppTest()
@@ -112,6 +112,44 @@ function! SetupCppBench()
 
 endfunction
 
+function! SetupCppVimspector()
+
+	call append(0,[ "{ ",
+				\"",
+				\"\"configurations\": {",
+				\"\"cpp:launch\": {",
+				\"\"adapter\": \"vscode-cpptools\",",
+				\"\"configuration\": {",
+				\"\"name\": \"cpp\",",
+				\"\"type\": \"cppdbg\",",
+				\"\"request\": \"launch\",",
+				\"\"program\": \"${fileDirname}/${fileBasenameNoExtension}\",",
+				\"\"args\": [",
+				\"\"*${ProgramArgs}\"",
+				\"],",
+				\"\"cwd\": \"${workspaceRoot}\",",
+				\"\"environment\": [],",
+				\"\"externalConsole\": true,",
+				\"\"stopAtEntry\": true,",
+				\"\"MIMode\": \"gdb\",",
+				\"\"logging\": {",
+				\"\"engineLogging\": false",
+				\"}",
+				\"}",
+				\"},",
+				\"\"cpp:attach\": {",
+				\"\"adapter\": \"vscode-cpptools\",",
+				\"\"configuration\": {",
+				\"\"name\": \"cpp\",",
+				\"\"type\": \"cppdbg\",",
+				\"\"request\": \"attach\",",
+				\"\"program\": \"${fileDirname}/${fileBasenameNoExtension}\",",
+				\"\"MIMode\": \"gdb\"",
+				\"}",
+				\"}",
+				\"}",
+				\"}", ])
+endfunction
 
 autocmd BufNewFile *_test.cpp call SetupCppTest()
 autocmd BufNewFile *_bench.cpp call SetupCppBench()
@@ -119,4 +157,5 @@ autocmd BufNewFile *.sh call Setupshell()
 autocmd BufNewFile Makefile call Setupmake()
 autocmd BufNewFile *.py call Setuppython()
 autocmd BufNewFile *_test.go call SetupGoTest()
+autocmd BufNewFile .vimspector.json call SetupCppVimspector()
 autocmd Filetype markdown call Setupmarkdown()

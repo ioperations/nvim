@@ -9,4 +9,5 @@ tmp/
 _machine_specific.vim
 .ccls-cache/
 coc-settings.json
+vimspector-config
 

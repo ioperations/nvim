@@ -55,6 +55,7 @@ else
     source $HOME/.config/nvim/plug-config/vim-db.vim
     source $HOME/.config/nvim/plug-config/vista.vim
     source $HOME/.config/nvim/plug-config/vim-latex-preview.vim
+    source $HOME/.config/nvim/plug-config/vimspector.vim
     luafile $HOME/.config/nvim/lua/plug-colorizer.lua
     source $HOME/.config/nvim/plug-config/coc.vim
 

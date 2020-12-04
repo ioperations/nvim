@@ -94,7 +94,8 @@ else
     " Interactive code
     Plug 'metakirby5/codi.vim'
     " Debugging
-    " Plug 'puremourning/vimspector'
+    Plug 'puremourning/vimspector'
+    " Plug 'cpiger/NeoDebug'
     " Better tabline
     "Plug 'mg979/vim-xtabline'
     " undo time travel

@@ -287,28 +287,36 @@ let g:which_key_map.r = {
 	  \ 'r' : [':FloatermNew ranger'                      , 'ranger' ],
 	  \ 'c' : ['Startify'                      , 'vim rc' ],
 	  \}
-" Global
-" <Plug>VimwikiIndex
-" <Plug>VimwikiTabIndex
-" <Plug>VimwikiUISelect
-" <Plug>VimwikiDiaryIndex
-" <Plug>VimwikiMakeDiaryNote
-" <Plug>VimwikiTabMakeDiaryNote
-" <Plug>VimwikiMakeYesterdayDiaryNote
-" <Plug>VimwikiMakeTomorrowDiaryNote
-"
-" " Local
-" <Plug>Vimwiki2HTML
-" <Plug>Vimwiki2HTMLBrowse
-" <Plug>VimwikiDiaryGenerateLinks
-" <Plug>VimwikiFollowLink
-" <Plug>VimwikiSplitLink
-" <Plug>VimwikiVSplitLink
-" <Plug>VimwikiTabnewLink
-" <Plug>VimwikiGoBackLink
-" <Plug>VimwikiNextLink
-" <Plug>VimwikiPrevLink
-" <Plug>VimwikiGoto
+
+
+let g:which_key_map.d = {
+      \ 'name' : '+debug adapter protocol',
+      \ 'c' : ['<Plug>VimspectorContinue' , 'continue debug'],
+      \ 'so' : ['<Plug>VimspectorStop' , 'stop'],
+      \ 'r' : ['<Plug>VimspectorRestart' , 'restart'],
+      \ 'p' : ['<Plug>VimspectorPause' , 'pause'],
+      \ 't' : ['<Plug>VimspectorToggleBreakpoint' , 'toggle break point'],
+      \ 'T' : ['<Plug>VimspectorToggleConditionalBreakpoint' , 'toggle conditional breakpoint'],
+      \ 'a' : ['<Plug>VimspectorAddFunctionBreakpoint' , 'funtion breakpoint'],
+      \ 's' : ['<Plug>VimspectorStepOver' , 'step over'],
+      \ 'S' : ['<Plug>VimspectorStepInto' , 'step into'],
+      \ 'o' : ['<Plug>VimspectorStepOut' , 'step out'],
+      \ 'R' : ['<Plug>VimspectorRunToCursor' , 'Run to Cursor'],
+      \ }
+
+let g:which_key_map.x = {
+      \ 'b' :[":call CocLocations(\'ccls\',\'$ccls/inheritance\')<cr>",'inheritance'],
+      \ 'B' :[":call CocLocations(\'ccls\',\'$ccls/inheritance\',{\'levels\':3})<cr>       "          ,'class bases up to 3 level'],
+      \ 'd' :[":call CocLocations(\'ccls\',\'$ccls/inheritance\',{\'derived\':v:true})<cr> "          ,'derived class'],
+      \ 'D' :[":call CocLocations(\'ccls\',\'$ccls/inheritance\',{\'derived\':v:true,\'levels\'':3})<cr> ",'derived up to 3 class'],
+      \ 'c' :[":call CocLocations(\'ccls\',\'$ccls/call\')<cr>                          "          ,'the caller'],
+      \ 'C' :[":call CocLocations(\'ccls\',\'$ccls/call\',{\'callee\':v:true})<cr>  "          ,'the callee'],
+      \ 'm' :[":call CocLocations(\'ccls\',\'$ccls/member\')<cr>                  "          ,'variables in a namespace'],
+      \ 'f' :[":call CocLocations(\'ccls\',\'$ccls/member\',{\'kind\':3})<cr>    "          ,'funtions in a namespace'],
+      \ 's' :[":call CocLocations(\'ccls\',\'$ccls/member\',{\'kind\':2})<cr>   "          ,'nasted calsses in a namespace'],
+      \ 'v' :[":call CocLocations(\'ccls\',\'$ccls/vars\',{\'kind\':1})<cr> "          ,'vars in a '],
+      \}
+
 " <Plug>VimwikiDeleteLink
 " <Plug>VimwikiRenameLink
 " <Plug>VimwikiAddHeaderLevel
