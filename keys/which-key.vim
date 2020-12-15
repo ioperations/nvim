@@ -83,10 +83,18 @@ let g:which_key_map.b = {
 " f is for find and replace
 let g:which_key_map.f = {
       \ 'name' : '+find & replace' ,
-      \ 'b' : [':Farr --source=vimgrep'    , 'buffer'],
       \ 'p' : [':Farr --source=rgnvim'     , 'project'],
+      \ 'w' : [':Windows' , 'fzf windows'],
+      \ 'b' : [':Buffers' , 'fzf buffers'],
+      \ 'a' : [':Ag' , 'fzf Ag'],
+      \ 'r' : [':Rg' , 'fzf Rg'],
+      \ 'c' : [':Colors' , 'fzf vim config colors'],
+      \ 'l' : [':Lines' , 'fzf lines in the current fudder'],
+      \ 'h' : [':History' , 'fzf oldfiles and open buffers'],
+      \ 'f' : [':FZF' , 'fzf search'],
       \ }
 
+      " \ 'b' : [':Farr --source=vimgrep'    , 'buffer'],
 " k is for task
 let g:which_key_map.k = {
       \ 'name' : '+task' ,

@@ -119,3 +119,15 @@ nnoremap <expr><C-u> coc#float#has_float() ? coc#float#scroll(0) : "\<C-u>"
 nnoremap W 5w
 nnoremap B 5b
 nnoremap E 5e
+" Actions
+" let g:fzf_action = {
+            " \ 'alt-j': 'preview-down',
+            " \ 'alt-k': 'preview-up',
+            " \ 'alt-o': '!open'}
+" Search spotlight {{{2
+" command! -nargs=1 FzfSpotlight call fzf#run(fzf#wrap({
+            " \ 'source'  : 'mdfind -onlyin ~ <q-args>',
+            " \ 'options' : '-m --prompt "Spotlight> "'
+            " \ }))
+" nnoremap <Space>s :FzfSpotlight <C-R><C-W>
+let g:ranger_map_keys='Rg'

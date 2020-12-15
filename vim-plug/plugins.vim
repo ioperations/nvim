@@ -18,6 +18,10 @@ Plug 'glts/vim-radical'
 Plug 'tpope/vim-repeat'
 " Text Navigation
 Plug 'unblevable/quick-scope'
+Plug 'haya14busa/incsearch.vim'
+Plug 'haya14busa/incsearch-fuzzy.vim'
+Plug 'haya14busa/incsearch-easymotion.vim'
+Plug 'easymotion/vim-easymotion'
 " Useful for React Commenting
 Plug 'suy/vim-context-commentstring'
 " highlight all matches under cursor
@@ -61,6 +65,7 @@ else
     " Plug 'ycm-core/YouCompleteMe',
 
     Plug 'nathanaelkane/vim-indent-guides'
+    " Plug 'Yggdroot/indentLine'
     "go
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
     " Status Line
@@ -117,6 +122,7 @@ else
     " Markdown Preview
     " Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & npm install'  }
     Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+    Plug 'jceb/vim-orgmode'
     " Easily Create Gists
     Plug 'mattn/vim-gist'
     "Plug 'mattn/webapi-vim'
@@ -139,6 +145,8 @@ else
     " Plug 'jelera/vim-javascript-syntax'
     " Plugin Graveyard
   
+    "input method
+    Plug 'h-youhei/vim-fcitx'
     "swift
 
     Plug 'lilyball/vim-swift'
