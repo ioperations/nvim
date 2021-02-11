@@ -117,7 +117,7 @@ installondebian() { \
   sudo apt install texlive-extra-utils texlive-lang-chinese mupdf -y
   sudo npm install -g neovim bash-language-server dockerfile-language-server-nodejs
   sudo gem install solargraph
-  sudo pip3 install ueberzug neovim-remote cmake-language-server
+  sudo pip3 install ueberzug neovim-remote cmake-language-server "python-language-server[all]"
 }
 
 
