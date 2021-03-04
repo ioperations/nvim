@@ -42,7 +42,7 @@
     "suggest.detailMaxLength": 60,
     "suggest.triggerAfterInsertEnter": true,
     "suggest.enablePreview": true,
-    "suggest.snippetIndicator": "⭐︎",
+    "suggest.snippetIndicator": "Ⓜ",
     "tslint.trace.server": "verbose",
     "python.jediEnabled": false,
     "tsserver.trace.server": "verbose",
