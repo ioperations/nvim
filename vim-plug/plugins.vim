@@ -61,7 +61,7 @@ else
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'neoclide/coc-snippets',
     Plug 'jackguo380/vim-lsp-cxx-highlight'
-
+    Plug 'derekwyatt/vim-fswitch'
     " Plug 'ycm-core/YouCompleteMe',
 
     Plug 'nathanaelkane/vim-indent-guides'
@@ -144,13 +144,13 @@ else
     " Plug 'maxmellon/vim-jsx-pretty'
     " Plug 'jelera/vim-javascript-syntax'
     " Plugin Graveyard
-  
+
     "input method
     Plug 'h-youhei/vim-fcitx'
     "swift
-
     Plug 'lilyball/vim-swift'
-
+    Plug 'xolox/vim-misc'
+    Plug 'xolox/vim-session'
     Plug 'morhetz/gruvbox'
 
     "sql

@@ -42,10 +42,10 @@ endfunc
 " == NERDTree-git
 " ==
 let g:NERDTreeGitStatusIndicatorMapCustom = {
-			\ "Modified"	: "✹",
+			\ "Modified"	: "M",
 			\ "Staged"		: "✚",
-			\ "Untracked" : "✭",
-			\ "Renamed"	 : "➜",
+			\ "Untracked" : "U",
+			\ "Renamed"	 : "R",
 			\ "Unmerged"	: "═",
 			\ "Deleted"	 : "✖",
 			\ "Dirty"		 : "✗",

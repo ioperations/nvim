@@ -94,7 +94,15 @@ let g:which_key_map.f = {
       \ 'f' : [':FZF' , 'fzf search'],
       \ }
 
-      " \ 'b' : [':Farr --source=vimgrep'    , 'buffer'],
+let g:which_key_map.F = {
+      \ 'name ' : 'File switch plugin',
+      \ 't' :[':FSTab','FSTab'],
+      \ 'k' :[':FSSplitAbove','FSSplitAbove'],
+      \ 'h' :[':FSSplitLeft','FSSplitLeft'],
+      \ 'l' :[':FSSplitRight','FSSplitRight'],
+      \ 'j' :[':FSSplitBelow','FSSplitBelow'],
+      \}
+
 " k is for task
 let g:which_key_map.k = {
       \ 'name' : '+task' ,
