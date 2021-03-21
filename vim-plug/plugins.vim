@@ -146,7 +146,7 @@ else
     " Plugin Graveyard
 
     "input method
-    Plug 'h-youhei/vim-fcitx'
+    " Plug 'h-youhei/vim-fcitx'
     "swift
     Plug 'lilyball/vim-swift'
     Plug 'xolox/vim-misc'

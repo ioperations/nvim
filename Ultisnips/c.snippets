@@ -21,3 +21,31 @@ for(unsigned int i=0;i<${1:num};++i){
 	${2}
 }
 endsnippet
+
+snippet // "the doxygen comment"
+/**
+  \if english
+  <pre>
+  ${1:the english comment about this block}
+  </pre>
+  \else
+  <pre>
+  ${2: 中文注释}
+  </pre>
+  \endif
+ */
+endsnippet
+
+snippet /c "the doxygen comment"
+/**
+  \if english
+  <pre>
+  ${1:the english comment about this block}
+  </pre>
+  \else
+  <pre>
+  ${2: 中文注释}
+  </pre>
+  \endif
+ */
+endsnippet

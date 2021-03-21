@@ -79,3 +79,31 @@ snippet process_bar "status process bar"
 // 让输出可以重新被覆盖
 std::cout << "\e[A";
 endsnippet
+
+snippet // "the doxygen comment"
+/**
+  \if english
+  <pre>
+  ${1:the english comment about this block}
+  </pre>
+  \else
+  <pre>
+  ${2: 中文注释}
+  </pre>
+  \endif
+ */
+endsnippet
+
+snippet /c "the doxygen comment"
+/**
+  \if english
+  <pre>
+  ${1:the english comment about this block}
+  </pre>
+  \else
+  <pre>
+  ${2: 中文注释}
+  </pre>
+  \endif
+ */
+endsnippet
