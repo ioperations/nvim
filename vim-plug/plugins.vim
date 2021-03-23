@@ -33,6 +33,7 @@ if exists('g:vscode')
     Plug 'machakann/vim-highlightedyank'
 else
     Plug 'vim-airline/vim-airline'
+    Plug 'junegunn/rainbow_parentheses.vim'
     " Sneak
     Plug 'justinmk/vim-sneak'
     " Surround
@@ -150,7 +151,7 @@ else
     "swift
     Plug 'lilyball/vim-swift'
     Plug 'xolox/vim-misc'
-    Plug 'xolox/vim-session'
+    " Plug 'xolox/vim-session'
     Plug 'morhetz/gruvbox'
 
     "sql
