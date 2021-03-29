@@ -77,6 +77,7 @@ else
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
     " Git
+    Plug 'f-person/git-blame.nvim'
     Plug 'airblade/vim-gitgutter'
     Plug 'tpope/vim-fugitive'
     Plug 'tpope/vim-rhubarb'
@@ -180,7 +181,7 @@ else
     " Plug 'arcticicestudio/nord-vim'
     " Ranger
     Plug 'francoiscabrol/ranger.vim'
-    " Plug 'rbgrouleff/bclose.vim'
+    Plug 'rbgrouleff/bclose.vim' " ranger dependency
     " Making stuff
     " Plug 'neomake/neomake'
     " Plug 'mhinz/vim-signify'

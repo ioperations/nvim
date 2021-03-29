@@ -12,11 +12,11 @@ nnoremap <f10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> 
 func! CompileRunGcc()
   exec "w"
   if &filetype == 'c'
-    exec "!clang % -lgtest -lbenchmark -pthread -g -o %<"
+    exec "!clang % -fsanitize=address -lgtest  -lbenchmark -pthread  -lcrypto -lpcre -g -o %<"
     exec "!timeout 30 %<"
   elseif &filetype == 'cpp'
     set splitbelow
-    exec "!clang++ -std=c++11 %  -fsanitize=address -lgtest -lbenchmark -lcrypto -pthread -g -Wall -o %<"
+    exec "!clang++ -std=c++11 %  -fsanitize=address -lgtest -lbenchmark -lcrypto -pthread -lpcre -g -Wall -o %<"
     exec "!timeout 30  ./%<"
   elseif &filetype == 'java'
     exec "!javac -encoding utf8 %"
