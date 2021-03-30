@@ -65,7 +65,8 @@ else
     Plug 'derekwyatt/vim-fswitch'
     " Plug 'ycm-core/YouCompleteMe',
 
-    Plug 'nathanaelkane/vim-indent-guides'
+    " Plug 'nathanaelkane/vim-indent-guides'
+    Plug 'Yggdroot/indentLine'
     " Plug 'Yggdroot/indentLine'
     "go
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
