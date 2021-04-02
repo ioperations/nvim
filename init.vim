@@ -73,7 +73,7 @@ if(has("gui"))
     " 禁止显示菜单和工具条
     set guioptions-=m
     set guioptions-=T
-    set guifont=agave\ Nerd\ Font\ Italic\ Bold\ 21
+    set guifont=Monaco
 endif
 
 

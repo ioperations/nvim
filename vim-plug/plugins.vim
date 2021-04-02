@@ -68,6 +68,9 @@ else
     " Plug 'nathanaelkane/vim-indent-guides'
     Plug 'Yggdroot/indentLine'
     " Plug 'Yggdroot/indentLine'
+    "cpp
+    Plug 'octol/vim-cpp-enhanced-highlight'
+    Plug 'bfrg/vim-cpp-modern'
     "go
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
     " Status Line
@@ -77,8 +80,17 @@ else
     " FZF
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
+    if has('nvim')
+	Plug 'sharkdp/fd'
+	Plug 'sharkdp/bat'
+	Plug 'BurntSushi/ripgrep'
+	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+	Plug 'nvim-lua/popup.nvim'
+	Plug 'nvim-lua/plenary.nvim'
+	Plug 'nvim-telescope/telescope.nvim'
     " Git
     Plug 'f-person/git-blame.nvim'
+    endif
     Plug 'airblade/vim-gitgutter'
     Plug 'tpope/vim-fugitive'
     Plug 'tpope/vim-rhubarb'

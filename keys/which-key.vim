@@ -87,9 +87,9 @@ let g:which_key_map.f = {
       \ 'w' : [':Windows' , 'fzf windows'],
       \ 'b' : [':Buffers' , 'fzf buffers'],
       \ 'a' : [':Ag' , 'fzf Ag'],
-      \ 'r' : [':Rg' , 'fzf Rg'],
+      \ 'r' : [':Telescope live_grep' , 'Telescope live_grep'],
       \ 'c' : [':Colors' , 'fzf vim config colors'],
-      \ 'l' : [':Lines' , 'fzf lines in the current fudder'],
+      \ 'l' : [':Telescope current_buffer_fuzzy_find' , 'telescope current_buffer_fuzzy_find '],
       \ 'h' : [':History' , 'fzf oldfiles and open buffers'],
       \ 'f' : [':FZF' , 'fzf search'],
       \ }

@@ -13,7 +13,7 @@ func! CompileRunGcc()
   exec "w"
   if &filetype == 'c'
     exec "!clang % -fsanitize=address -lgtest  -lbenchmark -pthread  -lcrypto -lpcre -g -o %<"
-    exec "!timeout 30 %<"
+    exec "!timeout 30 ./%<"
   elseif &filetype == 'cpp'
     set splitbelow
     exec "!clang++ -std=c++11 %  -fsanitize=address -lgtest -lbenchmark -lcrypto -pthread -lpcre -g -Wall -o %<"
