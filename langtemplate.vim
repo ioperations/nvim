@@ -164,6 +164,15 @@ function! SetupCppVimspector()
 				\"}", ])
 endfunction
 
+function! SetupClangformat()
+	call append(0 ,[ "BasedOnStyle: Google",
+				\"IndentWidth: 4",
+				\"Language: Cpp",
+				\"# Force pointers to the type for C++.",
+				\"DerivePointerAlignment: false",
+				\"PointerAlignment: Left", ])
+endfunction
+
 autocmd BufNewFile *_test.cpp call SetupCppTest()
 autocmd BufNewFile *_bench.cpp call SetupCppBench()
 autocmd BufNewFile *.sh call Setupshell()
@@ -171,4 +180,5 @@ autocmd BufNewFile Makefile call Setupmake()
 autocmd BufNewFile *.py call Setuppython()
 autocmd BufNewFile *_test.go call SetupGoTest()
 autocmd BufNewFile .vimspector.json call SetupCppVimspector()
+autocmd BufNewFile .clang-format call SetupClangformat()
 autocmd Filetype markdown call Setupmarkdown()

@@ -26,7 +26,7 @@ highlight default link WhichKeyDesc      Function
 " Hide status line
 autocmd! FileType which_key
 autocmd  FileType which_key set laststatus=0 noshowmode noruler
-  \| autocmd BufLeave <buffer> set laststatus=2 noshowmode ruler
+      \| autocmd BufLeave <buffer> set laststatus=2 noshowmode ruler
 
 
 " Single mappings
@@ -119,7 +119,7 @@ let g:which_key_map.k = {
       \ 'p' : [':AsyncTask project-run'       , 'run project'],
       \ 'x' : [':cclose'                      , 'close task view'],
       \ }
-      " \ 'l' : [':AsyncTaskList'               , 'list tasks'],
+" \ 'l' : [':AsyncTaskList'               , 'list tasks'],
 
 " s is for search
 let g:which_key_map.s = {
@@ -149,7 +149,7 @@ let g:which_key_map.s = {
       \ 'y' : [':Filetypes'             , 'file types'],
       \ 'z' : [':FZF'                   , 'FZF'],
       \ }
-      " \ 's' : [':Snippets'     , 'snippets'],
+" \ 's' : [':Snippets'     , 'snippets'],
 
 let g:which_key_map.S = {
       \ 'name' : '+Session' ,
@@ -239,7 +239,7 @@ let g:which_key_map.l = {
       \ 'z' : [':CocDisable'                         , 'disable CoC'],
       \ 'Z' : [':CocEnable'                          , 'enable CoC'],
       \ }
-      " \ 'o' : ['<Plug>(coc-openlink)'                , 'open link'],
+" \ 'o' : ['<Plug>(coc-openlink)'                , 'open link'],
 
 " t is for terminal
 let g:which_key_map.t = {
@@ -298,10 +298,10 @@ let g:which_key_map.w = {
       \ }
 
 let g:which_key_map.r = {
-	  \ "name" : '+jump',
-	  \ 'r' : [':FloatermNew ranger'                      , 'ranger' ],
-	  \ 'c' : ['Startify'                      , 'vim rc' ],
-	  \}
+      \ "name" : '+jump',
+      \ 'r' : [':FloatermNew ranger'                      , 'ranger' ],
+      \ 'c' : ['Startify'                      , 'vim rc' ],
+      \}
 
 
 let g:which_key_map.d = {

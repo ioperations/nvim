@@ -31,7 +31,7 @@ func! CompileRunGcc()
   elseif &filetype == 'javascript'
     exec "!node %"
   elseif &filetype == 'swift'
-    exec "!swift % -o %<"
+    exec "!swiftc % -o %<"
     exec "!timeout 20 ./%<"
   elseif &filetype == 'typescript'
     exec "!node %"

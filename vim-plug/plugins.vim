@@ -64,7 +64,7 @@ else
     Plug 'jackguo380/vim-lsp-cxx-highlight'
     Plug 'derekwyatt/vim-fswitch'
     " Plug 'ycm-core/YouCompleteMe',
-
+    Plug 'metakirby5/codi.vim'
     " Plug 'nathanaelkane/vim-indent-guides'
     Plug 'Yggdroot/indentLine'
     " Plug 'Yggdroot/indentLine'
@@ -88,8 +88,8 @@ else
 	Plug 'nvim-lua/popup.nvim'
 	Plug 'nvim-lua/plenary.nvim'
 	Plug 'nvim-telescope/telescope.nvim'
-    " Git
-    Plug 'f-person/git-blame.nvim'
+	" Git
+	Plug 'f-person/git-blame.nvim'
     endif
     Plug 'airblade/vim-gitgutter'
     Plug 'tpope/vim-fugitive'

@@ -113,8 +113,6 @@ noremap <c-l> :Vista coc<cr>
 noremap Q :q!<cr>
 noremap S :w!<cr>
 
-nnoremap <expr><C-d> coc#float#has_float() ? coc#float#scroll(1) : "\<C-d>"
-nnoremap <expr><C-u> coc#float#has_float() ? coc#float#scroll(0) : "\<C-u>"
 
 nnoremap W 5w
 nnoremap B 5b
