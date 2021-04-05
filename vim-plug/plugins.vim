@@ -208,6 +208,7 @@ else
     " Plug 'atishay/far.vim'
     "
     Plug 'Chiel92/vim-autoformat' "\f to autoformat the file
+    Plug 'rhysd/vim-clang-format'
     " File navigation
     Plug 'scrooloose/nerdtree'
     Plug 'Xuyuanp/nerdtree-git-plugin'
