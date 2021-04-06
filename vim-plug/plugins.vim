@@ -66,8 +66,8 @@ else
     " Plug 'ycm-core/YouCompleteMe',
     Plug 'metakirby5/codi.vim'
     " Plug 'nathanaelkane/vim-indent-guides'
-    " Plug 'Yggdroot/indentLine'
-    Plug 'lukas-reineke/indent-blankline.nvim'
+    Plug 'Yggdroot/indentLine'
+    " Plug 'lukas-reineke/indent-blankline.nvim'
     " Plug 'Yggdroot/indentLine'
     "cpp
     Plug 'octol/vim-cpp-enhanced-highlight'

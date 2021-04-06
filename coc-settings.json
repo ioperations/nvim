@@ -38,11 +38,11 @@
         "json",
         "python"
     ],
-    "coc.preferences.hoverTarget": "float",
+    // "coc.preferences.hoverTarget": "float",
     "suggest.detailMaxLength": 60,
     "suggest.triggerAfterInsertEnter": true,
     "suggest.enablePreview": true,
-    "suggest.snippetIndicator": "Ⓜ",
+    "suggest.snippetIndicator": "🐶",
     "tslint.trace.server": "verbose",
     "python.jediEnabled": false,
     "tsserver.trace.server": "verbose",
@@ -111,6 +111,7 @@
             "command": "sourcekit-lsp"
         }
     },
+    // "sourcekit.commandPath": "/home/tablinux/swift/usr/bin/sourcekit-lsp",
     "snippets.shortcut": "J",
     "snippets.ultisnips.directories": [
         "$HOME/.config/nvim/autoload/plugged/vim-snippets/UltiSnips/",
