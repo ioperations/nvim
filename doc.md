@@ -151,12 +151,3 @@ To use **vim-gists** you will need to configure the following:
 ```
 git config --global github.user <username>
 ```
-
-## CoC extensions to check out
-
-- coc-fzf
-- coc-stylelintplus
-- coc-floaterm
-- coc-actions
-- coc-bookmark
-
