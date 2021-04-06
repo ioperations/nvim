@@ -38,7 +38,7 @@ bash <(curl -s https://git.io/JTvvG)
 
 ```
 git clone https://github.com/ioperations/nvim.git ~/.config/nvim
-nvim +PlugInstall
+nvim +PlugInstall +q
 ```
 
 ## Install python & node support
