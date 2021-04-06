@@ -92,6 +92,7 @@ let g:which_key_map.f = {
       \ 'l' : [':Telescope current_buffer_fuzzy_find' , 'telescope current_buffer_fuzzy_find '],
       \ 'h' : [':History' , 'fzf oldfiles and open buffers'],
       \ 'f' : [':FZF' , 'fzf search'],
+      \ 'L' : [':NERDTreeToggle<CR>' , 'nerdtree'],
       \ }
 
 let g:which_key_map.F = {

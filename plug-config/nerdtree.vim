@@ -1,7 +1,7 @@
 " ===
 " === NERDTree
 " ===
-noremap <leader>fL :NERDTreeToggle<CR>
+nnoremap <leader>fL :NERDTreeToggle<CR>
 let NERDTreeMapOpenExpl = ""
 let NERDTreeMapUpdir = "N"
 let NERDTreeMapUpdirKeepOpen = "n"

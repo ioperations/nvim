@@ -66,7 +66,8 @@ else
     " Plug 'ycm-core/YouCompleteMe',
     Plug 'metakirby5/codi.vim'
     " Plug 'nathanaelkane/vim-indent-guides'
-    Plug 'Yggdroot/indentLine'
+    " Plug 'Yggdroot/indentLine'
+    Plug 'lukas-reineke/indent-blankline.nvim'
     " Plug 'Yggdroot/indentLine'
     "cpp
     Plug 'octol/vim-cpp-enhanced-highlight'
@@ -91,6 +92,8 @@ else
 	" Git
 	Plug 'f-person/git-blame.nvim'
     endif
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'lewis6991/gitsigns.nvim'
     Plug 'airblade/vim-gitgutter'
     Plug 'tpope/vim-fugitive'
     Plug 'tpope/vim-rhubarb'
@@ -211,6 +214,9 @@ else
     Plug 'rhysd/vim-clang-format'
     " File navigation
     Plug 'scrooloose/nerdtree'
+    " requires
+    Plug 'kyazdani42/nvim-web-devicons' " for file icons
+    Plug 'kyazdani42/nvim-tree.lua'
     Plug 'Xuyuanp/nerdtree-git-plugin'
 endif
 
