@@ -52,6 +52,7 @@ if 1
     source $HOME/.config/nvim/plug-config/vimspector.vim
     source $HOME/.config/nvim/plug-config/wildfire.vim
     source $HOME/.config/nvim/plug-config/vim-easymotion.vim
+    source $HOME/.config/nvim/plug-config/gitblame.vim
     " source $HOME/.config/nvim/plug-config/nvimtree.vim
     if(exists('nvim'))
         luafile $HOME/.config/nvim/lua/plug-colorizer.lua
