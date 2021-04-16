@@ -39,6 +39,7 @@
         "python"
     ],
     // "coc.preferences.hoverTarget": "float",
+    "clangd.path": "/usr/local/Cellar/llvm/11.1.0/bin/clangd",
     "suggest.removeDuplicateItems": true,
     "suggest.detailMaxLength": 60,
     "suggest.triggerAfterInsertEnter": true,
@@ -49,6 +50,21 @@
     "tsserver.trace.server": "verbose",
     "javascript.validate.enable": false,
     "languageserver": {
+        "clang": {
+            "command": "/usr/local/Cellar/llvm/11.1.0/bin/clangd",
+            "rootPatterns": [
+                "compile_flags.txt",
+                "compile_commands.json"
+            ],
+            "filetypes": [
+                "c",
+                "cc",
+                "cpp",
+                "c++",
+                "objc",
+                "objcpp"
+            ]
+        },
         "ccls": {
             "command": "ccls",
             "filetypes": [
