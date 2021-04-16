@@ -70,6 +70,13 @@
                 "client": {
                     "snippetSupport": true
                 },
+                "clang": {
+                    "extraArgs": [
+                        "-isystem",
+                        "/usr/local/Cellar/llvm/11.1.0_1/include/c++/v1"
+                    ],
+                    "resourceDir": "/Library/Developer/CommandLineTools/usr/lib/clang/11.0.0"
+                },
                 "highlight": {
                     "lsRanges": true
                 }
