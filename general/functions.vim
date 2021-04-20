@@ -42,6 +42,9 @@ func! CompileRunGcc()
     " silent! exec "!pdflatex %"
     " silent! exec "!echo 'done'"
     "silent! exec "VimtexCompile"
+  elseif &filetype == 'rust'
+    exec "!cargo build"
+    exec "!cargo run"
   elseif &filetype == 'go'
     exec "!go run %"
   elseif &filetype == 'lua'
