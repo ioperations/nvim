@@ -8,6 +8,6 @@ tmp/
 .netrwhist
 _machine_specific.vim
 .ccls-cache/
-coc-settings.json
+./coc-settings.json
 vimspector-config
 

@@ -39,6 +39,7 @@
         "python"
     ],
     // "coc.preferences.hoverTarget": "float",
+    "suggest.removeDuplicateItems": true,
     "suggest.detailMaxLength": 60,
     "suggest.triggerAfterInsertEnter": true,
     "suggest.enablePreview": true,

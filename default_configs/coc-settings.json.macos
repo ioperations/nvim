@@ -39,6 +39,8 @@
         "python"
     ],
     // "coc.preferences.hoverTarget": "float",
+    "clangd.path": "/usr/local/Cellar/llvm/11.1.0/bin/clangd",
+    "suggest.removeDuplicateItems": true,
     "suggest.detailMaxLength": 60,
     "suggest.triggerAfterInsertEnter": true,
     "suggest.enablePreview": true,
@@ -48,6 +50,21 @@
     "tsserver.trace.server": "verbose",
     "javascript.validate.enable": false,
     "languageserver": {
+        "clang": {
+            "command": "/usr/local/Cellar/llvm/11.1.0/bin/clangd",
+            "rootPatterns": [
+                "compile_flags.txt",
+                "compile_commands.json"
+            ],
+            "filetypes": [
+                "c",
+                "cc",
+                "cpp",
+                "c++",
+                "objc",
+                "objcpp"
+            ]
+        },
         "ccls": {
             "command": "ccls",
             "filetypes": [
@@ -68,6 +85,13 @@
                 },
                 "client": {
                     "snippetSupport": true
+                },
+                "clang": {
+                    "extraArgs": [
+                        "-isystem",
+                        "/usr/local/Cellar/llvm/11.1.0_1/include/c++/v1"
+                    ],
+                    "resourceDir": "/Library/Developer/CommandLineTools/usr/lib/clang/11.0.0"
                 },
                 "highlight": {
                     "lsRanges": true
