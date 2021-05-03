@@ -174,6 +174,7 @@ function! SetupClangformat()
 endfunction
 
 autocmd BufNewFile *_test.cpp call SetupCppTest()
+autocmd BufNewFile *_test.cc call SetupCppTest()
 autocmd BufNewFile *_bench.cpp call SetupCppBench()
 autocmd BufNewFile *.sh call Setupshell()
 autocmd BufNewFile Makefile call Setupmake()

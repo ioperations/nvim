@@ -23,10 +23,14 @@ func! CompileRunGcc()
     set splitbelow
     if has("macunix")
       exec "!clang++ -std=c++11 %  -fsanitize=address -lm -Wall -o %<"
-    elseif hsa("unix")
+    elseif has("unix")
       exec "!clang++ -std=c++11 %  -fsanitize=address -lgtest -lbenchmark -lcrypto -pthread -lpcre -g -Wall -o %<"
     endif
     exec "!timeout 30  ./%<"
+  elseif &filetype == 'cuda'
+    set splitbelow
+    exec "!nvcc -std=c++11 %  -o %<"
+    exec "!timeout 30 ./%<"
   elseif &filetype == 'java'
     exec "!javac -encoding utf8 %"
     exec "!time java %<"

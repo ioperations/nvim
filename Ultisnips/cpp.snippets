@@ -4,7 +4,7 @@ endsnippet
 
 snippet fora " for auto ptr"
 for(auto ${1:ptr} : ${2:vector}){
-	std::cout<< $1 << std::endl ;
+    std::cout<< $1 << std::endl ;
 }
 endsnippet
 
@@ -37,8 +37,8 @@ TEST(${1:testName},${2:testNum}){
 
 int main(int argc, char *argv[])
 {
-	testing::InitGoogleTest(&argc,argv);
-	return RUN_ALL_TESTS();
+    testing::InitGoogleTest(&argc,argv);
+    return RUN_ALL_TESTS();
 }
 
 endsnippet
@@ -46,11 +46,11 @@ endsnippet
 post_jump "if snip.tabstop == 0 : split_line(snip.tabstops[4].current_text)"
 snippet walkarray "遍历数组"
 for(int i=0;i<${1:Row};i++){
-	for(int j=0;j<${2:Col};j++){
-		if(rand()%2){
-			*((int*)${3:Array} +i*$2 + j) = 0;
-		}
-	}
+    for(int j=0;j<${2:Col};j++){
+        if(rand()%2){
+            *((int*)${3:Array} +i*$2 + j) = 0;
+        }
+    }
 }
 endsnippet
 
@@ -91,14 +91,63 @@ endsnippet
 
 snippet // "the doxygen comment"
 /**
-  \if english
-  <pre>
-  ${1:the english comment about this block}
-  </pre>
-  \else
-  <pre>
-  ${2: 中文注释}
-  </pre>
-  \endif
- */
+\if english
+<pre>
+${1:the english comment about this block}
+</pre>
+\else
+<pre>
+${2: 中文注释}
+</pre>
+\endif
+         */
+endsnippet
+
+snippet singleton " to generate a singleton"
+
+#include<iostream>
+#include<mutex>
+
+/// singleton class ${1:singleton}
+class $1 {
+    public:
+        static $1 * getInstance(){
+            if (instance == NULL) {
+                objmutex.lock();
+                if(instance == NULL ){
+                    instance = new $1();
+                }
+                objmutex.unlock();
+            }
+            return instance;
+        };
+    private:
+        /// >>>> deconstructor
+        ~$1(){
+
+        }
+        /// >>>> constructor
+        $1(){
+
+        }
+        /// >>>> ensure the singleton being freed by c++ compiler
+        class globalgc{
+            public:
+                ~globalgc(){
+                    if (instance) {
+                        delete instance;
+                    }
+                }
+        };
+
+        static globalgc gc_obj;
+        static std::mutex objmutex;
+        static $1* instance;
+
+};
+
+$1::globalgc $1::gc_obj;
+std::mutex $1::objmutex;
+$1 *  $1::instance = NULL ;
+
 endsnippet
