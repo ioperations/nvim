@@ -55,7 +55,7 @@ function! Setupmake()
 				\ "CPPFLAGS+= -lgtest -lpthread -lbenchmark -lpcre -lcrypto",
 				\ "",
 				\ "%:%.cc",
-				\ "${CXX} $< ${CPPFLAGS} -o $@",
+				\ "    ${CXX} $< ${CPPFLAGS} -o $@",
 				\ "",
 				\ "",
 				\ "cmake:",
