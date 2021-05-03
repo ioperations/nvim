@@ -115,6 +115,8 @@
     },
     // "sourcekit.commandPath": "/home/tablinux/swift/usr/bin/sourcekit-lsp",
     "snippets.shortcut": "J",
+    "rust-analyzer.procMacro.enable": true,
+    "rust-analyzer.cargo.loadOutDirsFromCheck": true,
     "snippets.ultisnips.directories": [
         "$HOME/.config/nvim/autoload/plugged/vim-snippets/UltiSnips/",
         "$HOME/.config/nvim/UltiSnips"
