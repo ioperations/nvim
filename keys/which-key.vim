@@ -89,7 +89,7 @@ let g:which_key_map.f = {
       \ 'a' : [':Ag' , 'fzf Ag'],
       \ 'r' : [':Telescope live_grep' , 'Telescope live_grep'],
       \ 'c' : [':Colors' , 'fzf vim config colors'],
-      \ 'l' : [':Telescope current_buffer_fuzzy_find' , 'telescope current_buffer_fuzzy_find '],
+      \ 'l' : [':Lines ' , 'fzf lines'],
       \ 'h' : [':History' , 'fzf oldfiles and open buffers'],
       \ 'f' : [':FZF' , 'fzf search'],
       \ 'L' : [':NERDTreeToggle<CR>' , 'nerdtree'],
