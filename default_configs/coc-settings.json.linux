@@ -106,6 +106,15 @@
                 "buildDirectory": "build"
             }
         },
+        "rust": {
+            "command": "rust-analyzer",
+            "filetypes": [
+                "rust"
+            ],
+            "rootPatterns": [
+                "Cargo.toml"
+            ]
+        },
         "sourcekit-lsp": {
             "filetypes": [
                 "swift"
