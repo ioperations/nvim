@@ -151,3 +151,204 @@ std::mutex $1::objmutex;
 $1 *  $1::instance = NULL ;
 
 endsnippet
+
+snippet binaryTree "c++ binaryTree template" 
+#include <iostream>
+template <typename T>
+struct tree {
+    T data;
+    tree *left, *right;
+};
+
+#if __cplusplus > 201703L
+template <typename T>
+concept fill_in_the_need_for_Btree = requires(T t1, T t2)
+{
+    t1 > t2;
+    t1 < t2;
+    t1 = t2;
+    std::cout << t1;
+};
+#endif
+
+#if __cplusplus > 201703L
+template <fill_in_the_need_for_Btree T>
+#else
+template <typename T>
+#endif
+class Btree {
+private:
+    static int n;
+    static int m;
+    tree<T>* root;
+
+public:
+    Btree()
+    {
+        root = nullptr;
+    }
+
+protected:
+    void erase_btree(tree<T>* root_)
+    {
+        if (root_ == nullptr) {
+            return;
+        }
+
+        erase_btree(root_->left);
+        erase_btree(root_->right);
+        delete root_;
+        return;
+    }
+
+    /// 先序遍历
+    void preOrder(tree<T>* temp)
+    {
+        if (temp != nullptr) {
+            std::cout << temp->data << " ";
+            preOrder(temp->left);
+            preOrder(temp->right);
+        }
+    }
+    /// 中序遍历
+    void inOrder(tree<T>* temp)
+    {
+        {
+            if (temp != nullptr) {
+                inOrder(temp->left);
+                std::cout << temp->data << " ";
+                inOrder(temp->right);
+            }
+        }
+    }
+    /// 后序遍历
+    void postOrder(tree<T>* temp)
+    {
+        if (temp != nullptr) {
+            postOrder(temp->left);
+            postOrder(temp->right);
+            std::cout << temp->data << " ";
+        }
+    }
+    /// 计算二叉树的个数
+    int count(tree<T>* p)
+    {
+        if (p == nullptr)
+            return 0;
+        else
+            return count(p->left) + count(p->right) + 1;
+    }
+    /// 求二叉树叶子的个数
+    int findLeaf(tree<T>* temp)
+    {
+        if (temp == nullptr)
+            return 0;
+        else {
+            if (temp->left == nullptr && temp->right == nullptr)
+                return n += 1;
+            else {
+                findLeaf(temp->left);
+                findLeaf(temp->right);
+            }
+        }
+        return 0;
+    }
+    /// 求二叉树叶子的个数
+    int findNode(tree<T>* temp)
+    {
+        if (temp == nullptr)
+            return 0;
+        else {
+            if (temp->left != nullptr && temp->right != nullptr) {
+                findNode(temp->left);
+                findNode(temp->right);
+            }
+            if (temp->left != nullptr && temp->right == nullptr) {
+                m += 1;
+                findNode(temp->left);
+            }
+            if (temp->left == nullptr && temp->right != nullptr) {
+                m += 1;
+                findNode(temp->right);
+            }
+        }
+        return m;
+    }
+
+public:
+    void erase_btree()
+    {
+        erase_btree(root);
+    }
+    void create_Btree(T x)
+    {
+        {
+            tree<T>* newNode = new tree<T>;
+            newNode->data = x;
+            newNode->right = newNode->left = nullptr;
+            if (root == nullptr)
+                root = newNode;
+            else {
+                tree<T>* back;
+                tree<T>* current = root;
+                while (current != nullptr) {
+                    back = current;
+                    if (current->data > x)
+                        current = current->left;
+                    else
+                        current = current->right;
+                }
+                if (back->data > x)
+                    back->left = newNode;
+                else
+                    back->right = newNode;
+            }
+        }
+    }
+    ///先序遍历
+    void preOrder()
+    {
+        preOrder(root);
+    }
+    ///中序遍历
+    void inOrder()
+    {
+        inOrder(root);
+    };
+    ///后序遍历
+    void postOrder()
+    {
+        postOrder(root);
+    };
+    ///计算二叉树的个数
+    int count()
+    {
+        return count(root);
+    };
+    ///求二叉树叶子的个数
+    int findLeaf()
+    {
+
+        return findLeaf(root);
+    };
+    //求二叉树中度数为1的结点数量
+    int findNode()
+    {
+
+        return findNode(root);
+    }
+};
+endsnippet
+
+snippet istream "friend istream" 
+friend std::istream& operator>> (std::istream& is ,${1:Object}& rhs){
+    is >> rhs.$2;
+    return is;
+}
+endsnippet
+snippet ostream "friend ostream" 
+friend std::ostream& operator<< (std::ostream& os ,${1:Object}& rhs){
+    os << rhs.$2 << std::endl;
+    return os;
+}
+endsnippet

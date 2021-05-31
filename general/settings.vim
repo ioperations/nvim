@@ -74,3 +74,4 @@ let g:session_autoload = 'yes'
 
 "保存配置时文件自动重新加载
 autocmd BufWritePost $MYVIMRC source $MYVIMRC
+set wrap
