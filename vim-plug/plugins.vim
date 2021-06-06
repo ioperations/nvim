@@ -60,6 +60,9 @@ else
     " Plug 'kyazdani42/blue-moon'
     " Intellisense
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'skywind3000/vim-auto-popmenu'
+    Plug 'skywind3000/vim-dict'
+
     Plug 'neoclide/coc-snippets',
     Plug 'jackguo380/vim-lsp-cxx-highlight'
     Plug 'derekwyatt/vim-fswitch'

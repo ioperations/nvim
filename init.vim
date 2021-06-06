@@ -59,6 +59,7 @@ if 1
         luafile $HOME/.config/nvim/plug-config/gitsigns.lua
     endif
     source $HOME/.config/nvim/plug-config/coc.vim
+    source $HOME/.config/nvim/plug-config/vim-auto-popmenu.vim
 
 endif
 
