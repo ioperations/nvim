@@ -12,9 +12,12 @@ jobs:
               name: checkout code
               uses: actions/checkout@v2
             - id: step1
-              run: wget https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz -o nvim.tar.gz
+              run: curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz 
             - id: step2
-              run: tar xf nvim.tar.gz && export PATH="$PWD/nvim-linux64/bin:$PATH"
+              run: |
+                  tar xzf nvim-linux64.tar.gz 
+                  export PATH="$PWD/nvim-linux64/bin:$PATH"
+                  nvim --version
             - id: step3
               run: mkdir ~/.config/nvim -pv
             - id: step4
