@@ -11,22 +11,22 @@ jobs:
             - id: step0
               name: checkout code
               uses: actions/checkout@v2
-            - id: install neovim
+            - id: install-neovim
               run: |
                   curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz 
                   tar xzf nvim-linux64.tar.gz 
                   export PATH="$(pwd)/nvim-linux64/bin:$PATH"
                   nvim --version
-            - id: move to configuration dir
+            - id: move-to-configuration-dir
               run: |
                   mkdir ~/.config/nvim -pv
                   cp * -rf ~/.config/nvim/
                   ls ~/.config/nvim -la
-            - id:  dependancy install
+            - id:  dependancy-install
               run: |
                   sudo apt install golang python3-pip nodejs npm ripgrep -y
                   sudo npm install -g neovim && sudo pip3 install neovim
-            - id: install neovim plugin
+            - id: install-neovim-plugin
               run: |
                   export PATH="$(pwd)/nvim-linux64/bin:$PATH"
                   nvim +PlugInstall +q! +q
