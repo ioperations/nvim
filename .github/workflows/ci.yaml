@@ -16,7 +16,7 @@ jobs:
             - id: step2
               run: |
                   tar xzf nvim-linux64.tar.gz 
-                  export PATH="$PWD/nvim-linux64/bin:$PATH"
+                  export PATH="$(pwd)/nvim-linux64/bin:$PATH"
                   nvim --version
             - id: step3
               run: mkdir ~/.config/nvim -pv
@@ -27,6 +27,8 @@ jobs:
             - id: step6
               run: sudo npm install -g neovim && sudo pip3 install neovim
             - id: step7 
-              run: nvim +PlugInstall +q! +q
+              run: |
+                  export PATH="$(pwd)/nvim-linux64/bin:$PATH"
+                  nvim +PlugInstall +q! +q
 
 
