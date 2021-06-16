@@ -25,7 +25,7 @@ jobs:
             - id: step5
               run: sudo apt install golang python3-pip nodejs npm ripgrep -y
             - id: step6
-              run: npm install -g neovim && pip3 install neovim
+              run: sudo npm install -g neovim && sudo pip3 install neovim
             - id: step7 
               run: nvim +PlugInstall +q! +q
 
