@@ -1,0 +1,29 @@
+name: nvim configuration ci
+
+on: push
+
+jobs:
+    build-test:
+        name: Build on ${{ matrix.container }}
+        runs-on: ubuntu-latest
+        container: ${{ matrix.container }}
+        steps:
+            - id: step0
+              name: checkout code
+              uses: actions/checkout@v2
+            - id: step1
+              run: wget https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz -o nvim.tar.gz
+            - id: step2
+              run: tar xf nvim.tar.gz && export PATH="$PWD/nvim-linux64/bin:$PATH"
+            - id: step3
+              run: mkdir ~/.config/nvim -pv
+            - id: step4
+              run: cp * -rf ~/.config/nvim/
+            - id: step5
+              run: apt install golang python3-pip nodejs npm ripgrep 
+            - id: step6
+              run: npm install -g neovim && pip3 install neovim
+            - id: step7 
+              run: nvim +PlugInstall +q! +q
+
+
