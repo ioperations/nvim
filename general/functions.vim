@@ -14,17 +14,17 @@ func! CompileRunGcc()
   if &filetype == 'c'
     " mac has some limit
     if has("macunix")
-      exec "!clang % -fsanitize=address -lm -g -Wall -o %<"
+      exec "!clang % -DTEST_ADQ -fsanitize=address -lm -g -Wall -o %<"
     elseif has("unix")
-      exec "!clang % -fsanitize=address -lgtest  -lbenchmark -pthread  -lcrypto -lpcre -g -Wall -o %<"
+      exec "!clang % -DTEST_ADQ -fsanitize=address -lgtest  -lbenchmark -pthread  -lcrypto -lpcre -g -Wall -o %<"
     endif
     exec "!timeout 30 ./%<"
   elseif &filetype == 'cpp'
     set splitbelow
     if has("macunix")
-      exec "!clang++ -std=c++20 %  -fsanitize=address -lm -Wall -o %<"
+      exec "!clang++ -DTEST_ADQ -std=c++20 %  -fsanitize=address -lm -Wall -o %<"
     elseif has("unix")
-      exec "!clang++ -std=c++20 %  -fsanitize=address -lgtest -lbenchmark -lcrypto -pthread -lpcre -g -Wall -o %<"
+      exec "!clang++ -DTEST_ADQ -std=c++20 %  -fsanitize=address -lgtest -lbenchmark -lcrypto -pthread -lpcre -g -Wall -o %<"
     endif
     exec "!timeout 30  ./%<"
   elseif &filetype == 'cuda'
