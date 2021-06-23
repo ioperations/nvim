@@ -214,8 +214,8 @@ else
     " Plug 'atishay/far.vim'
     "
     Plug 'Chiel92/vim-autoformat' "\f to autoformat the file
-    " Plug 'gauteh/vim-cppman'
-    Plug 'skywind3000/vim-cppman'
+    Plug 'gauteh/vim-cppman'
+    " Plug 'skywind3000/vim-cppman'
     Plug 'rhysd/vim-clang-format'
     " File navigation
     Plug 'scrooloose/nerdtree'
