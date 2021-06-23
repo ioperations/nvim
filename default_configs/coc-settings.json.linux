@@ -17,8 +17,7 @@
         "bing",
         "youdao"
     ],
-    "translator.enableHover": false,
-    "translator.maxsize": 5000,
+    "translator.enableHover": true,
     "translator.window.maxWidth": 999,
     "translator.window.maxHeight": 999,
     "clangd.semanticHighlighting": true,
@@ -38,7 +37,6 @@
         "json",
         "python"
     ],
-    // "coc.preferences.hoverTarget": "float",
     "suggest.removeDuplicateItems": true,
     "suggest.detailMaxLength": 60,
     "suggest.triggerAfterInsertEnter": true,
