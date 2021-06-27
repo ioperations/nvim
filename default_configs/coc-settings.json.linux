@@ -1,6 +1,7 @@
 {
     "yank.enableCompletion": true,
     "diagnostic-languageserver.trace.server": "verbose",
+    "codeLens.enable": true,
     "translator.toLang": "zh",
     "explorer.width": 30,
     "java.trace.server": "verbose",
@@ -70,6 +71,12 @@
                 },
                 "highlight": {
                     "lsRanges": true
+                },
+                " clang ": {
+                    "extraArgs": [
+                        "-std=c++20",
+                        "-DTEST_ADQ"
+                    ]
                 }
             }
         },

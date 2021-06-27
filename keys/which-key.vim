@@ -331,6 +331,7 @@ let g:which_key_map.x = {
       \ 'f' :[":call CocLocations(\'ccls\',\'$ccls/member\',{\'kind\':3})<cr>    "          ,'funtions in a namespace'],
       \ 's' :[":call CocLocations(\'ccls\',\'$ccls/member\',{\'kind\':2})<cr>   "          ,'nasted calsses in a namespace'],
       \ 'v' :[":call CocLocations(\'ccls\',\'$ccls/vars\',{\'kind\':1})<cr> "          ,'vars in a '],
+      \ 'x' :[":call CocAction(\'toggleService\',\'languageserver.ccls\')<cr>","toggle ccls"],
       \}
 
 " <Plug>VimwikiDeleteLink

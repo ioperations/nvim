@@ -70,11 +70,26 @@ else
   inoremap <C-l> <C-\><C-N><C-w>l
   tnoremap <Esc> <C-\><C-n>
 
-  " Use alt + hjkl to resize windows
-  " nnoremap <silent> <M-j>    :resize -2<CR>
-  " nnoremap <silent> <M-k>    :resize +2<CR>
-  " nnoremap <silent> <M-h>    :vertical resize -2<CR>
-  " nnoremap <silent> <M-l>    :vertical resize +2<CR>
+  " <C-a>, A: move to head.
+  cnoremap <C-a>          <Home>
+  " <C-b>: previous char.
+  cnoremap <C-b>          <Left>
+  " <C-d>: delete char.
+  cnoremap <C-d>          <Del>
+  " <C-e>, E: move to end.
+  cnoremap <C-e>          <End>
+  " <C-f>: next char.
+  cnoremap <C-f>          <Right>
+  " <C-n>: next history.
+  cnoremap <C-n>          <Down>
+  cnoremap <C-j>          <Down>
+  " <C-p>: previous history.
+  cnoremap <C-p>          <Up>
+  cnoremap <C-k>          <Up>
+  " <C-y>: paste.
+  cnoremap <C-y>          <C-r>*
+  " <C-g>: Exit.
+  cnoremap <C-g>          <C-c>
 
   " split the screens to up (horizontal), down (horizontal), left (vertical), right (vertical)
   " spilt k up
@@ -119,13 +134,13 @@ nnoremap B 5b
 nnoremap E 5e
 " Actions
 " let g:fzf_action = {
-            " \ 'alt-j': 'preview-down',
-            " \ 'alt-k': 'preview-up',
-            " \ 'alt-o': '!open'}
+" \ 'alt-j': 'preview-down',
+" \ 'alt-k': 'preview-up',
+" \ 'alt-o': '!open'}
 " Search spotlight {{{2
 " command! -nargs=1 FzfSpotlight call fzf#run(fzf#wrap({
-            " \ 'source'  : 'mdfind -onlyin ~ <q-args>',
-            " \ 'options' : '-m --prompt "Spotlight> "'
-            " \ }))
+" \ 'source'  : 'mdfind -onlyin ~ <q-args>',
+" \ 'options' : '-m --prompt "Spotlight> "'
+" \ }))
 " nnoremap <Space>s :FzfSpotlight <C-R><C-W>
 let g:ranger_map_keys='Rg'

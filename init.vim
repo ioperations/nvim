@@ -57,6 +57,7 @@ if 1
     if(exists('nvim'))
         luafile $HOME/.config/nvim/lua/plug-colorizer.lua
         luafile $HOME/.config/nvim/plug-config/gitsigns.lua
+        source $HOME/.config/nvim/plug-config/nvim-treesitter.vim
     endif
     source $HOME/.config/nvim/plug-config/coc.vim
     source $HOME/.config/nvim/plug-config/cppman.vim

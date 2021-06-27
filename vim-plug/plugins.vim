@@ -151,7 +151,7 @@ else
     Plug 'norcalli/nvim-colorizer.lua'
     Plug 'sumneko/lua-language-server' ,{'dir':'~/.config/nvim/autoload/plugged/lua-language-server/','do':'git submodule update --init --recursive && cd 3rd/luamake && ninja -f ninja/linux.ninja && cd ../..  && ./3rd/luamake/luamake rebuild'}
     " Rainbow brackets
-    Plug 'luochen1990/rainbow'
+    " Plug 'luochen1990/rainbow'
     " Async Linting Engine
     " TODO make sure to add ale config before plugin
     " Plug 'dense-analysis/ale'
