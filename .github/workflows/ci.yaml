@@ -29,6 +29,6 @@ jobs:
             - id: install-neovim-plugin
               run: |
                   export PATH="$(pwd)/nvim-linux64/bin:$PATH"
-                  nvim +PlugInstall +q! +q
+                  nvim -Es -u ~/.config/nvim/init.vim +PlugInstall +qall
 
 
