@@ -332,6 +332,7 @@ let g:which_key_map.x = {
       \ 's' :[":call CocLocations(\'ccls\',\'$ccls/member\',{\'kind\':2})<cr>   "          ,'nasted calsses in a namespace'],
       \ 'v' :[":call CocLocations(\'ccls\',\'$ccls/vars\',{\'kind\':1})<cr> "          ,'vars in a '],
       \ 'x' :[":call CocAction(\'toggleService\',\'languageserver.ccls\')<cr>","toggle ccls"],
+      \ 'h' :[':CocCommand clangd.switchSourceHeader',"clangd.switchSourceHeader"],
       \}
 
 " <Plug>VimwikiDeleteLink
