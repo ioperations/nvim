@@ -75,7 +75,8 @@
                 " clang ": {
                     "extraArgs": [
                         "-std=c++20",
-                        "-DTEST_ADQ"
+                        "-DTEST_ADQ",
+                        "-Wall"
                     ]
                 }
             }
@@ -110,15 +111,6 @@
             "initializationOptions": {
                 "buildDirectory": "build"
             }
-        },
-        "rust": {
-            "command": "rust-analyzer",
-            "filetypes": [
-                "rust"
-            ],
-            "rootPatterns": [
-                "Cargo.toml"
-            ]
         },
         "sourcekit-lsp": {
             "filetypes": [

@@ -274,5 +274,4 @@ vmap <Leader>lv <Plug>(coc-translator-pv)
 let g:lsp_cxx_hl_use_text_props = 1
 
 " ccls extensions
-nn xx x
 
