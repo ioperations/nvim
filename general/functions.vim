@@ -22,9 +22,9 @@ func! CompileRunGcc()
   elseif &filetype == 'cpp'
     set splitbelow
     if has("macunix")
-      exec "!clang++ -DTEST_ADQ -std=c++20 %  -fsanitize=address -lm -Wall -o %<"
+      exec "!clang++ -DTEST_ADQ -std=c++2a %  -fsanitize=address -lm -Wall -o %<"
     elseif has("unix")
-      exec "!clang++ -DTEST_ADQ -std=c++20 %  -fsanitize=address -lgtest -lbenchmark -lcrypto -pthread -lpcre -g -Wall -o %<"
+      exec "!clang++ -DTEST_ADQ -std=c++2a %  -fsanitize=address -lgtest -lbenchmark -lcrypto -pthread -lpcre -g -Wall -o %<"
     endif
     exec "!timeout 30  ./%<"
   elseif &filetype == 'cuda'
