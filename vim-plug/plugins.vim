@@ -21,6 +21,7 @@ Plug 'unblevable/quick-scope'
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/incsearch-fuzzy.vim'
 Plug 'haya14busa/incsearch-easymotion.vim'
+Plug 'phaazon/hop.nvim'
 Plug 'easymotion/vim-easymotion'
 " Useful for React Commenting
 Plug 'suy/vim-context-commentstring'
@@ -35,7 +36,7 @@ else
     Plug 'vim-airline/vim-airline'
     Plug 'junegunn/rainbow_parentheses.vim'
     " Sneak
-    Plug 'justinmk/vim-sneak'
+    " Plug 'justinmk/vim-sneak'
     " Surround
     Plug 'tpope/vim-surround'
     " Files

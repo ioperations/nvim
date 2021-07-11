@@ -94,7 +94,7 @@ else
   " split the screens to up (horizontal), down (horizontal), left (vertical), right (vertical)
   " spilt k up
   " map s <nop>
-  noremap s <nop>
+  " noremap s <nop>
   " nmap s <nop>
   nnoremap sk :set nosplitbelow<CR>:split<CR>:set splitbelow<CR>
   " split<silent> j below
@@ -126,7 +126,8 @@ noremap <C-g> :Rg<cr>
 noremap <c-l> :Vista coc<cr>
 
 noremap Q :q!<cr>
-noremap S :w!<cr>
+noremap <c-S> :w!<cr>
+noremap S :HopWord<cr>
 
 
 nnoremap W 5w
