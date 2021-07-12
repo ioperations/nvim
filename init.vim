@@ -64,6 +64,7 @@ if 1
     source $HOME/.config/nvim/plug-config/coc.vim
     source $HOME/.config/nvim/plug-config/cppman.vim
     source $HOME/.config/nvim/plug-config/vim-auto-popmenu.vim
+    source $HOME/.config/nvim/plug-config/vim-translator.vim
 
 endif
 

@@ -20,7 +20,6 @@ let g:coc_global_extensions = ['coc-python',
       \'coc-git',
       \'coc-explorer',
       \'coc-sourcekit',
-      \'coc-translator',
       \'coc-flutter',
       \'coc-todolist',
       \'coc-yaml',
@@ -37,7 +36,8 @@ let g:coc_global_extensions = ['coc-python',
       \'coc-browser',
       \'coc-sourcekit',
       \'coc-perl',
-      \'coc-rust-analyzer',]
+      \'coc-rust-analyzer',
+      \'coc-highlight',]
 
 let g:go_doc_popup_window = 1
 let lua_lsp = glob('~/.config/nvim/autoload/plugged/lua-language-server/', 0, 1)
@@ -259,9 +259,6 @@ endfunction
 " nmap <leader>rn <Plug>(coc-rename)
 
 
-" popup
-nmap <Leader>lv <Plug>(coc-translator-p)
-vmap <Leader>lv <Plug>(coc-translator-pv)
 " echo
 " nmap <Leader>e <Plug>(coc-translator-e)
 " vmap <Leader>e <Plug>(coc-translator-ev)

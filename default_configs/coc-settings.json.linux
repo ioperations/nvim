@@ -14,13 +14,6 @@
         }
     ],
     "java.autobuild.enabled": true,
-    "translator.engines": [
-        "bing",
-        "youdao"
-    ],
-    "translator.enableHover": false,
-    "translator.window.maxWidth": 999,
-    "translator.window.maxHeight": 999,
     "clangd.semanticHighlighting": true,
     "suggest.completionItemKindLabels": {
         "text": "t",
@@ -28,6 +21,7 @@
         "function": "f"
     },
     "diagnostic.virtualText": false,
+    "coc.preferences.colorSupport": true,
     "coc.preferences.formatOnSaveFiletypes": [
         "css",
         "markdown",

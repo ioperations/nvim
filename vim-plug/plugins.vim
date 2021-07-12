@@ -224,6 +224,9 @@ else
     Plug 'kyazdani42/nvim-web-devicons' " for file icons
     Plug 'kyazdani42/nvim-tree.lua'
     Plug 'Xuyuanp/nerdtree-git-plugin'
+
+    " translator
+    Plug 'voldikss/vim-translator'
 endif
 
 call plug#end()
