@@ -26,6 +26,7 @@ if 1
     source $HOME/.config/nvim/plug-config/rnvimr.vim
     source $HOME/.config/nvim/plug-config/better-whitespace.vim
     source $HOME/.config/nvim/plug-config/fzf.vim
+    source $HOME/.config/nvim/plug-config/leaderF.vim
     source $HOME/.config/nvim/plug-config/sneak.vim
     source $HOME/.config/nvim/plug-config/codi.vim
     source $HOME/.config/nvim/plug-config/vim-wiki.vim
@@ -58,6 +59,7 @@ if 1
         luafile $HOME/.config/nvim/lua/plug-colorizer.lua
         luafile $HOME/.config/nvim/plug-config/gitsigns.lua
         luafile $HOME/.config/nvim/plug-config/tree-sitter.lua
+        luafile $HOME/.config/nvim/plug-config/telescope.lua
         " source $HOME/.config/nvim/plug-config/nvim-treesitter.vim
         source $HOME/.config/nvim/plug-config/hop.vim
     endif
@@ -65,6 +67,8 @@ if 1
     source $HOME/.config/nvim/plug-config/cppman.vim
     source $HOME/.config/nvim/plug-config/vim-auto-popmenu.vim
     source $HOME/.config/nvim/plug-config/vim-translator.vim
+    source $HOME/.config/nvim/plug-config/vim-worksapce.vim
+    source $HOME/.config/nvim/plug-config/vim-prettier.vim
 
 endif
 

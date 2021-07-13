@@ -85,6 +85,7 @@ else
     " FZF
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
+    Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
     if has('nvim')
 	Plug 'sharkdp/fd'
 	Plug 'sharkdp/bat'
@@ -163,7 +164,14 @@ else
     " Plug 'mg979/vim-visual-multi', {'branch': 'master'}
     Plug 'moll/vim-bbye'
     " Plug 'yuezk/vim-js'
-    " Plug 'maxmellon/vim-jsx-pretty'
+    " TypeScript
+    Plug 'pangloss/vim-javascript'
+    Plug 'leafgarland/typescript-vim'
+    Plug 'maxmellon/vim-jsx-pretty'
+
+    Plug 'prettier/vim-prettier', {
+		\ 'do': 'yarn install',
+		\ 'for': ['javascript', 'typescript', 'typescriptreact', 'javascriptreact'] }
     " Plug 'jelera/vim-javascript-syntax'
     " Plugin Graveyard
 
@@ -227,6 +235,7 @@ else
 
     " translator
     Plug 'voldikss/vim-translator'
+    Plug 'thaerkh/vim-workspace'
 endif
 
 call plug#end()

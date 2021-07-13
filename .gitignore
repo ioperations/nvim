@@ -10,4 +10,4 @@ _machine_specific.vim
 .ccls-cache/
 coc-settings.json
 vimspector-config
-
+.undodir
