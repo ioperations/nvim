@@ -127,7 +127,6 @@ noremap <c-l> :Vista coc<cr>
 
 noremap Q :q!<cr>
 noremap <c-S> :w!<cr>
-noremap S :HopWord<cr>
 
 
 nnoremap W 5w
