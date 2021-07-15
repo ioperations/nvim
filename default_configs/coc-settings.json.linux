@@ -13,7 +13,6 @@
         }
     ],
     "java.autobuild.enabled": true,
-    "clangd.semanticHighlighting": true,
     "suggest.completionItemKindLabels": {
         "text": "t",
         "method": "m",
