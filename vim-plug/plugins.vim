@@ -65,7 +65,7 @@ else
     Plug 'skywind3000/vim-dict'
 
     Plug 'neoclide/coc-snippets',
-    Plug 'jackguo380/vim-lsp-cxx-highlight'
+    " Plug 'jackguo380/vim-lsp-cxx-highlight'
     Plug 'derekwyatt/vim-fswitch'
     " Plug 'ycm-core/YouCompleteMe',
     Plug 'metakirby5/codi.vim'
@@ -74,8 +74,8 @@ else
     " Plug 'lukas-reineke/indent-blankline.nvim'
     " Plug 'Yggdroot/indentLine'
     "cpp
-    Plug 'octol/vim-cpp-enhanced-highlight'
-    Plug 'bfrg/vim-cpp-modern'
+    " Plug 'octol/vim-cpp-enhanced-highlight'
+    " Plug 'bfrg/vim-cpp-modern'
     "go
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
     " Status Line
@@ -173,7 +173,7 @@ else
     Plug 'maxmellon/vim-jsx-pretty'
 
     Plug 'prettier/vim-prettier', {
-		\ 'do': 'yarn install',
+		\ 'do': 'npm install',
 		\ 'for': ['javascript', 'typescript', 'typescriptreact', 'javascriptreact'] }
     " Plug 'jelera/vim-javascript-syntax'
     " Plugin Graveyard

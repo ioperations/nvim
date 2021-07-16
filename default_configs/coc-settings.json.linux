@@ -131,7 +131,7 @@
                     "snippetSupport": true
                 },
                 "highlight": {
-                    "lsRanges": true
+                    //    "lsRanges": true
                 },
                 " clang ": {
                     "extraArgs": [
