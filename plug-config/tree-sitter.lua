@@ -7,21 +7,5 @@ require'nvim-treesitter.configs'.setup {
         enable = true,
         disable = {},
     },
-    ensure_installed = {
-        "cpp",
-        "c",
-        "tsx",
-        "toml",
-        "fish",
-        "php",
-        "rust",
-        "go",
-        "python",
-        "java",
-        "json",
-        "yaml",
-        "swift",
-        "html",
-        "scss"
-    },
+    ensure_installed = "maintained",
 }
