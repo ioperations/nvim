@@ -21,7 +21,7 @@ Plug 'unblevable/quick-scope'
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/incsearch-fuzzy.vim'
 Plug 'haya14busa/incsearch-easymotion.vim'
-Plug 'phaazon/hop.nvim'
+Plug 'phaazon/hop.nvim', { 'branch': 'pre-extmarks' }
 Plug 'easymotion/vim-easymotion'
 " Useful for React Commenting
 Plug 'suy/vim-context-commentstring'
@@ -93,6 +93,9 @@ else
 	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 	Plug 'nvim-lua/popup.nvim'
 	Plug 'nvim-lua/plenary.nvim'
+	" telescope dependency
+	Plug 'folke/trouble.nvim'
+	Plug 'nvim-telescope/telescope-project.nvim'
 	Plug 'nvim-telescope/telescope.nvim'
 	" Git
 	Plug 'f-person/git-blame.nvim'

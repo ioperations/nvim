@@ -125,7 +125,8 @@ noremap <C-g> :Rg<cr>
 " noremap <C-l> :TagbarToggle<cr>
 noremap <c-l> :Vista coc<cr>
 
-noremap Q :q!<cr>
+noremap Q :qall!<cr>
+noremap X :xall!<cr>
 noremap <c-S> :w!<cr>
 
 

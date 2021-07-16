@@ -3,9 +3,6 @@
 " let g:EasyMotion_smartcase = 1
 
 " " JK motions: Line motions
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
-
 " nmap s <Plug>(easymotion-s2)
 " nmap t <Plug>(easymotion-t2)
 
@@ -18,9 +15,6 @@ map <Leader>k <Plug>(easymotion-k)
 "nmap s <Plug>(easymotion-s2)
 " map  n <Plug>(easymotion-next)
 " map  N <Plug>(easymotion-prev)
-nmap F <Plug>(easymotion-W)
-nmap B <Plug>(easymotion-B)
-nmap S <Plug>(easymotion-jumptoanywhere)
 
 " Move to line
 " map <Leader>l <Plug>(easymotion-bd-jk)

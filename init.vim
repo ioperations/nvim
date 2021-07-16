@@ -55,7 +55,13 @@ if 1
     source $HOME/.config/nvim/plug-config/vim-easymotion.vim
     source $HOME/.config/nvim/plug-config/gitblame.vim
     " source $HOME/.config/nvim/plug-config/nvimtree.vim
-    if(exists('nvim'))
+    source $HOME/.config/nvim/plug-config/coc.vim
+    source $HOME/.config/nvim/plug-config/cppman.vim
+    source $HOME/.config/nvim/plug-config/vim-auto-popmenu.vim
+    source $HOME/.config/nvim/plug-config/vim-translator.vim
+    source $HOME/.config/nvim/plug-config/vim-worksapce.vim
+    source $HOME/.config/nvim/plug-config/vim-prettier.vim
+    if(has('nvim'))
         luafile $HOME/.config/nvim/lua/plug-colorizer.lua
         luafile $HOME/.config/nvim/plug-config/gitsigns.lua
         luafile $HOME/.config/nvim/plug-config/tree-sitter.lua
@@ -63,16 +69,9 @@ if 1
         " source $HOME/.config/nvim/plug-config/nvim-treesitter.vim
         source $HOME/.config/nvim/plug-config/hop.vim
     endif
-    source $HOME/.config/nvim/plug-config/coc.vim
-    source $HOME/.config/nvim/plug-config/cppman.vim
-    source $HOME/.config/nvim/plug-config/vim-auto-popmenu.vim
-    source $HOME/.config/nvim/plug-config/vim-translator.vim
-    source $HOME/.config/nvim/plug-config/vim-worksapce.vim
-    source $HOME/.config/nvim/plug-config/vim-prettier.vim
-
+    " source $HOME/.config/nvim/plug-config/vimspector.vim " Uncomment if you want to use Vimspector
 endif
 
-" source $HOME/.config/nvim/plug-config/vimspector.vim " Uncomment if you want to use Vimspector
 
 " gvim
 if(has("gui"))
@@ -117,3 +116,11 @@ endif
 inoremap <expr> <c-j> ("\<C-n>")
 inoremap <expr> <c-k> ("\<C-p>")
 
+inoremap <F5> <C-R>=ListMonths()<CR>
+
+func! ListMonths()
+    call complete(col('.'), ['January', 'February', 'March',
+                \ 'April', 'May', 'June', 'July', 'August', 'September',
+                \ 'October', 'November', 'December'])
+    return ''
+endfunc
