@@ -17,9 +17,6 @@
         "bing",
         "youdao"
     ],
-    "translator.enableHover": false,
-    "translator.window.maxWidth": 999,
-    "translator.window.maxHeight": 999,
     "clangd.semanticHighlighting": true,
     "suggest.completionItemKindLabels": {
         "text": "t",
