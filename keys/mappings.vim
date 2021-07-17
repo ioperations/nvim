@@ -47,7 +47,7 @@ else
   " Alternate way to save
   nnoremap <silent> <C-s> :w<CR>
   " Alternate way to quit
-  nnoremap <silent> <C-Q> :wq!<CR>
+  nnoremap <silent> <C-Q> :wqall!<CR>
   " Use control-c instead of escape
   nnoremap <silent> <C-c> <Esc>
   " <TAB>: completion.
@@ -125,7 +125,8 @@ noremap <C-g> :Rg<cr>
 " noremap <C-l> :TagbarToggle<cr>
 noremap <c-l> :Vista coc<cr>
 
-noremap Q :qall!<cr>
+noremap Q :q!<cr>
+noremap <c-q> :qall!<cr>
 noremap X :xall!<cr>
 noremap <c-S> :w!<cr>
 
