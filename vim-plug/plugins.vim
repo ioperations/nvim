@@ -74,8 +74,8 @@ else
     " Plug 'lukas-reineke/indent-blankline.nvim'
     " Plug 'Yggdroot/indentLine'
     "cpp
-    " Plug 'octol/vim-cpp-enhanced-highlight'
-    " Plug 'bfrg/vim-cpp-modern'
+    Plug 'octol/vim-cpp-enhanced-highlight'
+    Plug 'bfrg/vim-cpp-modern'
     "go
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
     " Status Line

@@ -11,3 +11,4 @@ _machine_specific.vim
 coc-settings.json
 vimspector-config
 .undodir
+.vim-session*
