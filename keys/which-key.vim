@@ -84,15 +84,14 @@ let g:which_key_map.b = {
 let g:which_key_map.f = {
       \ 'name' : '+find & replace' ,
       \ 'p' : [':Farr --source=rgnvim'     , 'project'],
-      \ 'w' : [':LeaderfWindow' , 'fzf windows'],
-      \ 'b' : [':Buffers' , 'fzf buffers'],
-      \ 'a' : [':Ag' , 'fzf Ag'],
+      \ 'w' : [':LeaderfWindow' , 'Leaderf windows'],
+      \ 'b' : [':Leaderf buffer' , 'Leaderf buffer'],
+      \ 'a' : [':Leaderf rg' , 'Leaderf Ag'],
       \ 'r' : [':Telescope live_grep' , 'Telescope live_grep'],
-      \ 'c' : [':Colors' , 'fzf vim config colors'],
-      \ 'l' : [':Lines ' , 'fzf lines'],
+      \ 'c' : [':Leaderf colorschema' , 'leaderf config colors'],
+      \ 'l' : [':LeaderfLine' , 'leaderf line'],
       \ 'h' : [':History' , 'fzf History'],
       \ 'f' : [':Leaderf file' , 'file search'],
-      \ 'L' : [':NERDTreeToggle<CR>' , 'nerdtree'],
       \ }
 
 let g:which_key_map.F = {

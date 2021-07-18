@@ -118,9 +118,9 @@ noremap <leader>st :Startify<cr>
 noremap <leader>dd :call CompileRunGcc()<CR>
 
 " find the file based on the file name
-noremap <C-p> :FZF<cr>
+noremap <C-p> :Leaderf file<cr>
 " find file based on the content
-noremap <C-g> :Rg<cr>
+noremap <C-g> :Leaderf rg<cr>
 
 " noremap <C-l> :TagbarToggle<cr>
 noremap <c-l> :Vista coc<cr>
