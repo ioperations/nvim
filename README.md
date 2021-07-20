@@ -1,6 +1,7 @@
 <link rel="stylesheet" type="text/css" herf="./res/style.css">
 
 <img align="center" src="./res/desktop.png" />
+<img align="center" src="./res/react-dev.gif"/>
 
 ## Installation
 
