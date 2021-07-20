@@ -116,6 +116,8 @@ endif
 inoremap <expr> <c-j> ("\<C-n>")
 inoremap <expr> <c-k> ("\<C-p>")
 
+hi Normal guibg=NONE ctermbg=NONE
+
 inoremap <F5> <C-R>=ListMonths()<CR>
 
 func! ListMonths()
@@ -124,3 +126,4 @@ func! ListMonths()
                 \ 'October', 'November', 'December'])
     return ''
 endfunc
+
