@@ -16,6 +16,7 @@ bash <(curl -sLf https://git.io/JTvvG)
 - [ line jump ] f for quickscope to select which word to jump
 - [ window scale jump ] S for hopWord (provided by hop.nvim)
 - [ buffer content search ] <leader>fl for buffer line search (by Leaderfbuffer )
+
 <img align="center" width=280px src="./res/navigate.gif">
 
 #### Source trace based on lsp [coc.nvim](https://github.com/neoclide/coc.nvim)
