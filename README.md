@@ -14,8 +14,9 @@ bash <(curl -sLf https://git.io/JTvvG)
 - [ line & char] __h__,__j__,__k__,__l__ for __left__, __down__ ,__up__, __right__
 - [ word ] __w__,__b__,__e__, for __Word__,__Back__,__Next_Word_Tail__
 - [ line jump ] f for quickscope to select which word to jump
-- [ window size jump ] S for hopWord (provided by hop.nvim)
+- [ window scale jump ] S for hopWord (provided by hop.nvim)
 - [ buffer content search ] <leader>fl for buffer line search (by Leaderfbuffer )
+<img align="center" width=280px src="./res/navigate.gif">
 
 #### Source trace based on lsp [coc.nvim](https://github.com/neoclide/coc.nvim)
 
@@ -35,7 +36,7 @@ bash <(curl -sLf https://git.io/JTvvG)
 <img align="center" width=280px src="./res/searchfilebyranger.gif">
 <img align="center" width=280px src="./res/searhpathbyfzf.gif">
 
-#### Git staff
+## Git staff
 - __`<leader>gD`__ for git-based diff
 - __`<leader>gm`__ for git-based message
 - __`<leader>gg`__ for git-based grep
@@ -45,14 +46,14 @@ bash <(curl -sLf https://git.io/JTvvG)
 <img align="center" width=280px src="./res/showgitmessage.gif">
 <img align="center" width=280px src="./res/gitDiff.gif">
 
-#### Task by [AsyncTask](https://github.com/skywind3000/asynctasks.vim)
+## Task by [AsyncTask](https://github.com/skywind3000/asynctasks.vim)
 - __`<leader>kl`__ for **`list all defined task`**
 - __`<leader>ke<Cr>`__ for **`edit local task`**
 - __`<leader>kg<Cr>`__ for **`edit global task`**
 
 <img align="center" width=380px src="./res/taskbuild.gif">
 
-#### Others cool staff
+## Others useful staff
 - __`<leader>lv`__ for language translation provided by vim-translator
 
 <img align="center" width=320px src="./res/translate.gif">
