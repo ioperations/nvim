@@ -74,8 +74,8 @@ else
     " Plug 'lukas-reineke/indent-blankline.nvim'
     " Plug 'Yggdroot/indentLine'
     "cpp
-    Plug 'octol/vim-cpp-enhanced-highlight'
-    Plug 'bfrg/vim-cpp-modern'
+    " Plug 'octol/vim-cpp-enhanced-highlight'
+    " Plug 'bfrg/vim-cpp-modern'
     "go
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
     " Status Line
@@ -120,7 +120,7 @@ else
     Plug 'junegunn/goyo.vim'
     " Snippets
     Plug 'honza/vim-snippets'
-    Plug 'SirVer/ultisnips'
+    "Plug 'SirVer/ultisnips'
     Plug 'mattn/emmet-vim'
     " Interactive code
     Plug 'metakirby5/codi.vim'
@@ -212,7 +212,7 @@ else
     " Plug 'arcticicestudio/nord-vim'
     " Ranger
     Plug 'francoiscabrol/ranger.vim'
-    Plug 'rbgrouleff/bclose.vim' " ranger dependency
+    "Plug 'rbgrouleff/bclose.vim' " ranger dependency
     " Making stuff
     " Plug 'neomake/neomake'
     " Plug 'mhinz/vim-signify'

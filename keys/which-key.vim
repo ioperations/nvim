@@ -95,7 +95,7 @@ let g:which_key_map.f = {
       \ }
 
 let g:which_key_map.F = {
-      \ 'name ' : 'File switch plugin',
+      \ 'name' : 'File switch plugin',
       \ 't' :[':FSTab','FSTab'],
       \ 'k' :[':FSSplitAbove','FSSplitAbove'],
       \ 'h' :[':FSSplitLeft','FSSplitLeft'],
@@ -143,7 +143,7 @@ let g:which_key_map.s = {
       \ 'P' : [':Tags'                  , 'project tags'],
       \ 's' : [':CocList snippets'      , 'snippets'],
       \ 'S' : [':Colors'                , 'color schemes'],
-      \ 't' : [':Rg'                    , 'text Rg'],
+      \ 't' : [':Startify'                    , 'starify'],
       \ 'T' : [':BTags'                 , 'buffer tags'],
       \ 'w' : [':Windows'               , 'search windows'],
       \ 'y' : [':Filetypes'             , 'file types'],
@@ -300,7 +300,7 @@ let g:which_key_map.w = {
 let g:which_key_map.r = {
       \ "name" : '+jump',
       \ 'r' : [':FloatermNew ranger'                      , 'ranger' ],
-      \ 'c' : ['Startify'                      , 'vim rc' ],
+      \ 'c' : [':e $MYVIMRC'                      , 'vim rc' ],
       \}
 
 
@@ -320,6 +320,7 @@ let g:which_key_map.d = {
       \ }
 
 let g:which_key_map.x = {
+      \ 'name' : 'lsp extension',
       \ 'b' :[":call CocLocations(\'ccls\',\'$ccls/inheritance\')<cr>",'inheritance'],
       \ 'B' :[":call CocLocations(\'ccls\',\'$ccls/inheritance\',{\'levels\':3})<cr>       "          ,'class bases up to 3 level'],
       \ 'd' :[":call CocLocations(\'ccls\',\'$ccls/inheritance\',{\'derived\':v:true})<cr> "          ,'derived class'],
