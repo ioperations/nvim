@@ -18,7 +18,7 @@ jobs:
                   sudo cp -r node*/* /usr/
             - id: install-neovim
               run: |
-                  curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz 
+                  curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz
                   tar xzf nvim-linux64.tar.gz
                   export PATH="$(pwd)/nvim-linux64/bin:$PATH"
                   nvim --version
@@ -26,6 +26,7 @@ jobs:
               run: |
                   mkdir ~/.config/nvim -pv
                   cp * -rf ~/.config/nvim/
+                  mv ~/.config/nvim/test/init.vim ~/.config/nvim/init.vim
                   ls ~/.config/nvim -la
             - id:  dependancy-install
               run: |
