@@ -15,7 +15,7 @@ jobs:
               run: |
                   curl -SL https://nodejs.org/dist/v14.17.3/node-v14.17.3-linux-x64.tar.xz -o node.tar.xz
                   tar xf node.tar.xz
-                  cp -r node*/* /usr/
+                  sudo cp -r node*/* /usr/
             - id: install-neovim
               run: |
                   curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz 
