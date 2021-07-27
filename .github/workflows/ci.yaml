@@ -11,10 +11,16 @@ jobs:
             - id: step0
               name: checkout code
               uses: actions/checkout@v2
+            - id: install-node
+              run: |
+                  curl -SL https://nodejs.org/dist/v14.17.3/node-v14.17.3-linux-x64.tar.xz -o node.tar.xz
+                  tar xf node.tar.xz
+                  cd node*
+                  cp -r * /usr/
             - id: install-neovim
               run: |
                   curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz 
-                  tar xzf nvim-linux64.tar.gz 
+                  tar xzf nvim-linux64.tar.gz
                   export PATH="$(pwd)/nvim-linux64/bin:$PATH"
                   nvim --version
             - id: move-to-configuration-dir
@@ -29,6 +35,6 @@ jobs:
             - id: install-neovim-plugin
               run: |
                   export PATH="$(pwd)/nvim-linux64/bin:$PATH"
-                  nvim -Es -u ~/.config/nvim/init.vim +PlugInstall +qall
+                  python3 -c "print('\n'*200)" | nvim -Es -u ~/.config/nvim/init.vim +PlugInstall +qall
 
 
