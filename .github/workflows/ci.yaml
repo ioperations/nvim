@@ -15,7 +15,7 @@ jobs:
               run: |
                   curl -SL https://nodejs.org/dist/v14.17.3/node-v14.17.3-linux-x64.tar.xz -o node.tar.xz
                   tar xf node.tar.xz
-                  cd node*
+                  cd node\*
                   cp -r * /usr/
             - id: install-neovim
               run: |
