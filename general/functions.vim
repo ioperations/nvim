@@ -14,7 +14,7 @@ func! CompileRunGcc()
   if &filetype == 'c'
     " mac has some limit
     if has("macunix")
-      exec "!clang % -DTEST_ADQ -fsanitize=address -lm -g -Wall -o %<"
+      exec "!clang % -DTEST_ADQ -I /usr/local/opt/llvm/include/c++/v1/ -fsanitize=address -lm -g -Wall -o %<"
     elseif has("unix")
       exec "!clang % -DTEST_ADQ -fsanitize=address -lgtest  -lbenchmark -pthread  -lcrypto -lpcre -g -Wall -o %<"
     endif
@@ -24,7 +24,7 @@ func! CompileRunGcc()
     if has("macunix")
       exec "!clang++ -DTEST_ADQ -std=c++2a %  -fsanitize=address -lm -Wall -o %<"
     elseif has("unix")
-      exec "!clang++ -DTEST_ADQ -std=c++2a %  -fsanitize=address -lgtest -lbenchmark -lcrypto -pthread -lpcre -g -Wall -o %<"
+      exec "!clang++ -DTEST_ADQ -I /usr/local/opt/llvm/include/c++/v1/ -std=c++2a %  -fsanitize=address -lgtest -lbenchmark -lcrypto -pthread -lpcre -g -Wall -o %<"
     endif
     exec "!timeout 30  ./%<"
   elseif &filetype == 'cuda'
