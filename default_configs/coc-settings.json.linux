@@ -129,10 +129,7 @@
                 "client": {
                     "snippetSupport": true
                 },
-                "highlight": {
-                    //    "lsRanges": true
-                },
-                " clang ": {
+                "clang": {
                     "extraArgs": [
                         "-std=c++20",
                         "-DTEST_ADQ",

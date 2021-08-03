@@ -67,9 +67,6 @@
                         "/usr/local/opt/llvm/include/c++/v1/"
                     ],
                     "resourceDir": "/Library/Developer/CommandLineTools/usr/lib/clang/11.0.0"
-                },
-                "highlight": {
-                    //"lsRanges": true
                 }
             }
         },
