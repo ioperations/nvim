@@ -21,7 +21,6 @@ Plug 'unblevable/quick-scope'
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/incsearch-fuzzy.vim'
 Plug 'haya14busa/incsearch-easymotion.vim'
-Plug 'phaazon/hop.nvim', { 'branch': 'pre-extmarks' }
 Plug 'easymotion/vim-easymotion'
 " Useful for React Commenting
 Plug 'suy/vim-context-commentstring'
@@ -97,6 +96,8 @@ else
 	Plug 'folke/trouble.nvim'
 	Plug 'nvim-telescope/telescope-project.nvim'
 	Plug 'nvim-telescope/telescope.nvim'
+	Plug 'norcalli/nvim-colorizer.lua'
+	Plug 'phaazon/hop.nvim', { 'branch': 'pre-extmarks' }
 	" Git
 	Plug 'f-person/git-blame.nvim'
     endif
@@ -153,7 +154,6 @@ else
     Plug 'mattn/vim-gist'
     "Plug 'mattn/webapi-vim'
     " Colorizer
-    Plug 'norcalli/nvim-colorizer.lua'
     Plug 'sumneko/lua-language-server' ,{'dir':'~/.config/nvim/autoload/plugged/lua-language-server/','do':'git submodule update --init --recursive && cd 3rd/luamake && ninja -f compile/ninja/linux.ninja && cd ../..  && ./3rd/luamake/luamake rebuild'}
     " Rainbow brackets
     " Plug 'luochen1990/rainbow'
