@@ -3,26 +3,25 @@
 set -o nounset    # error when referencing undefined variable
 set -o errexit    # exit when command fails
 
-installnodemac() { \
+installnodemac() {
   brew install lua
   brew install node
   brew install yarn
 }
 
-installnodedebian() { \
-  sudo apt install nodejs npm -y
+installnodedebian() {
+  sudo apt install -y nodejs npm  ripgrep clang ccls
 }
 
-installnodearch() { \
-  sudo pacman -S nodejs
-  sudo pacman -S npm
+installnodearch() {
+  sudo pacman -S --noconfirm nodejs npm ripgrep clang ccls lua ninja ccache
 }
 
 installnode() { \
   echo "Installing node..."
   [ "$(uname)" == "Darwin" ] && installnodemac
-  [  -n "$(uname -a | grep -e 'Debian\|Ubuntu')" ] && installnodedebian
-  [ -f "/etc/arch-release" ] && installnodearch
+  [ -n "$(uname -a | grep -e 'Debian\|Ubuntu')" ] && installnodedebian
+  [ -n "$(uname -a | grep -e 'arch')" ] && installnodearch
   [ "$(expr substr $(uname -s) 1 10)" == "MINGW64_NT" ] && echo "Windows not currently supported"
   sudo npm i -g neovim
 }
@@ -34,11 +33,11 @@ installpiponmac() { \
 }
 
 installpipondebian() { \
-  sudo apt install python3-pip > /dev/null
+  sudo apt install python3-pip -y
 }
 
 installpiponarch() { \
-  pacman -S python-pip
+  sudo pacman -S --noconfirm python-pip
 }
 
 installpip() { \
@@ -66,6 +65,7 @@ installcocextensions() { \
 
 cloneconfig() { \
   echo "Cloning Nvim Mach 2 configuration"
+  [ -d ~/.config ] || mkdir ~/.config
   git clone https://github.com/ioperations/nvim.git ~/.config/nvim --depth 1
 }
 
