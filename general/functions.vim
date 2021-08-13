@@ -18,7 +18,7 @@ func! CompileRunGcc()
     elseif has("unix")
       exec "!clang % -DTEST_ADQ -fsanitize=address -lgtest  -lbenchmark -pthread  -lcrypto -lpcre -g -Wall -o %<"
     endif
-    exec "!timeout 30 ./%<"
+    exec "!time timeout 30 ./%<"
   elseif &filetype == 'cpp'
     set splitbelow
     if has("macunix")
@@ -26,14 +26,18 @@ func! CompileRunGcc()
     elseif has("unix")
       exec "!clang++ -DTEST_ADQ -I /usr/local/opt/llvm/include/c++/v1/ -std=c++2a %  -fsanitize=address -lgtest -lbenchmark -lcrypto -pthread -lpcre -g -Wall -o %<"
     endif
-    exec "!timeout 30  ./%<"
+    exec "!time timeout 30 ./%<"
   elseif &filetype == 'cuda'
     set splitbelow
     exec "!nvcc -std=c++11 %  -o %<"
-    exec "!timeout 30 ./%<"
+    exec "!time timeout 30 ./%<"
+  elseif &filetype == 'haskell'
+    set splitbelow
+    exec "!ghc % -o %<"
+    exec "!time timeout 30 ./%<"
   elseif &filetype == 'java'
     exec "!javac -encoding utf8 %"
-    exec "!time java %<"
+    exec "!time timeout 30 java %<"
   elseif &filetype == 'sh'
     :!time bash %
   elseif &filetype == 'python'
