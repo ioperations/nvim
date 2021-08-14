@@ -36,7 +36,6 @@ let g:coc_global_extensions = ['coc-python',
       \'coc-browser',
       \'coc-sourcekit',
       \'coc-perl',
-      \'coc-rust-analyzer',
       \'coc-highlight',]
 
 let g:go_doc_popup_window = 1

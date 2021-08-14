@@ -157,6 +157,23 @@
             ],
             "ignoredRootPaths": []
         },
+        "rust": {
+            "command": "rust-analyzer",
+            "filetypes": [
+                "rust"
+            ],
+            "initializationOptions": {
+                "cargo": {
+                    "loadOutDirsFromCheck": true
+                },
+                "procMacro": {
+                    "enable": true
+                }
+            },
+            "rootPatterns": [
+                "Cargo.toml"
+            ]
+        },
         "haskell": {
             "command": "haskell-language-server-wrapper",
             "args": [
