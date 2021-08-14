@@ -117,5 +117,4 @@ inoremap <expr> <c-j> ("\<C-n>")
 inoremap <expr> <c-k> ("\<C-p>")
 
 " make background transparent
-hi Normal guibg=NONE ctermbg=NONE
-
+"hi Normal guibg=NONE ctermbg=NONE
