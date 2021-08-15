@@ -10,7 +10,7 @@ installnodemac() {
 }
 
 installnodedebian() {
-  sudo apt install -y nodejs npm  ripgrep clang ccls golang
+  sudo apt install -y nodejs npm  ripgrep clang ccls golang rustc
 }
 
 installnodearch() {
