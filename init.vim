@@ -61,6 +61,7 @@ if 1
     source $HOME/.config/nvim/plug-config/vim-translator.vim
     source $HOME/.config/nvim/plug-config/vim-worksapce.vim
     source $HOME/.config/nvim/plug-config/vim-prettier.vim
+    source $HOME/.config/nvim/plug-config/vimspector.vim " Uncomment if you want to use Vimspector
     if(has('nvim'))
         luafile $HOME/.config/nvim/lua/plug-colorizer.lua
         luafile $HOME/.config/nvim/plug-config/gitsigns.lua
@@ -69,7 +70,6 @@ if 1
         " source $HOME/.config/nvim/plug-config/nvim-treesitter.vim
         source $HOME/.config/nvim/plug-config/hop.vim
     endif
-    source $HOME/.config/nvim/plug-config/vimspector.vim " Uncomment if you want to use Vimspector
 endif
 
 
