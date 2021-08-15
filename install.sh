@@ -14,7 +14,7 @@ installnodedebian() {
 }
 
 installnodearch() {
-  sudo pacman -S --noconfirm nodejs npm ripgrep clang ccls lua ninja ccache
+  sudo pacman -S --noconfirm nodejs npm ripgrep clang ccls lua ninja ccache haskell-language-server
 }
 
 installnode() { \
