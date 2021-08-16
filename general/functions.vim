@@ -60,8 +60,8 @@ func! CompileRunGcc()
     " silent! exec "!echo 'done'"
     "silent! exec "VimtexCompile"
   elseif &filetype == 'rust'
-    exec "!rustc % -o %<"
-    exec "!time timeout 20 ./%<"
+    exec "!bash -c \" [ -f ./Cargo.toml ] && cargo build || rustc % -o %< \""
+    exec "!bash -c \" [ -f ./Cargo.toml ] && time timeout 20 cargo run || time timeout 20 ./%< \""
   elseif &filetype == 'go'
     exec "!go run %"
   elseif &filetype == 'lua'
