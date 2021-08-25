@@ -17,7 +17,6 @@ if 1
     source $HOME/.config/nvim/plug-config/easymotion.vim
     source $HOME/.config/nvim/plug-config/highlightyank.vim
     " Themes
-    source $HOME/.config/nvim/themes/airline.vim
     source $HOME/.config/nvim/plug-config/barbar.vim
     "indent
     source $HOME/.config/nvim/plug-config/indent-guide.vim

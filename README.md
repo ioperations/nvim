@@ -1,5 +1,3 @@
-<link rel="stylesheet" type="text/css" herf="./res/style.css">
-
 <img align="center" src="./res/desktop.png" />
 
 ## Installation
@@ -16,18 +14,18 @@ bash <(curl -sLf https://git.io/JTvvG)
 - [ buffer content search ] <leader>fl for buffer line search (by Leaderfbuffer )
 
 
-#### Source trace based on lsp [coc.nvim](https://github.com/neoclide/coc.nvim)
+## navigate based on lsp [coc.nvim](https://github.com/neoclide/coc.nvim)
 
 - __`<leader>ld`__ for go to definition
 - __`<leader>lr`__ for go to reference
 - __`<leader>lD`__ for go to Declaration
 - __`<leader>li`__ for go to implementation
-- `<leader>x` for c plus plus language server extension by clangd and ccls
+- __`<leader>x`__ for c plus plus language server extension by clangd and ccls
 - interactive key select via which-key.vim
 
 ##  files, windows and buffer search
 - __`<ctrl-g>`__ for project-wide Symbol Search by __[rg](https://github.com/BurntSushi/ripgrep)__
-- __`<ctrl-p>`__ for project-wide file Search by __[leaderf](https://github.com/junegunn/fzf)__
+- __`<ctrl-p>`__ for project-wide file Search by __[leaderf](https://github.com/Yggdroot/LeaderF)__
 - __`<leader>rr`__ for ranger-based search by __[ranger](https://github.com/ranger/ranger)__
 
 ## Git staff
