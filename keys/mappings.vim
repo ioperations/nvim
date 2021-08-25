@@ -122,9 +122,6 @@ noremap <C-p> :Leaderf file<cr>
 " find file based on the content
 noremap <C-g> :Leaderf rg<cr>
 
-" noremap <C-l> :TagbarToggle<cr>
-noremap <c-l> :Vista coc<cr>
-
 noremap Q :q!<cr>
 noremap <c-q> :qall!<cr>
 noremap X :xall!<cr>
