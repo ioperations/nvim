@@ -1,9 +1,9 @@
 " enable tabline
 
 set termguicolors  " enable true colors support
-let g:airline_powerline_fonts = 0
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#formatter = 'unique_tail'
+"let g:airline_powerline_fonts = 0
+let g:airline#extensions#tabline#enabled = 0
+"let g:airline#extensions#tabline#formatter = 'unique_tail'
 syntax on
 "colorscheme nvcode
 set background=dark
@@ -16,9 +16,9 @@ color gruvbox
 
 " unicode symbols
 " let g:airline_left_sep = '»'
-let g:airline_left_sep = ''
+" let g:airline_left_sep = ''
 " let g:airline_right_sep = '«'
-let g:airline_right_sep = ''
+" let g:airline_right_sep = ''
 " let g:airline_symbols.linenr = ''
 " let g:airline_symbols.linenr = '␤'
 " let g:airline_symbols.linenr = '¶'
@@ -36,9 +36,9 @@ let g:airline_right_sep = ''
 "let airline#extensions#tabline#tabs_label = ''
 "
 " Disable tabline close button
-let g:airline#extensions#tabline#show_close_button = 1
+"let g:airline#extensions#tabline#show_close_button = 1
 "let g:airline#extensions#tabline#show_tab_type = 0
-let g:airline#extensions#tabline#show_tab_nr = 0
+" let g:airline#extensions#tabline#show_tab_nr = 0
 "let g:airline#extensions#tabline#fnamecollapse = 1
 "
 " let g:airline_extensions = ['branch', 'hunks', 'coc']
@@ -76,4 +76,4 @@ let g:airline#extensions#tabline#show_tab_nr = 0
 "" Sections
 "" let g:airline_section_c = ''
 "let g:airline_section_y = ''
-let g:webdevicons_enable_airline_tabline = 1
+"let g:webdevicons_enable_airline_tabline = 1

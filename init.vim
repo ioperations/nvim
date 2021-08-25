@@ -67,6 +67,7 @@ if 1
         luafile $HOME/.config/nvim/plug-config/gitsigns.lua
         luafile $HOME/.config/nvim/plug-config/tree-sitter.lua
         luafile $HOME/.config/nvim/plug-config/telescope.lua
+        "luafile $HOME/.config/nvim/plug-config/lualine.lua
         " source $HOME/.config/nvim/plug-config/nvim-treesitter.vim
         source $HOME/.config/nvim/plug-config/hop.vim
     endif

@@ -33,6 +33,7 @@ if exists('g:vscode')
     Plug 'machakann/vim-highlightedyank'
 else
     Plug 'vim-airline/vim-airline'
+    Plug 'romgrk/barbar.nvim'
     Plug 'junegunn/rainbow_parentheses.vim'
     " Sneak
     " Plug 'justinmk/vim-sneak'
