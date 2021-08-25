@@ -29,7 +29,6 @@ if 1
     source $HOME/.config/nvim/plug-config/vim-wiki.vim
     source $HOME/.config/nvim/plug-config/goyo.vim
     source $HOME/.config/nvim/plug-config/vim-rooter.vim
-    source $HOME/.config/nvim/plug-config/start-screen.vim
     source $HOME/.config/nvim/plug-config/gitgutter.vim
     source $HOME/.config/nvim/plug-config/git-messenger.vim
     source $HOME/.config/nvim/plug-config/closetags.vim
@@ -43,9 +42,6 @@ if 1
     source $HOME/.config/nvim/plug-config/nerdtree.vim
     source $HOME/.config/nvim/plug-config/autoformat.vim
     source $HOME/.config/nvim/plug-config/ultisnips.vim
-    source $HOME/.config/nvim/plug-config/vim-db.vim
-    source $HOME/.config/nvim/plug-config/vista.vim
-    source $HOME/.config/nvim/plug-config/vim-latex-preview.vim
     source $HOME/.config/nvim/plug-config/vimspector.vim
     source $HOME/.config/nvim/plug-config/wildfire.vim
     source $HOME/.config/nvim/plug-config/vim-easymotion.vim
@@ -55,7 +51,6 @@ if 1
     source $HOME/.config/nvim/plug-config/cppman.vim
     source $HOME/.config/nvim/plug-config/vim-auto-popmenu.vim
     source $HOME/.config/nvim/plug-config/vim-translator.vim
-    source $HOME/.config/nvim/plug-config/vim-worksapce.vim
     source $HOME/.config/nvim/plug-config/vim-prettier.vim
     source $HOME/.config/nvim/plug-config/vimspector.vim " Uncomment if you want to use Vimspector
     if(has('nvim'))
