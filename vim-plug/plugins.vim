@@ -68,6 +68,7 @@ else
     Plug 'derekwyatt/vim-fswitch'
     " Plug 'ycm-core/YouCompleteMe',
     Plug 'metakirby5/codi.vim'
+    Plug 'neomake/neomake'
     " Plug 'nathanaelkane/vim-indent-guides'
     Plug 'Yggdroot/indentLine'
     " Plug 'lukas-reineke/indent-blankline.nvim'
@@ -239,7 +240,7 @@ else
 
     " translator
     Plug 'voldikss/vim-translator'
-    Plug 'thaerkh/vim-workspace'
+    "Plug 'thaerkh/vim-workspace'
 endif
 
 call plug#end()
@@ -252,3 +253,9 @@ autocmd VimEnter *
 
 
 source ~/.config/nvim/langtemplate.vim
+" Uncomment the following to have Vim jump to the last position when
+" reopening a file
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+    \| exe "normal! g'\"" | endif
+endif
