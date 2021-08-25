@@ -1,4 +1,4 @@
-<img align="center" src="./res/desktop.png" />
+<img align="center" src="./general/desktop.png" />
 
 ## Installation
 

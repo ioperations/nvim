@@ -4,7 +4,7 @@ let g:asynctasks_term_focus = 1
 " let g:asynctasks_term_pos = 'top'
 " let g:asynctasks_term_pos = 'tab'
 " let g:asynctasks_term_pos = 'external'
-let g:asynctasks_extra_config = ['~/.config/nvim/utils/tasks.ini']
+let g:asynctasks_rtp_config = "~/.config/nvim/utils/tasks.ini"
 " let current_tasks = asynctasks#list("")
 
 function! s:fzf_sink(what)

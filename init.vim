@@ -107,16 +107,14 @@ if has_machine_specific_file == 0
 endif
 
 if (exists('g:loadLangtemplate'))
-    source ~/.config/nvim/langtemplate.vim
+    source ~/.config/nvim/general/langtemplate.vim
     let g:loadLangtemplate = 1
 endif
-
 
 " Better nav for omnicomplete TODO figure out why this is being overridden
 inoremap <expr> <c-j> ("\<C-n>")
 inoremap <expr> <c-k> ("\<C-p>")
 
-source ~/.config/nvim/langtemplate.vim
 " Uncomment the following to have Vim jump to the last position when
 " reopening a file
 if has("autocmd")
