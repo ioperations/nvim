@@ -18,6 +18,7 @@ if 1
     source $HOME/.config/nvim/plug-config/highlightyank.vim
     " Themes
     source $HOME/.config/nvim/themes/airline.vim
+    source $HOME/.config/nvim/plug-config/barbar.vim
     "indent
     source $HOME/.config/nvim/plug-config/indent-guide.vim
     "" Plugin Configuration
@@ -116,6 +117,14 @@ endif
 " Better nav for omnicomplete TODO figure out why this is being overridden
 inoremap <expr> <c-j> ("\<C-n>")
 inoremap <expr> <c-k> ("\<C-p>")
+
+source ~/.config/nvim/langtemplate.vim
+" Uncomment the following to have Vim jump to the last position when
+" reopening a file
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+    \| exe "normal! g'\"" | endif
+endif
 
 " make background transparent
 "hi Normal guibg=NONE ctermbg=NONE

@@ -1,15 +1,12 @@
 <link rel="stylesheet" type="text/css" herf="./res/style.css">
 
 <img align="center" src="./res/desktop.png" />
-<img align="center" src="./res/react-dev.gif"/>
 
 ## Installation
 
 ```bash
 bash <(curl -sLf https://git.io/JTvvG)
 ```
-<img align="center" src="./res/overview.png">
-<img align="center" src="./res/overview2.png">
 
 ## Basic navigation
 - [ line & char] __h__,__j__,__k__,__l__ for __left__, __down__ ,__up__, __right__
@@ -18,7 +15,6 @@ bash <(curl -sLf https://git.io/JTvvG)
 - [ window scale jump ] S for hopWord (provided by hop.nvim)
 - [ buffer content search ] <leader>fl for buffer line search (by Leaderfbuffer )
 
-<img align="center" width=280px src="./res/navigate.gif">
 
 #### Source trace based on lsp [coc.nvim](https://github.com/neoclide/coc.nvim)
 
@@ -34,10 +30,6 @@ bash <(curl -sLf https://git.io/JTvvG)
 - __`<ctrl-p>`__ for project-wide file Search by __[leaderf](https://github.com/junegunn/fzf)__
 - __`<leader>rr`__ for ranger-based search by __[ranger](https://github.com/ranger/ranger)__
 
-<img align="center" width=280px src="./res/symbolsearch.gif">
-<img align="center" width=280px src="./res/searchfilebyranger.gif">
-<img align="center" width=280px src="./res/searhpathbyfzf.gif">
-
 ## Git staff
 - __`<leader>gD`__ for git-based diff
 - __`<leader>gm`__ for git-based message
@@ -45,15 +37,11 @@ bash <(curl -sLf https://git.io/JTvvG)
 - __`<leader>gh`__ for git-diff-based highlight
 - __`<leader>gl`__ for git log
 
-<img align="center" width=280px src="./res/showgitmessage.gif">
-<img align="center" width=280px src="./res/gitDiff.gif">
 
 ## Task by [AsyncTask](https://github.com/skywind3000/asynctasks.vim)
 - __`<leader>kl`__ for **`list all defined task`**
 - __`<leader>ke<Cr>`__ for **`edit local task`**
 - __`<leader>kg<Cr>`__ for **`edit global task`**
-
-<img align="center" width=380px src="./res/taskbuild.gif">
 
 ## Others useful staff
 - __`<leader>lv`__ for language translation provided by vim-translator

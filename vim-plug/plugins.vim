@@ -27,11 +27,10 @@ Plug 'suy/vim-context-commentstring'
 " highlight all matches under cursor
 " Plug 'RRethy/vim-illuminate'
 
-if exists('g:vscode')
+if 1
     " Easy motion for VSCode
     Plug 'asvetliakov/vim-easymotion'
     Plug 'machakann/vim-highlightedyank'
-else
     Plug 'vim-airline/vim-airline'
     Plug 'romgrk/barbar.nvim'
     Plug 'junegunn/rainbow_parentheses.vim'
@@ -241,7 +240,6 @@ else
 
     " translator
     Plug 'voldikss/vim-translator'
-    "Plug 'thaerkh/vim-workspace'
 endif
 
 call plug#end()
