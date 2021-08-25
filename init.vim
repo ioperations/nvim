@@ -9,7 +9,7 @@ if 1
     " General Settings
     source $HOME/.config/nvim/plug-config/polyglot.vim
 
-    source $HOME/.config/nvim/keys/mappings.vim
+    source $HOME/.config/nvim/general/mappings.vim
     source $HOME/.config/nvim/general/settings.vim
     source $HOME/.config/nvim/general/functions.vim
     source $HOME/.config/nvim/plug-config/quickscope.vim
@@ -20,7 +20,7 @@ if 1
     source $HOME/.config/nvim/plug-config/vim-airline.vim
     source $HOME/.config/nvim/plug-config/barbar.vim
     "" Plugin Configuration
-    source $HOME/.config/nvim/keys/which-key.vim
+    source $HOME/.config/nvim/general/which-key.vim
     source $HOME/.config/nvim/plug-config/vim-commentary.vim
     source $HOME/.config/nvim/plug-config/rnvimr.vim
     source $HOME/.config/nvim/plug-config/better-whitespace.vim
@@ -92,11 +92,11 @@ endif
 let has_machine_specific_file = 1
 if empty(glob('~/.config/nvim/_machine_specific.vim'))
     let has_machine_specific_file = 0
-    silent! exec "!cp ~/.config/nvim/default_configs/_machine_specific_default.vim ~/.config/nvim/_machine_specific.vim"
+    silent! exec "!cp ~/.config/nvim/general/_machine_specific_default.vim ~/.config/nvim/_machine_specific.vim"
     if has("macunix")
-        silent! exec "!ln -sv ~/.config/nvim/default_configs/coc-settings.json.macos ~/.config/nvim/coc-settings.json"
+        silent! exec "!ln -sv ~/.config/nvim/general/coc-settings.json.macos ~/.config/nvim/coc-settings.json"
     elseif has('unix')
-        silent! exec "!ln -sv ~/.config/nvim/default_configs/coc-settings.json.linux ~/.config/nvim/coc-settings.json"
+        silent! exec "!ln -sv ~/.config/nvim/general/coc-settings.json.linux ~/.config/nvim/coc-settings.json"
     endif
 endif
 source ~/.config/nvim/_machine_specific.vim

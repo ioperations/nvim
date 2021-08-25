@@ -13,13 +13,7 @@ nnoremap <Space> <Nop>
 vnoremap < <gv
 vnoremap > >gv
 
-if exists('g:vscode')
-
-  " Simulate same TAB behavior in VSCode
-  nmap <Tab> :Tabnext<CR>
-  nmap <S-Tab> :Tabprev<CR>
-
-else
+if 1
 
   " Better nav for omnicomplete
   inoremap <expr> <c-j> ("\<C-n>")
@@ -91,16 +85,9 @@ else
   " <C-g>: Exit.
   cnoremap <C-g>          <C-c>
 
-  " split the screens to up (horizontal), down (horizontal), left (vertical), right (vertical)
-  " spilt k up
-  " map s <nop>
   " noremap s <nop>
   " nmap s <nop>
-  nnoremap sk :set nosplitbelow<CR>:split<CR>:set splitbelow<CR>
   " split<silent> j below
-  nnoremap sj :set splitbelow<CR>:split<CR>
-  nnoremap sh :set nosplitright<CR>:vsplit<CR>:set splitright<CR>
-  nnoremap sl :set splitright<CR>:vsplit<CR>
 
   " Resize splits with arrow keys
   noremap <up> :res +5<CR>
@@ -131,15 +118,4 @@ noremap <c-S> :w!<cr>
 nnoremap W 5w
 nnoremap B 5b
 nnoremap E 5e
-" Actions
-" let g:fzf_action = {
-" \ 'alt-j': 'preview-down',
-" \ 'alt-k': 'preview-up',
-" \ 'alt-o': '!open'}
-" Search spotlight {{{2
-" command! -nargs=1 FzfSpotlight call fzf#run(fzf#wrap({
-" \ 'source'  : 'mdfind -onlyin ~ <q-args>',
-" \ 'options' : '-m --prompt "Spotlight> "'
-" \ }))
-" nnoremap <Space>s :FzfSpotlight <C-R><C-W>
 let g:ranger_map_keys='Rg'

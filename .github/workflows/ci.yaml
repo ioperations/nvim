@@ -26,7 +26,7 @@ jobs:
               run: |
                   mkdir ~/.config/nvim -pv
                   cp * -rf ~/.config/nvim/
-                  mv ~/.config/nvim/test/init.vim ~/.config/nvim/init.vim
+                  mv ~/.config/nvim/utils/test/init.vim ~/.config/nvim/init.vim
                   ls ~/.config/nvim -la
             - id:  dependancy-install
               run: |
