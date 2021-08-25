@@ -1,4 +1,5 @@
-<img align="center" src="./general/desktop.png" />
+<img align="center" src="./general/desktop.png"/>
+<img align="center" src="./general/nvim.png"/>
 
 ## Installation
 
