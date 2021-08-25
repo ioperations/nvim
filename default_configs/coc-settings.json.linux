@@ -128,7 +128,8 @@
                     "retainInMemory": 0
                 },
                 "client": {
-                    "snippetSupport": true
+                    "snippetSupport": true,
+                    "hoverProvider": false
                 },
                 "clang": {
                     "extraArgs": [
