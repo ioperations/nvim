@@ -3,6 +3,7 @@
     "diagnostic-languageserver.trace.server": "verbose",
     "codeLens.enable": true,
     "explorer.width": 30,
+    "explorer.icon.enableNerdfont": true,
     "java.trace.server": "verbose",
     "java.home": "/usr/lib/jvm/java-11-openjdk-amd64",
     "java.configuration.runtimes": [
