@@ -67,7 +67,6 @@ if 1
     " Plug 'jackguo380/vim-lsp-cxx-highlight'
     Plug 'derekwyatt/vim-fswitch'
     " Plug 'ycm-core/YouCompleteMe',
-    Plug 'metakirby5/codi.vim'
     Plug 'neomake/neomake'
     " Plug 'nathanaelkane/vim-indent-guides'
     Plug 'Yggdroot/indentLine'
@@ -114,7 +113,7 @@ if 1
     " Start Screen
     Plug 'mhinz/vim-startify'
     " Vista
-    Plug 'liuchengxu/vista.vim'
+    "Plug 'liuchengxu/vista.vim'
     " Plug 'preservim/tagbar'
     " See what keys do like in emacs
     Plug 'liuchengxu/vim-which-key'
@@ -125,7 +124,7 @@ if 1
     "Plug 'SirVer/ultisnips'
     Plug 'mattn/emmet-vim'
     " Interactive code
-    Plug 'metakirby5/codi.vim'
+    "Plug 'metakirby5/codi.vim'
     " Debugging
     Plug 'puremourning/vimspector'
     " Plug 'cpiger/NeoDebug'
@@ -179,19 +178,13 @@ if 1
     " Plug 'jelera/vim-javascript-syntax'
     " Plugin Graveyard
 
-    "input method
-    " Plug 'h-youhei/vim-fcitx'
     "swift
     Plug 'lilyball/vim-swift'
     Plug 'xolox/vim-misc'
     " Plug 'xolox/vim-session'
     Plug 'morhetz/gruvbox'
 
-    "sql
-    Plug 'tpope/vim-dadbod'
-    Plug 'kristijanhusak/vim-dadbod-ui'
-    Plug 'kristijanhusak/vim-dadbod-completion'
-    "multi cursor
+   "multi cursor
     Plug 'mg979/vim-visual-multi'
     " jsx syntax support
     " Typescript syntax
@@ -226,17 +219,11 @@ if 1
     " Plug 'brooth/far.vim'
     " Plug 'atishay/far.vim'
     "
-    Plug 'Chiel92/vim-autoformat' "\f to autoformat the file
+    Plug 'Chiel92/vim-autoformat'
     "Plug 'skywind3000/vim-cppman'
     Plug 'ioperations/vim-cppman'
     " Plug 'skywind3000/vim-cppman'
     Plug 'rhysd/vim-clang-format'
-    " File navigation
-    Plug 'scrooloose/nerdtree'
-    " requires
-    Plug 'kyazdani42/nvim-web-devicons' " for file icons
-    Plug 'kyazdani42/nvim-tree.lua'
-    Plug 'Xuyuanp/nerdtree-git-plugin'
 
     " translator
     Plug 'voldikss/vim-translator'
