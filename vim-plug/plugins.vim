@@ -33,6 +33,8 @@ if 1
     Plug 'machakann/vim-highlightedyank'
     Plug 'vim-airline/vim-airline'
     Plug 'romgrk/barbar.nvim'
+    " barbar's dependency
+    Plug 'kyazdani42/nvim-web-devicons' " for file icons
     Plug 'junegunn/rainbow_parentheses.vim'
     " Sneak
     " Plug 'justinmk/vim-sneak'
