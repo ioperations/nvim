@@ -43,5 +43,3 @@ bash <(curl -sLf https://git.io/JTvvG)
 
 ## Others useful staff
 - __`<leader>lv`__ for language translation provided by vim-translator
-
-<img align="center" width=320px src="./res/translate.gif">
