@@ -6,8 +6,6 @@
 
 if 1
     source $HOME/.config/nvim/vim-plug/plugins.vim
-    " General Settings
-    source $HOME/.config/nvim/plug-config/polyglot.vim
 
     source $HOME/.config/nvim/general/mappings.vim
     source $HOME/.config/nvim/general/settings.vim
@@ -34,7 +32,6 @@ if 1
     source $HOME/.config/nvim/plug-config/closetags.vim
     source $HOME/.config/nvim/plug-config/floaterm.vim
     source $HOME/.config/nvim/plug-config/tagalong.vim
-    source $HOME/.config/nvim/plug-config/bracey.vim
     source $HOME/.config/nvim/plug-config/asynctask.vim
     source $HOME/.config/nvim/plug-config/window-swap.vim
     source $HOME/.config/nvim/plug-config/markdown-preview.vim
@@ -54,12 +51,7 @@ if 1
     source $HOME/.config/nvim/plug-config/vim-prettier.vim
     source $HOME/.config/nvim/plug-config/vimspector.vim " Uncomment if you want to use Vimspector
     if(has('nvim'))
-        "luafile $HOME/.config/nvim/lua/plug-colorizer.lua
-        "luafile $HOME/.config/nvim/plug-config/gitsigns.lua
         luafile $HOME/.config/nvim/plug-config/tree-sitter.lua
-        "luafile $HOME/.config/nvim/plug-config/telescope.lua
-        "luafile $HOME/.config/nvim/plug-config/lualine.lua
-        " source $HOME/.config/nvim/plug-config/nvim-treesitter.vim
         source $HOME/.config/nvim/plug-config/hop.vim
     endif
 endif
