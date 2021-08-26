@@ -5,7 +5,7 @@
 " /___/_/ /_/_/\__(_)___/_/_/ /_/ /_/
 
 if 1
-    source $HOME/.config/nvim/vim-plug/plugins.vim
+    source $HOME/.config/nvim/general/plugins.vim
 
     source $HOME/.config/nvim/general/mappings.vim
     source $HOME/.config/nvim/general/settings.vim
