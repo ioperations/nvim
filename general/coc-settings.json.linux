@@ -5,11 +5,11 @@
     "explorer.width": 30,
     "explorer.icon.enableNerdfont": true,
     "java.trace.server": "verbose",
-    "java.home": "/usr/lib/jvm/java-11-openjdk-amd64",
+    "java.home": "/usr/lib/jvm/default",
     "java.configuration.runtimes": [
         {
             "name": "JavaSE-11",
-            "path": "/usr/lib/jvm/java-11-openjdk-amd64",
+            "path": "/usr/lib/jvm/default",
             "default": true
         }
     ],
@@ -214,8 +214,6 @@
         }
     },
     "snippets.shortcut": "🐮",
-    "rust-analyzer.procMacro.enable": true,
-    "rust-analyzer.lens.enable": false,
     "snippets.ultisnips.directories": [
         "$HOME/.config/nvim/autoload/plugged/vim-snippets/UltiSnips/",
         "$HOME/.config/nvim/UltiSnips"
