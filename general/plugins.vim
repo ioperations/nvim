@@ -48,7 +48,9 @@ if 1
 
     " dress
     Plug 'vim-airline/vim-airline'
-    Plug 'romgrk/barbar.nvim'
+    if(has('nvim'))
+        Plug 'romgrk/barbar.nvim'
+    endif
     Plug 'kyazdani42/nvim-web-devicons' " barbar's dependency
     Plug 'morhetz/gruvbox'
     Plug 'Yggdroot/indentLine'
@@ -126,5 +128,3 @@ autocmd VimEnter *
             \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
             \|   PlugInstall --sync | q
             \| endif
-
-
