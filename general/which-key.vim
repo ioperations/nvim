@@ -183,24 +183,11 @@ let g:which_key_map.g = {
                   \ 'p' : [':Git push'                         , 'push'],
                   \ 'P' : [':Git pull'                         , 'pull'],
                   \ 'r' : [':GRemove'                          , 'remove'],
-                  \ 's' : [':Git status'                      , 'status'],
+                  \ 's' : [':Git status'                       , 'status'],
                   \ 't' : [':GitGutterSignsToggle'             , 'toggle signs'],
                   \ 'u' : ['<Plug>(GitGutterUndoHunk)'         , 'undo hunk'],
                   \ 'v' : [':GV'                               , 'view commits'],
                   \ 'V' : [':GV!'                              , 'view buffer commits'],
-                  \ }
-
-let g:which_key_map.G = {
-                  \ 'name' : '+gist' ,
-                  \ 'a' : [':Gist -a'                          , 'post gist anon'],
-                  \ 'b' : [':Gist -b'                          , 'post gist browser'],
-                  \ 'd' : [':Gist -d'                          , 'delete gist'],
-                  \ 'e' : [':Gist -e'                          , 'edit gist'],
-                  \ 'l' : [':Gist -l'                          , 'list public gists'],
-                  \ 's' : [':Gist -ls'                         , 'list starred gists'],
-                  \ 'm' : [':Gist -m'                          , 'post gist all buffers'],
-                  \ 'p' : [':Gist -P'                          , 'post public gist '],
-                  \ 'P' : [':Gist -p'                          , 'post private gist '],
                   \ }
 
 " l is for language server protocol
@@ -275,27 +262,6 @@ let g:which_key_map.T = {
                   \ 'p' : [':tabprevious'             , 'prev tab'],
                   \ 'P' : [':XTabMoveBufferPrev'      , '<-buffer'],
                   \ 'x' : [':XTabPinBuffer'           , 'pin buffer'],
-                  \ }
-
-" w is for wiki
-let g:which_key_map.w = {
-                  \ 'name' : '+wiki' ,
-                  \ 'w' : ['<Plug>VimwikiIndex'                              , 'ncdu'],
-                  \ 'n' : ['<plug>(wiki-open)'                              , 'ncdu'],
-                  \ 'j' : ['<plug>(wiki-journal)'                              , 'ncdu'],
-                  \ 'R' : ['<plug>(wiki-reload)'                              , 'ncdu'],
-                  \ 'c' : ['<plug>(wiki-code-run)'                              , 'ncdu'],
-                  \ 'b' : ['<plug>(wiki-graph-find-backlinks)'                              , 'ncdu'],
-                  \ 'g' : ['<plug>(wiki-graph-in)'                              , 'ncdu'],
-                  \ 'G' : ['<plug>(wiki-graph-out)'                              , 'ncdu'],
-                  \ 'l' : ['<plug>(wiki-link-toggle)'                              , 'ncdu'],
-                  \ 'd' : ['<plug>(wiki-page-delete)'                              , 'ncdu'],
-                  \ 'r' : ['<plug>(wiki-page-rename)'                              , 'ncdu'],
-                  \ 't' : ['<plug>(wiki-page-toc)'                              , 'ncdu'],
-                  \ 'T' : ['<plug>(wiki-page-toc-local)'                              , 'ncdu'],
-                  \ 'e' : ['<plug>(wiki-export)'                              , 'ncdu'],
-                  \ 'u' : ['<plug>(wiki-list-uniq)'                              , 'ncdu'],
-                  \ 'U' : ['<plug>(wiki-list-uniq-local)'                              , 'ncdu'],
                   \ }
 
 let g:which_key_map.r = {
