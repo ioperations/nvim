@@ -60,13 +60,13 @@ bash <(curl -sLf https://git.io/JTvvG)
 ```
 
 ### Basic navigation, lsp-based jump, fuzzy search
-| move scale | key |
+| scale binding | explantion |
 |:-:|---|
-|  line & char |  __h__,__j__,__k__,__l__ for __left__, __down__ ,__up__, __right__ |
-|  word   | __w__,__b__,__e__, for __Word__,__Back__,__Next_Word_Tail__  |
-|  line jump  |  f for quickscope to select which word to jump  |
-|  window scale jump   | S for hopWord (provided by hop.nvim)  |
-|  buffer content search   | <leader>fl for buffer line search (by Leaderfbuffer ) | 
+| __`h,j,k,l`__ | __left__, __down__ ,__up__, __right__   |
+|__`w,b,e`__ | __Word__,__Back__,__Next_Word_Tail__    |
+| __`f`__  |quickscope to select which word to jump |
+| __`S`__  | window scale jump  |
+| __`<leader>fl`__  | buffer content search   |
 | __`<leader>ld`__ | go to definition|
 | __`<leader>lr`__ | go to reference |
 | __`<leader>lD`__ | go to Declaration |
