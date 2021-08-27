@@ -59,8 +59,8 @@
 bash <(curl -sLf https://git.io/JTvvG)
 ```
 
-### Basic navigation, lsp-based jump, fuzzy search
-| scale binding | explantion | provided by |
+### Basic navigation, lsp-based jump, fuzzy search :the key to keyboard user
+| key binding | explantion | provided by |
 |:-:|:-:|:-:|
 | __`h,j,k,l`__ | __left__, __down__ ,__up__, __right__   | vim builtin |
 |__`w,b,e`__ | __Word__,__Back__,__Next_Word_Tail__    | vim builtin |
