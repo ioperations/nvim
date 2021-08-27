@@ -1,6 +1,5 @@
-<link rel="stylesheet" href="./general/css.css">
 <div align="center">
-    <span style="font-size:40px;color:red;background-color: #a1f1a2"> Neo </span> <a href="https://github.com/yangyangwithgnu/use_vim_as_ide"; class="original-topic"> Use_vim_as_ide </a>
+    <h1 style="font-size:40px;color:red;background-color: #a1f1a2"> Neo <a href="https://github.com/yangyangwithgnu/use_vim_as_ide"; class="original-topic"; > Use_vim_as_ide </a> </h1>
 </div>
 
 <img align="center" src="./general/desktop.png"/>
