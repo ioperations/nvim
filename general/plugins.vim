@@ -29,21 +29,17 @@ if 1
         Plug 'phaazon/hop.nvim',{ 'branch': 'pre-extmarks'} " for easymotion
     endif
 
+    " fuzzy 
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
     Plug 'Yggdroot/LeaderF', { 'do' : ':LeaderfInstallCExtension' }
 
-    " Better Comments
-    Plug 'tpope/vim-commentary'
-    " Change dates fast
-    Plug 'tpope/vim-speeddating'
-    " Repeat stuff
-    Plug 'tpope/vim-repeat'
+    Plug 'tpope/vim-commentary' " Better Comments
+    Plug 'tpope/vim-speeddating' " Change dates fast
+    Plug 'tpope/vim-repeat' " Repeat stuff
     " Useful for React Commenting
     Plug 'suy/vim-context-commentstring'
 
-
-    " Easy motion for VSCode
     Plug 'machakann/vim-highlightedyank'
 
     " dress
