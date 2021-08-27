@@ -1,10 +1,10 @@
 <img align="center" src="./general/desktop.png"/>
 <img align="center" src="./general/nvim.png"/>
 
-
 <div align="center">
     <span style="font-size:40px;color:red;background-color: #a1f1a2"> Neo </span> <a href="https://github.com/yangyangwithgnu/use_vim_as_ide"; class="original-topic"> Use_vim_as_ide </a>
 </div>
+
 <style>
 .original-topic:link {
     font-size:40px; 
