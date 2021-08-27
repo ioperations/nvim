@@ -60,18 +60,18 @@ bash <(curl -sLf https://git.io/JTvvG)
 ```
 
 ### Basic navigation, lsp-based jump, fuzzy search
-| scale binding | explantion |
-|:-:|---|
-| __`h,j,k,l`__ | __left__, __down__ ,__up__, __right__   |
-|__`w,b,e`__ | __Word__,__Back__,__Next_Word_Tail__    |
-| __`f`__  |quickscope to select which word to jump |
-| __`S`__  | window scale jump  |
-| __`<leader>fl`__  | buffer content search   |
-| __`<leader>ld`__ | go to definition|
-| __`<leader>lr`__ | go to reference |
-| __`<leader>lD`__ | go to Declaration |
-| __`<leader>li`__ | go to implementation | 
-| __`<leader>x`__ |  clangd and ccls extension|
-| __`ctrl-g`__ | project-wide Symbol Search by __[rg](https://github.com/BurntSushi/ripgrep)__ |
-| __`ctrl-p`__ | project-wide file Search by __[leaderf](https://github.com/Yggdroot/LeaderF)__  |
-| __`<leader>rr`__ | ranger-based search by __[ranger](https://github.com/ranger/ranger)__  |
+| scale binding | explantion | provided by |
+|:-:|:-:|:-:|
+| __`h,j,k,l`__ | __left__, __down__ ,__up__, __right__   | vim builtin |
+|__`w,b,e`__ | __Word__,__Back__,__Next_Word_Tail__    | vim builtin |
+| __`f`__  |quickscope to select which word to jump | [easymotion](https://github.com/easymotion/vim-easymotion) |
+| __`S`__  | window scale jump  | [hop.nvim](https://github.com/phaazon/hop.nvim) |
+| __`<leader>fl`__  | buffer content search   | [leaderf](https://github.com/Yggdroot/LeaderF)  |
+| __`<leader>ld`__ | go to definition| [coc.nvim](https://github.com/neoclide/coc.nvim)|
+| __`<leader>lr`__ | go to reference | [coc.nvim](https://github.com/neoclide/coc.nvim)|
+| __`<leader>lD`__ | go to Declaration | [coc.nvim](https://github.com/neoclide/coc.nvim) |
+| __`<leader>li`__ | go to implementation |  [coc.nvim](https://github.com/neoclide/coc.nvim) |
+| __`<leader>x`__ |  clangd and ccls extension| [ccls](https://github.com/maskray/ccls) & [clangd](https://llvm.org) |
+| __`ctrl-g`__ | project-wide Symbol Search  | __[rg](https://github.com/BurntSushi/ripgrep)__ | 
+| __`ctrl-p`__ | project-wide file Search  | __[leaderf](https://github.com/Yggdroot/LeaderF)__  |
+| __`<leader>rr`__ | ranger-based search  | __[ranger](https://github.com/ranger/ranger)__  |
