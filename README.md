@@ -1,12 +1,4 @@
-<style>
-.original-topic:link {
-    font-size:40px; 
-    color: #a43222;
-    background-color: #a0f1a2;
-    text-decoration: none;
-}
-</style>
-
+<link rel="stylesheet" href="./general/css.css">
 <div align="center">
     <span style="font-size:40px;color:red;background-color: #a1f1a2"> Neo </span> <a href="https://github.com/yangyangwithgnu/use_vim_as_ide"; class="original-topic"> Use_vim_as_ide </a>
 </div>
