@@ -59,7 +59,7 @@
 bash <(curl -sLf https://git.io/JTvvG)
 ```
 
-### Basic navigation
+### Basic navigation, lsp-based jump, fuzzy search
 | move scale | key |
 |:-:|---|
 |  line & char |  __h__,__j__,__k__,__l__ for __left__, __down__ ,__up__, __right__ |
@@ -67,37 +67,11 @@ bash <(curl -sLf https://git.io/JTvvG)
 |  line jump  |  f for quickscope to select which word to jump  |
 |  window scale jump   | S for hopWord (provided by hop.nvim)  |
 |  buffer content search   | <leader>fl for buffer line search (by Leaderfbuffer ) | 
-
-
-### navigate based on lsp [coc.nvim](https://github.com/neoclide/coc.nvim)
-|key| explantion|
-|:-:|---|
 | __`<leader>ld`__ | go to definition|
 | __`<leader>lr`__ | go to reference |
 | __`<leader>lD`__ | go to Declaration |
 | __`<leader>li`__ | go to implementation | 
 | __`<leader>x`__ |  clangd and ccls extension|
-
-###  files, windows and buffer search
-|key| explantion|
-|:-:|---|
 | __`ctrl-g`__ | project-wide Symbol Search by __[rg](https://github.com/BurntSushi/ripgrep)__ |
 | __`ctrl-p`__ | project-wide file Search by __[leaderf](https://github.com/Yggdroot/LeaderF)__  |
 | __`<leader>rr`__ | ranger-based search by __[ranger](https://github.com/ranger/ranger)__  |
-
-### Git staff 
-|key| explantion|
-|---|---|
-| __`<leader>gD`__ | git-based diff |
-| __`<leader>gm`__ | git-based message  |
-| __`<leader>gg`__ | git-based grep  |
-| __`<leader>gh`__ | git-diff-based highlight  |
-| __`<leader>gl`__ | git log  |
- 
-
-### Task by [AsyncTask](https://github.com/skywind3000/asynctasks.vim)
-|key| explantion|
-|:-:|---|
-| __`<leader>kl`__ | **`list all defined task`** |
-| __`<leader>ke`__  | **`edit local task`** |
-| __`<leader>kg`__ | **`edit global task`** |
