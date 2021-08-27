@@ -50,6 +50,7 @@
     - easymotion和hop.vim： fuzzy search很强大，hjkl功能又很小，hop.vim能够对当前展示的文档中对每个word都提供一个place holder，只要按下对应的holder键位 就可以跳转到那个位置，这在写基于英文字母的编程语言的时候跳转起来很方便(如果你在浏览器中使用过vimium就很好理解)
     - English completion : 有的时候我们记得英文单词的大概轮廓，但是忘记了具体应该是什么样子，所以没办法流畅的写英文文档，也没有一款基于lsp的英文补全工具，但是vim自带的字典补全功能可以满足我们的需求，同时社区也提供translate工具让你对文档中的单词进行翻译，也被本配置考虑并收取
     - markdown 实时预览 ：日常在markdown的编写过程中，我们需要实时的预览我们写成了什么样的文档，这对结果导向的我们是一个好的工具，根据filetype，配置给了一个编译执行键位，space+d+d markdown触发实时渲染，c++触发编译执行，go直接执行 ```go run %```
+    - cppman : linux torvalds说 ```read the fuck source code``` 对于一个专业的人来说，这会是必经之路，但是对于一个初学者，在还没有对库有很好的理解的时候，应该选择```read the fuck manual```, cppman 就是这样一个工具让你能够从 cpluspluc.com中拉取到c++库函数对应的文档，你需要将这些东西先执行一下缓存，到时候就不会有漫长的等待拉取的时间。
 
 ## Installation
 
