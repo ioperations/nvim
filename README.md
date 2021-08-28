@@ -61,7 +61,7 @@ bash <(curl -sLf https://git.io/JTvvG)
 ```
 
 ## essential_keybinding_table
-| technology | key binding | explantion | provided by |
+| technology | key binding | explanation | provided by |
 |---|:-:|:-:|:-:|
 |🐮 cursor movement | __`h,j,k,l`__ | __left__, __down__ ,__up__, __right__   | vim builtin |
 |🐮 cursor movement  |__`w,b,e`__ | __Word__,__Back__,__Next_Word_Tail__    | vim builtin |
