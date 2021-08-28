@@ -65,10 +65,10 @@ bash <(curl -sLf https://git.io/JTvvG)
 |🐮 cursor movement  |__`w,b,e`__ | __Word__,__Back__,__Next_Word_Tail__    | vim builtin |
 |🐮 cursor movement| __`f`__  |quickscope to select which word to jump | [easymotion](https://github.com/easymotion/vim-easymotion) |
 |🐮 cursor movement| __`S`__  | window scale jump  | [hop.nvim](https://github.com/phaazon/hop.nvim) |
-|🪟 window management| __`c-q`__  | close all windows | vim builtin |
-|🪟 window management| __`Q`__  | close current window | vim builtin |
-|🪟 window management| __`<leader>v`__  | vsplit window | vim builtin |
-|🪟 window management| __`<leader>h`__  | split window | vim builtin |
+|🤓 window management| __`c-q`__  | close all windows | vim builtin |
+|🤓 window management| __`Q`__  | close current window | vim builtin |
+|🤓 window management| __`<leader>v`__  | vsplit window | vim builtin |
+|🤓 window management| __`<leader>h`__  | split window | vim builtin |
 |⚛ lsp protocol | __`<leader>fl`__  | buffer content search   | [leaderf](https://github.com/Yggdroot/LeaderF)  |
 |⚛ lsp protocol| __`<leader>ld`__ | go to definition| [coc.nvim](https://github.com/neoclide/coc.nvim)|
 |⚛ lsp protocol|  __`<leader>lr`__ | go to reference | [coc.nvim](https://github.com/neoclide/coc.nvim)|
