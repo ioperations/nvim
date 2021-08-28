@@ -58,19 +58,25 @@
 bash <(curl -sLf https://git.io/JTvvG)
 ```
 
-### Basic navigation, lsp-based jump, fuzzy search :the key to keyboard user
-| key binding | explantion | provided by |
-|:-:|:-:|:-:|
-| __`h,j,k,l`__ | __left__, __down__ ,__up__, __right__   | vim builtin |
-|__`w,b,e`__ | __Word__,__Back__,__Next_Word_Tail__    | vim builtin |
-| __`f`__  |quickscope to select which word to jump | [easymotion](https://github.com/easymotion/vim-easymotion) |
-| __`S`__  | window scale jump  | [hop.nvim](https://github.com/phaazon/hop.nvim) |
-| __`<leader>fl`__  | buffer content search   | [leaderf](https://github.com/Yggdroot/LeaderF)  |
-| __`<leader>ld`__ | go to definition| [coc.nvim](https://github.com/neoclide/coc.nvim)|
-| __`<leader>lr`__ | go to reference | [coc.nvim](https://github.com/neoclide/coc.nvim)|
-| __`<leader>lD`__ | go to Declaration | [coc.nvim](https://github.com/neoclide/coc.nvim) |
-| __`<leader>li`__ | go to implementation |  [coc.nvim](https://github.com/neoclide/coc.nvim) |
-| __`<leader>x`__ |  clangd and ccls extension| [ccls](https://github.com/maskray/ccls) & [clangd](https://llvm.org) |
-| __`ctrl-g`__ | project-wide Symbol Search  | __[rg](https://github.com/BurntSushi/ripgrep)__ | 
-| __`ctrl-p`__ | project-wide file Search  | __[leaderf](https://github.com/Yggdroot/LeaderF)__  |
-| __`<leader>rr`__ | ranger-based search  | __[ranger](https://github.com/ranger/ranger)__  |
+## Key to keyboard user
+| technology | key binding | explantion | provided by |
+|---|:-:|:-:|:-:|
+|🐮 cursor movement | __`h,j,k,l`__ | __left__, __down__ ,__up__, __right__   | vim builtin |
+|🐮 cursor movement  |__`w,b,e`__ | __Word__,__Back__,__Next_Word_Tail__    | vim builtin |
+|🐮 cursor movement| __`f`__  |quickscope to select which word to jump | [easymotion](https://github.com/easymotion/vim-easymotion) |
+|🐮 cursor movement| __`S`__  | window scale jump  | [hop.nvim](https://github.com/phaazon/hop.nvim) |
+|🪟 window management| __`c-q`__  | close all windows | vim builtin |
+|🪟 window management| __`Q`__  | close current window | vim builtin |
+|🪟 window management| __`<leader>v`__  | vsplit window | vim builtin |
+|🪟 window management| __`<leader>h`__  | split window | vim builtin |
+|⚛ lsp protocol | __`<leader>fl`__  | buffer content search   | [leaderf](https://github.com/Yggdroot/LeaderF)  |
+|⚛ lsp protocol| __`<leader>ld`__ | go to definition| [coc.nvim](https://github.com/neoclide/coc.nvim)|
+|⚛ lsp protocol|  __`<leader>lr`__ | go to reference | [coc.nvim](https://github.com/neoclide/coc.nvim)|
+|⚛ lsp protocol|  __`<leader>lD`__ | go to Declaration | [coc.nvim](https://github.com/neoclide/coc.nvim) |
+|⚛ lsp protocol|  __`<leader>li`__ | go to implementation |  [coc.nvim](https://github.com/neoclide/coc.nvim) |
+|⚛ lsp protocol|  __`<leader>x`__ |  clangd and ccls extension| [ccls](https://github.com/maskray/ccls) & [clangd](https://llvm.org) |
+|🆚 fuzzy search| __`ctrl-g`__ | project-wide Symbol Search  | __[rg](https://github.com/BurntSushi/ripgrep)__ | 
+|🆚 fuzzy search| __`ctrl-p`__ | project-wide file Search  | __[leaderf](https://github.com/Yggdroot/LeaderF)__  |
+|🆚 fuzzy search| __`:FZF`__ | project-wide file Search  | __[fzf](https://github.com/junegunn/fzf.vim)__  |
+|🐂 file manager | __`<leader>rr`__ | ranger-based search  | __[ranger](https://github.com/ranger/ranger)__  |
+|🐂 file manager | __`<leader>e`__ | file tree | __[coc.nvim](https://github.com/neoclide/coc.nvim)__  |
