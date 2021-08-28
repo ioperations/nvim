@@ -12,8 +12,10 @@
 * [支持多种语言的补全，语义跳转: rust go java typescript vue.js react](#多种语言支持)
 * [改变基于正则匹配的语法高亮，转而使用tree-sitter基于编译器的语法高亮](#语法高亮)
 * [neovim的ui系统做了现代化，用barbar.nvim 来展示title bar,coc explore 并加入vim devicons](#ui系统现代化)
-* [模糊搜索，全文跳转，当前文件内容搜索](#模糊搜索)
-* [小工具集成](#小工具)
+* [模糊搜索，全文跳转，当前文件内容搜索等等](#模糊搜索)
+* [小工具集成,whick-key,easymotion,cppman,translate,markdown render](#小工具)
+* [一键安装代码,包括debian发行版的工具链拉取,请安装好node,golang(optional)](#Installation)
+* [光标移动的键位绑定,这是不使用鼠标的提供者](#essential_keybinding_table)
 
 <!-- more --> 
 
@@ -58,7 +60,7 @@
 bash <(curl -sLf https://git.io/JTvvG)
 ```
 
-## Key to keyboard user
+## essential_keybinding_table
 | technology | key binding | explantion | provided by |
 |---|:-:|:-:|:-:|
 |🐮 cursor movement | __`h,j,k,l`__ | __left__, __down__ ,__up__, __right__   | vim builtin |
