@@ -40,7 +40,7 @@
     - 有些人可能选择nvim会列出其他的种种，比如不同担心其他语言的绑定在编译期间没有完成，lua脚本的执行效率比vim script高，但是我就是颜值动物，nvim内置了tui(terminal ui) 就是我选择它的理由，vim-airline插件和barbar.nvim可以把这种特性发挥到我认为很好的层面了。现代软件中相较于比较老的软件一打特性在ui设计上就是注重扁平化，devicons是vim中提供的基于utf-8编码的小图标，对文件，源代码文件基于文件类型展示对应icon，对于编程人员是一种好的效果展示。
     - 除了neovim所做出的努力，nerdfont 在另一个角度来说，对比modern系统和比较老的系统之间也有很大的差别，移值微信，qq，tencent meeting到wine中做的事情也是先把微软雅黑装好，在谈其他。所以系统装好之后第一件事情装nerdfont，更改.icons文件配置，更改.theme文件配置，形成可以接受的ui系统，终端字体设置成agave nerd font，系统字体设置成PingFang SC。形成对视觉的保护。
 
-<div align="center">
+<div align="right">
 <img src="./general/c++.png">
 </div>
 
