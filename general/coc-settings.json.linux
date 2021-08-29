@@ -129,7 +129,8 @@
                 },
                 "client": {
                     "snippetSupport": true,
-                    "hoverProvider": false
+                    "hoverProvider": false,
+                    "completionProvider": false
                 },
                 "clang": {
                     "extraArgs": [
