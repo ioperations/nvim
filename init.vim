@@ -47,6 +47,7 @@ if 1
     source $HOME/.config/nvim/plug-config/vim-prettier.vim
     source $HOME/.config/nvim/plug-config/autoformat.vim
     source $HOME/.config/nvim/plug-config/wildfire.vim
+    source $HOME/.config/nvim/plug-config/auto-pairs.vim
 
     " better navigation
     source $HOME/.config/nvim/plug-config/fzf.vim

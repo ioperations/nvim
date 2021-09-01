@@ -1,7 +1,4 @@
 " Basic Key Mappings
-
-inoremap <C-h> <left>
-inoremap <C-l> <right>
 " g Leader key
 let mapleader=" "
 " let localleader=" "

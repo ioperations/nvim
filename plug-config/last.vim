@@ -40,8 +40,8 @@ endif
 " Better nav for omnicomplete TODO figure out why this is being overridden
 inoremap <expr> <c-j> ("\<C-n>")
 inoremap <expr> <c-k> ("\<C-p>")
-inoremap <C-h> <left>
-inoremap <C-l> <right>
+"inoremap <C-h> <left>
+"inoremap <C-l> <right>
 "
 " Uncomment the following to have Vim jump to the last position when
 " reopening a file
