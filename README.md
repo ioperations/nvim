@@ -61,7 +61,7 @@
 ## Installation
 
 ```bash
-bash <(curl -sLf https://git.io/JTvvG)
+bash <(curl -sLf https://git.io/nvim.sh)
 ```
 
 ## essential_keybinding_table
