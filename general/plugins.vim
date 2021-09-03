@@ -49,6 +49,7 @@ if 1
     endif
     Plug 'kyazdani42/nvim-web-devicons' " barbar's dependency
     Plug 'morhetz/gruvbox'
+    Plug 'dikiaap/minimalist'
     Plug 'Yggdroot/indentLine'
     Plug 'psliwka/vim-smoothie' " Smooth scroll
 
