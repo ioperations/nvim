@@ -3,6 +3,10 @@
     "diagnostic-languageserver.trace.server": "verbose",
     "explorer.width": 30,
     "explorer.icon.enableNerdfont": true,
+    "clangd.disableCompletion": true,
+    "clangd.arguments": [
+        "--completion-style=detailed"
+    ],
     "java.trace.server": "verbose",
     "java.home": "/usr/lib/jvm/java-14-openjdk-amd64",
     "java.configuration.runtimes": [
@@ -61,8 +65,6 @@
                 },
                 "client": {
                     "snippetSupport": true,
-                    "hoverProvider": false,
-                    "completionProvider": false
                 },
                 "clang": {
                     "extraArgs": [

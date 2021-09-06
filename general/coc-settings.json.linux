@@ -3,6 +3,10 @@
     "diagnostic-languageserver.trace.server": "verbose",
     "codeLens.enable": true,
     "explorer.width": 30,
+    "clangd.disableCompletion": true,
+    "clangd.arguments": [
+        "--completion-style=detailed"
+    ],
     "explorer.icon.enableNerdfont": true,
     "java.trace.server": "verbose",
     "java.home": "/usr/lib/jvm/default",
@@ -128,9 +132,7 @@
                     "retainInMemory": 0
                 },
                 "client": {
-                    "snippetSupport": true,
-                    "hoverProvider": false,
-                    "completionProvider": false
+                    "snippetSupport": true
                 },
                 "clang": {
                     "extraArgs": [
