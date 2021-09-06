@@ -27,7 +27,7 @@
 - 在lsp一统江湖的时代，在vim实现多语言补全支持不再成为难题
     - 如今已经进入云原生和微服务的时代，语言不应该成为后端工作者的标签，说白了编译式语言中大部分都是基于 load-store执行模型，互联网资源的交换都是基于大部分都是基于http协议，开发基础都是来自于restful api风格。所以没有必要再把自己绑定在一种语言上，我倾向于主c++，并努力探索rust语言的可能性。
         - 想用c++开发restful服务，可以把[pistache](https://github.com/pistacheio/pistache)拉下来自己做一做实验，其实也没有那么难
-        - 当然你会说java支持反射，不过[graalvm](https://graalvm.org) 已经在做这方面的努力让java的反射在编译期间就能偶确定，ccls实现中reflect函数也值得你去研究，rust这种zero overhead的元编程的反射也可以了解一下。
+        - 当然你会说java支持反射，不过[graalvm](https://graalvm.org) 已经在做这方面的努力让java的反射在编译期间就能偶确定，[iguana](https://github.com/qicosmos/iguana)也值得你去研究，rust这种和c++同样采取的是compile time refection。
     - 而前端中出现了vue和react基础，以前单页面的模式基本上到了维护期，特别是typescript语言的出现，学了之后你才会真的发现程序语言不仅仅是编译原理，里面的类型系统，构造，析构，闭包，等等都对程序开发的效率有提高。特别是你学c++语言之后，你发现里面的概念都是相通的，当然你学java之后也可以对应到。
         - 你要上手vue项目的化可以把[yesPlayMusic](https://github.com/qier222/YesPlayMusic)拉下来自己浏览代码，你会发现这才是未来
 
