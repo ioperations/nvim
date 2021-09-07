@@ -5,7 +5,8 @@
     "explorer.width": 30,
     "clangd.disableCompletion": true,
     "clangd.arguments": [
-        "--completion-style=detailed"
+        "--completion-style=detailed",
+        "--background-index"
     ],
     "explorer.icon.enableNerdfont": true,
     "java.trace.server": "verbose",

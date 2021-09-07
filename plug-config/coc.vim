@@ -76,8 +76,9 @@ imap <C-j> <Plug>(coc-snippets-expand-jump)
 
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
-inoremap <silent><expr> <c-space> coc#refresh()
-inoremap <silent><expr> <c-o> coc#refresh()
+" c-x for auto suggest for completion :: x means super 
+" remove c-space as conflits with default input method
+inoremap <silent><expr> <c-x> coc#refresh()
 
 " Open up coc-commands
 nnoremap <silent><expr> <c-space> coc#refresh()

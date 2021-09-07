@@ -5,7 +5,8 @@
     "explorer.icon.enableNerdfont": true,
     "clangd.disableCompletion": true,
     "clangd.arguments": [
-        "--completion-style=detailed"
+        "--completion-style=detailed",
+        "--background-index"
     ],
     "java.trace.server": "verbose",
     "java.home": "/usr/lib/jvm/java-14-openjdk-amd64",

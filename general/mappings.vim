@@ -13,6 +13,10 @@ if 1
   " Better nav for omnicomplete
   inoremap <expr> <c-j> ("\<C-n>")
   inoremap <expr> <c-k> ("\<C-p>")
+  
+  " better navigation
+  inoremap <C-a> <c-o>0
+  inoremap <C-e> <c-o>$
 
   " I hate escape more than anything else
   inoremap jk <Esc>
@@ -86,10 +90,6 @@ if 1
   noremap <left> :vertical resize-5<CR>
   noremap <right> :vertical resize+5<CR>
 endif
-
-" Better nav for omnicomplete
-inoremap <expr> <c-j> ("\<C-n>")
-inoremap <expr> <c-k> ("\<C-p>")
 
 noremap <leader>rc :e ~/.config/nvim/init.vim<cr>
 noremap <leader>st :Startify<cr>
