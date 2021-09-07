@@ -3,7 +3,7 @@
     "diagnostic-languageserver.trace.server": "verbose",
     "explorer.width": 30,
     "explorer.icon.enableNerdfont": true,
-    "clangd.disableCompletion": true,
+    "clangd.disableCompletion": false,
     "clangd.arguments": [
         "--completion-style=detailed",
         "--background-index"

@@ -11,6 +11,7 @@ if 1
     " general settings
     source $HOME/.config/nvim/general/mappings.vim
     source $HOME/.config/nvim/general/settings.vim
+    source $HOME/.config/nvim/general/langtemplate.vim
     source $HOME/.config/nvim/general/functions.vim
     source $HOME/.config/nvim/general/which-key.vim
 

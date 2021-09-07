@@ -3,7 +3,7 @@
     "diagnostic-languageserver.trace.server": "verbose",
     "codeLens.enable": true,
     "explorer.width": 30,
-    "clangd.disableCompletion": true,
+    "clangd.disableCompletion": false,
     "clangd.arguments": [
         "--completion-style=detailed",
         "--background-index"
@@ -133,7 +133,9 @@
                     "retainInMemory": 0
                 },
                 "client": {
-                    "snippetSupport": true
+                    "snippetSupport": true,
+                    "hoverProvider": false,
+                    "completionProvider": false
                 },
                 "clang": {
                     "extraArgs": [
