@@ -135,7 +135,8 @@
                 "client": {
                     "snippetSupport": true,
                     "hoverProvider": false,
-                    "completionProvider": false
+                    "completionProvider": false,
+                    "codeActionProvider": false
                 },
                 "clang": {
                     "extraArgs": [
