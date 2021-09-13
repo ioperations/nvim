@@ -10,6 +10,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 if 1
     " Intellisense
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'm-pilia/vim-ccls'
     Plug 'neoclide/coc-snippets'
     Plug 'honza/vim-snippets'
     Plug 'skywind3000/vim-auto-popmenu'

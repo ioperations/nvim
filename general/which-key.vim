@@ -219,7 +219,7 @@ let g:which_key_map.l = {
                   \ 'q' : ['<Plug>(coc-fix-current)'             , 'quickfix'],
                   \ 'r' : ['<Plug>(coc-references)'              , 'references'],
                   \ 'R' : ['<Plug>(coc-rename)'                  , 'rename'],
-                  \ 's' : [':CocList -I symbols'                 , 'references'],
+                  \ 's' : [':CocList -I symbols'                 , 'Coc symbols'],
                   \ 'S' : [':CocList snippets'                   , 'snippets'],
                   \ 't' : ['<Plug>(coc-type-definition)'         , 'type definition'],
                   \ 'u' : [':CocListResume'                      , 'resume list'],
