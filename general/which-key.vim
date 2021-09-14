@@ -95,15 +95,6 @@ let g:which_key_map.f = {
                   \ 'm' : [':CocList mru' , 'coclist mru'] ,
                   \ }
 
-let g:which_key_map.F = {
-                  \ 'name' : 'File switch plugin',
-                  \ 't' :[':FSTab','FSTab'],
-                  \ 'k' :[':FSSplitAbove','FSSplitAbove'],
-                  \ 'h' :[':FSSplitLeft','FSSplitLeft'],
-                  \ 'l' :[':FSSplitRight','FSSplitRight'],
-                  \ 'j' :[':FSSplitBelow','FSSplitBelow'],
-                  \}
-
 " k is for task
 let g:which_key_map.k = {
                   \ 'name' : '+task' ,
@@ -287,7 +278,7 @@ let g:which_key_map.d = {
                   \ }
 
 let g:which_key_map.x = {
-                  \ 'name' : 'lsp extension',
+                  \ 'name' : '+lsp extension',
                   \ 'b' :[":call CocLocations(\'ccls\',\'$ccls/inheritance\')<cr>",'inheritance'],
                   \ 'B' :[":call CocLocations(\'ccls\',\'$ccls/inheritance\',{\'levels\':3})<cr>       "          ,'class bases up to 3 level'],
                   \ 'd' :[":call CocLocations(\'ccls\',\'$ccls/inheritance\',{\'derived\':v:true})<cr> "          ,'derived class'],
