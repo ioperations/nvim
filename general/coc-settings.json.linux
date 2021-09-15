@@ -68,7 +68,7 @@
                     "snippetSupport": true,
                     "hoverProvider": false,
                     "completionProvider": false,
-                    "referencesProvider": false,
+                    "referencesProvider": true,
                     "definationProvider": false,
                     "codeActionProvider": false
                 },
