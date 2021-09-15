@@ -6,7 +6,8 @@
     "clangd.disableCompletion": false,
     "clangd.arguments": [
         "--completion-style=detailed",
-        "--background-index"
+        "--background-index",
+        "--limit-references=1"
     ],
     "explorer.icon.enableNerdfont": true,
     "java.trace.server": "verbose",
@@ -78,6 +79,9 @@
                         "-DTEST_ADQ",
                         "-Wall"
                     ]
+                },
+                "index": {
+                    "threads": 3
                 }
             }
         },
