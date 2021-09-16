@@ -22,6 +22,7 @@
 ## ccls和calngd融合
 - 小孩子才做选择，大人选择全都要。
     - clangd和ccls在使用过程中都有自己的优点，比如clangd生成的hover展示的效果要比ccls好，函数参数，文档解释分开展示，完美透过hover就可以有很好的理解。而ccls有自己的基于json-rpc的扩展方法，在面向对象中，可以展示纯虚函数的实现，从实现跳转到接口(c++的接口就是纯虚函数)，本配置对ccls和clangd的初始化选项做了调整，可以只展示clangd的hover而不展示ccls生成的，又保证ccls的扩展功能在nvim的key binding中。
+    - 基于[原版的ccls](https://github.com/maskray/ccls) 加入了几点改进，比如两个language server结合起来(clangd & ccls),ccls的reference功能可能会出错，clangd的hover功能比ccls好，所以添加功能，能够禁止ccls返回hover;ccls 的completionOption 不如clangd的好，一共添加了4-5个功能，增强对c++的开发体验。[新版地址](https://github.com/ioperations/ccls)
 
 ## 多种语言支持
 - 在lsp一统江湖的时代，在vim实现多语言补全支持不再成为难题
