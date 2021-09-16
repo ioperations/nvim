@@ -229,6 +229,11 @@ let g:coc_snippet_prev = '<c-k>'
 
 " Useful commands
 nnoremap <silent> <space>y :<C-u>CocList -A --normal yank<cr>
+
+nnoremap <silent> <C-L> :call CocLocations('ccls','$ccls/navigate',{'direction':'D'})<cr>
+nnoremap <silent> <C-K> :call CocLocations('ccls','$ccls/navigate',{'direction':'L'})<cr>
+nnoremap <silent> <C-J> :call CocLocations('ccls','$ccls/navigate',{'direction':'R'})<cr>
+nnoremap <silent> <C-H> :call CocLocations('ccls','$ccls/navigate',{'direction':'U'})<cr>
 " coc-translator
 " Remap for do codeAction of selected region
 function! s:cocActionsOpenFromSelected(type) abort
