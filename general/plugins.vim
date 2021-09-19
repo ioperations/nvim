@@ -73,6 +73,7 @@ if 1
     Plug 'voldikss/vim-floaterm' " Terminal
     Plug 'liuchengxu/vim-which-key' " See what keys do like in emacs
     Plug 'junegunn/goyo.vim' " Zen mode
+    Plug 'rust-lang/rust.vim'   "cargo vim
     if has ('nvim')
         Plug 'nvim-treesitter/nvim-treesitter', { 'do' : ':TSUpdate' } " syntax highlight per filetype
     endif

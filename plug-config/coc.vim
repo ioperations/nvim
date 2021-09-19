@@ -83,7 +83,7 @@ inoremap <silent><expr> <c-x> coc#refresh()
 " Open up coc-commands
 nnoremap <silent><expr> <c-space> coc#refresh()
 nnoremap <silent><nowait> <C-c> :<C-u>CocCommand<cr>
-nnoremap <silent><nowait> <C-k> :<C-u>CocList tasks<cr>
+nnoremap <silent><nowait> <C-t> :<C-u>CocList tasks<cr>
 
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
 " position. Coc only does snippet and additional edit on confirm.
