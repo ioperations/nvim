@@ -10,6 +10,7 @@
 ## Table of content
 * [对重插件youcompeteme转为基于lsp的clangd和ccls](#ccls和calngd融合)
 * [支持多种语言的补全，语义跳转: rust go java typescript vue.js react](#多种语言支持)
+* [跟进edit-compile-run迭代规则,借助vim的quickfix功能跳转到对应要修改的地方](#任务系统)
 * [改变基于正则匹配的语法高亮，转而使用tree-sitter基于编译器的语法高亮](#语法高亮)
 * [neovim的ui系统做了现代化，用barbar.nvim 来展示title bar,coc explore 并加入vim devicons](#ui系统现代化)
 * [模糊搜索，全文跳转，当前文件内容搜索等等](#模糊搜索)
@@ -31,6 +32,9 @@
         - 当然你会说java支持反射，不过[graalvm](https://graalvm.org) 已经在做这方面的努力让java的反射在编译期间就能偶确定，[iguana](https://github.com/qicosmos/iguana)也值得你去研究，rust这种和c++同样采取的是compile time refection。
     - 而前端中出现了vue和react基础，以前单页面的模式基本上到了维护期，特别是typescript语言的出现，学了之后你才会真的发现程序语言不仅仅是编译原理，里面的类型系统，构造，析构，闭包，等等都对程序开发的效率有提高。特别是你学c++语言之后，你发现里面的概念都是相通的，当然你学java之后也可以对应到。
         - 你要上手vue项目的化可以把[yesPlayMusic](https://github.com/qier222/YesPlayMusic)拉下来自己浏览代码，你会发现这才是未来
+
+## 任务系统
+- vim内置了quickfix选择区，用:cnext找到下一个error/warn :copen打开quickfix窗口，当你设置compiler为cargo时，:make test就会执行cargo test，所以统一的接口就是:make ,然后根据不同的filetype，设置不同的运行程序，虽然有lsp的直接跳转到下一个error出现的地方，但借助于任务系统，你也可以跳转到需要修改的地方，不做选择。
 
 ## 语法高亮
 - tree-sitter 已经被nvim内置了

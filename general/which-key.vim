@@ -107,8 +107,9 @@ let g:which_key_map.k = {
                   \ 'l' : [':CocList tasks'               , 'list tasks'],
                   \ 'm' : [':AsyncTaskMacro'              , 'macro help'],
                   \ 'o' : [':copen'                       , 'open task view'],
+                  \ 'p' : [':cprev'                       , 'next error'],
+                  \ 'n' : [':cnext'                       , 'previous error'],
                   \ 'r' : [':AsyncTask file-run'          , 'run file'],
-                  \ 'p' : [':AsyncTask project-run'       , 'run project'],
                   \ 'x' : [':cclose'                      , 'close task view'],
                   \ }
 " \ 'l' : [':AsyncTaskList'               , 'list tasks'],

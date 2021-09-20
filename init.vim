@@ -32,6 +32,8 @@ if 1
     source $HOME/.config/nvim/plug-config/asynctask.vim
     source $HOME/.config/nvim/plug-config/vimspector.vim " 
     source $HOME/.config/nvim/plug-config/vimspector.vim
+    source $HOME/.config/nvim/plug-config/vim-rust.vim
+    source $HOME/.config/nvim/plug-config/vim-cmake.vim
 
     "editor plugin
     source $HOME/.config/nvim/plug-config/startfy.vim

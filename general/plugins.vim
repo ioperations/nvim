@@ -58,6 +58,9 @@ if 1
     Plug 'skywind3000/asyncrun.vim'
     Plug 'neomake/neomake'
     Plug 'puremourning/vimspector' " Debugging
+    Plug 'rust-lang/rust.vim'   "cargo vim
+    Plug 'mattn/webapi-vim' " cargo dependency
+    Plug 'cdelledonne/vim-cmake' " cmake intergration
 
     "editor plugin
     Plug 'mg979/vim-visual-multi' "multi cursor
@@ -73,8 +76,6 @@ if 1
     Plug 'voldikss/vim-floaterm' " Terminal
     Plug 'liuchengxu/vim-which-key' " See what keys do like in emacs
     Plug 'junegunn/goyo.vim' " Zen mode
-    Plug 'rust-lang/rust.vim'   "cargo vim
-    Plug 'mattn/webapi-vim' " cargo dependency
     if has ('nvim')
         Plug 'nvim-treesitter/nvim-treesitter', { 'do' : ':TSUpdate' } " syntax highlight per filetype
     endif
