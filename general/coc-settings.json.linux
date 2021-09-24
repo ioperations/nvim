@@ -6,8 +6,7 @@
     "clangd.disableCompletion": false,
     "clangd.arguments": [
         "--completion-style=detailed",
-        "--background-index",
-        "--limit-references=1"
+        "--background-index"
     ],
     "explorer.icon.enableNerdfont": true,
     "java.trace.server": "verbose",
@@ -75,7 +74,6 @@
                 },
                 "clang": {
                     "extraArgs": [
-                        "-std=c++20",
                         "-DTEST_ADQ",
                         "-Wall"
                     ]
