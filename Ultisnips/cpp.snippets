@@ -370,3 +370,28 @@ std::string type_name()
     return "";
 }
 endsnippet
+snippet gbench "google benchmark"
+#include <benchmark/benchmark.h>
+
+#include <algorithm>
+#include <vector>
+
+static void ${1:BM_VectorCreation}(benchmark::State& state) {
+    for (auto _ : state) {
+        std::vector<int>{};
+    }
+}
+BENCHMARK($1);
+
+BENCHMARK_MAIN();
+endsnippet
+snippet bench "benchmark block"
+
+static void ${1:BenchMark_fun}(benchmark::State& state){
+	${2:// pre condition}
+	for ( auto _ :state ){
+		${3:// to do}
+	}
+}
+BENCHMARK($1);
+endsnippet
