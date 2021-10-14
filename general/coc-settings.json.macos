@@ -3,6 +3,11 @@
     "diagnostic-languageserver.trace.server": "verbose",
     "explorer.width": 30,
     "explorer.icon.enableNerdfont": true,
+    "translator.engines": [
+        "bing",
+        "google",
+        "youdao"
+    ],
     "clangd.disableCompletion": false,
     "clangd.arguments": [
         "--completion-style=detailed",

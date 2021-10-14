@@ -19,7 +19,7 @@ if 1
     " c++ doc and translate
     "Plug 'skywind3000/vim-cppman'
     Plug 'ioperations/vim-cppman'
-    Plug 'voldikss/vim-translator'
+    "Plug 'voldikss/vim-translator'
 
     " search
     Plug 'haya14busa/incsearch.vim'

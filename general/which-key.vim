@@ -200,6 +200,7 @@ let g:which_key_map.l = {
                   \ 'h' : ['<Plug>(coc-float-hide)'              , 'hide'],
                   \ 'i' : ['<Plug>(coc-implementation)'          , 'implementation'],
                   \ 'I' : [':CocList diagnostics'                , 'diagnostics'],
+                  \ 'v' : ['<Plug>(coc-translator-p)'            , 'coc-translator'],
                   \ 'j' : ['<Plug>(coc-float-jump)'              , 'float jump'],
                   \ 'l' : ['<Plug>(coc-codelens-action)'         , 'code lens'],
                   \ 'n' : ['<Plug>(coc-diagnostic-next)'         , 'next diagnostic'],

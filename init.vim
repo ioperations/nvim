@@ -76,3 +76,4 @@ if 1
     " some global variable overrite here
     source $HOME/.config/nvim/plug-config/last.vim
 endif
+inoremap <expr> <c-j> ("\<C-n>")
