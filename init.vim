@@ -31,6 +31,10 @@ if 1
     " task system
     source $HOME/.config/nvim/plug-config/asynctask.vim
     source $HOME/.config/nvim/plug-config/vimspector.vim " 
+    if(has('nvim'))
+        luafile $HOME/.config/nvim/plug-config/nvim-dap.lua
+        luafile $HOME/.config/nvim/plug-config/nvim-dapui.lua
+    endif
     source $HOME/.config/nvim/plug-config/vimspector.vim
     source $HOME/.config/nvim/plug-config/vim-rust.vim
     source $HOME/.config/nvim/plug-config/vim-cmake.vim
@@ -77,3 +81,4 @@ if 1
     source $HOME/.config/nvim/plug-config/last.vim
 endif
 inoremap <expr> <c-j> ("\<C-n>")
+

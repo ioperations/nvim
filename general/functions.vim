@@ -16,7 +16,7 @@ func! CompileRunGcc()
     if has("macunix")
       exec "!clang % -DTEST_ADQ -I /usr/local/opt/llvm/include/c++/v1/ -fsanitize=address -lm -g -Wall -o %<"
     elseif has("unix")
-      exec "!clang % -DTEST_ADQ -fsanitize=address -lgtest  -lbenchmark -pthread  -lcrypto -lpcre -g -Wall -o %<"
+      exec "!clang % " . DotenvGet('CLANG_C_FLAGS') . " -o %<"
     endif
     exec "!time timeout 30 ./%<"
   elseif &filetype == 'cpp'
@@ -24,7 +24,7 @@ func! CompileRunGcc()
     if has("macunix")
       exec "!clang++ -DTEST_ADQ -I /usr/local/opt/llvm/include/c++/v1/ -std=c++2a %  -fsanitize=address -lm -Wall -o %<"
     elseif has("unix")
-      exec "!clang++ -DTEST_ADQ -std=c++20 %  -fsanitize=address -lgtest -lbenchmark -lcrypto -pthread -lpcre -g -Wall -o %<"
+      exec "!clang++ % " . DotenvGet('CLANG_CXX_FLAGS') . " -o %<"
     endif
     exec "!time timeout 30 ./%<"
   elseif &filetype == 'cuda'

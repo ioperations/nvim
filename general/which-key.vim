@@ -263,21 +263,27 @@ let g:which_key_map.r = {
                   \ 'c' : [':e $MYVIMRC'                      , 'vim rc' ],
                   \}
 
+nnoremap <silent> <leader>dc :lua require'dap'.continue()<CR>
+nnoremap <silent> <leader>dv :lua require'dap'.step_over()<CR>
+nnoremap <silent> <leader>di :lua require'dap'.step_into()<CR>
+nnoremap <silent> <leader>do :lua require'dap'.step_out()<CR>
+nnoremap <silent> <leader>db :lua require'dap'.toggle_breakpoint()<CR>
+nnoremap <silent> <leader>dr :lua require'dap'.repl.open({},'vsplit')<CR><C-w>l
+nnoremap <silent> <leader>dk :lua require'dap.ui.variables'.hover(function() return vim.fn.expand("<cexpr>") end)<CR>
+nnoremap <silent> <leader>ds :lua require'dap.ui.variables'.scopes()<CR>
+vnoremap <silent> <leader>dk :lua require'dap.ui.variables'.visual_hover()<CR>
+nnoremap <silent> <leader>dW :lua require'dapui'.float_element("scopes")<CR>
 
-let g:which_key_map.d = {
-                  \ 'name' : '+debug adapter protocol',
-                  \ 'c' : ['<Plug>VimspectorContinue' , 'continue debug'],
-                  \ 'so' : ['<Plug>VimspectorStop' , 'stop'],
-                  \ 'r' : ['<Plug>VimspectorRestart' , 'restart'],
-                  \ 'p' : ['<Plug>VimspectorPause' , 'pause'],
-                  \ 't' : ['<Plug>VimspectorToggleBreakpoint' , 'toggle break point'],
-                  \ 'T' : ['<Plug>VimspectorToggleConditionalBreakpoint' , 'toggle conditional breakpoint'],
-                  \ 'a' : ['<Plug>VimspectorAddFunctionBreakpoint' , 'funtion breakpoint'],
-                  \ 's' : ['<Plug>VimspectorStepOver' , 'step over'],
-                  \ 'S' : ['<Plug>VimspectorStepInto' , 'step into'],
-                  \ 'o' : ['<Plug>VimspectorStepOut' , 'step out'],
-                  \ 'R' : ['<Plug>VimspectorRunToCursor' , 'Run to Cursor'],
-                  \ }
+
+" let g:which_key_map.d = {
+                  " \ 'name' : '+debug adapter protocol',
+                  " \ 'c' : ['calldapcontine()' , 'launch & continue'],
+                  "\ 'o' : [':lua require("dap").step_out()<CR>' , 'step out'],
+                  "\ 'i' : [':lua require("dap").step_into()<CR>','step into'],
+                  "\ 'v' : [':lua require("dap").step_over()<CR>','step over'],
+                  "\ 'b' : [':lua require("dap").toogle_breakpoint()<CR>','toggle break'],
+                  "\ 's' : [ ':lua require"dapui".open("scopes")<CR>','view scopes'],
+                  "\ }
 
 let g:which_key_map.x = {
                   \ 'name' : '+lsp extension',

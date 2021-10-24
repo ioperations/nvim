@@ -57,6 +57,8 @@ if 1
     Plug 'skywind3000/asynctasks.vim'
     Plug 'skywind3000/asyncrun.vim'
     Plug 'neomake/neomake'
+    Plug 'mfussenegger/nvim-dap'
+    Plug 'rcarriga/nvim-dap-ui'
     Plug 'puremourning/vimspector' " Debugging
     Plug 'rust-lang/rust.vim'   "cargo vim
     Plug 'mattn/webapi-vim' " cargo dependency
