@@ -2,6 +2,7 @@
     <h1 style="font-size:40px;color:red;background-color: #a1f1a2"> Neo <a href="https://github.com/yangyangwithgnu/use_vim_as_ide"; class="original-topic"; > Use_vim_as_ide </a> </h1>
 </div>
 
+
 <img align="center" src="./general/nvim.png"/>
 
 
@@ -17,6 +18,7 @@
 * [小工具集成,whick-key,easymotion,cppman,translate,markdown render](#小工具)
 * [一键安装代码,包括debian发行版的工具链拉取,请安装好node,golang(optional)](#Installation)
 * [光标移动的键位绑定,这是不使用鼠标的提供者](#essential_keybinding_table)
+ 
 
 <!-- more --> 
 
@@ -68,6 +70,7 @@
 ```bash
 bash <(curl -sLf https://git.io/nvim.sh)
 ```
+#### Try this configuration using [docker](https://hub.docker.com/r/ioperations/neovim)
 
 ## essential_keybinding_table
 | technology | key binding | explanation | provided by |
