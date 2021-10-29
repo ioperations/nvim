@@ -263,16 +263,25 @@ let g:which_key_map.r = {
                   \ 'c' : [':e $MYVIMRC'                      , 'vim rc' ],
                   \}
 
-nnoremap <silent> <leader>dc :lua require'dap'.continue()<CR>
-nnoremap <silent> <leader>dv :lua require'dap'.step_over()<CR>
-nnoremap <silent> <leader>di :lua require'dap'.step_into()<CR>
-nnoremap <silent> <leader>do :lua require'dap'.step_out()<CR>
-nnoremap <silent> <leader>db :lua require'dap'.toggle_breakpoint()<CR>
-nnoremap <silent> <leader>dr :lua require'dap'.repl.open({},'vsplit')<CR><C-w>l
-nnoremap <silent> <leader>dk :lua require'dap.ui.variables'.hover(function() return vim.fn.expand("<cexpr>") end)<CR>
-nnoremap <silent> <leader>ds :lua require'dap.ui.variables'.scopes()<CR>
-vnoremap <silent> <leader>dk :lua require'dap.ui.variables'.visual_hover()<CR>
-nnoremap <silent> <leader>dW :lua require'dapui'.float_element("scopes")<CR>
+if has('nvim')
+    nnoremap <silent> <leader>dc :lua require'dap'.continue()<CR>
+    nnoremap <silent> <leader>dv :lua require'dap'.step_over()<CR>
+    nnoremap <silent> <leader>di :lua require'dap'.step_into()<CR>
+    nnoremap <silent> <leader>do :lua require'dap'.step_out()<CR>
+    nnoremap <silent> <leader>db :lua require'dap'.toggle_breakpoint()<CR>
+    nnoremap <silent> <leader>dr :lua require'dap'.repl.open({},'vsplit')<CR><C-w>l
+    nnoremap <silent> <leader>dk :lua require'dap.ui.variables'.hover(function() return vim.fn.expand("<cexpr>") end)<CR>
+    nnoremap <silent> <leader>ds :lua require'dap.ui.variables'.scopes()<CR>
+    vnoremap <silent> <leader>dk :lua require'dap.ui.variables'.visual_hover()<CR>
+    nnoremap <silent> <leader>dW :lua require'dapui'.float_element("scopes")<CR>
+else
+    nnoremap <silent> <leader>dc call <Plug>VimpectorRestart<CR>
+    nnoremap <silent> <leader>ds call <Plug>VimspectorContinue<CR>
+    nnoremap <silent> <leader>db call <Plug>VimspectorToggleBreakpoint<CR>
+    nnoremap <silent> <leader>dv call <Plug>VimspectorStepOver<CR>
+    nnoremap <silent> <leader>do call <Plug>VimspectorStepOut<CR>
+    nnoremap <silent> <leader>di call <Plug>VimspectorStepInto<CR>
+endif
 
 
 " let g:which_key_map.d = {
