@@ -275,24 +275,16 @@ if has('nvim')
     vnoremap <silent> <leader>dk :lua require'dap.ui.variables'.visual_hover()<CR>
     nnoremap <silent> <leader>dW :lua require'dapui'.float_element("scopes")<CR>
 else
-    nnoremap <silent> <leader>dc call <Plug>VimpectorRestart<CR>
-    nnoremap <silent> <leader>ds call <Plug>VimspectorContinue<CR>
-    nnoremap <silent> <leader>db call <Plug>VimspectorToggleBreakpoint<CR>
-    nnoremap <silent> <leader>dv call <Plug>VimspectorStepOver<CR>
-    nnoremap <silent> <leader>do call <Plug>VimspectorStepOut<CR>
-    nnoremap <silent> <leader>di call <Plug>VimspectorStepInto<CR>
+    let g:which_key_map.d  = {
+                \ "name" : 'debug',
+                \ 'c' : [":<Plug>VimspectorRestart" , 'restart'],
+                \ 's' : [":<Plug>VimspectorContinue", 'continue'],
+                \ 'b' : [":<Plug>VimspectorToggleBreakpoint", 'breakpoing'],
+                \ 'v' : [":<Plug>VimspectorStepOver",'step over'],
+                \ 'o' : [":<Plug>VimspectorStepOut",'step out'],
+                \ 'i' : [":<Plug>VimspectorStepInto",'step into']
+                \ }
 endif
-
-
-" let g:which_key_map.d = {
-                  " \ 'name' : '+debug adapter protocol',
-                  " \ 'c' : ['calldapcontine()' , 'launch & continue'],
-                  "\ 'o' : [':lua require("dap").step_out()<CR>' , 'step out'],
-                  "\ 'i' : [':lua require("dap").step_into()<CR>','step into'],
-                  "\ 'v' : [':lua require("dap").step_over()<CR>','step over'],
-                  "\ 'b' : [':lua require("dap").toogle_breakpoint()<CR>','toggle break'],
-                  "\ 's' : [ ':lua require"dapui".open("scopes")<CR>','view scopes'],
-                  "\ }
 
 let g:which_key_map.x = {
                   \ 'name' : '+lsp extension',
