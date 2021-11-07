@@ -27,7 +27,7 @@ if 1
     Plug 'haya14busa/incsearch-easymotion.vim'
     Plug 'easymotion/vim-easymotion'
     if has("nvim")
-        Plug 'phaazon/hop.nvim',{ 'branch': 'pre-extmarks'} " for easymotion
+        Plug 'phaazon/hop.nvim'
     endif
 
     " fuzzy 
