@@ -1,2 +1,2 @@
-nnoremap S :HopWordVisual<cr>
-nnoremap F :HopLineVisual<cr>
+nnoremap S :HopWord<cr>
+nnoremap F :HopLine<cr>
