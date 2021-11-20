@@ -1,179 +1,134 @@
 {
-    "yank.enableCompletion": true,
-    "diagnostic-languageserver.trace.server": "verbose",
-    "codeLens.enable": true,
-    "explorer.width": 32,
-    "translator.engines": [
-        "bing",
-        "google",
-        "youdao"
-    ],
-    "clangd.disableCompletion": false,
-    "clangd.arguments": [
-        "--completion-style=detailed",
-        "--background-index"
-    ],
-    "explorer.icon.enableNerdfont": true,
-    "java.trace.server": "verbose",
-    "java.home": "/usr/lib/jvm/default",
-    "java.configuration.runtimes": [
-        {
-            "name": "JavaSE-11",
-            "path": "/usr/lib/jvm/default",
-            "default": true
+  "yank.enableCompletion": true,
+  "diagnostic-languageserver.trace.server": "verbose",
+  "codeLens.enable": true,
+  "explorer.width": 32,
+  "translator.engines": ["bing", "google", "youdao"],
+  "clangd.disableCompletion": false,
+  "clangd.arguments": ["--completion-style=detailed", "--background-index"],
+  "explorer.icon.enableNerdfont": true,
+  "java.trace.server": "verbose",
+  "java.home": "/usr/lib/jvm/default",
+  "java.configuration.runtimes": [
+    {
+      "name": "JavaSE-11",
+      "path": "/usr/lib/jvm/default",
+      "default": true
+    }
+  ],
+  "java.autobuild.enabled": true,
+  "suggest.completionItemKindLabels": {
+    "text": "t",
+    "method": "m",
+    "function": "f"
+  },
+  "diagnostic.virtualText": false,
+  "coc.preferences.colorSupport": true,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "markdown",
+    "javascript",
+    "graphql",
+    "html",
+    "yaml",
+    "json",
+    "python"
+  ],
+  "suggest.removeDuplicateItems": true,
+  "suggest.detailMaxLength": 60,
+  "suggest.triggerAfterInsertEnter": true,
+  "suggest.enablePreview": true,
+  "suggest.snippetIndicator": "🐶",
+  "tslint.trace.server": "verbose",
+  "python.jediEnabled": true,
+  "tsserver.trace.server": "verbose",
+  "javascript.validate.enable": false,
+  "languageserver": {
+    "ccls": {
+      "command": "ccls",
+      "filetypes": ["c", "cpp", "cuda", "objc", "objcpp"],
+      "rootPatterns": [".ccls-root", "compile_commands.json"],
+      "initializationOptions": {
+        "cache": {
+          "directory": ".ccls-cache",
+          "retainInMemory": 0
+        },
+        "client": {
+          "snippetSupport": true,
+          "hoverProvider": false,
+          "completionProvider": false,
+          "referencesProvider": true,
+          "definationProvider": false,
+          "codeActionProvider": false
+        },
+        "clang": {
+          "extraArgs": ["-DTEST_ADQ", "-Wall"]
+        },
+        "index": {
+          "threads": 3
         }
-    ],
-    "java.autobuild.enabled": true,
-    "suggest.completionItemKindLabels": {
-        "text": "t",
-        "method": "m",
-        "function": "f"
+      }
     },
-    "diagnostic.virtualText": false,
-    "coc.preferences.colorSupport": true,
-    "coc.preferences.formatOnSaveFiletypes": [
-        "css",
-        "markdown",
-        "javascript",
-        "graphql",
-        "html",
-        "yaml",
-        "json",
-        "python"
-    ],
-    "suggest.removeDuplicateItems": true,
-    "suggest.detailMaxLength": 60,
-    "suggest.triggerAfterInsertEnter": true,
-    "suggest.enablePreview": true,
-    "suggest.snippetIndicator": "🐶",
-    "tslint.trace.server": "verbose",
-    "python.jediEnabled": false,
-    "tsserver.trace.server": "verbose",
-    "javascript.validate.enable": false,
-    "languageserver": {
-        "ccls": {
-            "command": "ccls",
-            "filetypes": [
-                "c",
-                "cpp",
-                "cuda",
-                "objc",
-                "objcpp"
-            ],
-            "rootPatterns": [
-                ".ccls-root",
-                "compile_commands.json"
-            ],
-            "initializationOptions": {
-                "cache": {
-                    "directory": ".ccls-cache",
-                    "retainInMemory": 0
-                },
-                "client": {
-                    "snippetSupport": true,
-                    "hoverProvider": false,
-                    "completionProvider": false,
-                    "referencesProvider": true,
-                    "definationProvider": false,
-                    "codeActionProvider": false
-                },
-                "clang": {
-                    "extraArgs": [
-                        "-DTEST_ADQ",
-                        "-Wall"
-                    ]
-                },
-                "index": {
-                    "threads": 3
-                }
-            }
-        },
-        "golang": {
-            "command": "gopls",
-            "rootPatterns": [
-                "go.mod"
-            ],
-            "filetypes": [
-                "go"
-            ]
-        },
-        "bash": {
-            "command": "bash-language-server",
-            "args": [
-                "start"
-            ],
-            "filetypes": [
-                "sh"
-            ],
-            "ignoredRootPaths": []
-        },
-        "rust": {
-            "command": "rust-analyzer",
-            "filetypes": [
-                "rust"
-            ],
-            "initializationOptions": {
-                "cargo": {
-                    "loadOutDirsFromCheck": true
-                },
-                "procMacro": {
-                    "enable": true
-                }
-            },
-            "rootPatterns": [
-                "Cargo.toml"
-            ]
-        },
-        "haskell": {
-            "command": "haskell-language-server-wrapper",
-            "args": [
-                "--lsp"
-            ],
-            "rootPatterns": [
-                ".stack.yaml",
-                ".hie-bios",
-                "BUILD.bazel",
-                "cabal.config",
-                "package.yaml"
-            ],
-            "filetypes": [
-                "hs",
-                "lhs",
-                "haskell"
-            ]
-        },
-        "cmake": {
-            "command": "cmake-language-server",
-            "filetypes": [
-                "cmake"
-            ],
-            "rootPatterns": [
-                "build/"
-            ],
-            "initializationOptions": {
-                "buildDirectory": "build"
-            }
-        },
-        "sourcekit-lsp": {
-            "filetypes": [
-                "swift"
-            ],
-            "command": "sourcekit-lsp"
-        }
+    "golang": {
+      "command": "gopls",
+      "rootPatterns": ["go.mod"],
+      "filetypes": ["go"]
     },
-    "snippets.shortcut": "🐮",
-    "snippets.ultisnips.directories": [
-        "$HOME/.config/nvim/autoload/plugged/vim-snippets/UltiSnips/",
-        "$HOME/.config/nvim/UltiSnips"
-    ],
-    "snippets.userSnippetsDirectory": "~/.config/nvim/Ultisnips",
-    "java.errors.incompleteClasspath.severity": "ignore",
-    "json.schemas": [
-        {
-            "fileMatch": [
-                ".vimspector.json"
-            ],
-            "url": "https://puremourning.github.io/vimspector/schema/vimspector.schema.json"
+    "bash": {
+      "command": "bash-language-server",
+      "args": ["start"],
+      "filetypes": ["sh"],
+      "ignoredRootPaths": []
+    },
+    "rust": {
+      "command": "rust-analyzer",
+      "filetypes": ["rust"],
+      "initializationOptions": {
+        "cargo": {
+          "loadOutDirsFromCheck": true
+        },
+        "procMacro": {
+          "enable": true
         }
-    ]
+      },
+      "rootPatterns": ["Cargo.toml"]
+    },
+    "haskell": {
+      "command": "haskell-language-server-wrapper",
+      "args": ["--lsp"],
+      "rootPatterns": [
+        ".stack.yaml",
+        ".hie-bios",
+        "BUILD.bazel",
+        "cabal.config",
+        "package.yaml"
+      ],
+      "filetypes": ["hs", "lhs", "haskell"]
+    },
+    "cmake": {
+      "command": "cmake-language-server",
+      "filetypes": ["cmake"],
+      "rootPatterns": ["build/"],
+      "initializationOptions": {
+        "buildDirectory": "build"
+      }
+    },
+    "sourcekit-lsp": {
+      "filetypes": ["swift"],
+      "command": "sourcekit-lsp"
+    }
+  },
+  "snippets.shortcut": "🐮",
+  "snippets.ultisnips.directories": [
+    "$HOME/.config/nvim/autoload/plugged/vim-snippets/UltiSnips/",
+    "$HOME/.config/nvim/UltiSnips"
+  ],
+  "snippets.userSnippetsDirectory": "~/.config/nvim/Ultisnips",
+  "java.errors.incompleteClasspath.severity": "ignore",
+  "json.schemas": [
+    {
+      "fileMatch": [".vimspector.json"],
+      "url": "https://puremourning.github.io/vimspector/schema/vimspector.schema.json"
+    }
+  ]
 }

@@ -25,6 +25,7 @@ if 1
 
     " completion
     source $HOME/.config/nvim/plug-config/coc.vim
+    source $HOME/.config/nvim/plug-config/clang-format.vim
     source $HOME/.config/nvim/plug-config/ultisnips.vim
     source $HOME/.config/nvim/plug-config/vim-auto-popmenu.vim
 

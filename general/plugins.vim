@@ -11,6 +11,7 @@ if 1
     " Intellisense
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'm-pilia/vim-ccls'
+    Plug 'rhysd/vim-clang-format'
     Plug 'neoclide/coc-snippets'
     Plug 'honza/vim-snippets'
     Plug 'skywind3000/vim-auto-popmenu'

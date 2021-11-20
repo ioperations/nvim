@@ -3,7 +3,7 @@
 " ===
 " fix the most annoying bug that coc has
 "silent! au BufEnter,BufRead,BufNewFile * silent! unmap if
-let g:coc_global_extensions = ['coc-python',
+let g:coc_global_extensions = ['coc-pyright',
       \'coc-vimlsp',
       \'coc-html',
       \'coc-json',
@@ -39,7 +39,8 @@ let g:coc_global_extensions = ['coc-python',
       \'coc-highlight',
       \'coc-translator',
       \'coc-pairs',
-      \'coc-db']
+      \'coc-db',
+      \'coc-prettier']
 
 let g:go_doc_popup_window = 1
 let lua_lsp = glob('~/.config/nvim/autoload/plugged/lua-language-server/', 0, 1)
