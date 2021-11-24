@@ -1,5 +1,6 @@
 set termguicolors  " enable true colors support
 syntax on
-set background=dark
 "colorscheme minimalist
 color gruvbox
+"color seoul256
+set background=dark

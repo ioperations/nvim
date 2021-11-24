@@ -29,6 +29,7 @@ if 1
     Plug 'easymotion/vim-easymotion'
     if has("nvim")
         Plug 'phaazon/hop.nvim'
+        Plug 'norcalli/nvim-colorizer.lua'
     endif
 
     " fuzzy 
@@ -51,6 +52,7 @@ if 1
     endif
     Plug 'kyazdani42/nvim-web-devicons' " barbar's dependency
     Plug 'morhetz/gruvbox'
+    Plug 'junegunn/seoul256.vim'
     Plug 'Yggdroot/indentLine'
     Plug 'psliwka/vim-smoothie' " Smooth scroll
 

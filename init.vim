@@ -64,6 +64,7 @@ if 1
     source $HOME/.config/nvim/plug-config/vim-easymotion.vim
     if(has('nvim'))
         source $HOME/.config/nvim/plug-config/hop.vim
+        luafile $HOME/.config/nvim/plug-config/nvim-colorizer.lua
     endif
 
     "git 
