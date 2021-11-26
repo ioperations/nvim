@@ -16,6 +16,7 @@ if 1
     Plug 'honza/vim-snippets'
     Plug 'skywind3000/vim-auto-popmenu'
     Plug 'skywind3000/vim-dict'
+    Plug 'diepm/vim-rest-console'
 
     " c++ doc and translate
     "Plug 'skywind3000/vim-cppman'

@@ -395,3 +395,22 @@ static void ${1:BenchMark_fun}(benchmark::State& state){
 }
 BENCHMARK($1);
 endsnippet
+
+snippet doc "doxygen"
+/**
+* @brief ${1:brief}
+* @param ${2:param1}
+* @return 
+*/
+endsnippet
+
+snippet file "file" 
+/**
+ * @file `!p snip.rv = snip.basename or "name"`
+ * @brief ${1:描述}
+ * @author qad
+ * @date 2021-05-06
+ * @copyright ${2:comany}
+ * @version 0.1
+ */
+endsnippet
