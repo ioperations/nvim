@@ -4,6 +4,8 @@
   "codeLens.enable": true,
   "explorer.width": 32,
   "translator.engines": ["bing", "google", "youdao"],
+  "clangd.semanticHighlighting": true,
+  "coc.preferences.semanticTokensHighlights": false,
   "clangd.disableCompletion": false,
   "clangd.arguments": ["--completion-style=detailed", "--background-index"],
   "explorer.icon.enableNerdfont": true,
@@ -63,6 +65,9 @@
         },
         "clang": {
           "extraArgs": ["-DTEST_ADQ", "-Wall"]
+        },
+        "highlight": {
+          "LsRanges": true
         },
         "index": {
           "threads": 3

@@ -8,6 +8,12 @@ endif
 
 call plug#begin('~/.config/nvim/autoload/plugged')
 if 1
+    if has ('nvim')
+        Plug 'nvim-treesitter/nvim-treesitter', { 'do' : ':TSUpdate' } " syntax highlight per filetype
+    else
+        Plug 'jackguo380/vim-lsp-cxx-highlight'
+    endif
+
     " Intellisense
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'm-pilia/vim-ccls'
@@ -17,6 +23,7 @@ if 1
     Plug 'skywind3000/vim-auto-popmenu'
     Plug 'skywind3000/vim-dict'
     Plug 'diepm/vim-rest-console'
+    Plug 'epheien/termdbg'
 
     " c++ doc and translate
     "Plug 'skywind3000/vim-cppman'
@@ -82,10 +89,6 @@ if 1
     Plug 'voldikss/vim-floaterm' " Terminal
     Plug 'liuchengxu/vim-which-key' " See what keys do like in emacs
     Plug 'junegunn/goyo.vim' " Zen mode
-    if has ('nvim')
-        Plug 'nvim-treesitter/nvim-treesitter', { 'do' : ':TSUpdate' } " syntax highlight per filetype
-    endif
-
     "git
     Plug 'airblade/vim-gitgutter'
     Plug 'tpope/vim-fugitive'
