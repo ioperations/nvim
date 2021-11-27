@@ -104,3 +104,5 @@ nnoremap W 5w
 nnoremap B 5b
 nnoremap E 5e
 let g:ranger_map_keys='Rg'
+
+nnoremap <A-x> :Maps<cr>
