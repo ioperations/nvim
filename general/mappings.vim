@@ -105,4 +105,9 @@ nnoremap B 5b
 nnoremap E 5e
 let g:ranger_map_keys='Rg'
 
-nnoremap <A-x> :Maps<cr>
+if has('nvim')
+    nnoremap <M-x> :Maps<cr>
+else
+    execute "set <M-x>=\ex"
+    nnoremap <M-x> :Maps<cr>
+endif
