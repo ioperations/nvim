@@ -8,12 +8,6 @@ endif
 
 call plug#begin('~/.config/nvim/autoload/plugged')
 if 1
-    if has ('nvim')
-        Plug 'nvim-treesitter/nvim-treesitter', { 'do' : ':TSUpdate' } " syntax highlight per filetype
-    else
-        Plug 'jackguo380/vim-lsp-cxx-highlight'
-    endif
-
     " Intellisense
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'm-pilia/vim-ccls'
@@ -22,13 +16,11 @@ if 1
     Plug 'honza/vim-snippets'
     Plug 'skywind3000/vim-auto-popmenu'
     Plug 'skywind3000/vim-dict'
-    Plug 'diepm/vim-rest-console'
     Plug 'epheien/termdbg'
 
     " c++ doc and translate
     "Plug 'skywind3000/vim-cppman'
     Plug 'ioperations/vim-cppman'
-    "Plug 'voldikss/vim-translator'
 
     " search
     Plug 'haya14busa/incsearch.vim'
@@ -54,10 +46,14 @@ if 1
     Plug 'machakann/vim-highlightedyank'
 
     " dress
-    Plug 'vim-airline/vim-airline'
     if(has('nvim'))
+        Plug 'nvim-treesitter/nvim-treesitter', { 'do' : ':TSUpdate' } " syntax highlight per filetype
         Plug 'romgrk/barbar.nvim'
+    else
+        Plug 'bfrg/vim-cpp-modern'
+        Plug 'jackguo380/vim-lsp-cxx-highlight'
     endif
+    Plug 'vim-airline/vim-airline'
     Plug 'kyazdani42/nvim-web-devicons' " barbar's dependency
     Plug 'morhetz/gruvbox'
     Plug 'junegunn/seoul256.vim'
@@ -67,9 +63,9 @@ if 1
     " tasks system
     Plug 'skywind3000/asynctasks.vim'
     Plug 'skywind3000/asyncrun.vim'
+    Plug 'thinca/vim-quickrun'
     Plug 'neomake/neomake'
     Plug 'mfussenegger/nvim-dap'
-    Plug 'rcarriga/nvim-dap-ui'
     Plug 'puremourning/vimspector' " Debugging
     Plug 'rust-lang/rust.vim'   "cargo vim
     Plug 'mattn/webapi-vim' " cargo dependency
@@ -107,8 +103,6 @@ if 1
                 \ 'do': { -> mkdp#util#install() }, 
                 \ 'for': ['markdown', 'vim-plug']}
 
-    "org mode
-    Plug 'jceb/vim-orgmode'
 
     "lua
     Plug 'sumneko/lua-language-server' ,{ 
