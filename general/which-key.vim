@@ -300,6 +300,7 @@ let g:which_key_map.x = {
                   \ 'v' :[":call CocLocations(\'ccls\',\'$ccls/vars\',{\'kind\':1})<cr> "          ,'vars in a '],
                   \ 'x' :[":call CocAction(\'toggleService\',\'languageserver.ccls\')<cr>","toggle ccls"],
                   \ 'h' :[':CocCommand clangd.switchSourceHeader',"clangd.switchSourceHeader"],
+                  \ 'a' :[':CocCommand clangd.ast',"clangd.ast"],
                   \ 'k' :[':Cppman',"use cppman"]
                   \}
 
