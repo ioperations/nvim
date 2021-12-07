@@ -27,12 +27,10 @@ func! CompileRunGcc()
         endif
     elseif &filetype == 'cuda'
         set splitbelow
-        exec "!nvcc -std=c++11 %  -o %<"
-        exec "!time timeout 30 ./%<"
+        exec "AsyncRun -position=bottomright -pos=floaterm -mode=term -width=0.6 -height=0.6 nvcc -std=c++11 %  -o %< && timeout 30 ./%<"
     elseif &filetype == 'haskell'
         set splitbelow
-        exec "!ghc % -o %<"
-        exec "!time timeout 30 ./%<"
+        exec "AsyncRun -position=bottomright -pos=floaterm -mode=term -width=0.6 -height=0.6 ghc % -o %< && timeout 30 ./%<"
     elseif &filetype == 'java'
         exec "!javac -encoding utf8 %"
         exec "!time timeout 30 java %<"
@@ -45,10 +43,9 @@ func! CompileRunGcc()
     elseif &filetype == 'javascript'
         exec "!node %"
     elseif &filetype == 'swift'
-        exec "!swiftc % -o %<"
-        exec "!timeout 20 ./%<"
+        exec "AsyncRun -position=bottomright -pos=floaterm -mode=term -width=0.6 -height=0.6 swiftc % -o %< && timeout 20 ./%<"
     elseif &filetype == 'typescript'
-        exec "!node %"
+        exec "AsyncRun -position=bottomright -pos=floaterm -mode=term -width=0.6 -height=0.6 timeout 30 node %"
     elseif &filetype == 'markdown'
         exec "MarkdownPreview"
     elseif &filetype == 'tex'
@@ -57,12 +54,11 @@ func! CompileRunGcc()
         " silent! exec "!echo 'done'"
         "silent! exec "VimtexCompile"
     elseif &filetype == 'rust'
-        exec "!bash -c \" [ -f ./Cargo.toml ] && cargo build || rustc % -o %< \""
-        exec "!bash -c \" [ -f ./Cargo.toml ] && time timeout 20 cargo run || time timeout 20 ./%< \""
+        exec "AsyncRun -position=bottomright -pos=floaterm -mode=term -width=0.6 -height=0.6 cargo build && timeout 30 cargo run"
     elseif &filetype == 'go'
-        exec "!go run %"
+        exec "AsyncRun -position=bottomright -pos=floaterm -mode=term -width=0.6 -height=0.6 timeout 30 go run %"
     elseif &filetype == 'lua'
-        exec "!lua %"
+        exec "AsyncRun -position=bottomright -pos=floaterm -mode=term -width=0.6 -height=0.6 timeout 30 lua %"
     endif
 endfunc
 
