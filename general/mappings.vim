@@ -109,5 +109,9 @@ if has('nvim')
     nnoremap <M-x> :Maps<cr>
 else
     execute "set <M-x>=\ex"
-    nnoremap <M-x> :Maps<cr>
+    execute "set <M-r>=\er"
+    execute "set <M-t>=\et"
+    nmap <M-x> :Maps<cr>
+    nmap <M-r> <Plug>VimspectorRestart
+    nmap <M-t> <Plug>VimspectorToggleBreakpoint
 endif
