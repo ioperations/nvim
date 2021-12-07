@@ -63,6 +63,7 @@ if 1
     " tasks system
     Plug 'skywind3000/asynctasks.vim'
     Plug 'skywind3000/asyncrun.vim'
+    Plug 'skywind3000/asyncrun.extra'
     Plug 'thinca/vim-quickrun'
     Plug 'neomake/neomake'
     Plug 'mfussenegger/nvim-dap'

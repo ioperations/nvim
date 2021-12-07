@@ -2,71 +2,68 @@
 
 " Turn spellcheck on for markdown files
 augroup auto_spellcheck
-  autocmd BufNewFile,BufRead *.md setlocal spell
+    autocmd BufNewFile,BufRead *.md setlocal spell
 augroup END
 
 nnoremap <f10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
-      \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
-      \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<cr>
+            \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+            \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<cr>
 
 func! CompileRunGcc()
-  exec "w"
-  if &filetype == 'c'
-    " mac has some limit
-    if has("macunix")
-      exec "!clang % -DTEST_ADQ -I /usr/local/opt/llvm/include/c++/v1/ -fsanitize=address -lm -g -Wall -o %<"
-    elseif has("unix")
-      exec "!clang % " . DotenvGet('CLANG_C_FLAGS') . " -o %<"
+    exec "w"
+    if &filetype == 'c'
+        " mac has some limit
+        if has("macunix")
+            exec "AsyncRun -position=bottomright -pos=floaterm -mode=term -width=0.6 -height=0.6 clang % -DTEST_ADQ -I /usr/local/opt/llvm/include/c++/v1/ -fsanitize=address -lm -g -Wall -o %< && time timeout 30 ./%<"
+        elseif has("unix")
+            exec "AsyncRun -position=bottomright -pos=floaterm -mode=term -width=0.6 -height=0.6 clang % " . DotenvGet('CLANG_C_FLAGS') . " -o %< && time timeout 30 ./%<"
+        endif
+    elseif &filetype == 'cpp'
+        set splitbelow
+        if has("macunix")
+            exec "AsyncRun -position=bottomright -pos=floaterm -mode=term -width=0.6 -height=0.6 clang++ -DTEST_ADQ -I /usr/local/opt/llvm/include/c++/v1/ -std=c++2a %  -fsanitize=address -lm -Wall -o %< && time timeout 30 ./%<"
+        elseif has("unix")
+            exec "AsyncRun -position=bottomright -pos=floaterm -mode=term -width=0.6 -height=0.6 clang++ % " . DotenvGet('CLANG_CXX_FLAGS') . " -o %< && time timeout 30 ./%<"
+        endif
+    elseif &filetype == 'cuda'
+        set splitbelow
+        exec "!nvcc -std=c++11 %  -o %<"
+        exec "!time timeout 30 ./%<"
+    elseif &filetype == 'haskell'
+        set splitbelow
+        exec "!ghc % -o %<"
+        exec "!time timeout 30 ./%<"
+    elseif &filetype == 'java'
+        exec "!javac -encoding utf8 %"
+        exec "!time timeout 30 java %<"
+    elseif &filetype == 'sh'
+        :!time bash %
+    elseif &filetype == 'python'
+        exec "!time python3 %"
+    elseif &filetype == 'html'
+        silent! exec "!/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome % "
+    elseif &filetype == 'javascript'
+        exec "!node %"
+    elseif &filetype == 'swift'
+        exec "!swiftc % -o %<"
+        exec "!timeout 20 ./%<"
+    elseif &filetype == 'typescript'
+        exec "!node %"
+    elseif &filetype == 'markdown'
+        exec "MarkdownPreview"
+    elseif &filetype == 'tex'
+        :StartLatexPreview
+        " silent! exec "!pdflatex %"
+        " silent! exec "!echo 'done'"
+        "silent! exec "VimtexCompile"
+    elseif &filetype == 'rust'
+        exec "!bash -c \" [ -f ./Cargo.toml ] && cargo build || rustc % -o %< \""
+        exec "!bash -c \" [ -f ./Cargo.toml ] && time timeout 20 cargo run || time timeout 20 ./%< \""
+    elseif &filetype == 'go'
+        exec "!go run %"
+    elseif &filetype == 'lua'
+        exec "!lua %"
     endif
-    exec "!time timeout 30 ./%<"
-  elseif &filetype == 'cpp'
-    set splitbelow
-    if has("macunix")
-      exec "!clang++ -DTEST_ADQ -I /usr/local/opt/llvm/include/c++/v1/ -std=c++2a %  -fsanitize=address -lm -Wall -o %<"
-    elseif has("unix")
-      exec "!clang++ % " . DotenvGet('CLANG_CXX_FLAGS') . " -o %<"
-    endif
-    exec "!time timeout 30 ./%<"
-  elseif &filetype == 'cuda'
-    set splitbelow
-    exec "!nvcc -std=c++11 %  -o %<"
-    exec "!time timeout 30 ./%<"
-  elseif &filetype == 'haskell'
-    set splitbelow
-    exec "!ghc % -o %<"
-    exec "!time timeout 30 ./%<"
-  elseif &filetype == 'java'
-    exec "!javac -encoding utf8 %"
-    exec "!time timeout 30 java %<"
-  elseif &filetype == 'sh'
-    :!time bash %
-  elseif &filetype == 'python'
-    exec "!time python3 %"
-  elseif &filetype == 'html'
-    "silent! exec "!chromium % &"
-    silent! exec "!/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome % "
-  elseif &filetype == 'javascript'
-    exec "!node %"
-  elseif &filetype == 'swift'
-    exec "!swiftc % -o %<"
-    exec "!timeout 20 ./%<"
-  elseif &filetype == 'typescript'
-    exec "!node %"
-  elseif &filetype == 'markdown'
-    exec "MarkdownPreview"
-  elseif &filetype == 'tex'
-    :StartLatexPreview
-    " silent! exec "!pdflatex %"
-    " silent! exec "!echo 'done'"
-    "silent! exec "VimtexCompile"
-  elseif &filetype == 'rust'
-    exec "!bash -c \" [ -f ./Cargo.toml ] && cargo build || rustc % -o %< \""
-    exec "!bash -c \" [ -f ./Cargo.toml ] && time timeout 20 cargo run || time timeout 20 ./%< \""
-  elseif &filetype == 'go'
-    exec "!go run %"
-  elseif &filetype == 'lua'
-    exec "!lua %"
-  endif
 endfunc
 
 

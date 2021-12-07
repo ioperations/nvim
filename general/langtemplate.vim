@@ -197,6 +197,43 @@ function! SetupClangformat()
                 \"PointerAlignment: Left", ])
 endfunction
 
+function! SetupDotTask()
+    call append(0, [ "# vim: set fenc=utf-8 ft=dosini:",
+                \"# define a new task named \"file-build\"",
+                \"[file-build]",
+                \"# shell command, use quotation for filenames containing spaces",
+                \"# check \":AsyncTaskMacro\" to see available macros",
+                \"command=:AsyncRun -mode=term -pos=floaterm -position=bottomright -width=0.6  -height=0.6 clang++ \"$(VIM_FILEPATH)\" -g -std=c++17 -o \"$(VIM_FILEDIR)/$(VIM_FILENOEXT)\" -lopencv_videoio -I/usr/include/opencv4 && ./$(VIM_FILENOEXT)",
+                \"# working directory, can change to $(VIM_ROOT) for project root",
+                \"cwd=$(VIM_ROOT)",
+                \"# output mode, can be one of quickfix and terminal",
+                \"# - quickfix: output to quickfix window",
+                \"# - terminal: run the command in the internal terminal",
+                \"output=quickfix",
+                \"# this is for output=quickfix only",
+                \"# if it is omitted, vim's current errorformat will be used.",
+                \"errorformat=%f:%l:%m",
+                \"# save file before execute",
+                \"save=1",
+                \"# define a new task named \"file-build\"",
+                \"[kaleidoscope]",
+                \"# shell command, use quotation for filenames containing spaces",
+                \"# check \":AsyncTaskMacro\" to see available macros",
+                \"command=clang++ -g \"$(VIM_FILEPATH)\" `llvm-config --cxxflags --ldflags --system-libs --libs all` -O3 -o \"$(VIM_FILEDIR)/$(VIM_FILENOEXT)\" ",
+                \"# working directory, can change to $(VIM_ROOT) for project root",
+                \"cwd=$(VIM_ROOT)",
+                \"# output mode, can be one of quickfix and terminal",
+                \"# - quickfix: output to quickfix window",
+                \"# - terminal: run the command in the internal terminal",
+                \"output=quickfix",
+                \"# this is for output=quickfix only",
+                \"# if it is omitted, vim's current errorformat will be used.",
+                \"errorformat=%f:%l:%m",
+                \"# save file before execute",
+                \"save=1",])
+
+endfunction
+
 autocmd BufNewFile *_test.cpp call SetupCppTest()
 autocmd BufNewFile *_test.cc call SetupCppTest()
 autocmd BufNewFile *_bench.cpp call SetupCppBench()
@@ -207,4 +244,5 @@ autocmd BufNewFile *.py call Setuppython()
 autocmd BufNewFile *_test.go call SetupGoTest()
 autocmd BufNewFile .vimspector.json call SetupCppVimspector()
 autocmd BufNewFile .clang-format call SetupClangformat()
+autocmd BufNewFile .tasks call SetupDotTask()
 autocmd Filetype markdown call Setupmarkdown()
