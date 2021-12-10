@@ -63,7 +63,6 @@ if 1
     " better navigation
     source $HOME/.config/nvim/plug-config/fzf.vim
     source $HOME/.config/nvim/plug-config/leaderF.vim
-    source $HOME/.config/nvim/plug-config/easymotion.vim
     source $HOME/.config/nvim/plug-config/vim-easymotion.vim
     if(has('nvim'))
         source $HOME/.config/nvim/plug-config/hop.vim
