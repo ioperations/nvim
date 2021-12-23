@@ -257,11 +257,19 @@ let g:which_key_map.T = {
                   \ 'x' : [':XTabPinBuffer'           , 'pin buffer'],
                   \ }
 
+if has('nvim')
 let g:which_key_map.r = {
                   \ "name" : '+jump',
                   \ 'r' : [':FloatermNew ranger'                      , 'ranger' ],
                   \ 'c' : [':e $MYVIMRC'                      , 'vim rc' ],
                   \}
+else 
+let g:which_key_map.r = {
+                  \ "name" : '+jump',
+                  \ 'r' : [':RangerCurrentFileExistingOrNewTab'                      , 'ranger' ],
+                  \ 'c' : [':e $MYVIMRC'                      , 'vim rc' ],
+                  \}
+endif
 
 if has('nvim')
     nnoremap <silent> <leader>dc :lua require'dap'.continue()<CR>
