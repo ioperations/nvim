@@ -22,7 +22,7 @@ if 1
     if(has('nvim'))
         luafile $HOME/.config/nvim/plug-config/tree-sitter.lua
     else
-        "source $HOME/.config/nvim/plug-config/vim-cpp-enhanced-highlight.vim
+        "source $HOME/.config/nvim/plug-config/lightline.vim
         source $HOME/.config/nvim/plug-config/vim-cpp-modern.vim
     endif
 

@@ -51,6 +51,8 @@ if 1
         Plug 'romgrk/barbar.nvim'
     else
         Plug 'bfrg/vim-cpp-modern'
+        "Plug 'bagrat/vim-buffet'
+        "Plug 'itchyny/lightline.vim'
         Plug 'jackguo380/vim-lsp-cxx-highlight'
     endif
     Plug 'vim-airline/vim-airline'
