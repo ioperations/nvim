@@ -113,11 +113,37 @@ let g:ranger_map_keys='Rg'
 
 if has('nvim')
     nnoremap <M-x> :Maps<cr>
+    nmap <M-r> <Plug>VimspectorRestart
+    nmap <M-t> <Plug>VimspectorToggleBreakpoint
+    nmap <M-n> <Plug>VimspectorStepOver
+    nmap <M-o> <Plug>VimspectorStepOut
+    nmap <M-i> <Plug>VimspectorStepInto
+    nmap <M-c> <Plug>VimspectorContinue
+    nmap <M-q> <Plug>VimspectorReset
+    " for normal mode - the word under the cursor
+    nmap <M-k> <Plug>VimspectorBalloonEval
+    " for visual mode, the visually selected text
+    xmap <M-k> <Plug>VimspectorBalloonEval
 else
     execute "set <M-x>=\ex"
     execute "set <M-r>=\er"
     execute "set <M-t>=\et"
+    execute "set <M-k>=\ek"
+    execute "set <M-n>=\en"
+    execute "set <M-o>=\eo"
+    execute "set <M-i>=\ei"
+    execute "set <M-c>=\ec"
+    execute "set <M-q>=\eq"
     nmap <M-x> :Maps<cr>
     nmap <M-r> <Plug>VimspectorRestart
     nmap <M-t> <Plug>VimspectorToggleBreakpoint
+    nmap <M-o> <Plug>VimspectorStepOut
+    nmap <M-i> <Plug>VimspectorStepInto
+    nmap <M-c> <Plug>VimspectorContinue
+    nmap <M-q> <Plug>VimspectorReset
+    nmap <M-n> <Plug>VimspectorStepOver
+    " for normal mode - the word under the cursor
+    nmap <M-k> <Plug>VimspectorBalloonEval
+    " for visual mode, the visually selected text
+    xmap <M-k> <Plug>VimspectorBalloonEval
 endif
