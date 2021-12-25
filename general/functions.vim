@@ -14,20 +14,20 @@ func! CompileRunGcc()
     if &filetype == 'c'
         " mac has some limit
         if has("macunix")
-            exec "AsyncRun -position=bottomright -pos=floaterm -mode=term -width=0.6 -height=0.6 clang % -DTEST_ADQ -I /usr/local/opt/llvm/include/c++/v1/ -fsanitize=address -lm -g -Wall -o %< && time timeout 30 ./%<"
+            exec "AsyncRun -position=bottomright -pos=floaterm -mode=term -width=0.6 -height=0.6 clang % -DTEST_ADQ -I /usr/local/opt/llvm/include/c++/v1/ -g -fsanitize=address -lm -g -Wall -o %< && time timeout 30 ./%<"
         elseif has("unix")
-            exec "AsyncRun -position=bottomright -pos=floaterm -mode=term -width=0.6 -height=0.6 clang % " . DotenvGet('CLANG_C_FLAGS') . " -o %< && time timeout 30 ./%<"
+            exec "AsyncRun -position=bottomright -pos=floaterm -mode=term -width=0.6 -height=0.6 clang % " . DotenvGet('CLANG_C_FLAGS') . " -g -o %< && time timeout 30 ./%<"
         endif
     elseif &filetype == 'cpp'
         set splitbelow
         if has("macunix")
-            exec "AsyncRun -position=bottomright -pos=floaterm -mode=term -width=0.6 -height=0.6 clang++ -DTEST_ADQ -I /usr/local/opt/llvm/include/c++/v1/ -std=c++2a %  -fsanitize=address -lm -Wall -o %< && time timeout 30 ./%<"
+            exec "AsyncRun -position=bottomright -pos=floaterm -mode=term -width=0.6 -height=0.6 clang++ -DTEST_ADQ -I /usr/local/opt/llvm/include/c++/v1/ -g -std=c++2a %  -fsanitize=address -lm -Wall -o %< && time timeout 30 ./%<"
         elseif has("unix")
-            exec "AsyncRun -position=bottomright -pos=floaterm -mode=term -width=0.6 -height=0.6 clang++ % " . DotenvGet('CLANG_CXX_FLAGS') . " -o %< && time timeout 30 ./%<"
+            exec "AsyncRun -position=bottomright -pos=floaterm -mode=term -width=0.6 -height=0.6 clang++ % " . DotenvGet('CLANG_CXX_FLAGS') . " -g -o %< && time timeout 30 ./%<"
         endif
     elseif &filetype == 'cuda'
         set splitbelow
-        exec "AsyncRun -position=bottomright -pos=floaterm -mode=term -width=0.6 -height=0.6 nvcc -std=c++11 %  -o %< && timeout 30 ./%<"
+        exec "AsyncRun -position=bottomright -pos=floaterm -mode=term -width=0.6 -height=0.6 nvcc -g -std=c++11 %  -o %< && timeout 30 ./%<"
     elseif &filetype == 'haskell'
         set splitbelow
         exec "AsyncRun -position=bottomright -pos=floaterm -mode=term -width=0.6 -height=0.6 ghc % -o %< && timeout 30 ./%<"
