@@ -45,6 +45,8 @@ if 1
 
     Plug 'machakann/vim-highlightedyank'
 
+    Plug 'caenrique/nvim-maximize-window-toggle'
+
     " dress
     if(has('nvim'))
         Plug 'nvim-treesitter/nvim-treesitter', { 'do' : ':TSUpdate' } " syntax highlight per filetype
