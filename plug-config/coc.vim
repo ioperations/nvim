@@ -3,7 +3,7 @@
 " ===
 " fix the most annoying bug that coc has
 "silent! au BufEnter,BufRead,BufNewFile * silent! unmap if
-let g:coc_global_extensions = ['coc-pyright',
+let g:coc_global_extensions = [ 'coc-jedi',
       \'coc-vimlsp',
       \'coc-html',
       \'coc-json',

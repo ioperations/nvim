@@ -32,12 +32,11 @@ func! CompileRunGcc()
         set splitbelow
         exec "AsyncRun -position=bottomright -pos=floaterm -mode=term -width=0.6 -height=0.6 ghc % -o %< && timeout 30 ./%<"
     elseif &filetype == 'java'
-        exec "!javac -encoding utf8 %"
-        exec "!time timeout 30 java %<"
+        exec "AsyncRun -position=bottomright -pos=floaterm -mode=term -width=0.6 -height=0.6 javac -encoding utf8 % && time timeout 30 java %< "
     elseif &filetype == 'sh'
         :!time bash %
     elseif &filetype == 'python'
-        exec "!time python3 %"
+        exec "AsyncRun -position=bottomright -pos=floaterm -mode=term -width=0.6 -height=0.6 time python3 %"
     elseif &filetype == 'html'
         silent! exec "!/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome % "
     elseif &filetype == 'javascript'
