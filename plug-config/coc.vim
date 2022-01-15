@@ -3,7 +3,8 @@
 " ===
 " fix the most annoying bug that coc has
 "silent! au BufEnter,BufRead,BufNewFile * silent! unmap if
-let g:coc_global_extensions = [ 'coc-jedi',
+let g:coc_global_extensions = ['coc-rust-analyzer',
+      \'coc-jedi',
       \'coc-vimlsp',
       \'coc-html',
       \'coc-json',

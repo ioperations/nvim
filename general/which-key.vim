@@ -192,6 +192,7 @@ let g:which_key_map.l = {
             \ 'b' : [':CocNext'                            , 'next action'],
             \ 'B' : [':CocPrev'                            , 'prev action'],
             \ 'c' : [':CocList commands'                   , 'commands'],
+            \ 'C' : ['<Plug>(coc-codelens-action)'         , 'codelens-action'],
             \ 'd' : ['<Plug>(coc-definition)'              , 'definition'],
             \ 'D' : ['<Plug>(coc-declaration)'             , 'declaration'],
             \ 'e' : [':CocList extensions'                 , 'extensions'],

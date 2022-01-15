@@ -2,6 +2,7 @@
   "yank.enableCompletion": true,
   "diagnostic-languageserver.trace.server": "verbose",
   "codeLens.enable": true,
+  "codeLens.subseparator": "|",
   "explorer.width": 32,
   "translator.engines": ["bing", "google", "youdao"],
   "clangd.semanticHighlighting": true,
@@ -75,6 +76,76 @@
     "__pycache__",
     "venv"
   ],
+  "rust-analyzer.enable": true,
+  "rust-analyzer.lens.enable": true,
+  "rust-analyzer.procMacro.enable": true,
+  "rust-analyzer.hover.linksInHover": true,
+  "rust-analyzer.lens.implementations": true,
+  "rust-analyzer.hoverActions.enable": true,
+  "rust-analyzer.highlighting.strings": true,
+  "rust-analyzer.lens.run": true,
+  "rust-analyzer.trace.server": "verbose",
+  "rust-analyzer.cache.warmup": true,
+  "rust-analyzer.cargo.unsetTest": ["core"],
+  "rust-analyzer.lruCapacity": 1024,
+  "rust-analyzer.checkOnSave.enable": true,
+  "rust-analyzer.checkOnSave.command": "clippy",
+  "rust-analyzer.lens.references": true,
+  "rust-analyzer.inlayHints.enable": true,
+  "rust-analyzer.inlayHints.typeHints": true,
+  "rust-analyzer.inlayHints.chainingHints": true,
+  "rust-analyzer.server.path": "~/.cargo/bin/rust-analyzer",
+  "rust-analyzer.debug.runtime": "vimspector",
+  "rust-analyzer.debug.vimspector.configuration.name": "rust:launch",
+  "rust-analyzer.diagnostics.enable": true,
+  "rust-analyzer.diagnostics.enableExperimental": true,
+  "rust-analyzer.checkOnSave.allTargets": true,
+  "rust-analyzer.hover.documentation": true,
+  "rust-analyzer.completion.postfix.enable": true,
+  "rust-analyzer.lens.methodReferences": true,
+  "rust-analyzer.workspace.symbol.search.scope": "workspace_and_dependencies",
+  "rust-analyzer.terminal.startinsert": true,
+  "rust-analyzer.completion.snippets": {
+    "Arc::new": {
+      "postfix": "arc",
+      "body": "Arc::new(${receiver})",
+      "requires": "std::sync::Arc",
+      "description": "Put the expression into an `Arc`",
+      "scope": "expr"
+    },
+    "Rc::new": {
+      "postfix": "rc",
+      "body": "Rc::new(${receiver})",
+      "requires": "std::rc::Rc",
+      "description": "Put the expression into an `Rc`",
+      "scope": "expr"
+    },
+    "Box::pin": {
+      "postfix": "pinbox",
+      "body": "Box::pin(${receiver})",
+      "requires": "std::boxed::Box",
+      "description": "Put the expression into a pinned `Box`",
+      "scope": "expr"
+    },
+    "Ok": {
+      "postfix": "ok",
+      "body": "Ok(${receiver})",
+      "description": "Wrap the expression in a `Result::Ok`",
+      "scope": "expr"
+    },
+    "Err": {
+      "postfix": "err",
+      "body": "Err(${receiver})",
+      "description": "Wrap the expression in a `Result::Err`",
+      "scope": "expr"
+    },
+    "Some": {
+      "postfix": "some",
+      "body": "Some(${receiver})",
+      "description": "Wrap the expression in an `Option::Some`",
+      "scope": "expr"
+    }
+  },
   "javascript.validate.enable": false,
   "languageserver": {
     "ccls": {
@@ -115,19 +186,6 @@
       "args": ["start"],
       "filetypes": ["sh"],
       "ignoredRootPaths": []
-    },
-    "rust": {
-      "command": "rust-analyzer",
-      "filetypes": ["rust"],
-      "initializationOptions": {
-        "cargo": {
-          "loadOutDirsFromCheck": true
-        },
-        "procMacro": {
-          "enable": true
-        }
-      },
-      "rootPatterns": ["Cargo.toml"]
     },
     "haskell": {
       "command": "haskell-language-server-wrapper",
