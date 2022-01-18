@@ -2,6 +2,7 @@
   "yank.enableCompletion": true,
   "diagnostic-languageserver.trace.server": "verbose",
   "codeLens.enable": true,
+  "codeLens.position": "eol",
   "codeLens.subseparator": "|",
   "explorer.width": 32,
   "translator.engines": ["bing", "google", "youdao"],
