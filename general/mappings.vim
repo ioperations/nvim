@@ -111,6 +111,7 @@ nnoremap B 5b
 nnoremap E 5e
 let g:ranger_map_keys='Rg'
 nnoremap <leader>o :ToggleOnly<Enter>
+nnoremap <leader>C :ToggleCopy<Enter>
 
 if has('nvim')
     nnoremap <M-x> :Maps<cr>

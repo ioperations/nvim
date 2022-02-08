@@ -4,6 +4,34 @@
 nnoremap <silent> <leader> :silent <c-u> :silent WhichKey '<Space>'<CR>
 vnoremap <silent> <leader> :silent <c-u> :silent WhichKeyVisual '<Space>'<CR>
 
+function ForCopy() abort
+    set nonumber
+    set norelativenumber
+    exec "CocDisable"
+    exec "IndentLinesDisable"
+endfunction
+
+function ResumeAfter() abort
+    set number
+    set relativenumber
+    exec "CocEnable"
+    exec "IndentLinesEnable"
+endfunction
+
+let g:toggle_copy = 1
+
+function ToggleCopy() abort
+    if g:toggle_copy == 1
+        call ForCopy()
+        let g:toggle_copy = 0
+    else
+        call ResumeAfter()
+        let g:toggle_copy = 1
+    endif
+endfunction
+
+command -nargs=0 ToggleCopy :call ToggleCopy()
+
 " Create map to add keys to
 let g:which_key_map =  {}
 " Define a separator
