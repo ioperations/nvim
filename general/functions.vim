@@ -34,7 +34,7 @@ func! CompileRunGcc()
     elseif &filetype == 'java'
         exec "AsyncRun -position=bottomright -pos=floaterm -mode=term -width=0.6 -height=0.6 javac -encoding utf8 % && time timeout 30 java %< "
     elseif &filetype == 'sh'
-        :!time bash %
+        exec "AsyncRun -position=bottomright -pos=floaterm -mode=term -width=0.6 -height=0.6 time zsh %"
     elseif &filetype == 'python'
         exec "AsyncRun -position=bottomright -pos=floaterm -mode=term -width=0.6 -height=0.6 time python3 %"
     elseif &filetype == 'html'

@@ -414,3 +414,20 @@ snippet file "file"
  * @version 0.1
  */
 endsnippet
+
+snippet op "operator++"
+// post add
+${1:testclasss} operator++( ${2:type}  dummy)
+{
+        $1 dummy_val(*this);
+        operator++();
+        return dummy_val;
+}
+
+// pre add
+$1& operator++() {
+        ${3: add logic};
+        return *this;
+}
+endsnippet
+
