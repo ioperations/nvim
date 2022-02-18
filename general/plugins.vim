@@ -79,7 +79,8 @@ if 1
     "editor plugin
     Plug 'mg979/vim-visual-multi' "multi cursor
     Plug 'tpope/vim-surround' " Surround
-    Plug 'airblade/vim-rooter' " Have the file system follow you around
+    "Plug 'airblade/vim-rooter' " Have the file system follow you around
+    Plug 'dylanaraps/root.vim'
     Plug 'jiangmiao/auto-pairs' " Auto pairs for '(' '[' '{'
     Plug 'gcmt/wildfire.vim' " Closetags
     Plug 'mhinz/vim-startify' " Start Screen

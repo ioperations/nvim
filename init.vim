@@ -46,7 +46,6 @@ if 1
     "editor plugin
     source $HOME/.config/nvim/plug-config/startfy.vim
     source $HOME/.config/nvim/plug-config/quickscope.vim
-    source $HOME/.config/nvim/plug-config/vim-rooter.vim
     source $HOME/.config/nvim/plug-config/floaterm.vim
     source $HOME/.config/nvim/plug-config/closetags.vim
     source $HOME/.config/nvim/plug-config/tagalong.vim
@@ -82,5 +81,6 @@ if 1
     source $HOME/.config/nvim/plug-config/vim-translator.vim
 
     " some global variable overrite here
+    source $HOME/.config/nvim/plug-config/vim-rooter.vim
     source $HOME/.config/nvim/plug-config/last.vim
 endif

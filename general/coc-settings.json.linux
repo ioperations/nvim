@@ -6,8 +6,6 @@
   "codeLens.subseparator": "|",
   "explorer.width": 32,
   "translator.engines": ["bing", "google", "youdao"],
-  "clangd.semanticHighlighting": true,
-  "coc.preferences.semanticTokensHighlights": false,
   "clangd.disableCompletion": false,
   "clangd.arguments": ["--completion-style=detailed", "--background-index"],
   "explorer.icon.enableNerdfont": true,
@@ -27,7 +25,6 @@
     "function": "f"
   },
   "diagnostic.virtualText": false,
-  "coc.preferences.colorSupport": true,
   "coc.preferences.formatOnSaveFiletypes": [
     "css",
     "markdown",
@@ -44,7 +41,6 @@
   "suggest.enablePreview": true,
   "suggest.snippetIndicator": "🐶",
   "tslint.trace.server": "verbose",
-  "python.jediEnabled": false,
   "tsserver.trace.server": "verbose",
   "jedi.enable": false,
   "jedi.startupMessage": false,
@@ -151,7 +147,7 @@
   "languageserver": {
     "ccls": {
       "command": "ccls",
-      "filetypes": ["c", "cpp", "cuda", "objc", "objcpp"],
+      "filetypes": ["c", "cpp", "cuda", "objc", "objcpp", "inc"],
       "rootPatterns": [".ccls-root", "compile_commands.json"],
       "initializationOptions": {
         "cache": {
@@ -167,7 +163,7 @@
           "codeActionProvider": false
         },
         "clang": {
-          "extraArgs": ["-DTEST_ADQ", "-Wall", "-std=c++20"]
+          "extraArgs": ["-DTEST_ADQ", "-Wall"]
         },
         "highlight": {
           "LsRanges": true
