@@ -40,6 +40,9 @@ set signcolumn=yes                      " Always show the signcolumn, otherwise 
 set updatetime=100                      " Faster completion
 set timeoutlen=100                      " By default timeoutlen is 1000 ms
 set clipboard=unnamedplus               " Copy paste between vim and everything else
+nnoremap Y "+y
+vnoremap Y "+y
+nnoremap yY ^"+y$
 set incsearch
 "set guifont=Fira\ Code\ Nerd\ Font
 
