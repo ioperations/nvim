@@ -214,9 +214,28 @@ function! SetupCppVimspector()
                 \"}",
                 \"]",
                 \"}",
-               \"}",
+                \"}, ",
+                \"\"myconf - Launch\": { ",
+                \"\"adapter\": \"CodeLLDB\", ",
+                \"\"filetypes\": [ \"cpp\", \"c\", \"objc\", \"rust\" ],",
+                \"\"env\": { \"LLDB_LAUNCH_FLAG_LAUNCH_IN_TTY\": \"NO\" },",
+                \"\"breakpoints\": {",
+                \"\"exception\": {",
+                \"\"cpp_throw\": \"Y\",",
+                \"\"cpp_catch\": \"N\"",
+                \"}",
+                \"},",
+                \"\"configuration\": {",
+                \"\"request\": \"launch\",",
+                \"\"program\": \"${fileDirname}/${fileBasenameNoExtension}\",",
+                \"\"args\": [],",
+                \"\"stopAtEntry\": true,",
+                \"\"cwd\": \"${fileDirname}\"",
+                \"}",
+                \"}",
                 \"}",
                 \"}", ])
+
 endfunction
 
 function! SetupClangformat()

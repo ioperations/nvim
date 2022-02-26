@@ -1,178 +1,205 @@
 {
-    "yank.enableCompletion": true,
-    "diagnostic-languageserver.trace.server": "verbose",
-    "explorer.width": 30,
-    "explorer.icon.enableNerdfont": true,
-    "translator.engines": [
-        "bing",
-        "google",
-        "youdao"
-    ],
-    "clangd.disableCompletion": false,
-    "clangd.arguments": [
-        "--completion-style=detailed",
-        "--background-index"
-    ],
-    "java.trace.server": "verbose",
-    "java.home": "/usr/lib/jvm/java-14-openjdk-amd64",
-    "java.configuration.runtimes": [
-        {
-            "name": "JavaSE-14",
-            "path": "/usr/lib/jvm/java-14-openjdk-amd64",
-            "default": true
-        }
-    ],
-    "java.autobuild.enabled": true,
-    "suggest.completionItemKindLabels": {
-        "text": "t",
-        "method": "m",
-        "function": "f"
+  "yank.enableCompletion": true,
+  "diagnostic-languageserver.trace.server": "verbose",
+  "explorer.width": 30,
+  "explorer.icon.enableNerdfont": true,
+  "translator.engines": ["bing", "google", "youdao"],
+  "clangd.disableCompletion": false,
+  "clangd.arguments": [
+    "--completion-style=detailed",
+    "--background-index",
+    "--enable-config",
+    "-log=verbose"
+  ],
+  "java.trace.server": "verbose",
+  "java.home": "/usr/lib/jvm/java-14-openjdk-amd64",
+  "java.configuration.runtimes": [
+    {
+      "name": "JavaSE-14",
+      "path": "/usr/lib/jvm/java-14-openjdk-amd64",
+      "default": true
+    }
+  ],
+  "java.autobuild.enabled": true,
+  "suggest.completionItemKindLabels": {
+    "text": "t",
+    "method": "m",
+    "function": "f"
+  },
+  "diagnostic.virtualText": false,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "markdown",
+    "javascript",
+    "graphql",
+    "html",
+    "yaml",
+    "json",
+    "python"
+  ],
+  // "coc.preferences.hoverTarget": "float",
+  "suggest.removeDuplicateItems": true,
+  "suggest.detailMaxLength": 60,
+  "suggest.triggerAfterInsertEnter": true,
+  "suggest.enablePreview": true,
+  "suggest.snippetIndicator": "🐶",
+  "tslint.trace.server": "verbose",
+  "python.jediEnabled": false,
+  "tsserver.trace.server": "verbose",
+  "javascript.validate.enable": false,
+  "rust-analyzer.enable": true,
+  "rust-analyzer.lens.enable": true,
+  "rust-analyzer.procMacro.enable": true,
+  "rust-analyzer.hover.linksInHover": true,
+  "rust-analyzer.lens.implementations": true,
+  "rust-analyzer.hoverActions.enable": true,
+  "rust-analyzer.highlighting.strings": true,
+  "rust-analyzer.lens.run": true,
+  "rust-analyzer.trace.server": "verbose",
+  "rust-analyzer.cache.warmup": true,
+  "rust-analyzer.cargo.unsetTest": ["core"],
+  "rust-analyzer.lruCapacity": 1024,
+  "rust-analyzer.checkOnSave.enable": true,
+  "rust-analyzer.checkOnSave.command": "clippy",
+  "rust-analyzer.lens.references": true,
+  "rust-analyzer.inlayHints.enable": true,
+  "rust-analyzer.inlayHints.typeHints": true,
+  "rust-analyzer.inlayHints.chainingHints": true,
+  "rust-analyzer.server.path": "~/.cargo/bin/rust-analyzer",
+  "rust-analyzer.debug.runtime": "vimspector",
+  "rust-analyzer.debug.vimspector.configuration.name": "rust:launch",
+  "rust-analyzer.diagnostics.enable": true,
+  "rust-analyzer.diagnostics.enableExperimental": true,
+  "rust-analyzer.checkOnSave.allTargets": true,
+  "rust-analyzer.hover.documentation": true,
+  "rust-analyzer.completion.postfix.enable": true,
+  "rust-analyzer.lens.methodReferences": true,
+  "rust-analyzer.workspace.symbol.search.scope": "workspace_and_dependencies",
+  "rust-analyzer.terminal.startinsert": true,
+  "rust-analyzer.completion.snippets": {
+    "Arc::new": {
+      "postfix": "arc",
+      "body": "Arc::new(${receiver})",
+      "requires": "std::sync::Arc",
+      "description": "Put the expression into an `Arc`",
+      "scope": "expr"
     },
-    "diagnostic.virtualText": false,
-    "coc.preferences.formatOnSaveFiletypes": [
-        "css",
-        "markdown",
-        "javascript",
-        "graphql",
-        "html",
-        "yaml",
-        "json",
-        "python"
-    ],
-    // "coc.preferences.hoverTarget": "float",
-    "clangd.path": "/Users/tabmac/.config/coc/extensions/coc-clangd-data/install/12.0.0/clangd_12.0.0/bin/clangd",
-    "suggest.removeDuplicateItems": true,
-    "suggest.detailMaxLength": 60,
-    "suggest.triggerAfterInsertEnter": true,
-    "suggest.enablePreview": true,
-    "suggest.snippetIndicator": "🐶",
-    "tslint.trace.server": "verbose",
-    "python.jediEnabled": false,
-    "tsserver.trace.server": "verbose",
-    "javascript.validate.enable": false,
-    "languageserver": {
-        "ccls": {
-            "command": "ccls",
-            "filetypes": [
-                "c",
-                "cpp",
-                "cuda",
-                "objc",
-                "objcpp"
-            ],
-            "rootPatterns": [
-                ".ccls-root",
-                "compile_commands.json"
-            ],
-            "initializationOptions": {
-                "cache": {
-                    "directory": ".ccls-cache",
-                    "retainInMemory": 0
-                },
-                "client": {
-                    "snippetSupport": true,
-                    "hoverProvider": false,
-                    "completionProvider": false,
-                    "referencesProvider": true,
-                    "definationProvider": false,
-                    "codeActionProvider": false
-                },
-                "clang": {
-                    "extraArgs": [
-                        "-isystem",
-                        "/usr/local/opt/llvm/include/c++/v1/"
-                    ],
-                    "resourceDir": "/Library/Developer/CommandLineTools/usr/lib/clang/11.0.0"
-                }
-            }
-        },
-        "rust": {
-            "command": "rust-analyzer",
-            "filetypes": [
-                "rust"
-            ],
-            "initializationOptions": {
-                "cargo": {
-                    "loadOutDirsFromCheck": true
-                },
-                "procMacro": {
-                    "enable": true
-                }
-            },
-            "rootPatterns": [
-                "Cargo.toml"
-            ]
-        },
-        "haskell": {
-            "command": "haskell-language-server-wrapper",
-            "args": [
-                "--lsp"
-            ],
-            "rootPatterns": [
-                ".stack.yaml",
-                ".hie-bios",
-                "BUILD.bazel",
-                "cabal.config",
-                "package.yaml"
-            ],
-            "filetypes": [
-                "hs",
-                "lhs",
-                "haskell"
-            ]
-        },
-        "golang": {
-            "command": "gopls",
-            "rootPatterns": [
-                "go.mod"
-            ],
-            "filetypes": [
-                "go"
-            ]
-        },
-        "bash": {
-            "command": "bash-language-server",
-            "args": [
-                "start"
-            ],
-            "filetypes": [
-                "sh"
-            ],
-            "ignoredRootPaths": []
-        },
-        "cmake": {
-            "command": "cmake-language-server",
-            "filetypes": [
-                "cmake"
-            ],
-            "rootPatterns": [
-                "build/"
-            ],
-            "initializationOptions": {
-                "buildDirectory": "build"
-            }
-        },
-        "sourcekit-lsp": {
-            "filetypes": [
-                "swift"
-            ],
-            "command": "sourcekit-lsp"
-        }
+    "Rc::new": {
+      "postfix": "rc",
+      "body": "Rc::new(${receiver})",
+      "requires": "std::rc::Rc",
+      "description": "Put the expression into an `Rc`",
+      "scope": "expr"
     },
-    // "sourcekit.commandPath": "/home/tablinux/swift/usr/bin/sourcekit-lsp",
-    "snippets.shortcut": "J",
-    "snippets.ultisnips.directories": [
-        "$HOME/.config/nvim/autoload/plugged/vim-snippets/UltiSnips/",
-        "$HOME/.config/nvim/UltiSnips"
-    ],
-    "snippets.userSnippetsDirectory": "~/.config/nvim/Ultisnips",
-    "java.errors.incompleteClasspath.severity": "ignore",
-    "json.schemas": [
-        {
-            "fileMatch": [
-                ".vimspector.json"
-            ],
-            "url": "https://puremourning.github.io/vimspector/schema/vimspector.schema.json"
+    "Box::pin": {
+      "postfix": "pinbox",
+      "body": "Box::pin(${receiver})",
+      "requires": "std::boxed::Box",
+      "description": "Put the expression into a pinned `Box`",
+      "scope": "expr"
+    },
+    "Ok": {
+      "postfix": "ok",
+      "body": "Ok(${receiver})",
+      "description": "Wrap the expression in a `Result::Ok`",
+      "scope": "expr"
+    },
+    "Err": {
+      "postfix": "err",
+      "body": "Err(${receiver})",
+      "description": "Wrap the expression in a `Result::Err`",
+      "scope": "expr"
+    },
+    "Some": {
+      "postfix": "some",
+      "body": "Some(${receiver})",
+      "description": "Wrap the expression in an `Option::Some`",
+      "scope": "expr"
+    }
+  },
+  "languageserver": {
+    "ccls": {
+      "command": "ccls",
+      "filetypes": ["c", "cpp", "cuda", "objc", "objcpp"],
+      "rootPatterns": [".ccls-root", "compile_commands.json"],
+      "initializationOptions": {
+        "cache": {
+          "directory": ".ccls-cache",
+          "retainInMemory": 0
+        },
+        "client": {
+          "snippetSupport": true,
+          "hoverProvider": false,
+          "completionProvider": false,
+          "referencesProvider": true,
+          "definationProvider": false,
+          "codeActionProvider": false
+        },
+        "clang": {
+          // from clang -v -fsyntax-only -x c++ /dev/null
+          "extraArgs": [
+            "-isystem/usr/local/include",
+            "-isystem/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1",
+            "-isystem/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include",
+            "-isystem/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
+            "-isystem/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include",
+            "-isystem/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks",
+            "-Wall",
+            "-std=c++17"
+          ],
+          //From clang -print-resource-dir
+          "resourceDir": "/usr/local/Cellar/llvm/13.0.1/lib/clang/13.0.1/"
         }
-    ]
+      }
+    },
+    "haskell": {
+      "command": "haskell-language-server-wrapper",
+      "args": ["--lsp"],
+      "rootPatterns": [
+        ".stack.yaml",
+        ".hie-bios",
+        "BUILD.bazel",
+        "cabal.config",
+        "package.yaml"
+      ],
+      "filetypes": ["hs", "lhs", "haskell"]
+    },
+    "golang": {
+      "command": "gopls",
+      "rootPatterns": ["go.mod"],
+      "filetypes": ["go"]
+    },
+    "bash": {
+      "command": "bash-language-server",
+      "args": ["start"],
+      "filetypes": ["sh"],
+      "ignoredRootPaths": []
+    },
+    "cmake": {
+      "command": "cmake-language-server",
+      "filetypes": ["cmake"],
+      "rootPatterns": ["build/"],
+      "initializationOptions": {
+        "buildDirectory": "build"
+      }
+    },
+    "sourcekit-lsp": {
+      "filetypes": ["swift"],
+      "command": "sourcekit-lsp"
+    }
+  },
+  // "sourcekit.commandPath": "/home/tablinux/swift/usr/bin/sourcekit-lsp",
+  "snippets.shortcut": "J",
+  "snippets.ultisnips.directories": [
+    "$HOME/.config/nvim/autoload/plugged/vim-snippets/UltiSnips/",
+    "$HOME/.config/nvim/UltiSnips"
+  ],
+  "snippets.userSnippetsDirectory": "~/.config/nvim/Ultisnips",
+  "java.errors.incompleteClasspath.severity": "ignore",
+  "json.schemas": [
+    {
+      "fileMatch": [".vimspector.json"],
+      "url": "https://puremourning.github.io/vimspector/schema/vimspector.schema.json"
+    }
+  ]
 }
