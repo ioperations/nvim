@@ -3,68 +3,68 @@
 " ===
 " fix the most annoying bug that coc has
 "silent! au BufEnter,BufRead,BufNewFile * silent! unmap if
-let g:coc_global_extensions = ['coc-rust-analyzer',
-      \'coc-jedi',
-      \'coc-vimlsp',
-      \'coc-html',
-      \'coc-json',
-      \'coc-css',
-      \'coc-tsserver',
-      \'coc-yank',
-      \'coc-java',
-      \'coc-gitignore',
-      \'coc-vimlsp',
-      \'coc-tailwindcss',
-      \'coc-stylelint',
-      \'coc-tslint',
-      \'coc-lists',
-      \'coc-git',
-      \'coc-explorer',
-      \'coc-sourcekit',
-      \'coc-flutter',
-      \'coc-todolist',
-      \'coc-yaml',
-      \'coc-tasks',
-      \'coc-diagnostic',
-      \'coc-snippets',
-      \'coc-solargraph',
-      \'coc-clangd',
-      \'coc-emoji',
-      \'coc-docker',
-      \'coc-db',
-      \'coc-vetur',
-      \'coc-browser',
-      \'coc-sourcekit',
-      \'coc-perl',
-      \'coc-highlight',
-      \'coc-translator',
-      \'coc-pairs',
-      \'coc-db',
-      \'coc-prettier']
+let g:coc_global_extensions = [ 'coc-rust-analyzer',
+            \'coc-jedi',
+            \'coc-vimlsp',
+            \'coc-html',
+            \'coc-json',
+            \'coc-css',
+            \'coc-tsserver',
+            \'coc-yank',
+            \'coc-java',
+            \'coc-gitignore',
+            \'coc-vimlsp',
+            \'coc-tailwindcss',
+            \'coc-stylelint',
+            \'coc-tslint',
+            \'coc-lists',
+            \'coc-git',
+            \'coc-explorer',
+            \'coc-sourcekit',
+            \'coc-flutter',
+            \'coc-todolist',
+            \'coc-yaml',
+            \'coc-tasks',
+            \'coc-diagnostic',
+            \'coc-snippets',
+            \'coc-solargraph',
+            \'coc-clangd',
+            \'coc-emoji',
+            \'coc-docker',
+            \'coc-db',
+            \'coc-vetur',
+            \'coc-browser',
+            \'coc-sourcekit',
+            \'coc-perl',
+            \'coc-highlight',
+            \'coc-translator',
+            \'coc-pairs',
+            \'coc-db',
+            \'coc-prettier']
 
 let g:go_doc_popup_window = 1
 let lua_lsp = glob('~/.config/nvim/autoload/plugged/lua-language-server/', 0, 1)
 if len(lua_lsp)
-  let lua_lsp = lua_lsp[-1]
-  call coc#config('languageserver', {
-	\ 'lua-language-server': {
-	\     'cwd': lua_lsp,
-	\     'command': lua_lsp . '/bin/Linux/lua-language-server',
-	\     'args': ['-E', '-e', 'LANG="zh-cn"', lua_lsp . '/main.lua'],
-	\     'filetypes': ['lua'],
-	\ }
-	\ })
+    let lua_lsp = lua_lsp[-1]
+    call coc#config('languageserver', {
+                \ 'lua-language-server': {
+                    \     'cwd': lua_lsp,
+                    \     'command': lua_lsp . '/bin/Linux/lua-language-server',
+                    \     'args': ['-E', '-e', 'LANG="zh-cn"', lua_lsp . '/main.lua'],
+                    \     'filetypes': ['lua'],
+                    \ }
+                    \ })
 endif
 " use <tab> for trigger completion and navigate to the next complete item
 function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]	=~ '\s'
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~ '\s'
 endfunction
 
 inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
+            \ pumvisible() ? "\<C-n>" :
+            \ <SID>check_back_space() ? "\<TAB>" :
+            \ coc#refresh()
 
 " Use <C-j> for select text for visual placeholder of snippet.
 vmap <C-j> <Plug>(coc-snippets-select)
@@ -80,7 +80,7 @@ imap <C-j> <Plug>(coc-snippets-expand-jump)
 
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
-" c-x for auto suggest for completion :: x means super 
+" c-x for auto suggest for completion :: x means super
 " remove c-space as conflits with default input method
 inoremap <silent><expr> <c-x> coc#refresh()
 
@@ -92,19 +92,19 @@ nnoremap <silent><nowait> <C-t> :<C-u>CocList tasks<cr>
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
 " position. Coc only does snippet and additional edit on confirm.
 if exists('*complete_info')
-  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+    inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
 else
-  imap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+    imap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 endif
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
+    if (index(['vim','help'], &filetype) >= 0)
+        execute 'h '.expand('<cword>')
+    else
+        call CocAction('doHover')
+    endif
 endfunction
 
 " Highlight the symbol and its references when holding the cursor.
@@ -114,11 +114,11 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 " nmap <leader>rn <Plug>(coc-rename)
 
 augroup mygroup
-  autocmd!
-  " Setup formatexpr specified filetype(s).
-  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-  " Update signature help on jump placeholder.
-  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+    autocmd!
+    " Setup formatexpr specified filetype(s).
+    autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+    " Update signature help on jump placeholder.
+    autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
 nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
@@ -185,23 +185,23 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Explorer
 let g:coc_explorer_global_presets = {
-      \   'floating': {
-      \      'position': 'floating',
-      \   },
-      \   'floatingLeftside': {
-      \      'position': 'floating',
-      \      'floating-position': 'left-center',
-      \      'floating-width': 30,
-      \   },
-      \   'floatingRightside': {
-      \      'position': 'floating',
-      \      'floating-position': 'right-center',
-      \      'floating-width': 30,
-      \   },
-      \   'simplify': {
-      \     'file.child.template': '[selection | clip | 1] [indent][icon | 1] [filename omitCenter 1]'
-      \   }
-      \ }
+            \   'floating': {
+            \      'position': 'floating',
+            \   },
+            \   'floatingLeftside': {
+            \      'position': 'floating',
+            \      'floating-position': 'left-center',
+            \      'floating-width': 30,
+            \   },
+            \   'floatingRightside': {
+            \      'position': 'floating',
+            \      'floating-position': 'right-center',
+            \      'floating-width': 30,
+            \   },
+            \   'simplify': {
+            \     'file.child.template': '[selection | clip | 1] [indent][icon | 1] [filename omitCenter 1]'
+            \   }
+            \ }
 "nmap <silent> <space>e :CocCommand explorer<CR>
 " nnoremap <silent> <leader>e :CocCommand explorer<CR>
 " nmap <space>f :CocCommand explorer --preset floatingRightside<CR>
@@ -241,7 +241,7 @@ nnoremap <silent> <C-H> :call CocLocations('ccls','$ccls/navigate',{'direction':
 " coc-translator
 " Remap for do codeAction of selected region
 function! s:cocActionsOpenFromSelected(type) abort
-  execute 'CocCommand actions.open ' . a:type
+    execute 'CocCommand actions.open ' . a:type
 endfunction
 
 " nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
