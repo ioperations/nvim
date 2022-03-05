@@ -116,6 +116,7 @@
   "languageserver": {
     "ccls": {
       "command": "ccls",
+      "args": ["-v=2"],
       "filetypes": ["c", "cpp", "cuda", "objc", "objcpp", "inc"],
       "rootPatterns": [".ccls-root", "compile_commands.json"],
       "initializationOptions": {

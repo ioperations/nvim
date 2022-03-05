@@ -50,5 +50,9 @@ if has("autocmd")
     \| exe "normal! g'\"" | endif
 endif
 
+autocmd BufEnter *.c set iskeyword-=-
+autocmd BufEnter *.cpp set iskeyword-=-
+autocmd BufEnter *.cc set iskeyword-=-
+
 " make background transparent
 "hi Normal guibg=NONE ctermbg=NONE
