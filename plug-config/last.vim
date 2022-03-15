@@ -54,5 +54,7 @@ autocmd BufEnter *.c set iskeyword-=-
 autocmd BufEnter *.cpp set iskeyword-=-
 autocmd BufEnter *.cc set iskeyword-=-
 
+autocmd BufWritePost *.dot :GraphvizCompile
+
 " make background transparent
 "hi Normal guibg=NONE ctermbg=NONE
