@@ -431,3 +431,135 @@ $1& operator++() {
 }
 endsnippet
 
+snippet list "list util"
+#include <iostream>
+#include <vector>
+
+// 1. 反转字符串
+// 2. 反转链表
+// 3. 找出链表倒数第k个节点
+
+template <typename T>
+struct ListNode {
+    T val;
+    struct ListNode<T>* next;
+    ListNode() : val(), next(nullptr) {}
+    ListNode(T val) : val(val), next(nullptr) {}
+    ListNode(T val, ListNode<T>* next) : val(val), next(next) {}
+};
+
+namespace listutil{
+
+
+    // 反转字符串
+    std::string Reverse(const std::string& str) {
+        if (str.size() == 0) {
+            return "";
+        }
+        return Reverse(str.substr(1, str.size() - 1)) + str[0];
+    }
+
+    // 返回链表倒数第k个节点
+    template <typename T>
+    ListNode<T>* FindLastKNode(ListNode<T>* list, const unsigned int k) {
+        ListNode<T>* fast = list;
+        ListNode<T>* slow = list;
+        unsigned int i = 0;
+        while (fast != nullptr && i < k) {
+            fast = fast->next;
+            i++;
+        }
+
+        if (i < k) {
+            return nullptr;
+        }
+
+        while (fast != nullptr) {
+            fast = fast->next;
+            slow = slow->next;
+        }
+
+        return slow;
+    }
+
+    // 判断链表是否有环
+    template <typename T>
+    bool HaveCircle(ListNode<T>* list) {
+        // circle
+        ListNode<T>* fast = list;
+        ListNode<T>* slow = list;
+
+        while (fast != nullptr && fast->next != nullptr) {
+            fast = fast->next->next;
+            slow = slow->next;
+            if (slow == fast) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    ///* 👖->  (👖->👖->👖->👖->👖->👖->👖)
+    ///* 先将子链表反转，反转之后将 头连接起来
+    template <typename T>
+    ListNode<T>* Reverse(ListNode<T>* list) {
+        if (list == nullptr) {
+            return nullptr;
+        }
+        ListNode<T>* savedlist = list;
+        ListNode<T>* tail = Reverse(list->next);
+
+        // 在返回的结尾 加上这个这一层 的头
+        ListNode<T>* sub_list_head = tail;
+
+        while (tail != nullptr && tail->next != nullptr) {
+            tail = tail->next;
+        }
+
+        savedlist->next = nullptr;
+        if (tail == nullptr) {
+            return savedlist;
+        }
+
+        tail->next = savedlist;
+        return sub_list_head;
+    }
+
+template <typename T>
+ListNode<T>* ConstructList(const std::vector<T>& elements) {
+    ListNode<T> head;
+    ListNode<T>* tail = &head;
+
+    for (auto& ptr : elements) {
+        tail->next = new ListNode<T>(ptr);
+        tail = tail->next;
+    }
+
+    return head.next;
+}
+
+template <typename T>
+void ExpectEqList(ListNode<T>* list, const std::vector<T>& elemets) {
+    int count = 0;
+    ListNode<T>* ptr = list;
+    while (ptr != nullptr) {
+        if (ptr->val !=  elemets[count]) throw std::exception();
+        ptr = ptr->next;
+        count++;
+    }
+}
+
+template <typename T>
+void FreeList(ListNode<T>* list) {
+    ListNode<T>* pre = list;
+    while (list != nullptr) {
+        list = list->next;
+        delete pre;
+        pre = list;
+    }
+}
+
+}
+endsnippet
+
