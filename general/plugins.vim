@@ -97,6 +97,8 @@ if 1
     Plug 'junegunn/gv.vim'
     Plug 'rhysd/git-messenger.vim'
 
+    Plug 'liuchengxu/graphviz.vim'
+
     "html
     Plug 'mattn/emmet-vim' " html tag expand
     Plug 'AndrewRadev/tagalong.vim' " Auto change html tags
