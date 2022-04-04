@@ -152,22 +152,22 @@
         }
       }
     },
-    "pylance": {
-      "enable": true,
-      "filetypes": ["python"],
-      // absolute path to server.bundle.js
-      "module": "~/.vscode/extensions/ms-python.vscode-pylance-2022.3.0/dist/server.bundle.js",
-      "initializationOptions": {},
-      "settings": {
-        "python.analysis.typeCheckingMode": "basic",
-        "python.analysis.diagnosticMode": "openFilesOnly",
-        "python.analysis.stubPath": "./typings",
-        "python.analysis.autoSearchPaths": true,
-        "python.analysis.extraPaths": [],
-        "python.analysis.diagnosticSeverityOverrides": {},
-        "python.analysis.useLibraryCodeForTypes": true
-      }
-    },
+    // "pylance": {
+    // "enable": true,
+    // "filetypes": ["python"],
+    // // absolute path to server.bundle.js
+    // "module": "~/.vscode/extensions/ms-python.vscode-pylance-2022.3.0/dist/server.bundle.js",
+    // "initializationOptions": {},
+    // "settings": {
+    // "python.analysis.typeCheckingMode": "basic",
+    //"python.analysis.diagnosticMode": "openFilesOnly",
+    //"python.analysis.stubPath": "./typings",
+    //"python.analysis.autoSearchPaths": true,
+    //"python.analysis.extraPaths": [],
+    //"python.analysis.diagnosticSeverityOverrides": {},
+    //"python.analysis.useLibraryCodeForTypes": true
+    //}
+    //},
     "haskell": {
       "command": "haskell-language-server-wrapper",
       "args": ["--lsp"],

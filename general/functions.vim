@@ -14,14 +14,14 @@ func! CompileRunGcc()
     if &filetype == 'c'
         " mac has some limit
         if has("macunix")
-            exec "AsyncRun -position=bottomright -pos=floaterm -mode=term -width=0.6 -height=0.6 clang % -DTEST_ADQ -I /usr/local/opt/llvm/include/c++/v1/ -g -fsanitize=address -lm -g -Wall -o %< && time ./%<"
+            exec "AsyncRun -position=bottomright -pos=floaterm -mode=term -width=0.6 -height=0.6 clang % -DTEST_ADQ -I /usr/local/opt/llvm/include/c++/v1/ " . DotenvGet('CLANG_C_FLAGS') . " -g -fsanitize=address -lm -g -Wall -o %< && time ./%<"
         elseif has("unix")
             exec "AsyncRun -position=bottomright -pos=floaterm -mode=term -width=0.6 -height=0.6 clang % " . DotenvGet('CLANG_C_FLAGS') . " -g -o %< && time timeout 30 ./%<"
         endif
     elseif &filetype == 'cpp'
         set splitbelow
         if has("macunix")
-            exec "AsyncRun -position=bottomright -pos=floaterm -mode=term -width=0.6 -height=0.6 clang++ -DTEST_ADQ -I /usr/local/opt/llvm/include/c++/v1/ -g -std=c++2a %  -fsanitize=address -lm -Wall -o %< && time ./%<"
+            exec "AsyncRun -position=bottomright -pos=floaterm -mode=term -width=0.6 -height=0.6 clang++ -DTEST_ADQ -I /usr/local/opt/llvm/include/c++/v1/ -g -std=c++17 %  -fsanitize=address -lm -Wall " . DotenvGet('CLANG_CXX_FLAGS') . " -o %< && time ./%<"
         elseif has("unix")
             exec "AsyncRun -position=bottomright -pos=floaterm -mode=term -width=0.6 -height=0.6 clang++ % " . DotenvGet('CLANG_CXX_FLAGS') . " -g -o %< && time timeout 30 ./%<"
         endif
