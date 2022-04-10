@@ -5,16 +5,9 @@
   "codeLens.position": "eol",
   "codeLens.subseparator": "|",
   "explorer.width": 32,
-  "translator.engines": [
-    "bing",
-    "google",
-    "youdao"
-  ],
+  "translator.engines": ["bing", "google", "youdao"],
   "clangd.disableCompletion": false,
-  "clangd.arguments": [
-    "--completion-style=detailed",
-    "--background-index"
-  ],
+  "clangd.arguments": ["--completion-style=detailed", "--background-index"],
   "explorer.icon.enableNerdfont": true,
   "java.trace.server": "verbose",
   "java.home": "/usr/lib/jvm/default",
@@ -60,9 +53,7 @@
   "rust-analyzer.lens.run": true,
   "rust-analyzer.trace.server": "verbose",
   "rust-analyzer.cache.warmup": true,
-  "rust-analyzer.cargo.unsetTest": [
-    "core"
-  ],
+  "rust-analyzer.cargo.unsetTest": ["core"],
   "rust-analyzer.lruCapacity": 1024,
   "rust-analyzer.checkOnSave.enable": true,
   "rust-analyzer.checkOnSave.command": "clippy",
@@ -122,25 +113,44 @@
       "scope": "expr"
     }
   },
+  "jedi.enable": true,
+  "jedi.startupMessage": false,
+  "jedi.markupKindPreferred": "markdown",
+  "jedi.trace.server": "off",
+  "jedi.jediSettings.autoImportModules": [],
+  "jedi.jediSettings.caseInsensitiveCompletion": true,
+  "jedi.jediSettings.debug": true,
+  "jedi.executable.command": "jedi-language-server",
+  "jedi.executable.args": [],
+  "jedi.codeAction.nameExtractFunction": "jls_extract_def",
+  "jedi.codeAction.nameExtractVariable": "jls_extract_var",
+  "jedi.completion.disableSnippets": false,
+  "jedi.completion.resolveEagerly": false,
+  "jedi.completion.ignorePatterns": [],
+  "jedi.diagnostics.enable": true,
+  "jedi.diagnostics.didOpen": true,
+  "jedi.diagnostics.didChange": true,
+  "jedi.diagnostics.didSave": true,
+  "jedi.hover.enable": true,
+  "jedi.hover.disable.keyword.all": false,
+  "jedi.hover.disable.keyword.names": [],
+  "jedi.hover.disable.keyword.fullNames": [],
+  "jedi.workspace.extraPaths": [],
+  "jedi.workspace.symbols.maxSymbols": 0,
+  "jedi.workspace.symbols.ignoreFolders": [
+    ".nox",
+    ".tox",
+    ".venv",
+    "__pycache__",
+    "venv"
+  ],
   "javascript.validate.enable": false,
   "languageserver": {
     "ccls": {
       "command": "ccls",
-      "args": [
-        "-v=2"
-      ],
-      "filetypes": [
-        "c",
-        "cpp",
-        "cuda",
-        "objc",
-        "objcpp",
-        "inc"
-      ],
-      "rootPatterns": [
-        ".ccls-root",
-        "compile_commands.json"
-      ],
+      "args": ["-v=2"],
+      "filetypes": ["c", "cpp", "cuda", "objc", "objcpp", "inc"],
+      "rootPatterns": [".ccls-root", "compile_commands.json"],
       "initializationOptions": {
         "cache": {
           "directory": ".ccls-cache",
@@ -155,10 +165,7 @@
           "codeActionProvider": false
         },
         "clang": {
-          "extraArgs": [
-            "-DTEST_ADQ",
-            "-Wall"
-          ]
+          "extraArgs": ["-DTEST_ADQ", "-Wall"]
         },
         "highlight": {
           "LsRanges": true
@@ -170,28 +177,18 @@
     },
     "golang": {
       "command": "gopls",
-      "rootPatterns": [
-        "go.mod"
-      ],
-      "filetypes": [
-        "go"
-      ]
+      "rootPatterns": ["go.mod"],
+      "filetypes": ["go"]
     },
     "bash": {
       "command": "bash-language-server",
-      "args": [
-        "start"
-      ],
-      "filetypes": [
-        "sh"
-      ],
+      "args": ["start"],
+      "filetypes": ["sh"],
       "ignoredRootPaths": []
     },
     "haskell": {
       "command": "haskell-language-server-wrapper",
-      "args": [
-        "--lsp"
-      ],
+      "args": ["--lsp"],
       "rootPatterns": [
         ".stack.yaml",
         ".hie-bios",
@@ -199,28 +196,18 @@
         "cabal.config",
         "package.yaml"
       ],
-      "filetypes": [
-        "hs",
-        "lhs",
-        "haskell"
-      ]
+      "filetypes": ["hs", "lhs", "haskell"]
     },
     "cmake": {
       "command": "cmake-language-server",
-      "filetypes": [
-        "cmake"
-      ],
-      "rootPatterns": [
-        "build/"
-      ],
+      "filetypes": ["cmake"],
+      "rootPatterns": ["build/"],
       "initializationOptions": {
         "buildDirectory": "build"
       }
     },
     "sourcekit-lsp": {
-      "filetypes": [
-        "swift"
-      ],
+      "filetypes": ["swift"],
       "command": "sourcekit-lsp"
     }
   },
@@ -233,9 +220,7 @@
   "java.errors.incompleteClasspath.severity": "ignore",
   "json.schemas": [
     {
-      "fileMatch": [
-        ".vimspector.json"
-      ],
+      "fileMatch": [".vimspector.json"],
       "url": "https://puremourning.github.io/vimspector/schema/vimspector.schema.json"
     }
   ]
