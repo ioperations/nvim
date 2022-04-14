@@ -165,7 +165,7 @@
           "codeActionProvider": false
         },
         "clang": {
-          "extraArgs": ["-DTEST_ADQ", "-Wall"]
+          "extraArgs": ["-DTEST_ADQ", "-Wall", "-Wpedantic"]
         },
         "highlight": {
           "LsRanges": true
