@@ -119,6 +119,7 @@ if 1
                 "\ ninja -f compile/ninja/linux.ninja && cd ../..  && 
                 "\ ./3rd/luamake/luamake rebuild' }
 
+    Plug 'liuchengxu/vista.vim'
     "db
     Plug 'tpope/vim-dotenv'
     Plug 'tpope/vim-dadbod'
