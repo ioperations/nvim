@@ -113,11 +113,11 @@ if 1
 
 
     "lua
-    Plug 'sumneko/lua-language-server' ,{ 
-                \ 'dir' : '~/.config/nvim/autoload/plugged/lua-language-server/', 
-                \ 'do' : 'git submodule update --init --recursive && cd 3rd/luamake && 
-                \ ninja -f compile/ninja/linux.ninja && cd ../..  && 
-                \ ./3rd/luamake/luamake rebuild' }
+    "Plug 'sumneko/lua-language-server' ,{ 
+                "\ 'dir' : '~/.config/nvim/autoload/plugged/lua-language-server/', 
+                "\ 'do' : 'git submodule update --init --recursive && cd 3rd/luamake && 
+                "\ ninja -f compile/ninja/linux.ninja && cd ../..  && 
+                "\ ./3rd/luamake/luamake rebuild' }
 
     "db
     Plug 'tpope/vim-dotenv'

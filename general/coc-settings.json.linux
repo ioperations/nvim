@@ -61,7 +61,6 @@
   "rust-analyzer.inlayHints.enable": true,
   "rust-analyzer.inlayHints.typeHints": true,
   "rust-analyzer.inlayHints.chainingHints": true,
-  "rust-analyzer.server.path": "~/.cargo/bin/rust-analyzer",
   "rust-analyzer.debug.runtime": "vimspector",
   "rust-analyzer.debug.vimspector.configuration.name": "rust:launch",
   "rust-analyzer.diagnostics.enable": true,
@@ -165,7 +164,8 @@
           "codeActionProvider": false
         },
         "clang": {
-          "extraArgs": ["-DTEST_ADQ", "-Wall", "-Wpedantic"]
+          "extraArgs": ["-DTEST_ADQ", "-Wall"]
+          // "extraArgs": ["-DTEST_ADQ", "-Wall", "-Wpedantic"]
         },
         "highlight": {
           "LsRanges": true
