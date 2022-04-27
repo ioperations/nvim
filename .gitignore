@@ -12,3 +12,4 @@ coc-settings.json
 vimspector-config
 .undodir
 .vim-session*
+.luarc.json
