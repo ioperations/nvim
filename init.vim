@@ -18,6 +18,7 @@ if 1
     " dress 
     source $HOME/.config/nvim/plug-config/vim-airline.vim
     source $HOME/.config/nvim/plug-config/barbar.vim
+    source $HOME/.config/nvim/plug-config/vista.vim
     source $HOME/.config/nvim/plug-config/highlightyank.vim
     if(has('nvim'))
         luafile $HOME/.config/nvim/plug-config/tree-sitter.lua
