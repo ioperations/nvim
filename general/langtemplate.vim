@@ -283,6 +283,29 @@ function! SetupDotTask()
                 \"save=1",])
 
 endfunction
+function! SetupClangTidy()
+
+    call append(0, [ "Checks: '-*,clang-diagnostic-*,llvm-*,misc-*,-misc-unused-parameters,-misc-non-private-member-variables-in-classes,-misc-no-recursion,readability-identifier-naming'",
+            \"CheckOptions:",
+            \" - key:             readability-identifier-naming.ClassCase",
+            \"   value:           CamelCase",
+            \" - key:             readability-identifier-naming.EnumCase",
+            \"   value:           lower_case",
+            \" - key:             readability-identifier-naming.FunctionCase",
+            \"   value:           CamelCase",
+            \" - key:             readability-identifier-naming.MemberCase",
+            \"   value:           lower_case",
+            \" - key:             readability-identifier-naming.ParameterCase",
+            \"   value:           lower_case",
+            \" - key:             readability-identifier-naming.UnionCase",
+            \"   value:           lower_case",
+            \" - key:             readability-identifier-naming.VariableCase",
+            \"   value:           lower_case",
+            \" - key:             readability-identifier-naming.IgnoreMainLikeFunctions",
+            \"   value:           1",
+            \" - key:             readability-identifier-naming.FunctionIgnoredRegexp",
+            \"   value:           \"next|hasNext|begin|end\"",])
+endfunction
 
 autocmd BufNewFile *_test.cpp call SetupCppTest()
 autocmd BufNewFile *_test.cc call SetupCppTest()
@@ -295,4 +318,6 @@ autocmd BufNewFile *_test.go call SetupGoTest()
 autocmd BufNewFile .vimspector.json call SetupCppVimspector()
 autocmd BufNewFile .clang-format call SetupClangformat()
 autocmd BufNewFile .tasks call SetupDotTask()
+autocmd BufNewFile .clang-tidy call SetupClangTidy()
+autocmd BufEnter .clang-tidy set ft=yaml
 autocmd Filetype markdown call Setupmarkdown()
