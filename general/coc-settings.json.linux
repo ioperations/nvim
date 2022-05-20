@@ -161,11 +161,12 @@
           "completionProvider": false,
           "referencesProvider": true,
           "definationProvider": false,
+          "diagnosticProvider": false,
           "codeActionProvider": false
         },
         "clang": {
-          "extraArgs": ["-DTEST_ADQ", "-Wall"]
-          // "extraArgs": ["-DTEST_ADQ", "-Wall", "-Wpedantic"]
+          // "extraArgs": ["-DTEST_ADQ", "-Wall", "-std=c++17"]
+          "extraArgs": ["-DTEST_ADQ", "-Wall", "-Wpedantic", "-std=c++17"]
         },
         "highlight": {
           "LsRanges": true

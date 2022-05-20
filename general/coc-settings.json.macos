@@ -163,6 +163,7 @@
           "hoverProvider": false,
           "completionProvider": false,
           "referencesProvider": true,
+          "diagnosticProvider": false,
           "definationProvider": false,
           "codeActionProvider": false
         },
