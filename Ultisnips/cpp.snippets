@@ -40,7 +40,26 @@ int main(int argc, char *argv[])
     testing::InitGoogleTest(&argc,argv);
     return RUN_ALL_TESTS();
 }
+endsnippet
 
+snippet test "test block"
+
+TEST(${1:testName},${2:testNum}){
+
+}
+endsnippet
+
+snippet testandbench "gtest and bench main"
+
+int main(int argc, char* argv[]) {
+    testing::InitGoogleTest(&argc, argv);
+    int ret = RUN_ALL_TESTS();
+    ::benchmark::Initialize(&argc, argv);
+    if (::benchmark::ReportUnrecognizedArguments(argc, argv)) return 1;
+    ::benchmark::RunSpecifiedBenchmarks();
+    ::benchmark::Shutdown();
+    return ret;
+}
 endsnippet
 
 post_jump "if snip.tabstop == 0 : split_line(snip.tabstops[4].current_text)"
