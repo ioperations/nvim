@@ -8,6 +8,7 @@
   "translator.engines": ["bing", "google", "youdao"],
   "clangd.disableCompletion": false,
   "clangd.arguments": ["--completion-style=detailed", "--background-index"],
+  "clangd.fallbackFlags": ["-DTEST_ADQ", "-Wall", "-std=c++20", "-Wpedantic"],
   "explorer.icon.enableNerdfont": true,
   "java.trace.server": "verbose",
   "java.home": "/usr/lib/jvm/default",
