@@ -35,6 +35,8 @@ func! CompileRunGcc()
     elseif &filetype == 'java'
         exec container . " javac -encoding utf8 % && time timeout 30 java %< "
     elseif &filetype == 'sh'
+        exec container . " time bash %"
+    elseif &filetype == 'zsh'
         exec container . " time zsh %"
     elseif &filetype == 'python'
         exec container . " time python3 %"
