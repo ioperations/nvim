@@ -310,6 +310,22 @@ let g:which_key_map.d  = {
             \ 'i' : [":<Plug>VimspectorStepInto",'step into']
             \ }
 
+let g:which_key_map.c = {
+            \ 'name' : '+cargo toml',
+            \'t' :[":lua require('crates').toggle()<cr>",'toggle'],
+            \'r' :[":lua require('crates').reload()<cr>",'reload'],
+            \'v' :[":lua require('crates').show_versions_popup()<cr>",'show_versions_popup'],
+            \'f' :[":lua require('crates').show_features_popup()<cr>",'show_features_popup'],
+            \'u' :[":lua require('crates').update_crate()<cr>",'update_crate'],
+            \'a' :[":lua require('crates').update_all_crates()<cr>",'update_all_crates'],
+            \'U' :[":lua require('crates').upgrade_crate()<cr>",'upgrade_crate'],
+            \'A' :[":lua require('crates').upgrade_all_crates()<cr>",'upgrade_all_crates'],
+            \'H' :[":lua require('crates').open_homepage()<cr>",'open_homepage'],
+            \'R' :[":lua require('crates').open_repository()<cr>",'open_repository'],
+            \'D' :[":lua require('crates').open_documentation()<cr>",'open_documentation'],
+            \'C' :[":lua require('crates').open_crates_io()<cr>",'open_crates_io']
+            \}
+
 let g:which_key_map.x = {
             \ 'name' : '+lsp extension',
             \ 'b' :[":call CocLocations(\'ccls\',\'$ccls/inheritance\')<cr>",'inheritance'],

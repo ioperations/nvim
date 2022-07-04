@@ -30,6 +30,8 @@ if 1
     if has("nvim")
         Plug 'phaazon/hop.nvim'
         Plug 'norcalli/nvim-colorizer.lua'
+        Plug 'nvim-lua/plenary.nvim'
+        Plug 'saecki/crates.nvim'
     endif
 
     " fuzzy 
@@ -51,8 +53,10 @@ if 1
     if(has('nvim'))
         Plug 'nvim-treesitter/nvim-treesitter', { 'do' : ':TSUpdate' } " syntax highlight per filetype
         Plug 'romgrk/barbar.nvim'
+        Plug 'lukas-reineke/indent-blankline.nvim'
     else
         Plug 'bfrg/vim-cpp-modern'
+        Plug 'Yggdroot/indentLine'
         "Plug 'bagrat/vim-buffet'
         "Plug 'itchyny/lightline.vim'
         Plug 'jackguo380/vim-lsp-cxx-highlight'
@@ -61,7 +65,6 @@ if 1
     Plug 'kyazdani42/nvim-web-devicons' " barbar's dependency
     Plug 'morhetz/gruvbox'
     Plug 'junegunn/seoul256.vim'
-    Plug 'Yggdroot/indentLine'
     Plug 'psliwka/vim-smoothie' " Smooth scroll
 
     " tasks system
