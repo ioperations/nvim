@@ -22,7 +22,7 @@ func! CompileRunGcc()
     elseif &filetype == 'cpp'
         set splitbelow
         if has("macunix")
-            exec container . " clang++ -DTEST_ADQ -I /usr/local/opt/llvm/include/c++/v1/ -g -std=c++17 %  -fsanitize=address -lm -Wall -Wpedantic " . DotenvGet('CLANG_CXX_FLAGS') . " -o %< && time ./%<"
+            exec container . " clang++ -DTEST_ADQ -I /usr/local/opt/llvm/include/c++/v1/ -g -std=c++17 %  -fsanitize=address  -Wall -Wpedantic " . DotenvGet('CLANG_CXX_FLAGS') . " -o %< && time ./%<"
         elseif has("unix")
             exec container . " clang++ % " . DotenvGet('CLANG_CXX_FLAGS') . " -Wall -Wpedantic -g -o %< && time timeout 30 ./%<"
         endif
