@@ -5,6 +5,7 @@
 "silent! au BufEnter,BufRead,BufNewFile * silent! unmap if
 let g:coc_global_extensions = ['coc-lua',
             \'coc-jedi',
+            \'coc-symbol-line',
             \'coc-rust-analyzer',
             \'coc-jedi',
             \'coc-vimlsp',

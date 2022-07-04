@@ -22,6 +22,7 @@ if 1
     source $HOME/.config/nvim/plug-config/highlightyank.vim
     if(has('nvim'))
         luafile $HOME/.config/nvim/plug-config/tree-sitter.lua
+        luafile $HOME/.config/nvim/plug-config/creates.lua
     else
         "source $HOME/.config/nvim/plug-config/lightline.vim
         source $HOME/.config/nvim/plug-config/vim-cpp-modern.vim
@@ -67,6 +68,7 @@ if 1
     if(has('nvim'))
         source $HOME/.config/nvim/plug-config/hop.vim
         luafile $HOME/.config/nvim/plug-config/nvim-colorizer.lua
+        luafile $HOME/.config/nvim/plug-config/indent_blackline.lua
     endif
 
     "git 
