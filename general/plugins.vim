@@ -85,7 +85,7 @@ if 1
     "Plug 'airblade/vim-rooter' " Have the file system follow you around
     Plug 'dylanaraps/root.vim'
     Plug 'jiangmiao/auto-pairs' " Auto pairs for '(' '[' '{'
-    " Plug 'gcmt/wildfire.vim' " Closetags
+    Plug 'gcmt/wildfire.vim' " Closetags
     Plug 'mhinz/vim-startify' " Start Screen
     Plug 'mbbill/undotree' " undo time travel
     Plug 'wesQ3/vim-windowswap' " Swap windows

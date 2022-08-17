@@ -5,6 +5,7 @@
   "explorer.icon.enableNerdfont": true,
   "translator.engines": ["bing", "google", "youdao"],
   "clangd.disableCompletion": false,
+  "clangd.inlayHints.enable": false,
   "clangd.arguments": [
     "--completion-style=detailed",
     "--background-index",
@@ -180,7 +181,7 @@
             "-std=c++17"
           ],
           //From clang -print-resource-dir
-          "resourceDir": "/usr/local/Cellar/llvm/13.0.1_1/lib/clang/13.0.1/"
+          "resourceDir": "/opt/homebrew/Cellar/llvm/14.0.6_1/lib/clang/14.0.6/"
         }
       }
     },
