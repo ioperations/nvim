@@ -85,7 +85,7 @@
     "rust-analyzer.completion.postfix.enable": true,
     "rust-analyzer.lens.methodReferences": true,
     "rust-analyzer.workspace.symbol.search.scope": "workspace_and_dependencies",
-    "rust-analyzer.terminal.startinsert": true,
+    "rust-analyzer.terminal.startinsert": false,
     "rust-analyzer.completion.snippets": {
         "Arc::new": {
             "postfix": "arc",
