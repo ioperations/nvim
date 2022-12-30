@@ -1,6 +1,9 @@
 {
   "yank.enableCompletion": true,
   "diagnostic-languageserver.trace.server": "verbose",
+  "codeLens.enable": true,
+  "codeLens.position": "eol",
+  "codeLens.subseparator": "|",
   "explorer.width": 30,
   "explorer.icon.enableNerdfont": true,
   "translator.engines": ["bing", "google", "youdao"],
@@ -107,8 +110,8 @@
   "rust-analyzer.completion.postfix.enable": true,
   "rust-analyzer.lens.methodReferences": true,
   "rust-analyzer.workspace.symbol.search.scope": "workspace_and_dependencies",
-  "rust-analyzer.terminal.startinsert": true,
-  "rust-analyzer.completion.snippets": {
+  "rust-analyzer.terminal.startinsert": false,
+  "rust-analyzer.completion.snippets.custom": {
     "Arc::new": {
       "postfix": "arc",
       "body": "Arc::new(${receiver})",
