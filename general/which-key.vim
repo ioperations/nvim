@@ -8,14 +8,14 @@ function ForCopy() abort
     set nonumber
     set norelativenumber
     exec "CocDisable"
-    exec "IndentLinesDisable"
+    exec "IndentBlanklineToggle"
 endfunction
 
 function ResumeAfter() abort
     set number
     set relativenumber
     exec "CocEnable"
-    exec "IndentLinesEnable"
+    exec "IndentBlanklineToggle"
 endfunction
 
 let g:toggle_copy = 1
