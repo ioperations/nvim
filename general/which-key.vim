@@ -107,7 +107,23 @@ let g:which_key_map.b = {
             \ 'p' : ['bprevious' , 'previous-buffer'],
             \ '?' : ['Buffers'   , 'fzf-buffer'],
             \ }
+if has('nvim')
+" f is for find and replace
+let g:which_key_map.f = {
+            \ 'name' : '+find & replace' ,
+            \ 'p' : [':Farr --source=rgnvim'     , 'project'],
+            \ 'w' : [':LeaderfWindow' , 'Leaderf windows'],
+            \ 'b' : [':Telescope buffers' , 'Leaderf buffer'],
+            \ 'a' : [':Telescope live_grep' , 'Leaderf Ag'],
+            \ 'r' : [':Telescope live_grep' , 'Telescope live_grep'],
+            \ 'c' : [':Telescope colorscheme' , 'leaderf config colors'],
+            \ 'l' : [':LeaderfLine' , 'leaderf line'],
+            \ 'h' : [':History' , 'fzf History'],
+            \ 'f' : [':Telescope find_files' , 'file search'],
+            \ 'm' : [':CocList mru' , 'coclist mru'] ,
+            \ }
 
+else 
 " f is for find and replace
 let g:which_key_map.f = {
             \ 'name' : '+find & replace' ,
@@ -122,6 +138,7 @@ let g:which_key_map.f = {
             \ 'f' : [':Leaderf file' , 'file search'],
             \ 'm' : [':CocList mru' , 'coclist mru'] ,
             \ }
+endif
 
 " k is for task
 let g:which_key_map.k = {

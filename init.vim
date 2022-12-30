@@ -22,6 +22,7 @@ if 1
     source $HOME/.config/nvim/plug-config/highlightyank.vim
     if(has('nvim'))
         luafile $HOME/.config/nvim/plug-config/tree-sitter.lua
+        luafile $HOME/.config/nvim/plug-config/telescope.lua
         luafile $HOME/.config/nvim/plug-config/creates.lua
     else
         "source $HOME/.config/nvim/plug-config/lightline.vim

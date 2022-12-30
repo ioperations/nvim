@@ -31,6 +31,8 @@ if 1
         Plug 'phaazon/hop.nvim'
         Plug 'norcalli/nvim-colorizer.lua'
         Plug 'nvim-lua/plenary.nvim'
+        Plug 'nvim-telescope/telescope.nvim'
+        Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
         Plug 'saecki/crates.nvim'
     endif
 

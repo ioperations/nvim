@@ -95,10 +95,15 @@ noremap <leader>rc :e ~/.config/nvim/init.vim<cr>
 noremap <leader>st :Startify<cr>
 noremap <leader>dd :call CompileRunGcc()<CR>
 
-" find the file based on the file name
-noremap <C-p> :Leaderf file<cr>
-" find file based on the content
-noremap <C-g> :Leaderf rg<cr>
+if has('nvim')
+    " find the file based on the file name
+    noremap <C-p> :Telescope find_files<cr>
+    " find file based on the content
+    noremap <C-g> :Telescope live_grep<cr>
+else
+    noremap <C-p> :Leaderf file<cr>
+    noremap <C-g> :Leaderf rg<cr>
+endif
 
 noremap Q :q!<cr>
 noremap <c-q> :qall!<cr>
