@@ -5,7 +5,6 @@
 "silent! au BufEnter,BufRead,BufNewFile * silent! unmap if
 let g:coc_global_extensions = ['coc-lua',
             \'coc-jedi',
-            \'coc-symbol-line',
             \'coc-rust-analyzer',
             \'coc-jedi',
             \'coc-vimlsp',
@@ -60,6 +59,7 @@ if len(lua_lsp)
 endif
 " use <tab> for trigger completion and navigate to the next complete item
 " coc#_select_confirm()
+let g:coc_terminal_height = 20
 
   inoremap <silent><expr> <TAB>
     \ coc#pum#visible() ? coc#pum#next(1) :
