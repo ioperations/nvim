@@ -14,8 +14,8 @@ inoremap <expr> <c-j> ("\<C-n>")
 inoremap <expr> <c-k> ("\<C-p>")
 
 " better navigation
-inoremap <C-a> <c-o>0
-inoremap <C-e> <c-o>$
+inoremap <C-a> <c-o>I
+inoremap <C-e> <c-o>A
 
 " I hate escape more than anything else
 inoremap jk <Esc>
