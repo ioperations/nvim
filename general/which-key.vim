@@ -63,11 +63,15 @@ let g:which_key_map['.'] = [ ':e $MYVIMRC'                        , 'open init' 
 let g:which_key_map[';'] = [ ':Commands'                          , 'commands' ]
 let g:which_key_map['='] = [ '<C-W>='                             , 'balance windows' ]
 " let g:which_key_map['d'] = [ ':Bdelete'                           , 'delete buffer']
-let g:which_key_map['e'] = [ ':CocCommand explorer'               , 'explorer' ]
+if has('nvim')
+    let g:which_key_map['e'] = [ ':NvimTreeToggle<cr>'               , 'explorer' ]
+else
+    let g:which_key_map['e'] = [ ':CocCommand explorer'               , 'explorer' ]
+endif
 let g:which_key_map['h'] = [ '<C-W>s'                             , 'split below']
 let g:which_key_map['m'] = [ ':call WindowSwap#EasyWindowSwap()'  , 'move window' ]
 let g:which_key_map['n'] = [ ':let @/ = ""'                       , 'no highlight' ]
-let g:which_key_map['p'] = [ ':Files'                             , 'search files' ]
+let g:which_key_map['p'] = [ ':Zi<cr>'                             , 'go to path' ]
 let g:which_key_map['q'] = [ 'q'                                  , 'quit' ]
 let g:which_key_map['u'] = [ ':UndotreeToggle'                    , 'undo tree']
 let g:which_key_map['v'] = [ '<C-W>v'                             , 'split right']
@@ -112,12 +116,11 @@ if has('nvim')
 let g:which_key_map.f = {
             \ 'name' : '+find & replace' ,
             \ 'p' : [':Farr --source=rgnvim'     , 'project'],
-            \ 'w' : [':LeaderfWindow' , 'Leaderf windows'],
             \ 'b' : [':Telescope buffers' , 'Leaderf buffer'],
             \ 'a' : [':Telescope live_grep' , 'Leaderf Ag'],
             \ 'r' : [':Telescope live_grep' , 'Telescope live_grep'],
             \ 'c' : [':Telescope colorscheme' , 'leaderf config colors'],
-            \ 'l' : [':LeaderfLine' , 'leaderf line'],
+            \ 'l' : [':Telescope current_buffer_fuzzy_find' , 'buffer fuzzy line'],
             \ 'h' : [':History' , 'fzf History'],
             \ 'f' : [':Telescope find_files' , 'file search'],
             \ 'm' : [':CocList mru' , 'coclist mru'] ,

@@ -34,12 +34,13 @@ if 1
         Plug 'nvim-telescope/telescope.nvim'
         Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
         Plug 'saecki/crates.nvim'
+    else
+        Plug 'Yggdroot/LeaderF', { 'do' : ':LeaderfInstallCExtension' }
     endif
 
     " fuzzy 
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
-    Plug 'Yggdroot/LeaderF', { 'do' : ':LeaderfInstallCExtension' }
 
     Plug 'tpope/vim-commentary' " Better Comments
     Plug 'tpope/vim-speeddating' " Change dates fast
@@ -51,19 +52,27 @@ if 1
 
     Plug 'caenrique/nvim-maximize-window-toggle'
 
+    " zoxide  requires fzf
+    Plug 'nanotee/zoxide.vim',
+
     " dress
     if(has('nvim'))
         Plug 'nvim-treesitter/nvim-treesitter', { 'do' : ':TSUpdate' } " syntax highlight per filetype
-        Plug 'romgrk/barbar.nvim'
+        " Plug 'romgrk/barbar.nvim'
+        Plug 'akinsho/bufferline.nvim'
+        Plug 'kyazdani42/nvim-web-devicons',
         Plug 'lukas-reineke/indent-blankline.nvim'
+        Plug 'kyazdani42/nvim-tree.lua',
+        Plug 'nvim-lualine/lualine.nvim',
     else
         Plug 'bfrg/vim-cpp-modern'
         Plug 'Yggdroot/indentLine'
         "Plug 'bagrat/vim-buffet'
         "Plug 'itchyny/lightline.vim'
         Plug 'jackguo380/vim-lsp-cxx-highlight'
+        Plug 'vim-airline/vim-airline'
+        " -- bufline {
     endif
-    Plug 'vim-airline/vim-airline'
     Plug 'kyazdani42/nvim-web-devicons' " barbar's dependency
     Plug 'morhetz/gruvbox'
     Plug 'junegunn/seoul256.vim'

@@ -16,7 +16,6 @@ if 1
     source $HOME/.config/nvim/general/which-key.vim
 
     " dress 
-    source $HOME/.config/nvim/plug-config/vim-airline.vim
     source $HOME/.config/nvim/plug-config/barbar.vim
     source $HOME/.config/nvim/plug-config/vista.vim
     source $HOME/.config/nvim/plug-config/highlightyank.vim
@@ -24,9 +23,12 @@ if 1
         luafile $HOME/.config/nvim/plug-config/tree-sitter.lua
         luafile $HOME/.config/nvim/plug-config/telescope.lua
         luafile $HOME/.config/nvim/plug-config/creates.lua
+        luafile $HOME/.config/nvim/plug-config/nvim-tree.lua
+        luafile $HOME/.config/nvim/plug-config/lualine.lua
     else
         "source $HOME/.config/nvim/plug-config/lightline.vim
         source $HOME/.config/nvim/plug-config/vim-cpp-modern.vim
+        source $HOME/.config/nvim/plug-config/vim-airline.vim
     endif
 
     " completion
@@ -70,6 +72,7 @@ if 1
         source $HOME/.config/nvim/plug-config/hop.vim
         luafile $HOME/.config/nvim/plug-config/nvim-colorizer.lua
         luafile $HOME/.config/nvim/plug-config/indent_blackline.lua
+        luafile $HOME/.config/nvim/plug-config/bufferline.lua
     endif
 
     "git 
