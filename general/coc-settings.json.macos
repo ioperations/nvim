@@ -10,16 +10,15 @@
   "clangd.disableCompletion": false,
   "clangd.inlayHints.enable": false,
   "clangd.fallbackFlags": [
-                    "-L/usr/local/lib/",
-                    "-isystem/usr/local/include",
-                    "-isystem/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1",
-                    "-isystem/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.3/include",
-                    "-isystem/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
-                    "-isystem/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include",
-                    "-isystem/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks",
-                    "-O3",
-                    "-stdlib=libc++",
- 
+    "-L/usr/local/lib/",
+    "-isystem/usr/local/include",
+    "-isystem/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1",
+    "-isystem/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.3/include",
+    "-isystem/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
+    "-isystem/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include",
+    "-isystem/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks",
+    "-O3",
+    "-stdlib=libc++",
     "-isystem/usr/local/include",
     "-isystem/opt/homebrew/opt/llvm/bin/../include/c++/v1",
     "-isystem/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
@@ -178,43 +177,43 @@
       "scope": "expr"
     }
   },
-  "languageserver": {
-    "ccls": {
-      "command": "ccls",
-      "filetypes": ["c", "cpp", "cuda", "objc", "objcpp"],
-      "rootPatterns": [".ccls-root", "compile_commands.json"],
-      "initializationOptions": {
-        "cache": {
-          "directory": ".ccls-cache",
-          "retainInMemory": 0
-        },
-        "client": {
-          "snippetSupport": true,
-          "hoverProvider": false,
-          "completionProvider": false,
-          "referencesProvider": true,
-          "diagnosticProvider": false,
-          "definationProvider": false,
-          "codeActionProvider": false
-        },
-        "clang": {
-          // from clang -v -fsyntax-only -x c++ /dev/null
-          "extraArgs": [
-            "-isystem/usr/local/include",
-            "-isystem/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1",
-            "-isystem/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include",
-            "-isystem/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
-            "-isystem/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include",
-            "-isystem/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks",
-            "-Wall",
-            "-DTEST_ADQ",
-            "-std=c++17"
-          ],
-          //From clang -print-resource-dir
-          "resourceDir": "/opt/homebrew/Cellar/llvm/16.0.4/lib/clang/16.0.4/"
-        }
-      }
-    },
+ // "languageserver": {
+ //   "ccls": {
+ //     "command": "ccls",
+ //     "filetypes": ["c", "cpp", "cuda", "objc", "objcpp"],
+ //     "rootPatterns": [".ccls-root", "compile_commands.json"],
+ //     "initializationOptions": {
+ //       "cache": {
+ //         "directory": ".ccls-cache",
+ //         "retainInMemory": 0
+ //       },
+ //       "client": {
+ //         "snippetSupport": true,
+ //         "hoverProvider": false,
+ //         "completionProvider": false,
+ //         "referencesProvider": true,
+ //         "diagnosticProvider": false,
+ //         "definationProvider": false,
+ //         "codeActionProvider": false
+ //       },
+ //       "clang": {
+ //         // from clang -v -fsyntax-only -x c++ /dev/null
+ //         "extraArgs": [
+ //           "-isystem/usr/local/include",
+ //           "-isystem/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1",
+ //           "-isystem/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include",
+ //           "-isystem/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
+ //           "-isystem/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include",
+ //           "-isystem/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks",
+ //           "-Wall",
+ //           "-DTEST_ADQ",
+ //           "-std=c++17"
+ //         ],
+ //         //From clang -print-resource-dir
+ //         "resourceDir": "/opt/homebrew/Cellar/llvm/16.0.4/lib/clang/16.0.4/"
+ //       }
+ //     }
+ //   },
     // "pylance": {
     // "enable": true,
     // "filetypes": ["python"],
