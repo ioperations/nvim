@@ -1,50 +1,93 @@
 local opt = {
-    auto_reload_on_write = true,
-    disable_netrw = false,
-    hijack_cursor = true,
+    filters = {
+        dotfiles = false,
+        exclude = { vim.fn.stdpath("config") .. "/lua/custom" },
+    },
+    disable_netrw = true,
     hijack_netrw = true,
+    hijack_cursor = true,
     hijack_unnamed_buffer_when_opening = false,
-    -- ignore_buffer_on_setup = false,
-    sort_by = "name",
-    root_dirs = {},
-    prefer_startup_root = false,
     sync_root_with_cwd = true,
-    reload_on_bufenter = true,
-    respect_buf_cwd = true,
-    remove_keymaps = false,
-    select_prompts = false,
+    update_focused_file = {
+        enable = true,
+        update_root = false,
+    },
     view = {
         adaptive_size = false,
-        centralize_selection = false,
-        width = 30,
-        hide_root_folder = false,
         side = "left",
-        preserve_window_proportions = false,
-        number = false,
-        relativenumber = false,
-        signcolumn = "yes",
+        width = 30,
+        preserve_window_proportions = true,
         mappings = {
             custom_only = false,
             list = {
-                { key = { "l", "<CR>", "o" }, action = "edit",      mode = "n" },
-                { key = "h",                  action = "close_node" },
-                { key = "v",                  action = "vsplit" },
-                { key = "C",                  action = "cd" },
-            },
-        },
-        float = {
-            enable = false,
-            quit_on_focus_loss = true,
-            open_win_config = {
-                relative = "editor",
-                border = "rounded",
-                width = 30,
-                height = 30,
-                row = 1,
-                col = 1,
+                { key = { "l", "<CR>", "o" }, action = "edit", mode = "n" },
+                { key = "h", action = "close_node" },
+                { key = "v", action = "vsplit" },
+                { key = "C", action = "cd" },
             },
         },
     },
+    git = {
+        enable = true,
+        ignore = true,
+    },
+    filesystem_watchers = {
+        enable = true,
+    },
+    actions = {
+        use_system_clipboard = true,
+        open_file = {
+            resize_window = false,
+        },
+        change_dir = {
+            enable = true,
+        },
+    },
+    renderer = {
+        special_files = { "Cargo.toml", "Makefile", "README.md", "readme.md" },
+        indent_width = 2,
+        root_folder_label = true,
+        highlight_git = false,
+        highlight_opened_files = "none",
+
+        indent_markers = {
+            enable = true,
+        },
+
+        icons = {
+            show = {
+                file = true,
+                folder = true,
+                folder_arrow = true,
+                git = true,
+            },
+
+            glyphs = {
+                default = "󰈚",
+                symlink = "",
+                folder = {
+                    default = "",
+                    empty = "",
+                    empty_open = "",
+                    open = "",
+                    symlink = "",
+                    symlink_open = "",
+                    arrow_open = "",
+                    arrow_closed = "",
+                },
+                git = {
+                    unstaged = "✗",
+                    staged = "✓",
+                    unmerged = "",
+                    renamed = "➜",
+                    untracked = "★",
+                    deleted = "",
+                    ignored = "◌",
+                },
+            },
+        },
+    },
+
     diagnostics = {
         enable = true,
         icons = {
@@ -52,47 +95,6 @@ local opt = {
             info = " ",
             warning = " ",
             error = " ",
-        },
-    },
-    filesystem_watchers = {
-        enable = true,
-        debounce_delay = 50,
-        ignore_dirs = {},
-    },
-    update_cwd = true,
-    update_focused_file = {
-        enable = true,
-        update_root = true,
-        update_cwd = true,
-    },
-    renderer = {
-        icons = {
-            show = {
-                folder_arrow = true,
-            },
-        },
-        highlight_git = true,
-        indent_width = 2,
-        highlight_opened_files = "all",
-        indent_markers = {
-            enable = true,
-            icons = {
-                corner = "└ ",
-                edge = "│ ",
-                item = "│",
-                none = "  ",
-            },
-        },
-        special_files = { "Cargo.toml", "Makefile", "README.md", "readme.md" },
-        symlink_destination = true,
-    },
-    actions = {
-        use_system_clipboard = true,
-        change_dir = {
-            enable = true,
-        },
-        open_file = {
-            quit_on_open = false,
         },
     },
 }
