@@ -1,11 +1,21 @@
 return {
-
-    {
-        "sindrets/diffview.nvim",
-        config = function()
-            require("diffview").setup({})
-        end,
-    },
+    --    {
+    --        "sindrets/diffview.nvim",
+    --        config = function()
+    --            require("diffview").setup({
+    --                enhanced_diff_hl = false, -- See ':h diffview-config-enhanced_diff_hl'
+    --                use_icons = true, -- Requires nvim-web-devicons
+    --                show_help_hints = false, -- Show hints for how to open the help panel
+    --
+    --                keymaps = {
+    --                    disable_defaults = false, -- Disable the default keymaps
+    --                    view = {
+    --                        { "n", "q", "<Cmd>q!<CR>", { desc = "close" } },
+    --                    },
+    --                },
+    --            })
+    --        end,
+    --    },
     {
         "lewis6991/gitsigns.nvim",
         lazy = true,
@@ -56,33 +66,17 @@ return {
         event = "User FileOpened",
         cmd = "Gitsigns",
     },
-    --  {
-    --      "akinsho/git-conflict.nvim",
-    --      lazy = true,
-    --      config = function()
-    --          vim.api.nvim_exec([[ hi my_gitdiffadd guibg=#333c3e ]], false)
-    --          require("git-conflict").setup({
-    --              highlights = { -- They must have background color, otherwise the default color will be used
-    --                  incoming = "DiffText",
-    --                  current = "my_gitdiffadd",
-    --              },
-    --          })
-    --      end,
-    --  },
-    -- {
-    --     "kdheepak/lazygit.nvim",
-    --     lazy = true,
-    --     config = function()
-    --         require("telescope").load_extension("lazygit")
-    --         vim.api.nvim_exec([[autocmd BufEnter * :lua require('lazygit.utils').project_root_dir()]], false)
-    --     end,
-    -- },
-
-    -- {
-    --     "airblade/vim-gitgutter",
-    --     config = function()
-    --         vim.opt.updatetime = 400
-    --     end,
-    -- },
+    {
+        "akinsho/git-conflict.nvim",
+        config = function()
+            vim.api.nvim_exec([[ hi my_gitdiffadd guibg=#333c3e ]], false)
+            require("git-conflict").setup({
+                highlights = { -- They must have background color, otherwise the default color will be used
+                    incoming = "DiffText",
+                    current = "my_gitdiffadd",
+                },
+            })
+        end,
+    },
     { "tpope/vim-fugitive" },
 }
