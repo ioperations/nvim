@@ -58,7 +58,7 @@ return {
                 -- trouble bindings
                 t = {
                     name = "Trouble",
-                    t = { "<cmd>FloatermNew --width=0.8 --height=0.8 <CR>", "Toggle terminal" },
+                    t = { "<cmd>FloatermNew --width=0.9 --height=0.9 <CR>", "Toggle terminal" },
                     r = { "<cmd>Trouble lsp_references<CR>", "References" },
                     d = { "<cmd>Trouble lsp_definitions<CR>", "Definitions" },
                     q = { "<cmd>Trouble quickfix<CR>", "Quickfix" },
@@ -69,7 +69,7 @@ return {
                 d = {
                     o = { require("dapui").toggle, "debug ui toggle" },
                 },
-                r = { r = { "<cmd>FloatermNew --width=0.8 --height=0.8 ranger<cr>", "ranger" } },
+                r = { r = { "<cmd>FloatermNew --width=0.9 --height=0.9 ranger<cr>", "ranger" } },
                 R = { "<cmd>Telescope resume<cr>", "resume" },
                 -- Bufferline
                 g = {

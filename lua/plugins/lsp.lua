@@ -99,12 +99,12 @@ return {
                         if not (args.data and args.data.client_id) then
                             return
                         end
-                        local client = vim.lsp.get_client_by_id(args.data.client_id)
+                        local client = vim.lsp.get_client_by_id(args.data.client_id) or {}
                         ---@diagnostic disable-next-line: need-check-nil
                         if client.name ~= "rust_analyzer" then
                             return
                         end
-                        require("lsp-inlayhints").on_attach(client, args.buf)
+                        require("lsp-inlayhints").on_attach(client, args.buf, false)
                     end,
                 })
             end,
@@ -112,7 +112,7 @@ return {
         -- rust
         {
             "rust-lang/rust.vim",
-            "simrat39/rust-tools.nvim",
+            { "simrat39/rust-tools.nvim", lazy = true },
             {
                 "saecki/crates.nvim",
                 version = "v0.3.0",
@@ -135,8 +135,8 @@ return {
             end,
         },
 
-        "p00f/clangd_extensions.nvim",
-        "ranjithshegde/ccls.nvim",
+        { "p00f/clangd_extensions.nvim", lazy = true },
+        { "ranjithshegde/ccls.nvim", lazy = true },
         -- diagnostic show
         --       {
         --           "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
@@ -152,6 +152,7 @@ return {
             config = function()
                 vim.g.code_action_menu_window_border = "single"
             end,
+            lazy = true,
         },
 
         {

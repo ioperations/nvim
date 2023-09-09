@@ -1,7 +1,11 @@
 return {
 
-    -- git
-    -- "f-person/git-blame.nvim",
+    {
+        "sindrets/diffview.nvim",
+        config = function()
+            require("diffview").setup({})
+        end,
+    },
     {
         "lewis6991/gitsigns.nvim",
         lazy = true,
@@ -52,27 +56,27 @@ return {
         event = "User FileOpened",
         cmd = "Gitsigns",
     },
-    {
-        "akinsho/git-conflict.nvim",
-        lazy = true,
-        config = function()
-            vim.api.nvim_exec([[ hi my_gitdiffadd guibg=#333c3e ]], false)
-            require("git-conflict").setup({
-                highlights = { -- They must have background color, otherwise the default color will be used
-                    incoming = "DiffText",
-                    current = "my_gitdiffadd",
-                },
-            })
-        end,
-    },
-    {
-        "kdheepak/lazygit.nvim",
-        lazy = true,
-        config = function()
-            require("telescope").load_extension("lazygit")
-            vim.api.nvim_exec([[autocmd BufEnter * :lua require('lazygit.utils').project_root_dir()]], false)
-        end,
-    },
+    --  {
+    --      "akinsho/git-conflict.nvim",
+    --      lazy = true,
+    --      config = function()
+    --          vim.api.nvim_exec([[ hi my_gitdiffadd guibg=#333c3e ]], false)
+    --          require("git-conflict").setup({
+    --              highlights = { -- They must have background color, otherwise the default color will be used
+    --                  incoming = "DiffText",
+    --                  current = "my_gitdiffadd",
+    --              },
+    --          })
+    --      end,
+    --  },
+    -- {
+    --     "kdheepak/lazygit.nvim",
+    --     lazy = true,
+    --     config = function()
+    --         require("telescope").load_extension("lazygit")
+    --         vim.api.nvim_exec([[autocmd BufEnter * :lua require('lazygit.utils').project_root_dir()]], false)
+    --     end,
+    -- },
 
     -- {
     --     "airblade/vim-gitgutter",
@@ -80,5 +84,5 @@ return {
     --         vim.opt.updatetime = 400
     --     end,
     -- },
-    { "tpope/vim-fugitive", cmd = "Gdiffsplit", lazy = true },
+    { "tpope/vim-fugitive" },
 }
