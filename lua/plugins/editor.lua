@@ -1,5 +1,6 @@
 return {
     -- welcome
+    "dstein64/vim-startuptime",
     {
         "goolord/alpha-nvim",
         config = function()
@@ -105,6 +106,7 @@ return {
     -- undotree
     {
         "mbbill/undotree",
+        lazy = true,
         config = function()
             vim.cmd([[
         if has("persistent_undo")
@@ -228,6 +230,7 @@ return {
             { "numToStr/Comment.nvim" },
             {
                 "christianchiarulli/nvim-ts-rainbow",
+                lazy = true,
                 config = function()
                     require("nvim-treesitter.configs").setup({
                         highlight = {

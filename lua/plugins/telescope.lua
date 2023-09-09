@@ -27,7 +27,8 @@ return {
             "nvim-telescope/telescope-file-browser.nvim",
             "BurntSushi/ripgrep",
         },
-        lazy = false,
+        lazy = true,
+        cmd = "Telescope",
         extensions = {
             fzf = {
                 fuzzy = true, -- false will only do exact matching

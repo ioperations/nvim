@@ -4,6 +4,7 @@ return {
     -- "f-person/git-blame.nvim",
     {
         "lewis6991/gitsigns.nvim",
+        lazy = true,
         config = function()
             require("gitsigns").setup({
                 signs = {
@@ -53,6 +54,7 @@ return {
     },
     {
         "akinsho/git-conflict.nvim",
+        lazy = true,
         config = function()
             vim.api.nvim_exec([[ hi my_gitdiffadd guibg=#333c3e ]], false)
             require("git-conflict").setup({
@@ -65,6 +67,7 @@ return {
     },
     {
         "kdheepak/lazygit.nvim",
+        lazy = true,
         config = function()
             require("telescope").load_extension("lazygit")
             vim.api.nvim_exec([[autocmd BufEnter * :lua require('lazygit.utils').project_root_dir()]], false)
@@ -77,5 +80,5 @@ return {
     --         vim.opt.updatetime = 400
     --     end,
     -- },
-    "tpope/vim-fugitive",
+    { "tpope/vim-fugitive", lazy = true },
 }

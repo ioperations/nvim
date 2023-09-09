@@ -1,6 +1,8 @@
 return {
     {
         "kyazdani42/nvim-tree.lua",
+        lazy = true,
+        cmd = "NvimTreeToggle",
         opts = {
             filters = {
                 dotfiles = false,
