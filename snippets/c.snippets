@@ -1,0 +1,36 @@
+snippet in "include cpp"
+    #include <${1:stdio>}
+
+
+snippet printd "printf int"
+    printf("%d\n",${1});
+
+
+snippet scanf "scanf"
+    scanf("%d\n",&${1});
+
+snippet printf "print float"
+    printf("%f\n",${1});
+
+snippet forui "for unsigned int"
+    for(unsigned int i=0;i<${1:num};++i){
+	    ${2}
+    }
+
+snippet /* "the doxygen brief"
+    /// * @brief ${1:brief comments}
+    /// * ${2:the full story}
+
+
+snippet // "the doxygen comment"
+    /**
+      \if english
+      <pre>
+      ${1:the english comment about this block}
+      </pre>
+      \else
+      <pre>
+      ${2: 中文注释}
+      </pre>
+      \endif
+     */
