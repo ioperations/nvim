@@ -42,7 +42,7 @@
     - 除了neovim所做出的努力，nerdfont 在另一个角度来说，对比modern系统和比较老的系统之间也有很大的差别，移值微信，qq，tencent meeting到wine中做的事情也是先把微软雅黑装好，在谈其他。所以系统装好之后第一件事情装nerdfont，更改.icons文件配置，更改.theme文件配置，形成可以接受的ui系统，终端字体设置成CaskaydiaCove Nerd Font Bold。形成对视觉的保护。
 
 <div align="right">
-<img src="./alpha/c++.png">
+<img src="./img/c++.png">
 </div>
 
 ## 模糊搜索
