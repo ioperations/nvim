@@ -80,5 +80,5 @@ return {
     --         vim.opt.updatetime = 400
     --     end,
     -- },
-    { "tpope/vim-fugitive", lazy = true },
+    { "tpope/vim-fugitive", cmd = "Gdiffsplit", lazy = true },
 }
