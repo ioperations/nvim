@@ -1,0 +1,5 @@
+snippet file "Check Error"
+    ifneq ("$(wildcard  ${1:FILENAME})","")
+    #file exists; use space insted of tab here
+    endif 
+

@@ -1,0 +1,23 @@
+snippet add "add two number " 
+    sum=\`expr ${1:first number} + ${2:second number} \`
+
+snippet minus "minus two number " 
+    sum=\`expr ${1:first number} - ${2:second number} \`
+
+snippet multiply "minus two number " 
+    sum=\`expr ${1:first number} \* ${2:second number} \`
+
+snippet divide "divide two number" 
+    sum=\`expr ${1:first number} / ${2:second number} \`
+
+snippet mod "the mod of two number" 
+    sum=\`expr ${1:first number} % ${2:second number} \`
+
+snippet strcmp "strcmp function" 
+    if [[ "${1:first_str}" == "${2:second_str}" ]]; then
+    	${3:#equal}
+    else
+    	${4:#no euqal}
+    fi
+
+
