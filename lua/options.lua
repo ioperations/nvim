@@ -12,6 +12,15 @@ vim.opt.textwidth = 80
 vim.opt.linebreak = true
 vim.opt.scrolloff = 10
 vim.opt.wrap = true
+
+-- coc.nvim need this
+vim.opt.backup = false
+vim.opt.writebackup = false
+--
+-- Having longer updatetime (default is 4000 ms = 4s) leads to noticeable
+-- delays and poor user experience
+vim.opt.updatetime = 300
+
 -- vim.opt.cmdheight = 2
 vim.opt.showmode = true
 vim.opt.numberwidth = 5 -- wider gutter

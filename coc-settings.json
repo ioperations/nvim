@@ -1,7 +1,7 @@
 {
   "yank.enableCompletion": true,
   "diagnostic-languageserver.trace.server": "verbose",
-  "codeLens.enable": false,
+  "codeLens.enable": true,
   "inlayHint.enable": false,
   "codeLens.position": "eol",
   "codeLens.subseparator": "|",

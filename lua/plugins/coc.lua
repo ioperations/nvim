@@ -2,17 +2,47 @@ return {
     "neoclide/coc.nvim",
     branch = "release",
     config = function()
-        -- Some servers have issues with backup files, see #649
-        vim.opt.backup = false
-        vim.opt.writebackup = false
-
-        -- Having longer updatetime (default is 4000 ms = 4s) leads to noticeable
-        -- delays and poor user experience
-        vim.opt.updatetime = 300
-
+        vim.g.coc_terminal_height = 20
+        vim.g.coc_global_extensions = {
+            "coc-lua",
+            "coc-jedi",
+            "coc-rust-analyzer",
+            "coc-jedi",
+            "coc-diagnostic",
+            "coc-vimlsp",
+            "coc-html",
+            "coc-json",
+            "coc-css",
+            "coc-tsserver",
+            "coc-yank",
+            "coc-java",
+            "coc-gitignore",
+            "coc-vimlsp",
+            "coc-lists",
+            "coc-git",
+            "coc-explorer",
+            "coc-sourcekit",
+            "coc-flutter",
+            "coc-todolist",
+            "coc-yaml",
+            "coc-tasks",
+            "coc-snippets",
+            "coc-solargraph",
+            "coc-clangd",
+            "coc-emoji",
+            "coc-docker",
+            "coc-db",
+            "coc-vetur",
+            "coc-browser",
+            "coc-perl",
+            "coc-highlight",
+            "coc-translator",
+            "coc-pairs",
+            "coc-db",
+            "coc-prettier",
+        }
         -- Always show the signcolumn, otherwise it would shift the text each time
         -- diagnostics appeared/became resolved
-        vim.opt.signcolumn = "yes"
 
         local keyset = vim.keymap.set
         -- Autocomplete
@@ -49,24 +79,21 @@ return {
         keyset("n", "[g", "<Plug>(coc-diagnostic-prev)", { silent = true })
         keyset("n", "]g", "<Plug>(coc-diagnostic-next)", { silent = true })
 
-        -- GoTo code navigation
-        keyset("n", "gd", "<Plug>(coc-definition)", { silent = true })
-        keyset("n", "gy", "<Plug>(coc-type-definition)", { silent = true })
-        keyset("n", "gi", "<Plug>(coc-implementation)", { silent = true })
-        keyset("n", "gr", "<Plug>(coc-references)", { silent = true })
-
         -- Use K to show documentation in preview window
         function _G.show_docs()
             local cw = vim.fn.expand("<cword>")
             if vim.fn.index({ "vim", "help" }, vim.bo.filetype) >= 0 then
                 vim.api.nvim_command("h " .. cw)
+            elseif vim.tbl_contains({ "man" }, filetype) then
+                vim.cmd("Man " .. vim.fn.expand("<cword>"))
+            elseif vim.fn.expand("%:t") == "Cargo.toml" then
+                require("crates").show_popup()
             elseif vim.api.nvim_eval("coc#rpc#ready()") then
                 vim.fn.CocActionAsync("doHover")
             else
                 vim.api.nvim_command("!" .. vim.o.keywordprg .. " " .. cw)
             end
         end
-        keyset("n", "K", "<CMD>lua _G.show_docs()<CR>", { silent = true })
 
         -- Highlight the symbol and its references on a CursorHold event(cursor is idle)
         vim.api.nvim_create_augroup("CocGroup", {})
@@ -99,9 +126,46 @@ return {
             desc = "Update signature help on jump placeholder",
         })
 
+        _G.setup_ccls_map = function()
+            vim.api.nvim_buf_set_keymap(
+                0,
+                "n",
+                "<C-L>",
+                "<cmd>call CocLocations('ccls','$ccls/navigate',{'direction':'D'}, v:false)<cr>",
+                opts
+            )
+            vim.api.nvim_buf_set_keymap(
+                0,
+                "n",
+                "<C-K>",
+                "<cmd>call CocLocations('ccls','$ccls/navigate',{'direction':'L'}, v:false)<cr>",
+                opts
+            )
+            vim.api.nvim_buf_set_keymap(
+                0,
+                "n",
+                "<C-J>",
+                "<cmd>call CocLocations('ccls','$ccls/navigate',{'direction':'R'}, v:false)<cr>",
+                opts
+            )
+            vim.api.nvim_buf_set_keymap(
+                0,
+                "n",
+                "<C-H>",
+                "<cmd>call CocLocations('ccls','$ccls/navigate',{'direction':'U'}, v:false)<cr>",
+                opts
+            )
+        end
+        vim.api.nvim_create_autocmd("FileType", {
+            group = "CocGroup",
+            pattern = "c,cpp,objc",
+            command = "lua _G.setup_ccls_map()",
+
+            desc = "ccls extension",
+        })
         -- Apply codeAction to the selected region
         -- Example: <leader>aap` for current paragraph
-        local opts = { silent = true, nowait = true }
+        opts = { silent = true, nowait = true }
         keyset("x", "<leader>a", "<Plug>(coc-codeaction-selected)", opts)
         keyset("n", "<leader>a", "<Plug>(coc-codeaction-selected)", opts)
 

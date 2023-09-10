@@ -14,19 +14,6 @@ end
 
 -- NOTE<cmd> <leader> prefixed mappings are in whichkey-settings.lua
 
-local show_documentation = function()
-    local filetype = vim.bo.filetype
-    if vim.tbl_contains({ "vim", "help" }, filetype) then
-        vim.cmd("h " .. vim.fn.expand("<cword>"))
-    elseif vim.tbl_contains({ "man" }, filetype) then
-        vim.cmd("Man " .. vim.fn.expand("<cword>"))
-    elseif vim.fn.expand("%:t") == "Cargo.toml" then
-        require("crates").show_popup()
-    else
-        vim.lsp.buf.hover()
-    end
-end
-
 local mappings = {
     i = {
         -- Insert mode
@@ -95,7 +82,7 @@ local mappings = {
         -- yank to end of line on Y
         { "Y", "y$" },
         -- lsp mappings
-        { "K", show_documentation },
+        { "K", "<CMD>lua _G.show_docs()<CR>" },
 
         { "<leader>dd", "<cmd>call CompileRunGcc()<cr>" },
 
