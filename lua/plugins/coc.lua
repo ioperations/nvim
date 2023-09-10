@@ -4,7 +4,6 @@ return {
     config = function()
         vim.g.coc_terminal_height = 20
         vim.g.coc_global_extensions = {
-            "coc-lua",
             "coc-jedi",
             "coc-rust-analyzer",
             "coc-jedi",
@@ -78,6 +77,59 @@ return {
         -- Use `:CocDiagnostics` to get all diagnostics of current buffer in location list
         keyset("n", "[g", "<Plug>(coc-diagnostic-prev)", { silent = true })
         keyset("n", "]g", "<Plug>(coc-diagnostic-next)", { silent = true })
+
+        local setup_lus_lsp = function()
+            local lazy_home = vim.fn.glob(vim.fn.stdpath("data")) .. "/lazy/"
+            local lua_lsp = lazy_home .. "lua-language-server/"
+
+            local lua_lsp_bin = ""
+
+            if vim.fn.has("mac") == 1 then
+                lua_lsp_bin = lua_lsp .. "/bin/lua-language-server"
+            else
+                lua_lsp_bin = lua_lsp .. "/bin/lua-language-server"
+            end
+
+            local json = require("json")
+
+            local lua_config = json.encode({
+                lua_language_server = {
+                    command = lua_lsp_bin,
+                    args = { "-E", lua_lsp .. "/main.lua" },
+                    initializationOptions = {
+                        Lua = {
+                            runtime = {
+                                -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+                                version = "LuaJIT",
+                            },
+                            diagnostics = {
+                                -- Get the language server to recognize the `vim` global
+                                globals = { "vim" },
+                            },
+                            workspace = {
+                                -- Make the server aware of Neovim runtime files
+                                checkThirdParty = "false",
+                                library = vim.api.nvim_get_runtime_file("", true),
+                            },
+                            -- Do not send telemetry data containing a randomized but unique identifier
+                            telemetry = {
+                                enable = "false",
+                            },
+                        },
+                    },
+                    filetype = { "lua" },
+                },
+            })
+
+            lua_config = string.gsub(lua_config, '"', "'")
+
+            local vim_config = "coc#config('languageserver'," .. lua_config .. ")"
+            -- print(vim_config)
+
+            vim.api.nvim_eval(vim_config)
+        end
+
+        setup_lus_lsp()
 
         -- Use K to show documentation in preview window
         function _G.show_docs()
