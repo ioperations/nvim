@@ -168,43 +168,47 @@ return {
             desc = "Update signature help on jump placeholder",
         })
 
-        _G.setup_ccls_map = function()
-            vim.api.nvim_buf_set_keymap(
-                0,
-                "n",
-                "<C-L>",
-                "<cmd>call CocLocations('ccls','$ccls/navigate',{'direction':'D'}, v:false)<cr>",
-                opts
-            )
-            vim.api.nvim_buf_set_keymap(
-                0,
-                "n",
-                "<C-K>",
-                "<cmd>call CocLocations('ccls','$ccls/navigate',{'direction':'L'}, v:false)<cr>",
-                opts
-            )
-            vim.api.nvim_buf_set_keymap(
-                0,
-                "n",
-                "<C-J>",
-                "<cmd>call CocLocations('ccls','$ccls/navigate',{'direction':'R'}, v:false)<cr>",
-                opts
-            )
-            vim.api.nvim_buf_set_keymap(
-                0,
-                "n",
-                "<C-H>",
-                "<cmd>call CocLocations('ccls','$ccls/navigate',{'direction':'U'}, v:false)<cr>",
-                opts
-            )
-        end
-        vim.api.nvim_create_autocmd("FileType", {
-            group = "CocGroup",
-            pattern = "c,cpp,objc",
-            command = "lua _G.setup_ccls_map()",
+        --_G.setup_ccls_map = function()
+        --    vim.api.nvim_buf_set_keymap(
+        --        0,
+        --        "n",
+        --        "<C-L>",
+        --        "<cmd>call CocLocations('ccls','$ccls/navigate',{'direction':'D'}, v:false)<cr>",
+        --        opts
+        --    )
+        --    vim.api.nvim_buf_set_keymap(
+        --        0,
+        --        "n",
+        --        "<C-K>",
+        --        "<cmd>call CocLocations('ccls','$ccls/navigate',{'direction':'L'}, v:false)<cr>",
+        --        opts
+        --    )
+        --    vim.api.nvim_buf_set_keymap(
+        --        0,
+        --        "n",
+        --        "<C-J>",
+        --        "<cmd>call CocLocations('ccls','$ccls/navigate',{'direction':'R'}, v:false)<cr>",
+        --        opts
+        --    )
+        --    vim.api.nvim_buf_set_keymap(
+        --        0,
+        --        "n",
+        --        "<C-H>",
+        --        "<cmd>call CocLocations('ccls','$ccls/navigate',{'direction':'U'}, v:false)<cr>",
+        --        opts
+        --    )
+        --end
+        -- vim.api.nvim_create_autocmd("FileType", {
+        --     group = "CocGroup",
+        --     pattern = "c,cpp,objc",
+        --     command = "lua _G.setup_ccls_map()",
 
-            desc = "ccls extension",
-        })
+        --     desc = "ccls extension",
+        -- })
+
+        vim.api.nvim_exec([[hi CocInlayHintParameter guibg='#1a1b26' guifg=#565f89 ctermbg=Red ctermfg=Blue]], false)
+        vim.api.nvim_exec([[hi CocInlayHintType guibg='#1a1b26' guifg='#5f6f9f' ctermbg=Red ctermfg=Blue]], false)
+
         -- Apply codeAction to the selected region
         -- Example: <leader>aap` for current paragraph
         opts = { silent = true, nowait = true }

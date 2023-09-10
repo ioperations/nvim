@@ -2,7 +2,7 @@
   "yank.enableCompletion": true,
   "diagnostic-languageserver.trace.server": "verbose",
   "codeLens.enable": true,
-  "inlayHint.enable": false,
+  "inlayHint.enable": true,
   "codeLens.position": "eol",
   "codeLens.subseparator": "|",
   "explorer.width": 30,
@@ -73,7 +73,14 @@
   "tsserver.trace.server": "verbose",
   "javascript.validate.enable": false,
   "rust-analyzer.enable": true,
-  "rust-analyzer.lens.enable": true,
+  "rust-analyzer.lens.enable": false,
+  "rust-analyzer.inlayHints.parameterHints.enable": false,
+  "rust-analyzer.inlayHints.typeHints.enable": false,
+  "rust-analyzer.inlayHints.renderColons": false,
+  "rust-analyzer.inlayHints.chainingHints.enable": false,
+  "rust-analyzer.inlayHints.reborrowHints.enable": "never",
+  "rust-analyzer.inlayHints.closingBraceHints.enable": false,
+  "rust-analyzer.inlayHints.discriminantHints.enable": "never",
   "rust-analyzer.procMacro.enable": true,
   "rust-analyzer.trace.server": "verbose",
   "rust-analyzer.cargo.unsetTest": ["core"],
@@ -125,48 +132,6 @@
     }
   },
   "languageserver": {
-    "ccls": {
-      "command": "ccls",
-      "filetypes": ["c", "cpp", "cuda", "objc", "objcpp"],
-      "rootPatterns": [".ccls-root", "compile_commands.json"],
-      "disabledFeatures": [
-        "completion",
-        "diagnostics",
-        "hover",
-        "signatureHelp",
-        "definition",
-        "declaration",
-        "references",
-        "codeAction",
-        "rename",
-        "inlayHint",
-        "inlineValue"
-      ],
-      "initializationOptions": {
-        "cache": {
-          "directory": ".ccls-cache",
-          "retainInMemory": 0
-        },
-        "client": {
-          "snippetSupport": true
-        },
-        "clang": {
-          // from clang -v -fsyntax-only -x c++ /dev/null,
-          "extraArgs": [
-            "-isystem/usr/local/include",
-            "-isystem/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1",
-            "-isystem/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include",
-            "-isystem/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
-            "-isystem/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include",
-            "-isystem/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks",
-            "-Wall",
-            "-std=c++17"
-          ],
-          //From clang -print-resource-dir,
-          "resourceDir": "/opt/homebrew/Cellar/llvm/14.0.6_1/lib/clang/14.0.6/"
-        }
-      }
-    },
     "haskell": {
       "command": "haskell-language-server-wrapper",
       "args": ["--lsp"],
