@@ -7,7 +7,6 @@ return {
             "coc-jedi",
             "coc-rust-analyzer",
             "coc-jedi",
-            "coc-diagnostic",
             "coc-vimlsp",
             "coc-html",
             "coc-json",
@@ -114,7 +113,6 @@ return {
             })
 
             lua_config = string.gsub(lua_config, '"', "'")
-
             local vim_config = "call coc#config('languageserver'," .. lua_config .. ")"
             -- print(vim_config)
 
