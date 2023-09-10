@@ -312,6 +312,14 @@ return {
             },
         },
     },
+    {
+        "nvimdev/lspsaga.nvim",
+        event = "LspAttach",
+        config = function()
+            require("lspsaga").setup({})
+        end,
+    },
+
     -- lsp client configuration [nvim builtin lsc]
     {
         "neovim/nvim-lspconfig",
