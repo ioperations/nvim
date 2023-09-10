@@ -79,23 +79,15 @@ return {
         keyset("n", "]g", "<Plug>(coc-diagnostic-next)", { silent = true })
 
         local setup_lus_lsp = function()
-            local lazy_home = vim.fn.glob(vim.fn.stdpath("data")) .. "/lazy/"
-            local lua_lsp = lazy_home .. "lua-language-server/"
+            local mason_root_dir = require("mason.settings").current.install_root_dir
 
-            local lua_lsp_bin = ""
-
-            if vim.fn.has("mac") == 1 then
-                lua_lsp_bin = lua_lsp .. "/bin/lua-language-server"
-            else
-                lua_lsp_bin = lua_lsp .. "/bin/lua-language-server"
-            end
+            local lua_lsp_bin = mason_root_dir .. "/bin/lua-language-server"
 
             local json = require("json")
 
             local lua_config = json.encode({
                 lua_language_server = {
                     command = lua_lsp_bin,
-                    args = { "-E", lua_lsp .. "/main.lua" },
                     initializationOptions = {
                         Lua = {
                             runtime = {
@@ -117,16 +109,16 @@ return {
                             },
                         },
                     },
-                    filetype = { "lua" },
+                    filetypes = { "lua" },
                 },
             })
 
             lua_config = string.gsub(lua_config, '"', "'")
 
-            local vim_config = "coc#config('languageserver'," .. lua_config .. ")"
+            local vim_config = "call coc#config('languageserver'," .. lua_config .. ")"
             -- print(vim_config)
 
-            vim.api.nvim_eval(vim_config)
+            vim.api.nvim_exec(vim_config, false)
         end
 
         setup_lus_lsp()
