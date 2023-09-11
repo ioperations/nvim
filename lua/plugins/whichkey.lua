@@ -85,7 +85,7 @@ return {
                 },
                 l = {
                     name = "LSP",
-                    f = { "<cmd>lua vim.lsp.buf.format({ async = true })<cr>", "Format File" },
+                    f = { "<cmd>call CocActionAsync('format')<cr>", "Format File" },
                     R = { vim.lsp.buf.rename, "Rename" },
                     D = { vim.lsp.buf.declaration, "declaration" },
                     d = { "<cmd>Telescope lsp_definitions<cr>", "Definition" },
@@ -95,8 +95,8 @@ return {
                     a = { "<cmd>CodeActionMenu<cr>", "Code actions" },
                     l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "Run codelens" },
                     t = { "<cmd>Telescope lsp_type_definitions<cr>", "Type Definition" },
-                    n = { '<Plug>(coc-diagnostic-next)', "next error" },
-                    p = { '<Plug>(coc-diagnostic-prev)', "next error" },
+                    n = { "<Plug>(coc-diagnostic-next)", "next error" },
+                    p = { "<Plug>(coc-diagnostic-prev)", "next error" },
                 },
             }, {
                 prefix = "<leader>",

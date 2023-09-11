@@ -394,7 +394,7 @@ return {
 
             vim.lsp.handlers["textDocument/publishDiagnostics"] = function(...)
                 if vim.api.nvim_get_mode().mode ~= "i" or vim.api.nvim_get_mode().mode ~= "s" then
-                    publish_diagnostics(...)
+                    -- publish_diagnostics(...)
                 end
             end
 

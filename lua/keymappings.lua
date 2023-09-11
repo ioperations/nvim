@@ -64,6 +64,7 @@ local mappings = {
         { "gr", "<Plug>(coc-references)" },
         { "ga", "<Plug>(coc-codeaction-selected)" },
         { "gl", "<cmd>lua vim.lsp.codelens.run()<cr>" },
+        { "gf", "<cmd>call CocActionAsync('format')<cr>" },
         { "gn", '<cmd>lua vim.diagnostic.goto_next({ float = { border = "rounded" } })<cr>' },
         { "gp", '<cmd>lua vim.diagnostic.goto_prev({ float = { border = "rounded" } })<cr>' },
         { "<c-\\>", "<cmd>cclose<cr>" },

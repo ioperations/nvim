@@ -3,6 +3,7 @@
   "diagnostic-languageserver.trace.server": "verbose",
   "codeLens.enable": true,
   "inlayHint.enable": true,
+    "inlayHint.refreshOnInsertMode": true,
   "codeLens.position": "eol",
   "codeLens.subseparator": "|",
   "explorer.width": 30,
