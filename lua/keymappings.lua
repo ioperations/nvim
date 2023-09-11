@@ -17,9 +17,9 @@ end
 local mappings = {
     i = {
         -- Insert mode
-        { "kk",    "<ESC>" },
-        { "jj",    "<ESC>" },
-        { "jk",    "<ESC>" },
+        { "kk", "<ESC>" },
+        { "jj", "<ESC>" },
+        { "jk", "<ESC>" },
         -- Terminal window navigation
         --   { "<C-h>", "<C-\\><C-N><C-w>h" },
         --   { "<C-j>", "<C-\\><C-N><C-w>j" },
@@ -49,59 +49,59 @@ local mappings = {
         -- Resize with arrows
 
         -- window management
-        { "<up>",       ":res +5<cr>" },
-        { "<down>",     ":res -5<cr>" },
-        { "<left>",     ":vertical resize -5<cr>" },
-        { "<right>",    ":vertical resize +5<cr>" },
+        { "<up>", ":res +5<cr>" },
+        { "<down>", ":res -5<cr>" },
+        { "<left>", ":vertical resize -5<cr>" },
+        { "<right>", ":vertical resize +5<cr>" },
 
         -- lsp
-        { "gR",         vim.lsp.buf.rename },
-        { "gD",         vim.lsp.buf.declaration },
-        { "gd",         "<Plug>(coc-definition)" },
-        { "go",         "<cmd>Lspsaga outline<cr>" },
-        { "gr",         "<cmd>Telescope lsp_references<cr>" },
-        { "gi",         "<cmd>Telescope lsp_implementations<cr>" },
-        { "ga",         "<cmd>CodeActionMenu<cr>" },
-        { "gl",         "<cmd>lua vim.lsp.codelens.run()<cr>" },
-        { "gt",         "<cmd>Telescope lsp_type_definitions<cr>" },
-        { "gn",         '<cmd>lua vim.diagnostic.goto_next({ float = { border = "rounded" } })<cr>' },
-        { "gp",         '<cmd>lua vim.diagnostic.goto_prev({ float = { border = "rounded" } })<cr>' },
-        { "<c-\\>",     "<cmd>cclose<cr>" },
-        { "<c-[>",      "<cmd>cprevious<cr>" },
-        { "<c-]>",      "<cmd>cnext<cr>" },
+        { "gR", vim.lsp.buf.rename },
+        { "gD", vim.lsp.buf.declaration },
+        { "go", "<cmd>Lspsaga outline<cr>" },
+        { "gd", "<Plug>(coc-definition)" },
+        { "gt", "<Plug>(coc-type-definition)" },
+        { "gi", "<Plug>(coc-implementation)" },
+        { "gr", "<Plug>(coc-references)" },
+        { "ga", "<Plug>(coc-codeaction-selected)" },
+        { "gl", "<cmd>lua vim.lsp.codelens.run()<cr>" },
+        { "gn", '<cmd>lua vim.diagnostic.goto_next({ float = { border = "rounded" } })<cr>' },
+        { "gp", '<cmd>lua vim.diagnostic.goto_prev({ float = { border = "rounded" } })<cr>' },
+        { "<c-\\>", "<cmd>cclose<cr>" },
+        { "<c-[>", "<cmd>cprevious<cr>" },
+        { "<c-]>", "<cmd>cnext<cr>" },
 
         -- Ctrl + p fuzzy files
-        { "<C-l>",      "<nop" },
-        { "<C-p>",      telescope_find_files },
-        { "<C-g>",      "<cmd>Telescope live_grep_args<cr>" },
+        { "<C-l>", "<nop" },
+        { "<C-p>", telescope_find_files },
+        { "<C-g>", "<cmd>Telescope live_grep_args<cr>" },
         -- escape clears highlighting
-        { "<leader>n",  "<cmd>noh<cr><esc>" },
+        { "<leader>n", "<cmd>noh<cr><esc>" },
         -- hop words
-        { "s",          "<cmd>HopWord<cr>" },
-        { "F",          "<cmd>HopLine<cr>" },
+        { "s", "<cmd>HopWord<cr>" },
+        { "F", "<cmd>HopLine<cr>" },
         -- yank to end of line on Y
-        { "Y",          "y$" },
+        { "Y", "y$" },
         -- lsp mappings
-        { "K",          "<CMD>lua _G.show_docs()<CR>" },
+        { "K", "<CMD>lua _G.show_docs()<CR>" },
 
         { "<leader>dd", "<cmd>call CompileRunGcc()<cr>" },
 
-        { "ga",         "<Plug>(LiveEasyAlign)" },
+        { "ga", "<Plug>(LiveEasyAlign)" },
 
         -- Resize with arrows
-        { "<C-Up>",     ":resize -2<CR>" },
-        { "<C-Down>",   ":resize +2<CR>" },
-        { "<C-Left>",   ":vertical resize -2<CR>" },
-        { "<C-Right>",  ":vertical resize +2<CR>" },
+        { "<C-Up>", ":resize -2<CR>" },
+        { "<C-Down>", ":resize +2<CR>" },
+        { "<C-Left>", ":vertical resize -2<CR>" },
+        { "<C-Right>", ":vertical resize +2<CR>" },
 
         -- window management
-        { "<c-j>",      "<c-d>" },
-        { "<c-k>",      "<c-u>" },
+        { "<c-j>", "<c-d>" },
+        { "<c-k>", "<c-u>" },
         --
         -- window management
-        { "<leader>v",  "<C-w>v<C-w>l" },
-        { "<leader>h",  "<C-w>s<C-w>j" },
-        { "<leader>;",  ":Alpha<cr>" },
+        { "<leader>v", "<C-w>v<C-w>l" },
+        { "<leader>h", "<C-w>s<C-w>j" },
+        { "<leader>;", ":Alpha<cr>" },
 
         --{ "n", "nzz" },
         --{ "N", "Nzz" },
@@ -109,32 +109,32 @@ local mappings = {
         --{ "#", "#zz" },
         --{ "g*", "g*zz" },
         --{ "g#", "g#zz" },
-        { "Q",          "<cmd>q!<CR>" },
-        { "<c-q>",      "<cmd>qall!<CR>" },
-        { "<c-s>",      "<cmd>w!<CR>" },
-        { "<c-q>",      "<cmd>q!<CR>" },
+        { "Q", "<cmd>q!<CR>" },
+        { "<c-q>", "<cmd>qall!<CR>" },
+        { "<c-s>", "<cmd>w!<CR>" },
+        { "<c-q>", "<cmd>q!<CR>" },
 
         -- dap
-        { "<M-x>",      ":Telescope commands<cr>" },
-        { "<M-r>",      ":lua require('dap').run_last()<cr>" },
-        { "<M-t>",      ":lua require('dap').toggle_breakpoint()<cr>" },
-        { "<M-n>",      ":lua require('dap').step_over()<cr>" },
-        { "<M-o>",      ":lua require('dap').step_out()<cr>" },
-        { "<M-i>",      ":lua require('dap').step_into()<cr>" },
-        { "<M-c>",      ":lua require('dap').continue()<cr>" },
-        { "<M-u>",      ":lua require('dap').run_to_cursor()<cr>" },
-        { "<M-k>",      ":lua require('dapui').eval()<cr>" },
+        { "<M-x>", ":Telescope commands<cr>" },
+        { "<M-r>", ":lua require('dap').run_last()<cr>" },
+        { "<M-t>", ":lua require('dap').toggle_breakpoint()<cr>" },
+        { "<M-n>", ":lua require('dap').step_over()<cr>" },
+        { "<M-o>", ":lua require('dap').step_out()<cr>" },
+        { "<M-i>", ":lua require('dap').step_into()<cr>" },
+        { "<M-c>", ":lua require('dap').continue()<cr>" },
+        { "<M-u>", ":lua require('dap').run_to_cursor()<cr>" },
+        { "<M-k>", ":lua require('dapui').eval()<cr>" },
 
         -- bufferline
-        { "<tab>",      "<cmd>BufferLineCyclePrev<CR>" },
-        { "<s-tab>",    "<cmd>BufferLineCycleNext<CR>" },
+        { "<tab>", "<cmd>BufferLineCyclePrev<CR>" },
+        { "<s-tab>", "<cmd>BufferLineCycleNext<CR>" },
         -- { "<C-d>", "<C-d>zz" },
         --       { "<C-u>", "<C-u>zz" },
         -- Remap for dealing with line wrap
         -- { "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true, } },
         -- { "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true, } },
         -- open link under cursor
-        { "gx",         '<Cmd>call jobstart(["xdg-open", expand("<cfile>")], {"detach": v:true})<CR>' },
+        { "gx", '<Cmd>call jobstart(["xdg-open", expand("<cfile>")], {"detach": v:true})<CR>' },
     },
     t = {
         -- Terminal mode
@@ -161,7 +161,7 @@ local mappings = {
     },
     x = {
         -- remap p to always paste from last yank
-        { "<leader>p",  '"_dP' },
+        { "<leader>p", '"_dP' },
 
         { "<leader>ga", "<Plug>(LiveEasyAlign)" },
         { "<leader>lf", "<Plug>(coc-format-selected)" },
