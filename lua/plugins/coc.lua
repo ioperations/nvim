@@ -18,23 +18,15 @@ return {
             "coc-vimlsp",
             "coc-lists",
             "coc-git",
-            "coc-explorer",
-            "coc-sourcekit",
             "coc-flutter",
             "coc-todolist",
-            "coc-yaml",
             "coc-tasks",
             "coc-snippets",
-            "coc-solargraph",
+            "coc-yaml",
             "coc-clangd",
             "coc-emoji",
-            "coc-docker",
-            "coc-db",
-            "coc-vetur",
             "coc-browser",
-            "coc-perl",
             "coc-highlight",
-            "coc-translator",
             "coc-pairs",
             "coc-db",
             "coc-prettier",
@@ -87,35 +79,21 @@ return {
             local lua_config = json.encode({
                 lua_language_server = {
                     command = lua_lsp_bin,
-                    initializationOptions = {
+                    filetypes = { "lua" },
+                    settings = {
                         Lua = {
-                            runtime = {
-                                -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-                                version = "LuaJIT",
-                            },
-                            diagnostics = {
-                                -- Get the language server to recognize the `vim` global
-                                globals = { "vim" },
-                            },
                             workspace = {
                                 -- Make the server aware of Neovim runtime files
-                                checkThirdParty = "false",
                                 library = vim.api.nvim_get_runtime_file("", true),
-                            },
-                            -- Do not send telemetry data containing a randomized but unique identifier
-                            telemetry = {
-                                enable = "false",
                             },
                         },
                     },
-                    filetypes = { "lua" },
                 },
             })
 
             lua_config = string.gsub(lua_config, '"', "'")
             local vim_config = "call coc#config('languageserver'," .. lua_config .. ")"
             -- print(vim_config)
-
             vim.api.nvim_exec(vim_config, false)
         end
 
@@ -206,6 +184,7 @@ return {
         --     desc = "ccls extension",
         -- })
 
+        vim.api.nvim_exec([[hi CocInlayHint guibg='#1a1b26' guifg='#5f6f9f' ctermbg=Red ctermfg=Blue]], false)
         vim.api.nvim_exec([[hi CocInlayHintParameter guibg='#1a1b26' guifg=#565f89 ctermbg=Red ctermfg=Blue]], false)
         vim.api.nvim_exec([[hi CocInlayHintType guibg='#1a1b26' guifg='#5f6f9f' ctermbg=Red ctermfg=Blue]], false)
 

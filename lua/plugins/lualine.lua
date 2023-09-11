@@ -12,9 +12,9 @@ return {
             },
             sections = {
                 lualine_a = { "mode" },
-                lualine_b = { "branch", "diff" },
+                lualine_b = { "branch", "diff" , "require'lsp-status'.status()"},
                 lualine_c = {
-                    { "require'lsp-status'.status()" },
+                    {  'g:coc_status' },
                 },
                 lualine_x = { "encoding", "fileformat", "filetype" },
                 lualine_y = { "progress" },

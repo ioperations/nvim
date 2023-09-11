@@ -95,8 +95,8 @@ return {
                     a = { "<cmd>CodeActionMenu<cr>", "Code actions" },
                     l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "Run codelens" },
                     t = { "<cmd>Telescope lsp_type_definitions<cr>", "Type Definition" },
-                    n = { '<cmd>lua vim.diagnostic.goto_next({ float = { border = "rounded" } })<cr>', "next error" },
-                    p = { '<cmd>lua vim.diagnostic.goto_prev({ float = { border = "rounded" } })<cr>', "next error" },
+                    n = { '<Plug>(coc-diagnostic-next)', "next error" },
+                    p = { '<Plug>(coc-diagnostic-prev)', "next error" },
                 },
             }, {
                 prefix = "<leader>",
