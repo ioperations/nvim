@@ -12,9 +12,9 @@ return {
             },
             sections = {
                 lualine_a = { "mode" },
-                lualine_b = { "branch", "diff" , "require'lsp-status'.status()"},
+                lualine_b = { "branch", "diff", "require'lsp-status'.status()" },
                 lualine_c = {
-                    {  'g:coc_status' },
+                    { "g:coc_status" },
                 },
                 lualine_x = { "encoding", "fileformat", "filetype" },
                 lualine_y = { "progress" },
@@ -30,6 +30,9 @@ return {
             },
             tabline = {},
             extensions = { "fugitive", "nvim-tree" },
+            refresh = { -- sets how often lualine should refresh it's contents (in ms)
+                statusline = 20,
+            },
         },
     },
 }

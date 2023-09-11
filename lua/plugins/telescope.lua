@@ -59,6 +59,16 @@ return {
                     },
                     path_display = { "smart" },
                     color_devicons = true,
+                    layout_config = {
+                        horizontal = {
+                            height = 0.95,
+                            preview_cutoff = 120,
+                            prompt_position = "bottom",
+                            width = 0.9,
+                            preview_width = 0.65,
+                        },
+                    },
+
                     mappings = {
                         i = {
                             ["<C-j>"] = require("telescope.actions").move_selection_next,

@@ -106,7 +106,6 @@ return {
     -- undotree
     {
         "mbbill/undotree",
-        lazy = true,
         config = function()
             vim.cmd([[
         if has("persistent_undo")
