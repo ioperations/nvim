@@ -13,9 +13,7 @@ return {
             "coc-css",
             "coc-tsserver",
             "coc-yank",
-            "coc-java",
             "coc-gitignore",
-            "coc-vimlsp",
             "coc-lists",
             "coc-git",
             "coc-flutter",
@@ -25,10 +23,8 @@ return {
             "coc-yaml",
             "coc-clangd",
             "coc-emoji",
-            "coc-browser",
             "coc-highlight",
             "coc-pairs",
-            "coc-db",
             "coc-prettier",
         }
         -- Always show the signcolumn, otherwise it would shift the text each time
