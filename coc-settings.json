@@ -3,10 +3,9 @@
   "diagnostic-languageserver.trace.server": "verbose",
   "codeLens.enable": true,
   "inlayHint.enable": true,
-    "inlayHint.refreshOnInsertMode": true,
-  "codeLens.position": "eol",
+  "inlayHint.refreshOnInsertMode": true,
+  "codeLens.position": "right_align",
   "codeLens.subseparator": "|",
-  "explorer.width": 30,
   "explorer.icon.enableNerdfont": true,
   "translator.engines": ["bing", "google", "youdao"],
   "clangd.disableCompletion": false,
@@ -20,19 +19,33 @@
     "--enable-config",
     "-log=verbose"
   ],
-  "java.trace.server": "verbose",
-  "java.configuration.runtimes": [
-    {
-      "name": "JavaSE-14",
-      "path": "/usr/lib/jvm/java-14-openjdk-amd64",
-      "default": true
-    }
-  ],
-  "java.autobuild.enabled": true,
   "suggest.completionItemKindLabels": {
     "text": "t",
-    "method": "m",
-    "function": "f"
+    "method": "󰆧 ",
+    "file": "󰈙 ",
+    "module": " ",
+    "class": "󰌗 ",
+    "property": " ",
+    "field": " ",
+    "constructor": " ",
+    "enum": "󰕘 ",
+    "interface": "󰕘 ",
+    "function": "󰊕 ",
+    "variable": "󰆧 ",
+    "constant": "󰏿 ",
+    "operator": "󰆕 ",
+    "enumMember": "󰕘 ",
+    "unit": " ",
+    "value": " ",
+    "folder": " ",
+    "struct": "󰌗 ",
+    "typeParameter": "󰊄 ",
+    "event": " ",
+    "snippet": "S",
+    "keyword": "󰌋 ",
+    "color": "💤",
+    "reference": "※ ",
+    "default": "❤️ "
   },
   "diagnostic.virtualText": false,
   "coc.preferences.formatOnSave": false,
@@ -203,7 +216,6 @@
     "$HOME/.config/nvim/UltiSnips"
   ],
   "snippets.userSnippetsDirectory": "~/.config/nvim/Ultisnips",
-  "java.errors.incompleteClasspath.severity": "ignore",
   "json.schemas": [
     {
       "fileMatch": [".vimspector.json"],
