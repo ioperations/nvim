@@ -164,9 +164,9 @@ return {
                     ensure_installed = {
 
                         -- you can pin a tool to a particular version
-                        { "golangci-lint" },
+                        -- { "golangci-lint" },
                         { "pyright" },
-                        { "debugpy" },
+                        -- { "debugpy" },
                         { "cmake-language-server" },
 
                         -- you can turn off/on auto_update per tool
@@ -176,18 +176,17 @@ return {
                         "cpptools",
                         "lua-language-server",
                         "vim-language-server",
-                        "gopls",
+                        -- "gopls",
                         "stylua",
-                        "shellcheck",
                         "editorconfig-checker",
-                        "gofumpt",
-                        "golines",
-                        "gomodifytags",
-                        "gotests",
+                        -- "gofumpt",
+                        -- "golines",
+                        -- "gomodifytags",
+                        -- "gotests",
                         "impl",
                         "json-to-struct",
                         "misspell",
-                        "revive",
+                        -- "revive",
                         "shellcheck",
                         "shfmt",
                         "staticcheck",
