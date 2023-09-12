@@ -32,7 +32,7 @@ if vim.fn.has("mac") == 1 then
 end
 
 function nodeRequest(bufnr, method, params, handler)
-    local util = require "lspconfig.util"
+    local util = require("lspconfig.util")
     bufnr = util.validate_bufnr(bufnr)
     local client = util.get_active_client_by_name(bufnr, "ccls")
 
@@ -51,7 +51,7 @@ function nodeRequest(bufnr, method, params, handler)
     end
 end
 
-local util = require('vim.lsp.util')
+local util = require("vim.lsp.util")
 
 function request(method, config)
     local bufnr = vim.api.nvim_get_current_buf()
@@ -68,7 +68,6 @@ function request(method, config)
 
     --    local json = require "json"
     --    print("prarm is ", json.encode(params))
-
 
     local function location_handler(result)
         if result == nil or vim.tbl_isempty(result) then
@@ -178,9 +177,9 @@ M.enable = function()
             local cmd = vim.api.nvim_create_user_command
 
             local navigate = function(direction)
-                if type(direction) ~= 'string' then
+                if type(direction) ~= "string" then
                     error("CclsNavigate expect D/R/L/U as params")
-                    if direction ~= 'D' or direction ~= 'R' or direction ~= 'L' or direction ~= 'U' then
+                    if direction ~= "D" or direction ~= "R" or direction ~= "L" or direction ~= "U" then
                         error("CclsNavigate expect D/R/L/U as params")
                     end
                     return
@@ -191,10 +190,22 @@ M.enable = function()
             cmd("CclsNavigate", function(opts)
                 navigate(opts.args)
             end, { nargs = "*", desc = "ccls Navigation" })
-            vim.keymap.set('n','<c-l>', "<cmd>CclsNavigate D<cr>")
-            vim.keymap.set('n','<c-k>', "<cmd>CclsNavigate L<cr>")
-            vim.keymap.set('n','<c-j>', "<cmd>CclsNavigate R<cr>")
-            vim.keymap.set('n','<c-h>', "<cmd>CclsNavigate U<cr>")
+
+            _G.create_ccls_keymap = function()
+                local buf_number = vim.api.nvim_get_current_buf()
+                vim.api.nvim_buf_set_keymap(buf_number, "n", "<c-l>", "<cmd>CclsNavigate D<cr>")
+                vim.api.nvim_buf_set_keymap(buf_number, "n", "<c-k>", "<cmd>CclsNavigate L<cr>")
+                vim.api.nvim_buf_set_keymap(buf_number, "n", "<c-j>", "<cmd>CclsNavigate R<cr>")
+                vim.api.nvim_buf_set_keymap(buf_number, "n", "<c-h>", "<cmd>CclsNavigate U<cr>")
+            end
+
+            vim.api.nvim_create_augroup("CclsGroup", {})
+            vim.api.nvim_create_autocmd("FileType", {
+                group = "CclsGroup",
+                pattern = "c,cpp,objc,objcpp",
+                command = "v:lua.create_ccls_keymap()",
+                desc = "Create ccls keymap",
+            })
         end,
     }
 
