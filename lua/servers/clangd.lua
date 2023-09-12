@@ -206,6 +206,8 @@ M.enable = function()
                 command = "v:lua.create_ccls_keymap()",
                 desc = "Create ccls keymap",
             })
+
+            create_ccls_keymap()
         end,
     }
 
