@@ -193,16 +193,16 @@ M.enable = function()
 
             _G.create_ccls_keymap = function()
                 local buf_number = vim.api.nvim_get_current_buf()
-                vim.api.nvim_buf_set_keymap(buf_number, "n", "<c-l>", "<cmd>CclsNavigate D<cr>")
-                vim.api.nvim_buf_set_keymap(buf_number, "n", "<c-k>", "<cmd>CclsNavigate L<cr>")
-                vim.api.nvim_buf_set_keymap(buf_number, "n", "<c-j>", "<cmd>CclsNavigate R<cr>")
-                vim.api.nvim_buf_set_keymap(buf_number, "n", "<c-h>", "<cmd>CclsNavigate U<cr>")
+                vim.api.nvim_buf_set_keymap(buf_number, "n", "<c-l>", "<cmd>CclsNavigate D<cr>", {})
+                vim.api.nvim_buf_set_keymap(buf_number, "n", "<c-k>", "<cmd>CclsNavigate L<cr>", {})
+                vim.api.nvim_buf_set_keymap(buf_number, "n", "<c-j>", "<cmd>CclsNavigate R<cr>", {})
+                vim.api.nvim_buf_set_keymap(buf_number, "n", "<c-h>", "<cmd>CclsNavigate U<cr>", {})
             end
 
             vim.api.nvim_create_augroup("CclsGroup", {})
             vim.api.nvim_create_autocmd("FileType", {
                 group = "CclsGroup",
-                pattern = "c,cpp,objc,objcpp",
+                pattern = { "c", "cpp", "objc", "objcpp" },
                 command = "v:lua.create_ccls_keymap()",
                 desc = "Create ccls keymap",
             })
