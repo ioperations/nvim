@@ -30,9 +30,6 @@ return {
             },
             tabline = {},
             extensions = { "fugitive", "nvim-tree" },
-            refresh = { -- sets how often lualine should refresh it's contents (in ms)
-                statusline = 20,
-            },
         },
     },
 }
