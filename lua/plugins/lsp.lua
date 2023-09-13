@@ -266,10 +266,6 @@ return {
                         "rust_analyzer@nightly",
                         "taplo",
                         "lua_ls",
-                        "neocmakelsp",
-                        "bash-language-server",
-                        "codelldb",
-                        "cpptools",
                     },
                     automatic_installation = true,
                 })
