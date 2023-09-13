@@ -1,6 +1,5 @@
 {
   "yank.enableCompletion": true,
-  "diagnostic-languageserver.trace.server": "verbose",
   "codeLens.enable": true,
   "inlayHint.enable": true,
   "inlayHint.refreshOnInsertMode": true,
@@ -9,6 +8,7 @@
   "explorer.icon.enableNerdfont": true,
   "translator.engines": ["bing", "google", "youdao"],
   "clangd.disableCompletion": false,
+  "diagnostic.floatConfig": { "border": true },
   "clangd.arguments": [
     "--completion-style=detailed",
     "--background-index",

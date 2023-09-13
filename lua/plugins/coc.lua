@@ -62,19 +62,16 @@ return {
 
         -- Use `[g` and `]g` to navigate diagnostics
         -- Use `:CocDiagnostics` to get all diagnostics of current buffer in location list
-        keyset("n", "[g", "<Plug>(coc-diagnostic-prev)", { silent = true })
-        keyset("n", "]g", "<Plug>(coc-diagnostic-next)", { silent = true })
+        keyset("n", "gp", "<Plug>(coc-diagnostic-prev)", { silent = true })
+        keyset("n", "gn", "<Plug>(coc-diagnostic-next)", { silent = true })
 
         local setup_lus_lsp = function()
             local mason_root_dir = require("mason.settings").current.install_root_dir
-
-            local lua_lsp_bin = mason_root_dir .. "/bin/lua-language-server"
-
             local json = require("json")
 
-            local lua_config = json.encode({
+            local language_server_config = json.encode({
                 lua_language_server = {
-                    command = lua_lsp_bin,
+                    command = mason_root_dir .. "/bin/lua-language-server",
                     filetypes = { "lua" },
                     settings = {
                         Lua = {
@@ -85,22 +82,6 @@ return {
                         },
                     },
                 },
-            })
-
-            lua_config = string.gsub(lua_config, '"', "'")
-            local vim_config = "call coc#config('languageserver'," .. lua_config .. ")"
-            -- print(vim_config)
-            vim.api.nvim_exec(vim_config, false)
-        end
-
-        setup_lus_lsp()
-
-        local setup_bash_lsp = function()
-            local mason_root_dir = require("mason.settings").current.install_root_dir
-
-            local json = require("json")
-
-            local json_config = json.encode({
                 cmake_language_server = {
                     command = mason_root_dir .. "/bin/neocmakelsp",
                     filetypes = { "cmake" },
@@ -118,12 +99,14 @@ return {
                 },
             })
 
-            json_config = string.gsub(json_config, '"', "'")
-            vim.api.nvim_exec2("call coc#config('languageserver'," .. json_config .. ")", {})
+            language_server_config = string.gsub(language_server_config, '"', "'")
+            local vim_config = "call coc#config('languageserver'," .. language_server_config .. ")"
+            -- print(vim_config)
+            vim.api.nvim_exec(vim_config, false)
         end
 
-        setup_bash_lsp()
-
+        setup_lus_lsp()
+        
         -- Use K to show documentation in preview window
         function _G.show_docs()
             local cw = vim.fn.expand("<cword>")
