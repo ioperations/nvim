@@ -95,6 +95,39 @@ return {
 
         setup_lus_lsp()
 
+        local setup_bash_lsp = function()
+            local mason_root_dir = require("mason.settings").current.install_root_dir
+
+            local json = require("json")
+
+            local cmake_lsp_config = json.encode({
+                cmake_language_server = {
+                    command = mason_root_dir .. "/bin/cmake-language-server",
+                    filetypes = { "cmake" },
+                    rootPatterns = { "build/" },
+                    initializationOptions = {
+                        buildDirectory = "build",
+                    },
+                },
+            })
+
+            local bash_lsp_config = json.encode({
+                bash_language_server = {
+                    command = mason_root_dir .. "/bin/bash-language-server",
+                    filetypes = { "bash", "sh", "zsh" },
+                    args = { "start" },
+                    ignoredRootPaths = {},
+                },
+            })
+
+            bash_lsp_config = string.gsub(bash_lsp_config, '"', "'")
+            cmake_lsp_config = string.gsub(cmake_lsp_config, '"', "'")
+            vim.api.nvim_exec("call coc#config('languageserver'," .. bash_lsp_config .. ")", false)
+            vim.api.nvim_exec("call coc#config('languageserver'," .. cmake_lsp_config .. ")", false)
+        end
+
+        setup_bash_lsp()
+
         -- Use K to show documentation in preview window
         function _G.show_docs()
             local cw = vim.fn.expand("<cword>")
@@ -141,44 +174,6 @@ return {
             command = "call CocActionAsync('showSignatureHelp')",
             desc = "Update signature help on jump placeholder",
         })
-
-        --_G.setup_ccls_map = function()
-        --    vim.api.nvim_buf_set_keymap(
-        --        0,
-        --        "n",
-        --        "<C-L>",
-        --        "<cmd>call CocLocations('ccls','$ccls/navigate',{'direction':'D'}, v:false)<cr>",
-        --        opts
-        --    )
-        --    vim.api.nvim_buf_set_keymap(
-        --        0,
-        --        "n",
-        --        "<C-K>",
-        --        "<cmd>call CocLocations('ccls','$ccls/navigate',{'direction':'L'}, v:false)<cr>",
-        --        opts
-        --    )
-        --    vim.api.nvim_buf_set_keymap(
-        --        0,
-        --        "n",
-        --        "<C-J>",
-        --        "<cmd>call CocLocations('ccls','$ccls/navigate',{'direction':'R'}, v:false)<cr>",
-        --        opts
-        --    )
-        --    vim.api.nvim_buf_set_keymap(
-        --        0,
-        --        "n",
-        --        "<C-H>",
-        --        "<cmd>call CocLocations('ccls','$ccls/navigate',{'direction':'U'}, v:false)<cr>",
-        --        opts
-        --    )
-        --end
-        -- vim.api.nvim_create_autocmd("FileType", {
-        --     group = "CocGroup",
-        --     pattern = "c,cpp,objc",
-        --     command = "lua _G.setup_ccls_map()",
-
-        --     desc = "ccls extension",
-        -- })
 
         vim.api.nvim_exec([[hi CocInlayHint guibg='#1a1b26' guifg='#5f6f9f' ctermbg=Red ctermfg=Blue]], false)
         vim.api.nvim_exec([[hi CocInlayHintParameter guibg='#1a1b26' guifg=#565f89 ctermbg=Red ctermfg=Blue]], false)

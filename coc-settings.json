@@ -163,12 +163,7 @@
       "rootPatterns": ["go.mod"],
       "filetypes": ["go"]
     },
-    "bash": {
-      "command": "bash-language-server",
-      "args": ["start"],
-      "filetypes": ["sh"],
-      "ignoredRootPaths": []
-    },
+
     "lua_language_server": {
       "settings": {
         "Lua": {
@@ -200,14 +195,6 @@
             "enable": false
           }
         }
-      }
-    },
-    "cmake": {
-      "command": "cmake-language-server",
-      "filetypes": ["cmake"],
-      "rootPatterns": ["build/"],
-      "initializationOptions": {
-        "buildDirectory": "build"
       }
     }
   },
