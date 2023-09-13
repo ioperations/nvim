@@ -86,7 +86,7 @@ return {
                 l = {
                     name = "LSP",
                     f = { "<cmd>call CocActionAsync('format')<cr>", "Format File" },
-                    R = { vim.lsp.buf.rename, "Rename" },
+                    R = { "<Plug>(coc-rename)", "Rename" },
                     D = { vim.lsp.buf.declaration, "declaration" },
                     d = { "<cmd>Telescope lsp_definitions<cr>", "Definition" },
                     r = { "<cmd>Telescope lsp_references<cr>", "References" },
