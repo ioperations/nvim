@@ -167,7 +167,7 @@ return {
                         -- { "golangci-lint" },
                         { "pyright" },
                         -- { "debugpy" },
-                        { "cmake-language-server" },
+                        "neocmakelsp",
 
                         -- you can turn off/on auto_update per tool
                         { "bash-language-server", auto_update = true },
@@ -266,8 +266,8 @@ return {
                         "rust_analyzer@nightly",
                         "taplo",
                         "lua_ls",
-                        "clangd",
-                        "gopls",
+                        -- "clangd",
+                        -- "gopls",
                     },
                     automatic_installation = true,
                 })
