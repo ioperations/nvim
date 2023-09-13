@@ -266,6 +266,7 @@ return {
                         "rust_analyzer@nightly",
                         "taplo",
                         "lua_ls",
+                        "clangd",
                     },
                     automatic_installation = true,
                 })
@@ -288,7 +289,7 @@ return {
                         require("servers.luals").enable()
                     end,
                     ["clangd"] = function()
-                        require("servers.clangd").enable()
+                        require("servers.ccls").enable()
                     end,
                     ["gopls"] = function()
                         require("servers.gopls").enable()
@@ -306,6 +307,7 @@ return {
                 "williamboman/mason.nvim",
                 "simrat39/rust-tools.nvim",
                 "b0o/SchemaStore.nvim",
+                { "ranjithshegde/ccls.nvim", lazy = true },
             },
         },
     },
