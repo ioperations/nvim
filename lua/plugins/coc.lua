@@ -100,18 +100,16 @@ return {
 
             local json = require("json")
 
-            local cmake_lsp_config = json.encode({
+            local json_config = json.encode({
                 cmake_language_server = {
-                    command = mason_root_dir .. "/bin/cmake-language-server",
+                    command = mason_root_dir .. "/bin/neocmakelsp",
                     filetypes = { "cmake" },
                     rootPatterns = { "build/" },
+                    args = { "--stdio" },
                     initializationOptions = {
                         buildDirectory = "build",
                     },
                 },
-            })
-
-            local bash_lsp_config = json.encode({
                 bash_language_server = {
                     command = mason_root_dir .. "/bin/bash-language-server",
                     filetypes = { "bash", "sh", "zsh" },
@@ -120,10 +118,8 @@ return {
                 },
             })
 
-            bash_lsp_config = string.gsub(bash_lsp_config, '"', "'")
-            cmake_lsp_config = string.gsub(cmake_lsp_config, '"', "'")
-            vim.api.nvim_exec("call coc#config('languageserver'," .. bash_lsp_config .. ")", false)
-            vim.api.nvim_exec("call coc#config('languageserver'," .. cmake_lsp_config .. ")", false)
+            json_config = string.gsub(json_config, '"', "'")
+            vim.api.nvim_exec2("call coc#config('languageserver'," .. json_config .. ")", {})
         end
 
         setup_bash_lsp()
@@ -175,9 +171,9 @@ return {
             desc = "Update signature help on jump placeholder",
         })
 
-        vim.api.nvim_exec([[hi CocInlayHint guibg='#1a1b26' guifg='#5f6f9f' ctermbg=Red ctermfg=Blue]], false)
-        vim.api.nvim_exec([[hi CocInlayHintParameter guibg='#1a1b26' guifg=#565f89 ctermbg=Red ctermfg=Blue]], false)
-        vim.api.nvim_exec([[hi CocInlayHintType guibg='#1a1b26' guifg='#5f6f9f' ctermbg=Red ctermfg=Blue]], false)
+        vim.api.nvim_exec2([[hi CocInlayHint guibg='#1a1b26' guifg='#5f6f9f' ctermbg=Red ctermfg=Blue]], {})
+        vim.api.nvim_exec2([[hi CocInlayHintParameter guibg='#1a1b26' guifg=#565f89 ctermbg=Red ctermfg=Blue]], {})
+        vim.api.nvim_exec2([[hi CocInlayHintType guibg='#1a1b26' guifg='#5f6f9f' ctermbg=Red ctermfg=Blue]], {})
 
         -- Apply codeAction to the selected region
         -- Example: <leader>aap` for current paragraph
