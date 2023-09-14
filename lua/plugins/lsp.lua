@@ -112,10 +112,14 @@ return {
         -- rust
         {
             "rust-lang/rust.vim",
+            ft = { "rust", "toml" },
+            lazy = true,
             { "simrat39/rust-tools.nvim", lazy = true },
             {
                 "saecki/crates.nvim",
                 version = "v0.3.0",
+                lazy = true,
+                ft = { "rust", "toml" },
                 dependencies = { "nvim-lua/plenary.nvim" },
                 config = function()
                     require("crates").setup({
@@ -307,9 +311,7 @@ return {
             dependencies = {
                 --"rcarriga/nvim-notify",
                 "williamboman/mason.nvim",
-                "simrat39/rust-tools.nvim",
                 "b0o/SchemaStore.nvim",
-                { "ranjithshegde/ccls.nvim", lazy = true },
             },
         },
     },
