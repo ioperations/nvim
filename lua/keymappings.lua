@@ -30,8 +30,6 @@ local mappings = {
         --   { "<C-k>", "<esc><cmd>m .-2<CR>==" },
         -- Ctrl single quote for backtick
         { "<C-'>", "``<esc>i" },
-        { "<C-f>", "<right>" },
-        { "<C-b>", "<left>" },
         { "<C-p>", "<up>" },
         { "<C-n>", "<down>" },
         { "<C-a>", "<c-o>I" },
@@ -162,7 +160,6 @@ local mappings = {
     },
     x = {
         -- remap p to always paste from last yank
-        { "<leader>p", '"_dP' },
 
         { "<leader>ga", "<Plug>(LiveEasyAlign)" },
         { "<leader>lf", "<Plug>(coc-format-selected)" },

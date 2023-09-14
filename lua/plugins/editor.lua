@@ -174,7 +174,7 @@ return {
                 floats = "transparent",
             },
         },
-        config = function(_, opts)
+        config = function()
             -- require("tokyonight").setup(opts) -- opts here are passed from above
             -- vim.cmd("highlight WinSeparator guifg=" .. colors.bg_highlight)
             vim.cmd([[colorscheme lunar]])
@@ -252,6 +252,8 @@ return {
     -- smater cd
     {
         "nanotee/zoxide.vim",
+        lazy = true,
+        cmd = "Zi",
         dependencies = {
             {
                 "junegunn/fzf",
@@ -266,6 +268,8 @@ return {
     {
         "iamcco/markdown-preview.nvim",
         build = "cd app && npm install",
+        lazy = true,
+        cmd = "MarkdownPreview",
         config = function()
             vim.g.mkdp_filetypes = { "markdown" }
 
@@ -279,15 +283,19 @@ return {
 
     -- task
     {
-        "tpope/vim-dotenv",
-        "skywind3000/asyncrun.extra",
-        "voldikss/vim-floaterm",
-        "skywind3000/asynctasks.vim",
+        { "tpope/vim-dotenv", lazy = true, cmd = "DotenvGet" },
+        { "voldikss/vim-floaterm", cmd = "FloatermNew ", lazy = true },
+        { "skywind3000/asynctasks.vim", lazy = true, cmd = "AsyncTask" },
         {
             "skywind3000/asyncrun.vim",
+            lazy = true,
             config = function()
                 require("scripts")
             end,
+            dependencies = {
+                { "skywind3000/asyncrun.extra" },
+            },
+            cmd = "AsyncRun",
         },
     },
 }

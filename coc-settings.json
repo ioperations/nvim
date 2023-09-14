@@ -9,6 +9,10 @@
   "translator.engines": ["bing", "google", "youdao"],
   "clangd.disableCompletion": false,
   "diagnostic.floatConfig": { "border": true },
+  "diagnostic.hintSign": "💡",
+  "diagnostic.warningSign": " ",
+  "diagnostic.infoSign": " ",
+  "diagnostic.errorSign": ">>",
   "clangd.arguments": [
     "--completion-style=detailed",
     "--background-index",

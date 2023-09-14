@@ -187,6 +187,7 @@ return {
                         "json-to-struct",
                         "misspell",
                         -- "revive",
+                        "prettier",
                         "shellcheck",
                         "shfmt",
                         "staticcheck",
@@ -240,6 +241,7 @@ return {
         {
             "ray-x/go.nvim",
             dependencies = "ray-x/guihua.lua",
+            lazy = true,
             config = function()
                 require("go").setup({
                     lsp_cfg = false,
