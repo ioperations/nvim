@@ -106,7 +106,7 @@ return {
         end
 
         setup_lus_lsp()
-        
+
         -- Use K to show documentation in preview window
         function _G.show_docs()
             local cw = vim.fn.expand("<cword>")
