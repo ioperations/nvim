@@ -289,9 +289,6 @@ return {
         {
             "skywind3000/asyncrun.vim",
             lazy = true,
-            config = function()
-                require("scripts")
-            end,
             dependencies = {
                 { "skywind3000/asyncrun.extra" },
             },
