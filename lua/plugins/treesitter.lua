@@ -1,7 +1,7 @@
 return {
     { "nickhutchinson/vim-systemtap" },
     { "mmarchini/bpftrace.vim" },
-    { "ericpruitt/tmux.vim" },
+    { "whatyouhide/vim-tmux-syntax" },
     {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
