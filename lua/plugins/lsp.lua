@@ -168,27 +168,16 @@ return {
                     ensure_installed = {
 
                         -- you can pin a tool to a particular version
-                        -- { "golangci-lint" },
                         { "pyright" },
-                        -- { "debugpy" },
                         "neocmakelsp",
-
-                        -- you can turn off/on auto_update per tool
                         { "bash-language-server", auto_update = true },
-
+                        "jdtls",
                         "jedi_language_server",
                         "codelldb",
                         "cpptools",
                         "lua-language-server",
                         "vim-language-server",
-                        -- "gopls",
                         "stylua",
-                        "editorconfig-checker",
-                        -- "gofumpt",
-                        -- "golines",
-                        -- "gomodifytags",
-                        -- "gotests",
-                        -- "revive",
                         "prettier",
                         "shellcheck",
                         "shfmt",

@@ -70,6 +70,7 @@ local mappings = {
 
         -- Ctrl + p fuzzy files
         { "<C-l>", "<nop" },
+        { "<C-c>", "<cmd>CocCommand<cr>" },
         { "<C-p>", telescope_find_files },
         { "<C-g>", "<cmd>Telescope live_grep_args<cr>" },
         -- escape clears highlighting
