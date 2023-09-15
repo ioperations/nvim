@@ -284,7 +284,7 @@ return {
     -- task
     {
         { "tpope/vim-dotenv", lazy = true, cmd = "DotenvGet" },
-        { "voldikss/vim-floaterm", cmd = "FloatermNew ", lazy = true },
+        { "voldikss/vim-floaterm" },
         { "skywind3000/asynctasks.vim", lazy = true, cmd = "AsyncTask" },
         {
             "skywind3000/asyncrun.vim",
