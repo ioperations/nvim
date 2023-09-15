@@ -284,7 +284,7 @@ return {
     -- task
     {
         "honza/vim-snippets",
-        { "tpope/vim-dotenv", lazy = true, cmd = "DotenvGet" },
+        { "tpope/vim-dotenv" },
         { "voldikss/vim-floaterm" },
         { "skywind3000/asynctasks.vim", lazy = true, cmd = "AsyncTask" },
         {
