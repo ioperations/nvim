@@ -132,7 +132,6 @@ return {
         })
 
         -- Symbol renaming
-        keyset("n", "<leader>rn", "<Plug>(coc-rename)", { silent = true })
 
         -- Formatting selected code
         keyset("x", "<leader>f", "<Plug>(coc-format-selected)", { silent = true })
@@ -161,8 +160,8 @@ return {
         -- Apply codeAction to the selected region
         -- Example: <leader>aap` for current paragraph
         opts = { silent = true, nowait = true }
-        keyset("x", "<leader>a", "<Plug>(coc-codeaction-selected)", opts)
-        keyset("n", "<leader>a", "<Plug>(coc-codeaction-selected)", opts)
+        keyset("x", "<leader>la", "<Plug>(coc-codeaction-selected)", opts)
+        keyset("n", "<leader>la", "<Plug>(coc-codeaction-selected)", opts)
 
         -- Remap keys for apply code actions at the cursor position.
         keyset("n", "<leader>ac", "<Plug>(coc-codeaction-cursor)", opts)

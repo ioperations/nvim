@@ -92,7 +92,6 @@ return {
                     r = { "<cmd>Telescope lsp_references<cr>", "References" },
                     o = { "<cmd>Lspsaga outline<cr>", "Outline" },
                     i = { "<cmd>Telescope lsp_implementations<cr>", "Implementations" },
-                    a = { "<cmd>CodeActionMenu<cr>", "Code actions" },
                     l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "Run codelens" },
                     t = { "<cmd>Telescope lsp_type_definitions<cr>", "Type Definition" },
                     n = { "<Plug>(coc-diagnostic-next)", "next error" },
