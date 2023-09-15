@@ -57,6 +57,8 @@
   "suggest.labelMaxLength": 60,
   "suggest.triggerAfterInsertEnter": true,
   "suggest.snippetIndicator": "🐶",
+  "pyright.enable": true,
+  "pyright.server": "~/.local/share/nvim/mason/bin/pyright",
   "jedi.enable": true,
   "jedi.startupMessage": false,
   "jedi.markupKindPreferred": "markdown",
@@ -64,7 +66,7 @@
   "jedi.jediSettings.autoImportModules": [],
   "jedi.jediSettings.caseInsensitiveCompletion": true,
   "jedi.jediSettings.debug": false,
-  "jedi.executable.command": "jedi-language-server",
+  "jedi.executable.command": "~/.local/share/nvim/mason/bin/jedi-language-server",
   "jedi.executable.args": [],
   "jedi.codeAction.nameExtractFunction": "jls_extract_def",
   "jedi.codeAction.nameExtractVariable": "jls_extract_var",
@@ -203,7 +205,7 @@
     }
   },
   "snippets.ultisnips.directories": [
-    "$HOME/.config/nvim/autoload/plugged/vim-snippets/UltiSnips/",
+    "$HOME/.local/share/nvim/lazy/vim-snippets/UltiSnips/",
     "$HOME/.config/nvim/UltiSnips"
   ],
   "snippets.userSnippetsDirectory": "~/.config/nvim/Ultisnips",

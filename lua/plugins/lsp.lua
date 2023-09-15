@@ -176,6 +176,7 @@ return {
                         -- you can turn off/on auto_update per tool
                         { "bash-language-server", auto_update = true },
 
+                        "jedi_language_server",
                         "codelldb",
                         "cpptools",
                         "lua-language-server",
