@@ -284,9 +284,9 @@ return {
                     ["clangd"] = function()
                         require("servers.ccls").enable()
                     end,
-                    ["gopls"] = function()
-                        require("servers.gopls").enable()
-                    end,
+                    -- ["gopls"] = function()
+                    --     require("servers.gopls").enable()
+                    -- end,
                     ["yamlls"] = function()
                         require("servers.yaml").enable()
                     end,
