@@ -63,14 +63,11 @@ return {
 
         -- Use `[g` and `]g` to navigate diagnostics
         -- Use `:CocDiagnostics` to get all diagnostics of current buffer in location list
-        keyset("n", "gp", "<Plug>(coc-diagnostic-prev)", { silent = true })
-        keyset("n", "gn", "<Plug>(coc-diagnostic-next)", { silent = true })
 
-        local setup_lus_lsp = function()
+        local setup_lsp_server = function()
             local mason_root_dir = require("mason.settings").current.install_root_dir
-            local json = require("json")
 
-            local language_server_config = json.encode({
+            local language_server_config = vim.json.encode({
                 lua_language_server = {
                     command = mason_root_dir .. "/bin/lua-language-server",
                     filetypes = { "lua" },
@@ -101,20 +98,21 @@ return {
             })
 
             language_server_config = string.gsub(language_server_config, '"', "'")
+            language_server_config = string.gsub(language_server_config, "\\", "")
             local vim_config = "call coc#config('languageserver'," .. language_server_config .. ")"
             -- print(vim_config)
-            vim.api.nvim_exec(vim_config, false)
+            vim.api.nvim_exec2(vim_config, {})
         end
 
-        setup_lus_lsp()
+        setup_lsp_server()
 
         -- Use K to show documentation in preview window
         function _G.show_docs()
             local cw = vim.fn.expand("<cword>")
             if vim.fn.index({ "vim", "help" }, vim.bo.filetype) >= 0 then
                 vim.api.nvim_command("h " .. cw)
-            elseif vim.tbl_contains({ "man" }, filetype) then
-                vim.cmd("Man " .. vim.fn.expand("<cword>"))
+            elseif vim.tbl_contains({ "man" }, vim.bo.filetype) then
+                vim.cmd("Man " .. cw)
             elseif vim.fn.expand("%:t") == "Cargo.toml" then
                 require("crates").show_popup()
             elseif vim.api.nvim_eval("coc#rpc#ready()") then
