@@ -7,6 +7,7 @@ return {
             "coc-jedi",
             "coc-rust-analyzer",
             "coc-jedi",
+            "coc-pyright",
             "coc-vimlsp",
             "coc-html",
             "coc-json",
@@ -134,8 +135,7 @@ return {
         -- Symbol renaming
 
         -- Formatting selected code
-        keyset("x", "<leader>f", "<Plug>(coc-format-selected)", { silent = true })
-        keyset("n", "<leader>f", "<Plug>(coc-format-selected)", { silent = true })
+        keyset("x", "<leader>lf", "<Plug>(coc-format-selected)", { silent = true })
 
         -- Setup formatexpr specified filetype(s)
         vim.api.nvim_create_autocmd("FileType", {
