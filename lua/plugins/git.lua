@@ -69,7 +69,7 @@ return {
     {
         "akinsho/git-conflict.nvim",
         config = function()
-            vim.api.nvim_exec([[ hi my_gitdiffadd guibg=#333c3e ]], false)
+            vim.api.nvim_exec2([[ hi my_gitdiffadd guibg=#333c3e ]], {})
             require("git-conflict").setup({
                 highlights = { -- They must have background color, otherwise the default color will be used
                     incoming = "DiffText",
