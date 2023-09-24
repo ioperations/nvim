@@ -124,10 +124,39 @@ return {
             options = {
                 offsets = {
                     {
+                        filetype = "undotree",
+                        text = "Undotree",
+                        highlight = "PanelHeading",
+                        padding = 1,
+                    },
+                    {
                         filetype = "NvimTree",
-                        -- text = "File Explorer",
-                        highlight = "Directory",
-                        text_align = "left",
+                        text = "Explorer",
+                        highlight = "PanelHeading",
+                        padding = 1,
+                    },
+                    {
+                        filetype = "DiffviewFiles",
+                        text = "Diff View",
+                        highlight = "PanelHeading",
+                        padding = 1,
+                    },
+                    {
+                        filetype = "flutterToolsOutline",
+                        text = "Flutter Outline",
+                        highlight = "PanelHeading",
+                    },
+                    {
+                        filetype = "lazy",
+                        text = "Lazy",
+                        highlight = "PanelHeading",
+                        padding = 1,
+                    },
+                    {
+                        filetype = "fugitiveblame",
+                        text = "Fugitiveblame",
+                        highlight = "PanelHeading",
+                        padding = 1,
                     },
                 },
                 diagnostics = "nvim_lsp",

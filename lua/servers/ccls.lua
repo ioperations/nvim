@@ -54,8 +54,6 @@ function request(method, config)
     nodeRequest(bufnr, method, params, location_handler)
 end
 
-local navic = require("nvim-navic")
-
 M.enable = function()
     local filetypes = { "c", "cpp", "objc", "objcpp", "opencl", "inc" }
     local server_config = {
@@ -83,7 +81,6 @@ M.enable = function()
         ),
         on_attach = function(client, bufnr)
             local wk = require("which-key")
-            navic.attach(client, bufnr)
             wk.register({
                 x = {
                     name = "Lsp",
