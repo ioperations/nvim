@@ -33,7 +33,7 @@
     "field": " ",
     "constructor": " ",
     "enum": "󰕘 ",
-    "interface": "󰕘 ",
+    "interface": " ",
     "function": "󰊕 ",
     "variable": "󰆧 ",
     "constant": "󰏿 ",
@@ -47,7 +47,7 @@
     "event": " ",
     "snippet": "S",
     "keyword": "󰌋 ",
-    "color": "💤",
+    "color": "󰏘 ",
     "reference": "※ ",
     "default": "❤️ "
   },
