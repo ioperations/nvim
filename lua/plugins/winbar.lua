@@ -28,6 +28,7 @@ return {
             highlight = true,
             lsp = {
                 auto_attach = true,
+                preference = { "ccls" },
             },
             icons = {
                 Array = " ",
