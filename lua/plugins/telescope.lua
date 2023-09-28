@@ -25,6 +25,7 @@ return {
             "nvim-lua/plenary.nvim",
             -- "rmagatti/session-lens",
             "nvim-telescope/telescope-file-browser.nvim",
+            "fannheyward/telescope-coc.nvim",
             "BurntSushi/ripgrep",
         },
         lazy = true,
@@ -35,6 +36,9 @@ return {
                 override_generic_sorter = true, -- override the generic sorter
                 override_file_sorter = true, -- override the file sorter
                 case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+            },
+            coc = {
+                prefer_locations = false, -- always use Telescope locations to preview definitions/declarations/implementations etc
             },
         },
         config = function()
@@ -110,6 +114,7 @@ return {
             telescope.load_extension("fzf")
             telescope.load_extension("dap")
             telescope.load_extension("live_grep_args")
+            telescope.load_extension("coc")
         end,
     },
 }
