@@ -93,7 +93,7 @@ return {
                     a = { "<Plug>(coc-codeaction-selected)", "codeAction" },
                     o = { "<cmd>Lspsaga outline<cr>", "Outline" },
                     i = { "<cmd>Telescope lsp_implementations<cr>", "Implementations" },
-                    l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "Run codelens" },
+                    l = { "<Plug>(coc-codelens-action)", "Run codelens" },
                     t = { "<cmd>Telescope lsp_type_definitions<cr>", "Type Definition" },
                     n = { "<Plug>(coc-diagnostic-next)", "next error" },
                     p = { "<Plug>(coc-diagnostic-prev)", "next error" },

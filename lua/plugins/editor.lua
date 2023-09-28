@@ -111,6 +111,10 @@ return {
             -- require("tokyonight").setup(opts) -- opts here are passed from above
             -- vim.cmd("highlight WinSeparator guifg=" .. colors.bg_highlight)
             vim.cmd([[colorscheme lunar]])
+            vim.api.nvim_exec2([[hi CocInlayHint guibg=None guifg='#5f6f9f' ctermbg=Red ctermfg=Blue]], {})
+            vim.api.nvim_exec2([[hi CocInlayHintParameter guibg=None guifg=#565f89 ctermbg=Red ctermfg=Blue]], {})
+            vim.api.nvim_exec2([[hi CocInlayHintType guibg=None guifg='#5f6f9f' ctermbg=Red ctermfg=Blue]], {})
+            vim.api.nvim_exec2([[hi CocCodeLens guibg=None guifg='#5f6f9f' ctermbg=Red ctermfg=Blue]], {})
         end,
     },
 

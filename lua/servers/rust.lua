@@ -119,7 +119,7 @@ M.enable = function()
                 settings = {
                     ["rust-analyzer"] = {
                         lens = {
-                            enable = true,
+                            enable = false,
                         },
                         imports = {
                             granularity = {

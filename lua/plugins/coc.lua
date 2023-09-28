@@ -171,10 +171,6 @@ return {
             desc = "Update signature help on jump placeholder",
         })
 
-        vim.api.nvim_exec2([[hi CocInlayHint guibg=None guifg='#5f6f9f' ctermbg=Red ctermfg=Blue]], {})
-        vim.api.nvim_exec2([[hi CocInlayHintParameter guibg=None guifg=#565f89 ctermbg=Red ctermfg=Blue]], {})
-        vim.api.nvim_exec2([[hi CocInlayHintType guibg=None guifg='#5f6f9f' ctermbg=Red ctermfg=Blue]], {})
-
         -- Apply codeAction to the selected region
         -- Example: <leader>aap` for current paragraph
         opts = { silent = true, nowait = true }
