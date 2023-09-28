@@ -27,7 +27,6 @@ return {
             "coc-highlight",
             "coc-pairs",
             "coc-prettier",
-            "coc-symbol-line",
         }
         -- Always show the signcolumn, otherwise it would shift the text each time
         -- diagnostics appeared/became resolved
