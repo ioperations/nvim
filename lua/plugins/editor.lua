@@ -29,7 +29,7 @@ return {
 
     "ioperations/vim-cppman",
     -- edit enhancement
-    "gcmt/wildfire.vim",
+    "gcmt/wildfire.vim", -- smart selection
     -- multi cursor
     "mg979/vim-visual-multi",
     -- easy align
@@ -117,6 +117,8 @@ return {
             vim.api.nvim_exec2([[hi CocCodeLens guibg=None guifg='#5f6f9f' ctermbg=Red ctermfg=Blue]], {})
         end,
     },
+
+    "andymass/vim-matchup",
 
     -- bufline
     {
