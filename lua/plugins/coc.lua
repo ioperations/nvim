@@ -24,7 +24,7 @@ return {
             "coc-yaml",
             "coc-clangd",
             "coc-emoji",
-            "coc-highlight",
+            -- "coc-highlight",
             "coc-pairs",
             "coc-prettier",
         }
@@ -124,11 +124,12 @@ return {
 
         -- Highlight the symbol and its references on a CursorHold event(cursor is idle)
         vim.api.nvim_create_augroup("CocGroup", {})
-        vim.api.nvim_create_autocmd("CursorHold", {
-            group = "CocGroup",
-            command = "silent call CocActionAsync('highlight')",
-            desc = "Highlight symbol under cursor on CursorHold",
-        })
+        -- inlay hint got highlight when using Coc's highlight setting
+        -- vim.api.nvim_create_autocmd("CursorHold", {
+        --     group = "CocGroup",
+        --     command = "silent call CocActionAsync('highlight')",
+        --     desc = "Highlight symbol under cursor on CursorHold",
+        -- })
 
         -- Symbol renaming
 
