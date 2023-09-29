@@ -98,7 +98,7 @@
   "rust-analyzer.lens.references.trait.enable": true,
   "rust-analyzer.lens.references.method.enable": true,
   "rust-analyzer.lens.references.enumVariant.enable": true,
-  "rust-analyzer.lens.enable": true,
+  "rust-analyzer.lens.enable": false,
   "rust-analyzer.lens.location": "above_name",
   "rust-analyzer.inlayHints.parameterHints.enable": true,
   "rust-analyzer.inlayHints.typeHints.enable": true,
