@@ -52,6 +52,7 @@ M.enable = function()
 
         vim.cmd(running)
     end
+    local capabilities = vim.lsp.protocol.make_client_capabilities()
 
     -- local ih = require("lsp-inlayhints")
     pcall(function()
@@ -113,13 +114,27 @@ M.enable = function()
                         },
                     }, { prefix = "<leader>" })
 
+                    if client.server_capabilities.documentHighlightProvider then
+                        vim.api.nvim_del_augroup_by_name(vim.fn.printf("lsp_document_highlight_%d", bufnr))
+                    end
                     -- ih.show()
                 end,
-                -- capabilities = capabilities,
+                capabilities = capabilities,
                 settings = {
                     ["rust-analyzer"] = {
                         lens = {
-                            enable = false,
+                            enable = true,
+                            debug = { enable = true },
+                            forceCustomCommands = true,
+                            implementations = { enable = true },
+                            location = "above_name",
+                            references = {
+                                adt = { enable = true },
+                                enumVariant = { enable = true },
+                                method = { enable = true },
+                                trait = { enable = true },
+                            },
+                            run = { enable = true },
                         },
                         imports = {
                             granularity = {
