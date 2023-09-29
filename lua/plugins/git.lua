@@ -1,21 +1,21 @@
 return {
-    --    {
-    --        "sindrets/diffview.nvim",
-    --        config = function()
-    --            require("diffview").setup({
-    --                enhanced_diff_hl = false, -- See ':h diffview-config-enhanced_diff_hl'
-    --                use_icons = true, -- Requires nvim-web-devicons
-    --                show_help_hints = false, -- Show hints for how to open the help panel
-    --
-    --                keymaps = {
-    --                    disable_defaults = false, -- Disable the default keymaps
-    --                    view = {
-    --                        { "n", "q", "<Cmd>q!<CR>", { desc = "close" } },
-    --                    },
-    --                },
-    --            })
-    --        end,
-    --    },
+    {
+        "sindrets/diffview.nvim",
+        config = function()
+            require("diffview").setup({
+                enhanced_diff_hl = false, -- See ':h diffview-config-enhanced_diff_hl'
+                use_icons = true, -- Requires nvim-web-devicons
+                show_help_hints = false, -- Show hints for how to open the help panel
+
+                keymaps = {
+                    disable_defaults = false, -- Disable the default keymaps
+                    view = {
+                        { "n", "q", "<Cmd>q!<CR>", { desc = "close" } },
+                    },
+                },
+            })
+        end,
+    },
     {
         "lewis6991/gitsigns.nvim",
         lazy = true,

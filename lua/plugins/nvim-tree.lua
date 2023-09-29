@@ -20,7 +20,16 @@ return {
             view = {
                 adaptive_size = false,
                 side = "left",
-                width = 30,
+                width = function()
+                    local winwidth = vim.fn.winwidth(0)
+                    if winwidth <= 100 then
+                        return 35
+                    elseif winwidth <= 200 then
+                        return 45
+                    else
+                        return 55
+                    end
+                end,
                 preserve_window_proportions = true,
                 --mappings = {
                 --    custom_only = false,

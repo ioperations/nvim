@@ -71,7 +71,10 @@ return {
     {
         "lukas-reineke/indent-blankline.nvim",
         config = function()
-            require("indent_blankline").setup()
+            -- create the highlight groups in the highlight setup hook, so they are reset
+            -- every time the colorscheme changes
+
+            require("ibl").setup({})
         end,
     },
 
