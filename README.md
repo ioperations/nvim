@@ -1,29 +1,39 @@
 <div align="center">
-    <h1 style="font-size:40px;color:red;background-color: #a1f1a2"> Neo <a href="https://github.com/yangyangwithgnu/use_vim_as_ide"; class="original-topic"; > Use_vim_as_ide </a> </h1>
+    <h1 style="font-size:40px;color:red;background-color: #a1f1a2"> <a href="https://github.com/ioperations/nvim"; class="original-topic"; > Neo use_vim_as_ide </a> </h1>
 </div>
 
 <img align="center" src="./img/alpha.png"/>
 
-#### [yangyangwithgnu](https://github.com/yangyangwithgnu) 说过所思即所获，本人也是基于这篇文章后跟随社区成长过来的，本文相对于那篇老文章对nvim做了几点改进，主要是：
-
 ## Table of content
 
+- [lsp前端:coc.nvim vs nvim-cmp](#coc.nvim还是nvim-cmp)
 - [对重插件youcompeteme转为基于lsp的clangd和ccls](#ccls和calngd融合)
 - [支持多种语言的补全，语义跳转: rust go java typescript vue.js react](#多种语言支持)
 - [跟进edit-compile-run迭代规则,借助vim的quickfix功能跳转到对应要修改的地方](#任务系统)
 - [改变基于正则匹配的语法高亮，转而使用tree-sitter基于编译器的语法高亮](#语法高亮)
 - [neovim的ui系统做了现代化，用barbar.nvim 来展示title bar,nvim-tree并加入vim devicons](#ui系统现代化)
 - [模糊搜索，全文跳转，当前文件内容搜索等等](#模糊搜索)
+- [调试: vimspector vs nvim-dap](#vimspector还是nvim-dap)
 - [小工具集成,whick-key,easymotion,cppman,translate,markdown render](#小工具)
 - [一键安装代码,包括debian发行版的工具链拉取,请安装好node,golang(optional)](#Installation)
 
 <!-- more -->
 
+## coc.nvim还是nvim-cmp
+
+- 现如今单纯的插件已经不足以作为一个卖点了，生态最重要! coc.nvim从一开始就提供了良好的插件生态，用ts写vim插件，由于是异步的，写出来的插件都不会阻塞，对用户体验也很好。后来neovim自己搞了一套内置的lsp，由于rewrittern in lua的运动，很多基于lsp的应用也开始出现，mason.nvim提供了对各种luanguage server二进制的下载功能，尝试了之后就再也回不去了。nvim-cmp虽然是rewrittern in lua，但他提供的编辑体验不如coc.nvim, 补全list去重我折腾了很长时间也没达到实现和coc.nvim一样的效果，补全list的排序算法也不如coc.nvim的强大。对于这种现状，我们还是坚持不做选择，从两者当中挑选最好的给自己用，补全引擎用coc.nvim,同时提供neovim lsp的后端server给其他插件使用。
+
+  |              | coc.nvim                                                                                                                             | neovim builtin lsp                                                                                                 |
+  | ------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
+  | winbar       | coc-symbol-line,使用起来体验不太好，展示时随着鼠标的移动结果会跳变                                                                   | ✅ [nvim-navic](https://github.com/SmiteshP/nvim-navic)中,winbar中展示稳定 <img width=100% src="./img/winbar.png"> |
+  | completion   | ✅coc.nvim会对返回结果进行排序，挑选合适的结果作为第一个候选者给用户，基本上这个结果就是用户想要的                                   | nvim-cmp 作为其前端，基本功能实现还可以，但毕竟这个repo当中才有800次提交，还有很多提升编辑体验的空间               |
+  | project tree | ✅nvim-tree对coc和neovim builtin lsp都有支持，这个我觉得还是很好的，上面的winbar其实也应该可以做到支持coc，有哥哥愿意给他来个issue吗 | ✅                                                                                                                 |
+  | telescope    | ✅作为neovim最强大插件之一，coc.nvim 有[telescope-coc.nvim](https://github.com/fannheyward/telescope-coc.nvim) 提供对telescope的支持 | ✅telescope内置支持neovim builtin lsp                                                                              |
+
 ## ccls和calngd融合
 
 - 小孩子才做选择，大人选择全都要。
   - clangd和ccls在使用过程中都有自己的优点，比如clangd生成的hover展示的效果要比ccls好，函数参数，文档解释分开展示，完美透过hover就可以有很好的理解。而ccls有自己的基于json-rpc的扩展方法，在面向对象中，可以展示纯虚函数的实现，从实现跳转到接口(c++的接口就是纯虚函数)，本配置对ccls和clangd的初始化选项做了调整，可以只展示clangd的hover而不展示ccls生成的，又保证ccls的扩展功能在nvim的key binding中。
-  - neovim内置的language server client可以对language server的能力进行挑选，让我们可以挑选两个language server的能力，转换到neovim内置的language server clinet还有一点好处，就是可以方便的集成其他基于lsp协议的工具，如nvim-navica。
 
 ## 多种语言支持
 
