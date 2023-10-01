@@ -78,6 +78,10 @@ return {
         end,
     },
 
+    {
+        "RRethy/vim-illuminate",
+        enabled = false,
+    },
     -- cursorline
     {
         "yamatsum/nvim-cursorline",
