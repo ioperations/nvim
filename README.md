@@ -29,6 +29,8 @@
   | completion   | ✅coc.nvim会对返回结果进行排序，挑选合适的结果作为第一个候选者给用户，基本上这个结果就是用户想要的                                   | nvim-cmp 作为其前端，基本功能实现还可以，但毕竟这个repo当中才有800次提交，还有很多提升编辑体验的空间               |
   | project tree | ✅nvim-tree对coc和neovim builtin lsp都有支持，这个我觉得还是很好的，上面的winbar其实也应该可以做到支持coc，有哥哥愿意给他来个issue吗 | ✅                                                                                                                 |
   | telescope    | ✅作为neovim最强大插件之一，coc.nvim 有[telescope-coc.nvim](https://github.com/fannheyward/telescope-coc.nvim) 提供对telescope的支持 | ✅telescope内置支持neovim builtin lsp                                                                              |
+  | LspSaga      | --                                                                                                                                   | ✅另一套基于neovim builtin lsp的前端，在CursorMove这个Event的时候会发送textDocument/codeAction并显示💡到当前函数   |
+  | mason.nvim   | ✅                                                                                                                                   | ✅neovim提供的language server binary下载插件                                                                       |
 
 ## ccls和calngd融合
 
