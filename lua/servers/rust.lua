@@ -45,7 +45,7 @@ M.enable = function()
         end
 
         local com = command .. args_flatten
-        local running = com:gsub("cargo", "make")
+        local running = "!" .. com
         vim.g.cargo_run_current_test = com
 
         vim.cmd("set makeprg=cargo")
