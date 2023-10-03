@@ -82,6 +82,10 @@ vim.g.markdown_fenced_languages = {
     "js=javascript",
 }
 
-vim.cmd("source" .. vim.fn.stdpath("config") .. "/vim/langtemplate.vim")
+if vim.loop.os_uname().sysname ~= "Windows_NT" then
+    vim.cmd("source " .. vim.fn.stdpath("config") .. "/vim/langtemplate.vim")
+else
+    vim.cmd("source " .. vim.fn.stdpath("config") .. "\\vim\\langtemplate.vim")
+end
 -- ~/.locals/share/nvim/lsp.log
 -- vim.lsp.set_log_level(vim.log.levels.TRACE)
