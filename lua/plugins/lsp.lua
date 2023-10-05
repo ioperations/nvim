@@ -67,14 +67,21 @@ return {
             config = function()
                 require("lsp-status").config({
                     status_symbol = "  ",
-                    indicator_ok = "",
-                    indicator_errors = "",
-                    indicator_warnings = "",
+                    indicator_ok = " ",
+                    indicator_errors = " ",
+                    indicator_warnings = " ",
                     pinner_frames = { "⣾", "⣽", "⣻", "⢿", "⡿", "⣟", "⣯", "⣷" },
                 })
             end,
         },
 
+        {
+            "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+            enabled = false,
+            config = function()
+                require("lsp_lines").setup()
+            end,
+        },
         -- {
         --     "lvimuser/lsp-inlayhints.nvim",
         --     event = "LspAttach",
