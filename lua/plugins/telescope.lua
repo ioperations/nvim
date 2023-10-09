@@ -28,7 +28,7 @@ return {
             "fannheyward/telescope-coc.nvim",
             "BurntSushi/ripgrep",
         },
-        lazy = true,
+        lazy = false,
         cmd = "Telescope",
         extensions = {
             fzf = {
