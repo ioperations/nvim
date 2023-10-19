@@ -1,5 +1,6 @@
 return {
     "puremourning/vimspector",
+    enabled = false,
     config = function()
         _G.vimspector_enable_mappings = "HUMAN"
         _G.vimspector_install_gadgets = { "debugpy", "vscode-cpptools", "CodeLLDB" }
