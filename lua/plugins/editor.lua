@@ -110,6 +110,9 @@ return {
 
     -- colorschema
     {
+        "morhetz/gruvbox",
+    },
+    {
         "lunarvim/lunar.nvim",
         -- lazy = true,
         priority = 1000,
