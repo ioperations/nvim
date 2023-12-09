@@ -26,6 +26,7 @@ return {
             "coc-emoji",
             -- "coc-highlight",
             "coc-pairs",
+            "coc-lightbulb",
             "coc-prettier",
         }
         -- Always show the signcolumn, otherwise it would shift the text each time
