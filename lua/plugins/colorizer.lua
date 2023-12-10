@@ -2,7 +2,7 @@ return {
     {
         "NvChad/nvim-colorizer.lua",
         opts = {
-            filetypes = { "*" },
+            filetypes = { "*", "!cpp", "!c", "!rust", "!go", "!java" },
             user_default_options = {
                 rgb_fn = true, -- CSS rgb() and rgba() functions
                 hsl_fn = true, -- CSS hsl() and hsla() functions
