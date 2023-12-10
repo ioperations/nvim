@@ -71,6 +71,7 @@ return {
                     indicator_errors = " ",
                     indicator_warnings = " ",
                     pinner_frames = { "⣾", "⣽", "⣻", "⢿", "⡿", "⣟", "⣯", "⣷" },
+                    current_function = true,
                 })
             end,
         },

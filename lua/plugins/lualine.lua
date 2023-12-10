@@ -12,7 +12,27 @@ return {
             },
             sections = {
                 lualine_a = { "mode" },
-                lualine_b = { "branch", "diff", "require'lsp-status'.status()" },
+                lualine_b = {
+                    "branch",
+                    "diff",
+                    "require'lsp-status'.status()",
+                    {
+                        "diagnostics",
+                        sources = { "coc" },
+                        sections = { "error", "warn", "info", "hint" },
+                        symbols = { error = " ", warn = " ", info = " ", hint = "💡" },
+                        diagnostics_color = {
+                            -- Same values as the general color option can be used here.
+                            error = "DiagnosticError", -- Changes diagnostics' error color.
+                            warn = "DiagnosticWarn", -- Changes diagnostics' warn color.
+                            info = "DiagnosticInfo", -- Changes diagnostics' info color.
+                            hint = "DiagnosticHint", -- Changes diagnostics' hint color.
+                        },
+                        colored = true, -- Displays diagnostics status in color if set to true.
+                        update_in_insert = false, -- Update diagnostics in insert mode.
+                        always_visible = false, -- Show diagnostics even if there are none.
+                    },
+                },
                 lualine_c = {
                     { "g:coc_status" },
                 },
@@ -29,7 +49,7 @@ return {
                 lualine_z = {},
             },
             tabline = {},
-            extensions = { "fugitive", "nvim-tree" },
+            extensions = { "fugitive" },
         },
     },
 }
