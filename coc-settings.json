@@ -4,6 +4,7 @@
   "inlayHint.enable": true,
   "inlayHint.refreshOnInsertMode": false,
   "codeLens.position": "eol",
+  "lightbulb.enableSign": true,
   "codeLens.subseparator": "|",
   "explorer.icon.enableNerdfont": true,
   "translator.engines": ["bing", "google", "youdao"],
