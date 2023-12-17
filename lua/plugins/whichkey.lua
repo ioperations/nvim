@@ -89,7 +89,7 @@ return {
                     R = { "<Plug>(coc-rename)", "Rename" },
                     D = { vim.lsp.buf.declaration, "declaration" },
                     d = { "<cmd>Telescope lsp_definitions<cr>", "Definition" },
-                    r = { "<cmd>Telescope lsp_references<cr>", "References" },
+                    r = { "<cmd>Glance references<cr>", "References" },
                     a = { "<Plug>(coc-codeaction-selected)", "codeAction" },
                     o = { "<cmd>Lspsaga outline<cr>", "Outline" },
                     i = { "<cmd>Telescope lsp_implementations<cr>", "Implementations" },
