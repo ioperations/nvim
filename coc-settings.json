@@ -176,7 +176,11 @@
       "rootPatterns": ["go.mod"],
       "filetypes": ["go"]
     },
-
+    "stp": {
+      "filetypes": ["stp"],
+      "command": "stap",
+      "args": ["--language-server"]
+    },
     "lua_language_server": {
       "settings": {
         "Lua": {
