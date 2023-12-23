@@ -155,6 +155,12 @@ return {
             lazy = true,
         },
         {
+            "IngoMeyer441/coc_current_word",
+            dependencies = {
+                "neoclide/coc.nvim",
+            },
+        },
+        {
             "dnlhc/glance.nvim",
             config = function()
                 require("glance").setup({

@@ -37,6 +37,7 @@ vim.opt.mousemodel = "popup"
 -- timeout for whichkey
 vim.opt.timeoutlen = 500
 vim.opt.pumheight = 17
+vim.g.coc_current_word_highlight_delay = 2000
 
 -- Neovide settings
 

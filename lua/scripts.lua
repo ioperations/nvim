@@ -1,4 +1,6 @@
-vim.api.nvim_exec(
+vim.api.nvim_exec2([[hi CurrentWord guifg=#3fbfff guibg=None gui=underline,bold]], {})
+
+vim.api.nvim_exec2(
     [[
 func! CompileRunGcc()
     let container = "AsyncRun -position=bottomright -pos=floaterm -mode=term -width=0.8 -height=0.6 "
@@ -56,5 +58,5 @@ func! CompileRunGcc()
     endif
 endfunc
 ]],
-    false
+    {}
 )
