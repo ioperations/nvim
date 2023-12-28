@@ -1,10 +1,14 @@
+local function relativepath()
+    return vim.fn.fnamemodify(vim.fn.getcwd(), ":t") .. "/" .. vim.fn.expand("%:.")
+end
+
 return {
     {
         "nvim-lualine/lualine.nvim",
         opts = {
             options = {
                 icons_enabled = true,
-                component_separators = { left = "●", right = "●" },
+                component_separators = { left = " ", right = "●" },
                 section_separators = "",
                 disabled_filetypes = {},
                 theme = "lunar",
@@ -14,8 +18,11 @@ return {
                 lualine_a = { "mode" },
                 lualine_b = {
                     "branch",
+                    {
+                        color = { fg = "#8faa88", bg = nil, gui = "italic,bold" },
+                        relativepath,
+                    },
                     "diff",
-                    "require'lsp-status'.status()",
                     {
                         "diagnostics",
                         sources = { "coc" },
@@ -34,7 +41,9 @@ return {
                     },
                 },
                 lualine_c = {
-                    { "g:coc_status" },
+                    {
+                        "g:coc_status",
+                    },
                 },
                 lualine_x = { "encoding", "fileformat", "filetype" },
                 lualine_y = { "progress" },

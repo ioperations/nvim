@@ -181,6 +181,11 @@
       "command": "stap",
       "args": ["--language-server"]
     },
+    "ocaml-lsp": {
+      "command": "opam",
+      "args": ["config", "exec", "--", "ocamllsp"],
+      "filetypes": ["ocaml", "reason"]
+    },
     "lua_language_server": {
       "settings": {
         "Lua": {
