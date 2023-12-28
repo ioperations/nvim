@@ -1,14 +1,17 @@
 local function relativepath()
-    return vim.fn.fnamemodify(vim.fn.getcwd(), ":t") .. "/" .. vim.fn.expand("%:.")
+    return vim.fn.expand("%:.")
 end
 
+local function project()
+    return vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
+end
 return {
     {
         "nvim-lualine/lualine.nvim",
         opts = {
             options = {
                 icons_enabled = true,
-                component_separators = { left = " ", right = "●" },
+                component_separators = { left = "", right = "" },
                 section_separators = "",
                 disabled_filetypes = {},
                 theme = "lunar",
@@ -18,6 +21,10 @@ return {
                 lualine_a = { "mode" },
                 lualine_b = {
                     "branch",
+                    {
+                        color = { fg = "#ffaa88", bg = nil, gui = "underline,bold" },
+                        project,
+                    },
                     {
                         color = { fg = "#8faa88", bg = nil, gui = "italic,bold" },
                         relativepath,
