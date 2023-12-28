@@ -1,4 +1,4 @@
-vim.api.nvim_exec2([[hi CurrentWord guifg=#3fbfff guibg=None gui=underline,bold]], {})
+vim.api.nvim_exec2([[hi CurrentWord guifg=#1f111f guibg=#cecec6 gui=underline,bold]], {})
 
 vim.api.nvim_exec2(
     [[
