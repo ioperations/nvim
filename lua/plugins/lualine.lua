@@ -1,5 +1,6 @@
 local function project()
-    return "λ >> " .. vim.fn.fnamemodify(vim.fn.getcwd(), ":t") .. " << λ"
+    return "࿘ " .. vim.fn.fnamemodify(vim.fn.getcwd(), ":t") .. " ࿗"
+    -- λ
 end
 return {
     {
@@ -24,7 +25,7 @@ return {
                         "filename",
                         file_status = true,
                         path = 1,
-                        color = { fg = "#0feaaf", bg = nil, gui = "" },
+                        color = { fg = "#ffaa88", bg = nil, gui = "" },
                     },
                     "diff",
                     {
