@@ -1,7 +1,7 @@
 local function project()
-    return "☞  " .. vim.fn.fnamemodify(vim.fn.getcwd(), ":t") .. " ☜ "
-    -- λ
+    return vim.fn.fnamemodify(vim.fn.getcwd(), ":t") .. "  "
 end
+
 return {
     {
         "nvim-lualine/lualine.nvim",
