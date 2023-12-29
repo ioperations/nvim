@@ -1,9 +1,5 @@
-local function relativepath()
-    return vim.fn.expand("%:.")
-end
-
 local function project()
-    return vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
+    return "λ >> " .. vim.fn.fnamemodify(vim.fn.getcwd(), ":t") .. " << λ"
 end
 return {
     {
@@ -26,8 +22,10 @@ return {
                         project,
                     },
                     {
-                        color = { fg = "#8faa88", bg = nil, gui = "italic,bold" },
-                        relativepath,
+                        "filename",
+                        file_status = true,
+                        path = 1,
+                        color = { fg = "#0feaaf", bg = nil, gui = "" },
                     },
                     "diff",
                     {
