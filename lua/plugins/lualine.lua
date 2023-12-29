@@ -1,5 +1,5 @@
 local function project()
-    return "࿘ " .. vim.fn.fnamemodify(vim.fn.getcwd(), ":t") .. " ࿗"
+    return "☞  " .. vim.fn.fnamemodify(vim.fn.getcwd(), ":t") .. " ☜ "
     -- λ
 end
 return {
