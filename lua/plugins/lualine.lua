@@ -17,10 +17,9 @@ return {
                 lualine_a = { "mode" },
                 lualine_b = {
                     "branch",
-                    {
-                        color = { fg = "#ffaa88", bg = nil, gui = "underline,bold" },
-                        project,
-                    },
+                },
+                lualine_c = {
+
                     {
                         "filename",
                         file_status = true,
@@ -44,14 +43,22 @@ return {
                         update_in_insert = false, -- Update diagnostics in insert mode.
                         always_visible = false, -- Show diagnostics even if there are none.
                     },
-                },
-                lualine_c = {
                     {
                         "g:coc_status",
                     },
                 },
-                lualine_x = { "encoding", "fileformat", "filetype" },
-                lualine_y = { "progress" },
+                lualine_x = {
+                    "encoding",
+                    "fileformat",
+                    {
+                        color = { fg = "#ffaa88", bg = nil, gui = "bold" },
+                        project,
+                    },
+                },
+                lualine_y = {
+                    "filetype",
+                    "progress",
+                },
                 lualine_z = { "location" },
             },
             inactive_sections = {
