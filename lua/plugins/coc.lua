@@ -70,16 +70,36 @@ return {
 
             local language_server_config = vim.json.encode({
                 lua_language_server = {
-                    command = mason_root_dir .. "/bin/lua-language-server",
-                    filetypes = { "lua" },
                     settings = {
                         Lua = {
                             workspace = {
-                                -- Make the server aware of Neovim runtime files
+                                maxPreload = 2000,
+                                preloadFileSize = 1000,
+                                checkThirdParty = "false",
                                 library = vim.api.nvim_get_runtime_file("", true),
+                            },
+                            runtime = {
+                                version = "LuaJIT",
+                            },
+                            filetypes = { "lua" },
+                            diagnostics = {
+                                enable = "true",
+                                globals = {
+                                    "vim",
+                                    "setup",
+                                },
+                                disable = { "lowercase-global" },
+                            },
+                            completion = {
+                                keywordSnippet = "Disable",
+                            },
+                            telemetry = {
+                                enable = "false",
                             },
                         },
                     },
+                    command = mason_root_dir .. "/bin/lua-language-server",
+                    filetypes = { "lua" },
                 },
                 cmake_language_server = {
                     command = mason_root_dir .. "/bin/neocmakelsp",
@@ -100,6 +120,7 @@ return {
 
             language_server_config = string.gsub(language_server_config, '"', "'")
             language_server_config = string.gsub(language_server_config, "\\", "")
+            -- vim.print(vim.inspect(language_server_config))
             local vim_config = "call coc#config('languageserver'," .. language_server_config .. ")"
             -- print(vim_config)
             vim.api.nvim_exec2(vim_config, {})

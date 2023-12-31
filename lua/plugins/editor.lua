@@ -243,7 +243,7 @@ return {
             {
                 "junegunn/fzf",
                 build = function()
-                    vim.api.nvim_exec([[call fzf#install()]], false)
+                    vim.api.nvim_exec2([[call fzf#install()]], {})
                 end,
             },
             "junegunn/fzf.vim",

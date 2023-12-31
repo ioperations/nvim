@@ -185,39 +185,6 @@
       "command": "opam",
       "args": ["config", "exec", "--", "ocamllsp"],
       "filetypes": ["ocaml", "reason"]
-    },
-    "lua_language_server": {
-      "settings": {
-        "Lua": {
-          "workspace": {
-            "maxPreload": 2000,
-            "preloadFileSize": 1000,
-            "checkThirdParty": false
-          },
-          "runtime": {
-            "version": "LuaJIT"
-          },
-          "filetypes": ["lua"],
-          "diagnostics": {
-            "enable": true,
-            "globals": [
-              "hs",
-              "vim",
-              "it",
-              "describe",
-              "before_each",
-              "after_each"
-            ],
-            "disable": ["lowercase-global"]
-          },
-          "completion": {
-            "keywordSnippet": "Disable"
-          },
-          "telemetry": {
-            "enable": false
-          }
-        }
-      }
     }
   },
   "snippets.ultisnips.directories": [
