@@ -45,7 +45,9 @@ return {
                         always_visible = false, -- Show diagnostics even if there are none.
                     },
                     {
+                        "b:coc_lightbulb_status",
                         "g:coc_status",
+                        color = { fg = nil, bg = "#17161e", gui = "" },
                     },
                 },
                 lualine_x = {
