@@ -5,6 +5,10 @@
   "inlayHint.refreshOnInsertMode": false,
   "codeLens.position": "eol",
   "lightbulb.enableSign": true,
+  "lightbulb.text": {
+    "default": "💡",
+    "quickfix": " "
+  },
   "codeLens.subseparator": "|",
   "explorer.icon.enableNerdfont": true,
   "translator.engines": ["bing", "google", "youdao"],
