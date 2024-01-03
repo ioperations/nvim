@@ -36,6 +36,8 @@ return {
     "junegunn/vim-easy-align",
     -- surround
     "tpope/vim-surround",
+    -- emacs keybinding
+    "tpope/vim-rsi",
     -- undotree
     {
         "mbbill/undotree",

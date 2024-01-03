@@ -167,19 +167,20 @@ local mappings = {
         { "<leader>ga", "<Plug>(LiveEasyAlign)" },
         { "<leader>lf", "<Plug>(coc-format-selected)" },
     },
-    c = {
-        { "<C-a>", "<Home>" },
-        { "<C-b>", "<Left>" },
-        { "<C-d>", "<Del>" },
-        { "<C-e>", "<End>" },
-        { "<C-f>", "<Right>" },
-        { "<C-n>", "<Down>" },
-        { "<C-j>", "<Down>" },
-        { "<C-p>", "<Up>" },
-        { "<C-k>", "<Up>" },
-        { "<C-y>", "<C-r>*" },
-        { "<C-g>", "<C-c>" },
-    },
+    -- "tpope/vim-rsi",
+    -- c = {
+    --     { "<C-a>", "<Home>" },
+    --     { "<C-b>", "<Left>" },
+    --     { "<C-d>", "<Del>" },
+    --     { "<C-e>", "<End>" },
+    --     { "<C-f>", "<Right>" },
+    --     { "<C-n>", "<Down>" },
+    --     { "<C-j>", "<Down>" },
+    --     { "<C-p>", "<Up>" },
+    --     { "<C-k>", "<Up>" },
+    --     { "<C-y>", "<C-r>*" },
+    --     { "<C-g>", "<C-c>" },
+    -- },
 }
 
 register_mappings(mappings, { silent = true, noremap = true })
