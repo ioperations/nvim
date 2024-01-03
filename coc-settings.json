@@ -176,13 +176,34 @@
       "filetypes": ["haskell", "lhaskell"],
       "settings": {
         "haskell": {
+          "plugin": {
+            "class": {
+              "codeLensOn": true
+            },
+            "importLens": {
+              "codeLensOn": true
+            },
+            "refineImports": {
+              "codeLensOn": true
+            },
+            "tactics": {
+              "codeLensOn": true
+            },
+            "moduleName": {
+              "globalOn": true
+            },
+            "eval": {
+              "globalOn": true
+            },
+            "ghcide-type-lenses": {
+              "globalOn": true
+            },
+            "stan": { "globalOn": true }
+          },
           "checkParents": "CheckOnSave",
           "checkProject": true,
           "maxCompletions": 40,
-          "formattingProvider": "ormolu",
-          "plugin": {
-            "stan": { "globalOn": true }
-          }
+          "formattingProvider": "ormolu"
         }
       }
     },
