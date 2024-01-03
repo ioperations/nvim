@@ -238,6 +238,59 @@ return {
                 })
             end,
         },
+        -- haskell
+        {
+            "mrcjkb/haskell-tools.nvim",
+            version = "^3", -- Recommended
+            enabled = true,
+            ft = { "haskell", "lhaskell", "cabal", "cabalproject" },
+            config = function()
+                vim.api.nvim_create_augroup("haskell_tools", {})
+                local ht = require("haskell-tools")
+
+                vim.api.nvim_create_autocmd({
+                    "BufEnter",
+                }, {
+                    group = "haskell_tools",
+                    pattern = "*.hs",
+                    callback = function()
+                        local wk = require("which-key")
+                        wk.register({
+                            l = {
+                                name = "Lsp",
+                                l = { vim.lsp.codelens.run, "codelens run" },
+                                d = { "<cmd>CclsDerived<cr>", "CCls Derived" },
+                                f = { "<cmd>CclsMemberFunction<cr>", "CCls MemberFunction" },
+                                D = { "<cmd>CclsDerivedHierarchy float<cr>", "CCls Derived Hierachy" },
+                                o = { "<cmd>CclsOutgoingCalls<cr>", "CCls Outgoing Calls Hierachy" },
+                                I = { "<cmd>CclsIncomingCallsHierarchy float<cr>", "CCls Incoming Calls Hierachy" },
+                                O = { "<cmd>CclsOutgoingCallsHierarchy float<cr>", "CCls Outgoing Calls Hierachy" },
+                                b = { "<cmd>CclsBase<cr>", "CCls Base" },
+                                v = { "<cmd>CclsVars<cr>", "CCls Vars" },
+                                m = { "<cmd>CclsMember<cr>", "CCls Member" },
+                                t = { "<cmd>CclsMemberType<cr>", "CCls MemberType" },
+                                B = { "<cmd>CclsBaseHierarchy float<cr>", "CCls CclsBaseHierarchy" },
+                                T = { "<cmd>CclsMemberTypeHierarchy float<cr>", "CCls MemberTypeHirarchy" },
+                                M = { "<cmd>CclsMemberHierarchy float<cr>", "CCls MemberHirarchy" },
+                                F = { "<cmd>CclsMemberFunctionHierarchy float<cr>", "CCls MemberFunctionHierarchy" },
+                            },
+                            d = {
+                                d = { ht.lsp.buf_eval_all, "buffer eval all" },
+                            },
+                            K = { ht.hoogle.hoogle_signature, "Hoggle" },
+                        }, { prefix = "<leader>" })
+
+                        -- Toggle a GHCi repl for the current package
+                        -- vim.keymap.set("n", "<leader>rr", ht.repl.toggle, opts)
+                        -- -- Toggle a GHCi repl for the current buffer
+                        -- vim.keymap.set("n", "<leader>rf", function()
+                        --     ht.repl.toggle(vim.api.nvim_buf_get_name(0))
+                        -- end, def_opts)
+                        -- vim.keymap.set("n", "<leader>rq", ht.repl.quit, opts)
+                    end,
+                })
+            end,
+        },
         -- {
         --     "ray-x/go.nvim",
         --     dependencies = "ray-x/guihua.lua",
@@ -296,6 +349,7 @@ return {
                     -- ["gopls"] = function()
                     --     require("servers.gopls").enable()
                     -- end,
+                    ["hls"] = function() end,
                     ["yamlls"] = function()
                         require("servers.yaml").enable()
                     end,
