@@ -11,7 +11,7 @@ return {
                     update_root = true,
                 },
 
-                patterns = { ".git", "_darcs", ".hg", ".bzr", ".svn", ".cache" },
+                patterns = { ".git", "_darcs", ".hg", ".bzr", ".svn", ".cache", "stack.yaml", "hs.cabal" },
             })
         end,
         lazy = true,
