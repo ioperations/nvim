@@ -104,7 +104,7 @@ return {
                 cmake_language_server = {
                     command = mason_root_dir .. "/bin/neocmakelsp",
                     filetypes = { "cmake" },
-                    rootPatterns = { "build/" },
+                    rootPatterns = { ".git" },
                     args = { "--stdio" },
                     initializationOptions = {
                         buildDirectory = "build",
