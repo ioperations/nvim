@@ -13,6 +13,7 @@
   "explorer.icon.enableNerdfont": true,
   "translator.engines": ["bing", "google", "youdao"],
   "clangd.disableCompletion": false,
+  "rust-analyzer.server.path": "~/.local/share/nvim/mason/bin/rust-analyzer",
   "diagnostic.floatConfig": { "border": true },
   "diagnostic.hintSign": "💡",
   "diagnostic.warningSign": " ",
