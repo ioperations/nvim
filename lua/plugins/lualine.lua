@@ -1,3 +1,8 @@
+--
+local function filepath()
+    return "  " .. vim.fn.expand("%:.")
+end
+
 local function project()
     return vim.fn.fnamemodify(vim.fn.getcwd(), ":t") .. "  "
 end
@@ -22,7 +27,7 @@ return {
                 lualine_c = {
 
                     {
-                        "filename",
+                        filepath,
                         file_status = true,
                         path = 1,
                         color = { fg = "#ffaa88", bg = nil, gui = "" },
