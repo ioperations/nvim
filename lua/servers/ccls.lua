@@ -65,12 +65,7 @@ M.enable = function()
             },
             clang = {
                 --  "extraArgs": ["-DTEST_ADQ", "-Wall", "-std=c++17"]
-                extraArgs = {
-                    "-DTEST_ADQ",
-                    "-Wall",
-                    "-Wpedantic",
-                    "-std=c++17",
-                },
+                extraArgs = {},
             },
         },
         name = "ccls",
@@ -138,6 +133,16 @@ M.enable = function()
             create_ccls_keymap()
         end,
     }
+
+    if not vim.fn.exists(vim.fn.glob(vim.fn.getcwd() .. "/compile_commands.json")) then
+        local fallback = {
+            "-DTEST_ADQ",
+            "-Wall",
+            "-Wpedantic",
+            "-std=c++17",
+        }
+        server_config.init_options.clang.extraArgs = fallback
+    end
 
     require("ccls").setup({
         filetypes = filetypes,
