@@ -36,6 +36,7 @@ return {
         -- status
         {
             "nvim-lua/lsp-status.nvim",
+            enabled = false,
             config = function()
                 require("lsp-status").config({
                     status_symbol = "  ",
@@ -110,13 +111,6 @@ return {
 
         { "p00f/clangd_extensions.nvim", lazy = true },
         { "ranjithshegde/ccls.nvim", lazy = true },
-        -- diagnostic show
-        --       {
-        --           "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-        --           config = function()
-        --               require("lsp_lines").setup()
-        --           end,
-        --       },
         "jose-elias-alvarez/null-ls.nvim",
         -- code action
         {
@@ -126,15 +120,6 @@ return {
                 vim.g.code_action_menu_window_border = "single"
             end,
             lazy = true,
-        },
-        {
-            "IngoMeyer441/coc_current_word",
-            dependencies = {
-                "neoclide/coc.nvim",
-            },
-            config = function()
-                vim.api.nvim_exec2([[hi CurrentWord guifg=None guibg=#3b5e6a gui=underline,bold]], {})
-            end,
         },
         {
             "dnlhc/glance.nvim",
