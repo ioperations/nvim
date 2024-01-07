@@ -1,10 +1,10 @@
 --
 local function filepath()
-    return "  " .. vim.fn.expand("%:.")
+    return vim.fn.expand("%:.")
 end
 
 local function project()
-    return vim.fn.fnamemodify(vim.fn.getcwd(), ":t") .. "  "
+    return "  " .. vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
 end
 
 return {
@@ -21,8 +21,10 @@ return {
             },
             sections = {
                 lualine_a = { "mode" },
+
                 lualine_b = {
-                    "branch",
+                    -- color = { fg = "#ffaa88", bg = nil, gui = "bold" },
+                    project,
                 },
                 lualine_c = {
 
@@ -58,13 +60,10 @@ return {
                 lualine_x = {
                     "encoding",
                     "fileformat",
-                    {
-                        color = { fg = "#ffaa88", bg = nil, gui = "bold" },
-                        project,
-                    },
+                    "filetype",
                 },
                 lualine_y = {
-                    "filetype",
+                    "branch",
                     "progress",
                 },
                 lualine_z = { "location" },
