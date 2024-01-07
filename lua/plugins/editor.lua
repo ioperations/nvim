@@ -198,7 +198,7 @@ return {
             require("todo-comments").setup({
                 keywords = {
                     FIX = {
-                        icon = "", -- icon used for the sign, and in search results
+                        icon = " ", -- icon used for the sign, and in search results
                         color = "error", -- can be a hex color, or a named color (see below)
                         alt = { "FIXME", "BUG", "FIXIT", "ISSUE" }, -- a set of other keywords that all map to this FIX keywords
                         -- signs = false, -- configure signs for some keywords individually
@@ -214,26 +214,6 @@ return {
         end,
         dependencies = { -- looking
             { "numToStr/Comment.nvim" },
-            {
-                "christianchiarulli/nvim-ts-rainbow",
-                lazy = true,
-                config = function()
-                    require("nvim-treesitter.configs").setup({
-                        highlight = {
-                            -- ...
-                        },
-                        -- ...
-                        rainbow = {
-                            enable = true,
-                            -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
-                            extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
-                            max_file_lines = nil, -- Do not enable for files with more than n lines, int
-                            -- colors = {}, -- table of hex strings
-                            -- termcolors = {} -- table of colour name strings
-                        },
-                    })
-                end,
-            },
         },
     },
     -- smater cd
