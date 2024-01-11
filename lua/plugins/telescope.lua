@@ -14,7 +14,7 @@ return {
                 patterns = { ".git", "_darcs", ".hg", ".bzr", ".svn", ".cache", "stack.yaml", "hs.cabal" },
             })
         end,
-        lazy = true,
+        lazy = false,
     },
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make", lazy = true },
     { "nvim-telescope/telescope-dap.nvim", lazy = true },

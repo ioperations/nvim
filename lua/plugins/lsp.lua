@@ -84,24 +84,28 @@ return {
             "rust-lang/rust.vim",
             ft = { "rust", "toml" },
             lazy = true,
-            { "simrat39/rust-tools.nvim", lazy = true },
-            {
-                "saecki/crates.nvim",
-                version = "v0.3.0",
-                lazy = true,
-                ft = { "rust", "toml" },
-                dependencies = { "nvim-lua/plenary.nvim" },
-                config = function()
-                    require("crates").setup({
-                        null_ls = {
-                            enabled = true,
-                            name = "crates.nvim",
-                        },
-                    })
-                end,
-            },
+        },
+        {
+            "mrcjkb/rustaceanvim",
+            version = "^3", -- Recommended
+            ft = { "rust" },
         },
 
+        {
+            "saecki/crates.nvim",
+            version = "v0.3.0",
+            lazy = true,
+            ft = { "rust", "toml" },
+            dependencies = { "nvim-lua/plenary.nvim" },
+            config = function()
+                require("crates").setup({
+                    null_ls = {
+                        enabled = true,
+                        name = "crates.nvim",
+                    },
+                })
+            end,
+        },
         {
             "folke/trouble.nvim",
             config = function()
@@ -301,7 +305,7 @@ return {
                     -- Next, you can provide a dedicated handler for specific servers.
                     -- For example, a handler override for the `rust_analyzer`:
                     ["rust_analyzer"] = function()
-                        require("servers.rust").enable()
+                        -- require("servers.rust").enable()
                     end,
                     ["lua_ls"] = function()
                         require("servers.luals").enable()
