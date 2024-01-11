@@ -63,7 +63,6 @@ M.enable = function()
                 -- directory = vim.fs.normalize("~/.cache/ccls/"),
                 retainInMemory = 0,
             },
-            highlight = { lsRanges = true },
             clang = {
                 --  "extraArgs": ["-DTEST_ADQ", "-Wall", "-std=c++17"]
                 extraArgs = {},

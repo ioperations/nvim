@@ -2,7 +2,6 @@ return {
     { "nickhutchinson/vim-systemtap" },
     { "mmarchini/bpftrace.vim" },
     { "whatyouhide/vim-tmux-syntax" },
-    { "jackguo380/vim-lsp-cxx-highlight" },
     {
         "HiPhish/rainbow-delimiters.nvim",
         config = function()

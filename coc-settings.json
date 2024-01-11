@@ -16,7 +16,6 @@
   "rust-analyzer.server.path": "~/.local/share/nvim/mason/bin/rust-analyzer",
   "diagnostic.floatConfig": { "border": true },
   "diagnostic.hintSign": "💡",
-  "semanticTokens.enable": true,
   "diagnostic.warningSign": " ",
   "diagnostic.infoSign": " ",
   "diagnostic.errorSign": ">>",
