@@ -87,7 +87,7 @@ return {
         },
         config = function()
             local bufferline = require("bufferline")
-            opts = {
+            bufferline.setup({
                 options = {
                     style = bufferline.style_preset.slant,
                     hover = {
@@ -136,8 +136,7 @@ return {
                     max_name_length = 22,
                     tab_size = 22,
                 },
-            }
-            bufferline.setup(opts)
+            })
         end,
     },
 }
