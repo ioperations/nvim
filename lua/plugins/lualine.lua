@@ -16,7 +16,7 @@ return {
                 component_separators = { left = "●", right = "●" },
                 section_separators = "",
                 disabled_filetypes = {},
-                theme = "lunar",
+                theme = "tokyonight",
                 globalstatus = true,
             },
             sections = {
@@ -78,5 +78,66 @@ return {
             tabline = {},
             extensions = { "fugitive" },
         },
+    },
+    -- bufline
+    {
+        "akinsho/bufferline.nvim",
+        dependencies = {
+            "kyazdani42/nvim-web-devicons",
+        },
+        config = function()
+            local bufferline = require("bufferline")
+            opts = {
+                options = {
+                    style = bufferline.style_preset.slant,
+                    hover = {
+                        enabled = true,
+                        delay = 200,
+                        reveal = { "close" },
+                    },
+                    offsets = {
+                        {
+                            filetype = "undotree",
+                            text = "Undotree",
+                            highlight = "PanelHeading",
+                            padding = 1,
+                        },
+                        {
+                            filetype = "NvimTree",
+                            text = "Explorer",
+                            highlight = "PanelHeading",
+                            padding = 1,
+                        },
+                        {
+                            filetype = "DiffviewFiles",
+                            text = "Diff View",
+                            highlight = "PanelHeading",
+                            padding = 1,
+                        },
+                        {
+                            filetype = "flutterToolsOutline",
+                            text = "Flutter Outline",
+                            highlight = "PanelHeading",
+                        },
+                        {
+                            filetype = "lazy",
+                            text = "Lazy",
+                            highlight = "PanelHeading",
+                            padding = 1,
+                        },
+                        {
+                            filetype = "fugitiveblame",
+                            text = "Fugitiveblame",
+                            highlight = "PanelHeading",
+                            padding = 1,
+                        },
+                    },
+                    diagnostics = "coc",
+                    max_name_length = 22,
+                    tab_size = 22,
+                },
+            }
+            bufferline.setup(opts)
+        end,
     },
 }
