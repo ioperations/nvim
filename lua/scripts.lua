@@ -6,14 +6,14 @@ func! CompileRunGcc()
     if &filetype == 'c'
         " mac has some limit
         if has("macunix")
-            exec container . " /usr/bin/clang % -DTEST_ADQ -I /usr/local/opt/llvm/include/c++/v1/ " . DotenvGet('CLANG_C_FLAGS') . " -g -fsanitize=address -lm -g -Wall -Wpedantic -o %< && time ./%<"
+            exec container . " clang % -DTEST_ADQ -I/usr/local/inlcude -L/usr/local/lib " . DotenvGet('CLANG_C_FLAGS') . " -g -fsanitize=address -lm -g -Wall -Wpedantic -o %< && time timeout 30 ./%<"
         elseif has("unix")
             exec container . " clang -DTEST_ADQ % " . DotenvGet('CLANG_C_FLAGS') . " -Wall -Wpedantic -g -o %< && time timeout 30 ./%<"
         endif
     elseif &filetype == 'cpp'
         set splitbelow
         if has("macunix")
-            let v = container . " /usr/bin/clang++ -DTEST_ADQ -I /usr/local/opt/llvm/include/c++/v1/ -g -std=c++20 %   -Wall -Wpedantic " . DotenvGet('CLANG_CXX_FLAGS') . " -o %< && time ./%<"
+            let v = container . " clang++ -DTEST_ADQ  % -I/usr/local/include -L/usr/local/lib -g  -Wall -Wpedantic " . DotenvGet('CLANG_CXX_FLAGS') . " -o %< && time timeout 30 ./%<"
             exec v
         elseif has("unix")
             exec container . " clang++ -DTEST_ADQ % " . DotenvGet('CLANG_CXX_FLAGS') . " -Wall -Wpedantic -g -o %< && time timeout 30 ./%<"

@@ -13,7 +13,7 @@ return {
         opts = {
             options = {
                 icons_enabled = true,
-                component_separators = { left = "", right = "" },
+                component_separators = { left = "●", right = "●" },
                 section_separators = "",
                 disabled_filetypes = {},
                 theme = "lunar",
@@ -64,9 +64,8 @@ return {
                 },
                 lualine_y = {
                     "branch",
-                    "progress",
                 },
-                lualine_z = { "location" },
+                lualine_z = { "progress", "location" },
             },
             inactive_sections = {
                 lualine_a = {},
