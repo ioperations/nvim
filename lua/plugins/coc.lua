@@ -143,11 +143,6 @@ return {
 
             setup_lsp_server()
 
-            vim.api.nvim_exec2([[hi CocInlayHint guibg=None guifg='#5f6f9f' ctermbg=Red ctermfg=Blue]], {})
-            vim.api.nvim_exec2([[hi CocInlayHintParameter guibg=None guifg=#565f89 ctermbg=Red ctermfg=Blue]], {})
-            vim.api.nvim_exec2([[hi CocInlayHintType guibg=None guifg='#5f6f9f' ctermbg=Red ctermfg=Blue]], {})
-            vim.api.nvim_exec2([[hi CocCodeLens guibg=None guifg='#5f6f9f' ctermbg=Red ctermfg=Blue]], {})
-
             -- Use K to show documentation in preview window
             function _G.show_docs()
                 local cw = vim.fn.expand("<cword>")

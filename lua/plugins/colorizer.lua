@@ -2,9 +2,6 @@ return {
     -- colorschema
     {
         "morhetz/gruvbox",
-        config = function()
-            vim.cmd("colorscheme " .. vim.g.colorschema)
-        end,
         dependencies = {
             {
                 "lunarvim/lunar.nvim",
@@ -16,6 +13,17 @@ return {
                         floats = "transparent",
                     },
                 },
+                config = function()
+                    -- lunar specific
+                    vim.cmd("colorscheme " .. vim.g.colorschema)
+                    vim.api.nvim_exec2([[hi CocInlayHint guibg=None guifg='#5f6f9f' ctermbg=Red ctermfg=Blue]], {})
+                    vim.api.nvim_exec2(
+                        [[hi CocInlayHintParameter guibg=None guifg=#565f89 ctermbg=Red ctermfg=Blue]],
+                        {}
+                    )
+                    vim.api.nvim_exec2([[hi CocInlayHintType guibg=None guifg='#5f6f9f' ctermbg=Red ctermfg=Blue]], {})
+                    vim.api.nvim_exec2([[hi CocCodeLens guibg=None guifg='#5f6f9f' ctermbg=Red ctermfg=Blue]], {})
+                end,
             },
             {
                 "folke/tokyonight.nvim",
