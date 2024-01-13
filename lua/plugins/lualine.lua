@@ -16,7 +16,7 @@ return {
                 component_separators = { left = "●", right = "●" },
                 section_separators = "",
                 disabled_filetypes = {},
-                theme = "tokyonight",
+                theme = vim.g.colorschema or "lunar",
                 globalstatus = true,
             },
             sections = {

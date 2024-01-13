@@ -47,6 +47,7 @@ vim.g.netrw_liststyle = 3
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+vim.g.colorschema = "lunar"
 -- highlight on yank
 vim.cmd([[au TextYankPost * silent! lua vim.highlight.on_yank()]])
 
