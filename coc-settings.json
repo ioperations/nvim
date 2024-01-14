@@ -65,7 +65,7 @@
   "suggest.triggerAfterInsertEnter": true,
   "suggest.snippetIndicator": "🐶",
   "pyright.enable": true,
-  "pyright.server": "~/.local/share/nvim/mason/bin/pyright",
+  "pyright.server": "~/.local/share/nvim/mason/bin/pyright-langserver",
   "jedi.enable": true,
   "jedi.startupMessage": false,
   "jedi.markupKindPreferred": "markdown",
