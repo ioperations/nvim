@@ -172,7 +172,7 @@
       "rootPatterns": ["go.mod"],
       "filetypes": ["go"]
     },
-    "stp": {
+    "systemstp": {
       "filetypes": ["stp"],
       "command": "stap",
       "args": ["--language-server"]
