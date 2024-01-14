@@ -308,7 +308,7 @@ return {
                         -- require("servers.rust").enable()
                     end,
                     ["lua_ls"] = function()
-                        require("servers.luals").enable()
+                        -- require("servers.luals").enable()
                     end,
                     ["clangd"] = function()
                         require("servers.ccls").enable()
@@ -348,6 +348,7 @@ return {
             -- Setup neovim lua configuration
             require("neodev").setup()
 
+            require("servers.luals").enable()
             -- require all language server modules
             -- rounded border on :LspInfo
             require("lspconfig.ui.windows").default_options.border = "rounded"

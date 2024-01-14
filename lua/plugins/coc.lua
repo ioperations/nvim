@@ -87,6 +87,7 @@ return {
                     lua_language_server = {
                         settings = {
                             Lua = {
+                                hint = { enable = "true" },
                                 workspace = {
                                     maxPreload = 2000,
                                     preloadFileSize = 1000,
