@@ -3,6 +3,7 @@
   "codeLens.enable": true,
   "inlayHint.enable": true,
   "inlayHint.refreshOnInsertMode": false,
+  "semanticTokens.enable": true,
   "codeLens.position": "eol",
   "lightbulb.enableSign": true,
   "lightbulb.text": {
