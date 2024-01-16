@@ -3,6 +3,7 @@ return {
         "IngoMeyer441/coc_current_word",
         dependencies = {
             "neoclide/coc.nvim",
+            "lunarvim/lunar.nvim",
         },
         config = function()
             vim.api.nvim_exec2([[hi CurrentWord guifg=None guibg=#3b5e6a gui=underline,bold]], {})
