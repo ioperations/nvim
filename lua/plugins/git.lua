@@ -1,4 +1,5 @@
 return {
+    { "rickhowe/diffchar.vim" },
     {
         "sindrets/diffview.nvim",
         config = function()
