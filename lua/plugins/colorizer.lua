@@ -1,7 +1,9 @@
 return {
     -- colorschema
     {
-        "morhetz/gruvbox",
+        "ellisonleao/gruvbox.nvim",
+        priority = 1000,
+        config = true,
         dependencies = {
             {
                 "lunarvim/lunar.nvim",
