@@ -2,8 +2,24 @@ return {
     -- colorschema
     {
         "ellisonleao/gruvbox.nvim",
-        priority = 1000,
-        config = true,
+        config = function()
+            -- lunar specific
+            vim.cmd("colorscheme " .. vim.g.colorschema)
+            vim.cmd([[hi CocInlayHint guibg=None guifg='#5f6f9f' ctermbg=Red ctermfg=Blue]])
+            vim.cmd([[hi CocInlayHintParameter guibg=None guifg=#565f89 ctermbg=Red ctermfg=Blue]])
+            vim.cmd([[ hi CocInlayHintType guibg=None guifg='#5f6f9f' ctermbg=Red ctermfg=Blue]])
+            vim.cmd([[ hi CocCodeLens guibg=None guifg='#5f6f9f' ctermbg=Red ctermfg=Blue]])
+
+            vim.cmd([[ hi diffRemoved guifg=#f43753 ctermfg=203 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE ]])
+            vim.cmd([[ hi diffChanged guifg=#b3deef ctermfg=153 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE]])
+            vim.cmd([[ hi diffAdded guifg=#c9d05c ctermfg=185 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE]])
+            vim.cmd([[ hi diffSubname guifg=#9faa00 ctermfg=142 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE]])
+
+            vim.cmd([[ hi DiffAdd guifg=NONE ctermfg=NONE guibg=#464632 ctermbg=238 gui=NONE cterm=NONE]])
+            vim.cmd([[ hi DiffChange guifg=NONE ctermfg=NONE guibg=#335261 ctermbg=239 gui=NONE cterm=NONE]])
+            vim.cmd([[ hi DiffDelete guifg=#f43753 ctermfg=203 guibg=#79313c ctermbg=237 gui=NONE cterm=NONE]])
+            vim.cmd([[ hi DiffText guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=reverse cterm=reverse]])
+        end,
         dependencies = {
             {
                 "lunarvim/lunar.nvim",
@@ -15,17 +31,6 @@ return {
                         floats = "transparent",
                     },
                 },
-                config = function()
-                    -- lunar specific
-                    vim.cmd("colorscheme " .. vim.g.colorschema)
-                    vim.api.nvim_exec2([[hi CocInlayHint guibg=None guifg='#5f6f9f' ctermbg=Red ctermfg=Blue]], {})
-                    vim.api.nvim_exec2(
-                        [[hi CocInlayHintParameter guibg=None guifg=#565f89 ctermbg=Red ctermfg=Blue]],
-                        {}
-                    )
-                    vim.api.nvim_exec2([[hi CocInlayHintType guibg=None guifg='#5f6f9f' ctermbg=Red ctermfg=Blue]], {})
-                    vim.api.nvim_exec2([[hi CocCodeLens guibg=None guifg='#5f6f9f' ctermbg=Red ctermfg=Blue]], {})
-                end,
             },
             {
                 "folke/tokyonight.nvim",
