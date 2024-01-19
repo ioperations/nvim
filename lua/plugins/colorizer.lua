@@ -15,8 +15,8 @@ return {
             vim.cmd([[ hi diffAdded guifg=#c9d05c ctermfg=185 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE]])
             vim.cmd([[ hi diffSubname guifg=#9faa00 ctermfg=142 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE]])
 
-            vim.cmd([[ hi DiffAdd guifg=NONE ctermfg=NONE guibg=#464632 ctermbg=238 gui=NONE cterm=NONE]])
-            vim.cmd([[ hi DiffChange guifg=NONE ctermfg=NONE guibg=#335261 ctermbg=239 gui=NONE cterm=NONE]])
+            vim.cmd([[ hi DiffAdd guifg=NONE ctermfg=NONE guibg=#465902 ctermbg=238 gui=NONE cterm=NONE]])
+            vim.cmd([[ hi DiffChange guifg=NONE ctermfg=NONE guibg=#41414f ctermbg=239 gui=NONE cterm=NONE]])
             vim.cmd([[ hi DiffDelete guifg=#f43753 ctermfg=203 guibg=#79313c ctermbg=237 gui=NONE cterm=NONE]])
             vim.cmd([[ hi DiffText guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=reverse cterm=reverse]])
         end,
