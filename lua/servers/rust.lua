@@ -4,8 +4,8 @@ local check_ra_multiplex = function()
     dir = vim.fn.expand(
         "$HOME" .. (vim.fn.has("mac") == 1 and "/Library/Application Support/ra-multiplex/" or "/.config/ra-multiplex/")
     )
-    if not vim.fn.isdirectory(dir) then
-        vim.fn.mkdir(dir, "pR")
+    if vim.fn.isdirectory(dir) == 0 then
+        vim.fn.mkdir(dir, "p")
     end
 
     file = dir .. "/config.toml"
