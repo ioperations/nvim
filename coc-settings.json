@@ -13,7 +13,7 @@
   "codeLens.subseparator": "|",
   "translator.engines": ["bing", "google", "youdao"],
   "clangd.disableCompletion": false,
-  "rust-analyzer.server.path": "~/.local/share/nvim/mason/bin/rust-analyzer",
+  "rust-analyzer.server.path": "~/.cargo/bin/ra-multiplex",
   "diagnostic.floatConfig": { "border": true },
   "diagnostic.hintSign": "💡",
   "diagnostic.warningSign": " ",
