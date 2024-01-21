@@ -21,6 +21,7 @@ return {
             vim.cmd([[ hi DiffText guifg=NONE ctermfg=NONE guibg=NONE ctermbg=NONE gui=reverse cterm=reverse]])
         end,
         dependencies = {
+            "projekt0n/github-nvim-theme",
             {
                 "lunarvim/lunar.nvim",
                 opts = {
