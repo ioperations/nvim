@@ -9,7 +9,7 @@ local check_ra_multiplex = function()
     end
 
     file = dir .. "/config.toml"
-    if vim.fn.empty(file) then
+    if vim.fn.filereadable(file) == 0 then
         content = {
             "gc_interval = 10",
             'listen = ["127.0.0.1", 27631]',
