@@ -39,7 +39,7 @@ M.enable = function()
             -- vim.cmd("MasonInstall codelldb")
         end, function() end)
     end
-    if vim.fn.executable("ra-multiplex") then
+    if vim.fn.executable("ra-multiplex") == 0 then
         async.run(function()
             vim.notify(" 🦀:ra-multiplex not exists, please install it by `cargo install ra-multiplex`")
             -- vim.cmd("MasonInstall codelldb")
