@@ -1,7 +1,7 @@
 return {
     -- colorschema
     {
-        "ellisonleao/gruvbox.nvim",
+        "lunarvim/lunar.nvim",
         config = function()
             -- lunar specific
             vim.cmd("colorscheme " .. vim.g.colorschema)
@@ -22,15 +22,7 @@ return {
         end,
         dependencies = {
             {
-                "lunarvim/lunar.nvim",
-                opts = {
-                    style = "night",
-                    transparent = true,
-                    styles = {
-                        sidebars = "transparent",
-                        floats = "transparent",
-                    },
-                },
+                "ellisonleao/gruvbox.nvim",
             },
             {
                 "folke/tokyonight.nvim",
