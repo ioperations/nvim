@@ -33,6 +33,7 @@ return {
                 "coc-tasks",
                 "coc-snippets",
                 "coc-yaml",
+                "coc-go",
                 "coc-clangd",
                 "coc-emoji",
                 -- "coc-highlight",

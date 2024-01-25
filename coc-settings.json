@@ -167,11 +167,6 @@
         }
       }
     },
-    "golang": {
-      "command": "gopls",
-      "rootPatterns": ["go.mod"],
-      "filetypes": ["go"]
-    },
     "systemstp": {
       "filetypes": ["stp"],
       "command": "stap",
