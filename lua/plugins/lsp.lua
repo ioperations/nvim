@@ -262,7 +262,16 @@ return {
         },
         {
             "ray-x/go.nvim",
-            dependencies = { "ray-x/guihua.lua", "theHamsta/nvim-dap-virtual-text" },
+            dependencies = {
+                "ray-x/guihua.lua",
+                "theHamsta/nvim-dap-virtual-text",
+                {
+                    "fatih/vim-go",
+                    config = function()
+                        vim.g.go_doc_keywordprg_enabled = 0
+                    end,
+                },
+            },
             lazy = true,
             config = function()
                 require("servers.gopls").enable()
