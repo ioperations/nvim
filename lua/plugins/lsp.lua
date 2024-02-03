@@ -79,6 +79,13 @@ return {
                 })
             end,
         },
+        -- c#
+        {
+            "OmniSharp/omnisharp-vim",
+            config = function()
+                vim.g.OmniSharp_highlighting = 1
+            end,
+        },
         -- rust
         {
             "rust-lang/rust.vim",
