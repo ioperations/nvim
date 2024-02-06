@@ -64,6 +64,11 @@
   "suggest.labelMaxLength": 60,
   "suggest.triggerAfterInsertEnter": true,
   "suggest.snippetIndicator": "🐶",
+  "go.goplsOptions": {
+    "staticcheck": true,
+    "usePlaceholders": true,
+    "completeFunctionCalls": true
+  },
   "pyright.enable": true,
   "pyright.server": "~/.local/share/nvim/mason/bin/pyright-langserver",
   "jedi.enable": true,
