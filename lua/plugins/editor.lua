@@ -40,6 +40,12 @@ return {
     "tpope/vim-rsi",
     -- undotree
     {
+        "petertriho/nvim-scrollbar",
+        config = function()
+            require("scrollbar").setup()
+        end,
+    },
+    {
         "mbbill/undotree",
         config = function()
             vim.cmd([[
