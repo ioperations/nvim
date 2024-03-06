@@ -89,6 +89,7 @@ local mappings = {
         { "<leader>dd", "<cmd>call CompileRunGcc()<cr>" },
 
         { "ga", "<Plug>(LiveEasyAlign)" },
+        { "mm", ":make<cr>" },
 
         -- Resize with arrows
         { "<C-Up>", ":resize -2<CR>" },
