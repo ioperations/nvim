@@ -12,6 +12,7 @@ vim.opt.textwidth = 80
 vim.opt.linebreak = true
 vim.opt.scrolloff = 10
 vim.opt.wrap = true
+vim.opt.colorcolumn = '80'
 
 -- coc.nvim need this
 vim.opt.backup = false
