@@ -337,6 +337,7 @@ return {
             dependencies = {
                 --"rcarriga/nvim-notify",
                 "williamboman/mason.nvim",
+                "ahmedkhalf/project.nvim",
                 "b0o/SchemaStore.nvim",
             },
         },
