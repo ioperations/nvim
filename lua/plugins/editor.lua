@@ -30,6 +30,8 @@ return {
     "ioperations/vim-cppman",
     -- edit enhancement
     "gcmt/wildfire.vim", -- smart selection
+    -- text objects
+    "wellle/targets.vim",
     -- multi cursor
     "mg979/vim-visual-multi",
     -- easy align
