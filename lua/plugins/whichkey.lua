@@ -70,6 +70,11 @@ return {
                     o = { require("dapui").toggle, "debug ui toggle" },
                 },
                 r = { r = { "<cmd>FloatermNew --width=0.9 --height=0.9 ranger<cr>", "ranger" } },
+                c = {
+                    C = { "<cmd>Coverage<cr>", "coverage" },
+                    c = { "<cmd>lua require('coverage').clear()<cr>", "coverage clear" },
+                    s = { "<cmd>lua require('coverage').summary()<cr>", "coverage summary" },
+                },
                 R = { "<cmd>Telescope resume<cr>", "resume" },
                 -- Bufferline
                 g = {
