@@ -136,6 +136,11 @@ return {
                         args = { "start" },
                         ignoredRootPaths = {},
                     },
+                    java_langauge_server = {
+                        command = mason_root_dir .. "/bin/jdtls",
+                        filetypes = { "java" },
+                        args = {},
+                    },
                 })
 
                 language_server_config = string.gsub(language_server_config, '"', "'")
