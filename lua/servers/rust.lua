@@ -20,7 +20,7 @@ local check_ra_multiplex = function()
     end
 end
 
-check_ra_multiplex()
+-- check_ra_multiplex()
 
 M.enable = function()
     local codelldb_path
@@ -39,12 +39,12 @@ M.enable = function()
             -- vim.cmd("MasonInstall codelldb")
         end, function() end)
     end
-    if vim.fn.executable("ra-multiplex") == 0 then
-        async.run(function()
-            vim.notify(" 🦀:ra-multiplex not exists, please install it by `cargo install ra-multiplex`")
-            -- vim.cmd("MasonInstall codelldb")
-        end, function() end)
-    end
+    --  if vim.fn.executable("ra-multiplex") == 0 then
+    --      async.run(function()
+    --          vim.notify(" 🦀:ra-multiplex not exists, please install it by `cargo install ra-multiplex`")
+    --          -- vim.cmd("MasonInstall codelldb")
+    --      end, function() end)
+    --  end
 
     if vim.fn.has("mac") == 1 then
         liblldb_path = extension_path .. "lldb/lib/liblldb.dylib" -- MacOS: This may be .dylib
@@ -118,7 +118,7 @@ M.enable = function()
             adapter = require("rustaceanvim.config").get_codelldb_adapter(codelldb_path, liblldb_path),
         },
         server = {
-            cmd = { vim.fn.expand("$HOME") .. "/.cargo/bin/ra-multiplex" },
+            cmd = { vim.fn.expand("$HOME") .. "/.cargo/bin/rust-analyzer" },
             on_attach = function(client, bufnr)
                 local wk = require("which-key")
                 wk.register({
