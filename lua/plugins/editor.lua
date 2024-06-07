@@ -80,9 +80,16 @@ return {
     -- indent
     {
         "shellRaining/hlchunk.nvim",
-        event = { "UIEnter" },
+        event = { "BufReadPre", "BufNewFile" },
         config = function()
-            require("hlchunk").setup({})
+            require("hlchunk").setup({
+                chunk = {
+                    enable = true,
+                },
+                indent = {
+                    enable = true,
+                },
+            })
         end,
     },
     --   {
