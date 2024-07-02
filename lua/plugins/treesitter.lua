@@ -63,7 +63,7 @@ return {
             "nvim-treesitter/nvim-treesitter-textobjects",
             -- "windwp/nvim-ts-autotag", -- auto close and rename tags
             "simonward87/nvim-ts-autotag",
-            "christianchiarulli/nvim-ts-rainbow",
+            --"christianchiarulli/nvim-ts-rainbow",
         },
 
         opts = {
