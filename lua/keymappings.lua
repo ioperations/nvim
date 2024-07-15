@@ -21,13 +21,6 @@ local mappings = {
         { "jj", "<ESC>" },
         { "jk", "<ESC>" },
         -- Terminal window navigation
-        --   { "<C-h>", "<C-\\><C-N><C-w>h" },
-        --   { "<C-j>", "<C-\\><C-N><C-w>j" },
-        --   { "<C-k>", "<C-\\><C-N><C-w>k" },
-        --   { "<C-l>", "<C-\\><C-N><C-w>l" },
-        -- moving text
-        --   { "<C-j>", "<esc><cmd>m .+1<CR>==" },
-        --   { "<C-k>", "<esc><cmd>m .-2<CR>==" },
         -- Ctrl single quote for backtick
         { "<C-'>", "``<esc>i" },
         { "<C-p>", "<up>" },
@@ -131,21 +124,12 @@ local mappings = {
         -- bufferline
         { "<tab>", "<cmd>BufferLineCyclePrev<CR>" },
         { "<s-tab>", "<cmd>BufferLineCycleNext<CR>" },
-        -- { "<C-d>", "<C-d>zz" },
-        --       { "<C-u>", "<C-u>zz" },
-        -- Remap for dealing with line wrap
-        -- { "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true, } },
-        -- { "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true, } },
         -- open link under cursor
         { "gx", '<Cmd>call jobstart(["xdg-open", expand("<cfile>")], {"detach": v:true})<CR>' },
     },
     t = {
         -- Terminal mode
         -- Terminal window navigation
-        -- { "<C-h>", "<C-\\><C-N><C-w>h" },
-        -- { "<C-j>", "<C-\\><C-N><C-w>j" },
-        -- { "<C-k>", "<C-\\><C-N><C-w>k" },
-        -- { "<C-l>", "<C-\\><C-N><C-w>l" },
         -- map escape to normal mode in terminal
         { "<esc>", "<C-\\><C-n>" },
         -- { "jj", [[ <C-\><C-n> ]] },
@@ -156,11 +140,6 @@ local mappings = {
         { "<", "<gv" },
         { ">", ">gv" },
         -- hop words
-        -- { "s", require("hop").hint_words },
-        -- { "F", require("hop").hint_lines },
-        -- moving text
-        -- { "J", "<cmd>m '>+1<CR>gv=gv" },
-        -- { "K", "<cmd>m '<-2<CR>gv=gv" },
     },
     x = {
         -- remap p to always paste from last yank
@@ -168,62 +147,17 @@ local mappings = {
         { "<leader>ga", "<Plug>(LiveEasyAlign)" },
         { "<leader>lf", "<Plug>(coc-format-selected)" },
     },
-    -- "tpope/vim-rsi",
-    -- c = {
-    --     { "<C-a>", "<Home>" },
-    --     { "<C-b>", "<Left>" },
-    --     { "<C-d>", "<Del>" },
-    --     { "<C-e>", "<End>" },
-    --     { "<C-f>", "<Right>" },
-    --     { "<C-n>", "<Down>" },
-    --     { "<C-j>", "<Down>" },
-    --     { "<C-p>", "<Up>" },
-    --     { "<C-k>", "<Up>" },
-    --     { "<C-y>", "<C-r>*" },
-    --     { "<C-g>", "<C-c>" },
-    -- },
+    -- "tpope/vim-rsi"
+    -- has great defaults
 }
 
 register_mappings(mappings, { silent = true, noremap = true })
-
--- S for search and replace in buffer
--- vim.cmd("nnoremap S :%s/")
 
 -- hop in motion
 local actions = { "d", "c", "<", ">", "y" }
 for _, a in ipairs(actions) do
     vim.keymap.set("n", a .. "f", a .. "<cmd>lua require'hop'.hint_char1()<cr>")
 end
-
---  local function is_lsp_float_open(window_id)
---      return window_id and window_id ~= 0 and vim.api.nvim_win_is_valid(window_id)
---  end
---
---  local function setkey(mode, origin_key, fallback_key)
---      vim.keymap.set(mode, origin_key, function()
---          assert(_G ~= nil, "_G should exists ")
---
---          local mapping = vim.api.nvim_replace_termcodes(fallback_key, true, false, true)
---          if _G._LSP_SIG_CFG == nil then
---              vim.api.nvim_feedkeys(mapping, "n" .. mode, false)
---              return
---          end
---          local window_id = _G._LSP_SIG_CFG.winnr
---          local mappingf = vim.api.nvim_replace_termcodes(origin_key, true, false, true)
---
---          if is_lsp_float_open(window_id) then
---              vim.fn.win_execute(window_id, "normal! " .. mappingf)
---          else
---              vim.api.nvim_feedkeys(mapping, "n" .. mode, false)
---          end
---      end, { silent = true })
---  end
---
---  setkey("i", "<c-d>", "<Del>")
---  setkey("i", "<c-u>", "<left>")
---
---  setkey("s", "<c-d>", "<Del>")
---  setkey("s", "<c-u>", "<left>")
 
 -- Remap <C-f> and <C-b> to scroll float windows/popups
 ---@diagnostic disable-next-line: redefined-local
