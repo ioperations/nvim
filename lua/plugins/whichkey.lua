@@ -15,6 +15,7 @@ return {
                 padding = { 2, 2, 2, 2 }, -- extra window padding [top, right, bottom, left]
                 -- winblend = 0,
             },
+            notify = false,
             triggers_blacklist = {
                 -- list of mode / prefixes that should never be hooked by WhichKey
                 -- this is mostly relevant for key maps that start with a native binding
