@@ -8,7 +8,7 @@ return {
                     suggestions = 20, -- how many suggestions should be shown in the list?
                 },
             },
-            window = {
+            win = {
                 border = "single", -- none, single, double, shadow
                 position = "bottom", -- bottom, top
                 margin = { 0, 0, 0, 0 }, -- extra window margin [top, right, bottom, left]
@@ -16,7 +16,7 @@ return {
                 -- winblend = 0,
             },
             notify = false,
-            triggers_blacklist = {
+            triggers = {
                 -- list of mode / prefixes that should never be hooked by WhichKey
                 -- this is mostly relevant for key maps that start with a native binding
                 -- most people should not need to change this
