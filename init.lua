@@ -24,4 +24,3 @@ require("lazy").setup("plugins", lazy_opts)
 -- keymappings
 require("keymappings")
 require("scripts")
-require("_last")
