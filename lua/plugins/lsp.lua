@@ -293,12 +293,6 @@ return {
             "williamboman/mason-lspconfig.nvim",
             config = function()
                 require("mason-lspconfig").setup({
-                    ensure_installed = {
-                        "rust_analyzer@nightly",
-                        "taplo",
-                        "lua_ls",
-                        "clangd",
-                    },
                     automatic_installation = true,
                 })
                 --
