@@ -49,6 +49,11 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 vim.g.colorschema = "lunar"
+
+vim.opt.sessionoptions = "curdir,folds,globals,help,tabpages,terminal,winsize"
+
+vim.o.showtabline = 2
+
 -- highlight on yank
 vim.cmd([[au TextYankPost * silent! lua vim.highlight.on_yank()]])
 
