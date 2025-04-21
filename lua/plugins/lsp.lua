@@ -292,13 +292,7 @@ return {
         {
             "williamboman/mason-lspconfig.nvim",
             config = function()
-                require("mason-lspconfig").setup({
-                    automatic_installation = true,
-                })
-                --
-                -- automatic_installation is handled by lsp-manager
-
-                require("mason-lspconfig").setup_handlers({
+                local handlers = {
                     -- The first entry (without a key) will be the default handler
                     -- and will be called for each installed server that doesn't have
                     -- a dedicated handler.
@@ -326,7 +320,26 @@ return {
                     ["jsonls"] = function()
                         require("servers.json").enable()
                     end,
+                }
+
+                function utils_Set(list)
+                    local set = {}
+                    for _, l in ipairs(list) do
+                        set[l] = true
+                    end
+                    return set
+                end
+
+                require("mason-lspconfig").setup({
+                    automatic_installation = true,
+                    ensure_installed = { "clangd" },
+                    handlers = handlers,
                 })
+
+                local install_server = require("mason-lspconfig").get_installed_servers()
+                if utils_Set(install_server)["clangd"] ~= true then
+                    print("ccls may not working, do MasonInstall clangd")
+                end
             end,
             dependencies = {
                 --"rcarriga/nvim-notify",
