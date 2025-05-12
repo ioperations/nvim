@@ -1,27 +1,5 @@
 M = {}
 
-local check_ra_multiplex = function()
-    dir = vim.fn.expand(
-        "$HOME" .. (vim.fn.has("mac") == 1 and "/Library/Application Support/ra-multiplex/" or "/.config/ra-multiplex/")
-    )
-    if vim.fn.isdirectory(dir) == 0 then
-        vim.fn.mkdir(dir, "p")
-    end
-
-    file = dir .. "/config.toml"
-    if vim.fn.filereadable(file) == 0 then
-        content = {
-            "gc_interval = 10",
-            'listen = ["127.0.0.1", 27631]',
-            'connect = ["127.0.0.1", 27631]',
-            'log_filters = "info"',
-        }
-        vim.fn.writefile(content, file, "a")
-    end
-end
-
--- check_ra_multiplex()
-
 M.enable = function()
     local codelldb_path
     local liblldb_path
