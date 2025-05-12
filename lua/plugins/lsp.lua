@@ -332,7 +332,7 @@ return {
 
                 require("mason-lspconfig").setup({
                     automatic_installation = true,
-                    ensure_installed = { "clangd" },
+                    ensure_installed = { "clangd", "rust_analyzer", "gopls" },
                     handlers = handlers,
                     automatic_enable = {
                         exclude = { "rust_analyzer", "lua_ls", "gopls", "hls" },
@@ -342,6 +342,9 @@ return {
                 local install_server = require("mason-lspconfig").get_installed_servers()
                 if utils_Set(install_server)["clangd"] ~= true then
                     print("ccls may not working, do MasonInstall clangd")
+                end
+                if utils_Set(install_server)["rust_analyzer"] ~= true then
+                    print("rust_analyzer may not working, do MasonInstall rust_analyzer")
                 end
             end,
             dependencies = {
