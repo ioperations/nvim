@@ -301,19 +301,19 @@ return {
                     end,
                     -- Next, you can provide a dedicated handler for specific servers.
                     -- For example, a handler override for the `rust_analyzer`:
-                    ["rust_analyzer"] = function()
-                        -- require("servers.rust").enable()
-                    end,
-                    ["lua_ls"] = function()
-                        -- require("servers.luals").enable()
-                    end,
+                    --  ["rust_analyzer"] = function()
+                    --      -- require("servers.rust").enable()
+                    --  end,
+                    --  ["lua_ls"] = function()
+                    --      -- require("servers.luals").enable()
+                    --  end,
+                    -- ["gopls"] = function()
+                    --     -- require("servers.gopls").enable()
+                    -- end,
+                    -- ["hls"] = function() end,
                     ["clangd"] = function()
                         require("servers.ccls").enable()
                     end,
-                    ["gopls"] = function()
-                        -- require("servers.gopls").enable()
-                    end,
-                    ["hls"] = function() end,
                     ["yamlls"] = function()
                         require("servers.yaml").enable()
                     end,
@@ -334,6 +334,9 @@ return {
                     automatic_installation = true,
                     ensure_installed = { "clangd" },
                     handlers = handlers,
+                    automatic_enable = {
+                        exclude = { "rust_analyzer", "lua_ls", "gopls", "hls" },
+                    },
                 })
 
                 local install_server = require("mason-lspconfig").get_installed_servers()
