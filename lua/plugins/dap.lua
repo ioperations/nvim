@@ -78,23 +78,6 @@ return {
             }
 
             -- FIXME: expect only one directory in /opt/homebrew/Cellar/llvm/
-            local lldb_vscode_home = vim.fn.expand("/opt/homebrew/Cellar/llvm/*")
-
-            local lldb_vscode = lldb_vscode_home .. "/bin/lldb-vscode"
-            if vim.fn.filereadable(lldb_vscode) ~= 1 then
-                -- check file path
-                if vim.fn.executable("lldb-vscode") == 1 then
-                    lldb_vscode = vim.fn.exepath("lldb-vscode")
-                else
-                    vim.notify("llvm-vscode should in your $PATH variable")
-                end
-            end
-
-            dap.adapters.lldb_vscode = {
-                type = "executable",
-                command = lldb_vscode, -- adjust as needed, must be absolute path
-                name = "lldb_vscode",
-            }
 
             local OpenDebugAD7 = mason_root_dir .. "/bin/OpenDebugAD7"
             dap.adapters.cppdbg = {
@@ -104,18 +87,6 @@ return {
             }
 
             dap.configurations.cpp = {
-                {
-                    name = "lldb vscode Launch",
-                    type = "lldb_vscode",
-                    request = "launch",
-                    --                   program = function()
-                    --                       return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
-                    --                   end,
-                    program = "${fileDirname}/${fileBasenameNoExtension}",
-                    cwd = "${workspaceFolder}",
-                    stopOnEntry = true,
-                    args = {},
-                },
                 {
                     name = "lldb launch",
                     type = "codelldb",
