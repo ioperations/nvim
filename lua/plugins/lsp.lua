@@ -292,35 +292,35 @@ return {
         {
             "williamboman/mason-lspconfig.nvim",
             config = function()
-                local handlers = {
-                    -- The first entry (without a key) will be the default handler
-                    -- and will be called for each installed server that doesn't have
-                    -- a dedicated handler.
-                    function(server_name) -- default handler (optional)
-                        require("lspconfig")[server_name].setup({})
-                    end,
-                    -- Next, you can provide a dedicated handler for specific servers.
-                    -- For example, a handler override for the `rust_analyzer`:
-                    --  ["rust_analyzer"] = function()
-                    --      -- require("servers.rust").enable()
-                    --  end,
-                    --  ["lua_ls"] = function()
-                    --      -- require("servers.luals").enable()
-                    --  end,
-                    -- ["gopls"] = function()
-                    --     -- require("servers.gopls").enable()
-                    -- end,
-                    -- ["hls"] = function() end,
-                    ["clangd"] = function()
-                        require("servers.ccls").enable()
-                    end,
-                    ["yamlls"] = function()
-                        require("servers.yaml").enable()
-                    end,
-                    ["jsonls"] = function()
-                        require("servers.json").enable()
-                    end,
-                }
+                -- local handlers = {
+                --     -- The first entry (without a key) will be the default handler
+                --     -- and will be called for each installed server that doesn't have
+                --     -- a dedicated handler.
+                --     function(server_name) -- default handler (optional)
+                --         require("lspconfig")[server_name].setup({})
+                --     end,
+                --     -- Next, you can provide a dedicated handler for specific servers.
+                --     -- For example, a handler override for the `rust_analyzer`:
+                --     --  ["rust_analyzer"] = function()
+                --     --      -- require("servers.rust").enable()
+                --     --  end,
+                --     --  ["lua_ls"] = function()
+                --     --      -- require("servers.luals").enable()
+                --     --  end,
+                --     -- ["gopls"] = function()
+                --     --     -- require("servers.gopls").enable()
+                --     -- end,
+                --     -- ["hls"] = function() end,
+                --     ["clangd"] = function()
+                --         require("servers.ccls").enable()
+                --     end,
+                --     ["yamlls"] = function()
+                --         require("servers.yaml").enable()
+                --     end,
+                --     ["jsonls"] = function()
+                --         require("servers.json").enable()
+                --     end,
+                -- }
 
                 function utils_Set(list)
                     local set = {}
@@ -335,10 +335,19 @@ return {
                     ensure_installed = { "clangd", "rust_analyzer", "gopls" },
                     handlers = handlers,
                     automatic_enable = {
-                        exclude = { "rust_analyzer", "lua_ls", "gopls", "hls" },
+                        exclude = { "rust_analyzer", "lua_ls", "gopls", "hls", "clangd" },
                     },
                 })
 
+                vim.lsp.config("clangd", {
+                    require("servers.ccls").enable(),
+                })
+                vim.lsp.config("yamlls", {
+                    require("servers.yaml").enable(),
+                })
+                vim.lsp.config("yamlls", {
+                    require("servers.json").enable(),
+                })
                 local install_server = require("mason-lspconfig").get_installed_servers()
                 if utils_Set(install_server)["clangd"] ~= true then
                     print("ccls may not working, do MasonInstall clangd")
