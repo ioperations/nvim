@@ -337,7 +337,7 @@ return {
                     ensure_installed = { "clangd", "rust_analyzer", "gopls" },
                     handlers = handlers,
                     automatic_enable = {
-                        exclude = { "rust_analyzer", "lua_ls", "gopls", "hls", "clangd" },
+                        exclude = { "rust_analyzer", "yamlls", "jsonls", "lua_ls", "gopls", "hls", "clangd" },
                     },
                 })
 
@@ -347,7 +347,7 @@ return {
                 vim.lsp.config("yamlls", {
                     require("servers.yaml").enable(),
                 })
-                vim.lsp.config("yamlls", {
+                vim.lsp.config("jsonls", {
                     require("servers.json").enable(),
                 })
                 local install_server = require("mason-lspconfig").get_installed_servers()
