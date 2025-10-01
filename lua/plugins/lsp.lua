@@ -126,7 +126,7 @@ return {
 
         { "p00f/clangd_extensions.nvim", lazy = true },
         { "ranjithshegde/ccls.nvim", lazy = true },
-        "jose-elias-alvarez/null-ls.nvim",
+        "nvimtools/none-ls.nvim",
         -- code action
         {
             "weilbith/nvim-code-action-menu",
