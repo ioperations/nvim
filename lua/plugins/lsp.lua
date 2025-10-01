@@ -334,7 +334,7 @@ return {
 
                 require("mason-lspconfig").setup({
                     automatic_installation = true,
-                    ensure_installed = { "clangd", "rust_analyzer", "gopls" },
+                    ensure_installed = { "clangd", "rust_analyzer", "gopls", "jsonls", "yamlls" },
                     handlers = handlers,
                     automatic_enable = {
                         exclude = { "rust_analyzer", "yamlls", "jsonls", "lua_ls", "gopls", "hls", "clangd" },
@@ -363,6 +363,7 @@ return {
                 "williamboman/mason.nvim",
                 "ahmedkhalf/project.nvim",
                 "b0o/SchemaStore.nvim",
+                "neovim/nvim-lspconfig",
             },
         },
     },
