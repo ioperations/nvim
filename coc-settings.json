@@ -25,7 +25,7 @@
     "--suggest-missing-includes",
     "--all-scopes-completion",
     "--header-insertion=iwyu",
-    "--offset-encoding=utf-32",
+    "--offset-encoding=utf-16",
     "--enable-config",
     "-log=verbose"
   ],
