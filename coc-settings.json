@@ -113,6 +113,7 @@
   "rust-analyzer.lens.location": "above_name",
   "rust-analyzer.inlayHints.parameterHints.enable": true,
   "rust-analyzer.inlayHints.typeHints.enable": true,
+  "rust-analyzer.inlayHints.enable": true,
   "rust-analyzer.inlayHints.renderColons": true,
   "rust-analyzer.inlayHints.chainingHints.enable": false,
   "rust-analyzer.inlayHints.reborrowHints.enable": "never",

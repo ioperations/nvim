@@ -123,6 +123,11 @@ M.enable = function()
                         },
                         run = { enable = true },
                     },
+                    inlayhints = {
+                        typeHints = {
+                            enable = false,
+                        },
+                    },
                     imports = {
                         granularity = {
                             group = "module",
