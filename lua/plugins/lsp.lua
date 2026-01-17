@@ -339,7 +339,7 @@ return {
                 require("mason-lspconfig").setup({
                     automatic_installation = true,
                     ensure_installed = { "clangd", "rust_analyzer", "gopls", "jsonls", "yamlls" },
-                    handlers = handlers,
+                    -- handlers = handlers,
                     automatic_enable = {
                         exclude = { "rust_analyzer", "yamlls", "jsonls", "lua_ls", "gopls", "hls", "clangd" },
                     },
@@ -353,6 +353,14 @@ return {
                 })
                 vim.lsp.config("jsonls", {
                     require("servers.json").enable(),
+                })
+                vim.lsp.enable("tsserver")
+
+                vim.lsp.config("tsserver", {
+                    cmd = { "typescript-language-server", "--stdio" },
+                    filetypes = { "typescript" },
+                    root_dir = vim.fs.root(0, { "package.json", ".git" }),
+                    -- " optional settings = {...} go here, refer to language server code: https://github.com/typescript-language-server/typescript-language-server/blob/5c483349b7b4b6f79d523f8f4d854cbc5cec7ecd/src/ts-protocol.ts#L379
                 })
                 local install_server = require("mason-lspconfig").get_installed_servers()
                 if utils_Set(install_server)["clangd"] ~= true then
