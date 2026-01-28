@@ -89,6 +89,12 @@ return {
                 indent = {
                     enable = true,
                 },
+                line_num = {
+                    enable = true,
+                },
+                blank = {
+                    enable = false,
+                },
             })
         end,
     },
