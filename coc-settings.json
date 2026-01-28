@@ -6,6 +6,10 @@
   "semanticTokens.enable": true,
   "codeLens.position": "eol",
   "lightbulb.enableSign": true,
+  "[rust][lua]": {
+    "inlayHint.display": false,
+    "inlayHint.enable": false
+  },
   "lightbulb.text": {
     "default": "💡",
     "quickfix": " "

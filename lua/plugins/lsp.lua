@@ -63,6 +63,14 @@ return {
             end,
         },
         {
+            "MysticalDevil/inlay-hints.nvim",
+            event = "LspAttach",
+            dependencies = { "neovim/nvim-lspconfig" }, -- optional
+            config = function()
+                require("inlay-hints").setup()
+            end,
+        },
+        {
             "lvimuser/lsp-inlayhints.nvim",
             event = "LspAttach",
             enabled = false,
@@ -77,7 +85,7 @@ return {
                         end
                         local client = vim.lsp.get_client_by_id(args.data.client_id) or {}
                         ---@diagnostic disable-next-line: need-check-nil
-                        if client.name ~= "rust_analyzer" then
+                        if client.name ~= "rust-analyzer" then
                             return
                         end
                         require("lsp-inlayhints").on_attach(client, args.buf, false)
@@ -100,7 +108,7 @@ return {
         },
         {
             "mrcjkb/rustaceanvim",
-            version = "^6", -- Recommended
+            version = "^7", -- Recommended
             config = function()
                 vim.g.rustaceanvim = require("servers.rust").enable()
             end,
@@ -353,6 +361,9 @@ return {
                 })
                 vim.lsp.config("jsonls", {
                     require("servers.json").enable(),
+                })
+                vim.lsp.config("rust_analyzer", {
+                    require("servers.rust").enable(),
                 })
                 vim.lsp.enable("tsserver")
 

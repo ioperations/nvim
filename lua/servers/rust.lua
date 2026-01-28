@@ -60,7 +60,6 @@ M.enable = function()
     end
     local capabilities = vim.lsp.protocol.make_client_capabilities()
 
-    -- local ih = require("lsp-inlayhints")
     return {
         tools = {
             -- executor = require("rust-tools/executors").termopen, -- can be quickfix or termopen
@@ -87,6 +86,7 @@ M.enable = function()
                     callback = function()
                         local _, _ = pcall(vim.lsp.codelens.refresh)
 
+                        -- local ih = require("lsp-inlayhints")
                         -- ih.show()
                     end,
                 })
@@ -105,9 +105,10 @@ M.enable = function()
                         x = { require("rustaceanvim").expand_macro, "expand macro" },
                     },
                 }, { prefix = "<leader>" })
+                require("inlay-hints").on_attach(client, bufnr)
             end,
             capabilities = capabilities,
-            settings = {
+            default_settings = {
                 ["rust-analyzer"] = {
                     lens = {
                         enable = true,
@@ -124,9 +125,11 @@ M.enable = function()
                         run = { enable = true },
                     },
                     inlayhints = {
-                        typeHints = {
-                            enable = false,
-                        },
+                        chainingHints = { enable = true },
+                        closingBraceHints = { enable = true, minLines = 25 },
+                        parameterHints = { enable = true },
+                        typeHints = { enable = true },
+                        enable = true,
                     },
                     imports = {
                         granularity = {
