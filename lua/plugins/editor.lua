@@ -88,6 +88,18 @@ return {
                 },
                 indent = {
                     enable = true,
+                    chars = {
+                        "┊",
+                    },
+                    style = {
+                        "#aFa000",
+                        "#aF7F00",
+                        "#aFaa00",
+                        "#a0aF00",
+                        "#a0FFFF",
+                        "#a0a0FF",
+                        "#aBa0FF",
+                    },
                 },
                 line_num = {
                     enable = true,
