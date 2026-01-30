@@ -2,6 +2,7 @@ return {
     -- project
     {
         "ahmedkhalf/project.nvim",
+        enabled = false,
         config = function()
             require("project_nvim").setup({
                 sync_root_with_cwd = true,
@@ -110,7 +111,7 @@ return {
 
             -- telescope.load_extension("session-lens")
             telescope.load_extension("file_browser")
-            telescope.load_extension("projects")
+            -- telescope.load_extension("projects")
             telescope.load_extension("fzf")
             telescope.load_extension("dap")
             telescope.load_extension("live_grep_args")

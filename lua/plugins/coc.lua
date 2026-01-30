@@ -16,7 +16,7 @@ return {
     {
         "neoclide/coc.nvim",
         branch = "release",
-        dependencies = { "ahmedkhalf/project.nvim" },
+        -- dependencies = { "ahmedkhalf/project.nvim" },
         config = function()
             vim.g.coc_terminal_height = 20
             vim.g.coc_global_extensions = {

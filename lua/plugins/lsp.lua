@@ -141,10 +141,9 @@ return {
         "nvimtools/none-ls.nvim",
         -- code action
         {
-            "weilbith/nvim-code-action-menu",
-            cmd = "CodeActionMenu",
+            "aznhe21/actions-preview.nvim",
             config = function()
-                vim.g.code_action_menu_window_border = "single"
+                vim.keymap.set({ "v", "n" }, "ga", require("actions-preview").code_actions)
             end,
             lazy = true,
         },
@@ -384,7 +383,7 @@ return {
             dependencies = {
                 --"rcarriga/nvim-notify",
                 "williamboman/mason.nvim",
-                "ahmedkhalf/project.nvim",
+                -- "ahmedkhalf/project.nvim",
                 "b0o/SchemaStore.nvim",
                 "neovim/nvim-lspconfig",
             },
