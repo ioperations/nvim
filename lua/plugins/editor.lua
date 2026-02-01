@@ -89,7 +89,7 @@ return {
                 indent = {
                     enable = true,
                     chars = {
-                        "┊",
+                        "····",
                     },
                     style = {
                         -- "#aFa000",
