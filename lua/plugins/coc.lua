@@ -10,7 +10,7 @@ return {
             vim.api.nvim_exec2([[highlight ColorColumn guibg=#161616]], {})
             vim.api.nvim_exec2([[highlight CocSemTypeParameter guifg=#FF6600 gui=underline]], {})
             vim.api.nvim_exec2([[highlight CocSemTypeVariable guifg=#FFCC33 ]], {})
-            vim.api.nvim_exec2([[highlight CocSemTypeFunction guifg=#52A3D3 ]], {})
+            -- vim.api.nvim_exec2([[highlight CocSemTypeFunction guifg=#52A3D3 ]], {})
         end,
     },
     {
