@@ -128,7 +128,7 @@ return {
                         command = mason_root_dir .. "/bin/neocmakelsp",
                         filetypes = { "cmake" },
                         rootPatterns = { ".git" },
-                        args = { "--stdio" },
+                        args = { "stdio" },
                         initializationOptions = {
                             buildDirectory = "build",
                         },
