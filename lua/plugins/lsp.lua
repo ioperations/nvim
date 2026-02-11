@@ -392,6 +392,7 @@ return {
     {
         "nvimdev/lspsaga.nvim",
         event = "LspAttach",
+        enabled = false,
         config = function()
             require("lspsaga").setup({})
         end,

@@ -6,6 +6,7 @@ return {
             "lunarvim/lunar.nvim",
         },
         config = function()
+            vim.g.coc_current_word_highlight_delay = 10
             vim.api.nvim_exec2([[hi CurrentWord guifg=None guibg=#3b5e6a gui=underline,bold]], {})
             vim.api.nvim_exec2([[highlight ColorColumn guibg=#161616]], {})
             vim.api.nvim_exec2([[highlight CocSemTypeParameter guifg=#FF6600 gui=underline]], {})

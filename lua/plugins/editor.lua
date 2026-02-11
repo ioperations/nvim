@@ -43,6 +43,7 @@ return {
     -- undotree
     {
         "petertriho/nvim-scrollbar",
+        enabled = false,
         config = function()
             require("scrollbar").setup()
         end,
@@ -80,6 +81,7 @@ return {
     -- indent
     {
         "shellRaining/hlchunk.nvim",
+        enabled = false, -- comsume much too cpu when open large file
         event = { "BufReadPre", "BufNewFile" },
         config = function()
             require("hlchunk").setup({
@@ -116,15 +118,6 @@ return {
             })
         end,
     },
-    --   {
-    --       "lukas-reineke/indent-blankline.nvim",
-    --       config = function()
-    --           -- create the highlight groups in the highlight setup hook, so they are reset
-    --           -- every time the colorscheme changes
-
-    --           require("ibl").setup({})
-    --       end,
-    --   },
 
     {
         "RRethy/vim-illuminate",
@@ -133,6 +126,7 @@ return {
     -- cursorline
     {
         "yamatsum/nvim-cursorline",
+        enabled = false,
         config = function()
             require("nvim-cursorline").setup({
                 cursorline = {
@@ -149,7 +143,10 @@ return {
         end,
     },
 
-    "andymass/vim-matchup",
+    {
+        "andymass/vim-matchup",
+        enabled = false,
+    },
 
     -- todo fix etc
     {
