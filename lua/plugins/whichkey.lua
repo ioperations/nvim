@@ -87,7 +87,7 @@ return {
                     g = { "<cmd>LazyGit<cr>", "LazyGit" },
                     s = { "<cmd>Git status<cr>", "Git status" },
                     P = { "<cmd>Git pull<cr>", "Git pull" },
-                    m = { require("gitsigns").blame_line, "git message" },
+                    -- m = { require("gitsigns").blame_line, "git message" },
                 },
                 l = {
                     name = "LSP",
