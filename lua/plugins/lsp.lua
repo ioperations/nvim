@@ -252,8 +252,8 @@ return {
         -- haskell
         {
             "mrcjkb/haskell-tools.nvim",
-            version = "^3", -- Recommended
-            enabled = true,
+            version = "^7", -- Recommended
+            enabled = false,
             ft = { "haskell", "lhaskell", "cabal", "cabalproject" },
             config = function()
                 vim.api.nvim_create_augroup("haskell_tools", {})
