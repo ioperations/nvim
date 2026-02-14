@@ -67,6 +67,9 @@ M.enable = function()
                 --  "extraArgs": ["-DTEST_ADQ", "-Wall", "-std=c++17"]
                 extraArgs = {},
             },
+            codeLens = {
+                localVariables = false,
+            },
         },
         name = "ccls",
         cmd = { "ccls" },
