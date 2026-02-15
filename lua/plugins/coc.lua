@@ -40,6 +40,7 @@ return {
                 "coc-snippets",
                 "coc-yaml",
                 "coc-go",
+                "coc-git",
                 "coc-clangd",
                 "coc-emoji",
                 -- "coc-highlight",
