@@ -132,6 +132,7 @@
   "rust-analyzer.completion.postfix.enable": true,
   "rust-analyzer.workspace.symbol.search.scope": "workspace_and_dependencies",
   "rust-analyzer.terminal.startinsert": false,
+  "git.addGBlameToVirtualText": true,
   "languageserver": {
     "haskell": {
       "command": "haskell-language-server-wrapper",
