@@ -68,7 +68,7 @@ return {
 
     -- easy motion
     {
-        "phaazon/hop.nvim",
+        "smoka7/hop.nvim",
         opts = {
             as = "hop",
             keys = "etovxqpdygfblzhckisuran",
