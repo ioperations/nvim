@@ -77,6 +77,7 @@ return {
                     s = { "<cmd>lua require('coverage').summary()<cr>", "coverage summary" },
                 },
                 R = { "<cmd>Telescope resume<cr>", "resume" },
+                o = { "<cmd>CocOutline<cr>", "cocoutline" },
                 -- Bufferline
                 g = {
                     a = { "<cmd>Git add .<cr>", "Git add" },
