@@ -59,7 +59,7 @@
     "keyword": "󰌋 ",
     "color": "󰏘 ",
     "reference": "※ ",
-    "default": "🐶"
+    "default": "⦿"
   },
   "diagnostic.virtualText": false,
   "coc.preferences.formatOnSave": false,
