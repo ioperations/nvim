@@ -86,12 +86,11 @@ return {
                 on_attach = nil, -- (fun(buf: integer): boolean) return false to disable attaching
             })
         end,
-        dependencies = {
-            "nvim-treesitter/nvim-treesitter",
-        },
+        dependencies = {},
     },
     {
         "nvim-treesitter/nvim-treesitter",
+        tag = "v0.10.0",
         build = ":TSUpdate",
         event = { "BufReadPost", "BufNewFile" },
         dependencies = {
@@ -129,6 +128,7 @@ return {
                 "css",
                 "cpp",
                 "c",
+                "sql",
             }, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
             -- ignore_install = {}, -- List of parsers to ignore installing
 
@@ -213,7 +213,7 @@ return {
             },
         },
         config = function(_, opts)
-            require("nvim-treesitter.config").setup(opts)
+            require("nvim-treesitter.configs").setup(opts)
             -- FIX: for nvim-autotag - not actually working
             -- local ts_utils = require("nvim-treesitter.ts_utils")
             -- ts_utils.get_node_text = vim.treesitter.query.get_node_text
