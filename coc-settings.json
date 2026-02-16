@@ -75,7 +75,7 @@
   },
   "pyright.enable": true,
   "pyright.server": "~/.local/share/nvim/mason/bin/pyright-langserver",
-  "jedi.enable": true,
+  "jedi.enable": false,
   "jedi.startupMessage": false,
   "jedi.markupKindPreferred": "markdown",
   "jedi.trace.server": "verbose",

@@ -191,7 +191,7 @@ return {
                         "neocmakelsp",
                         { "bash-language-server", auto_update = true },
                         "jdtls",
-                        "jedi_language_server",
+                        -- "jedi_language_server",
                         "codelldb",
                         "cpptools",
                         "lua-language-server",
