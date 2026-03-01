@@ -47,6 +47,7 @@ return {
                 -- parsers can contain values used in |user_default_options|
                 sass = { enable = true, parsers = { "css" } }, -- Enable sass colors
                 virtualtext = "■",
+                suppress_deprecation = true,
             },
             -- all the sub-options of filetypes apply to buftypes
             buftypes = {},
