@@ -90,6 +90,36 @@ vim.g.markdown_fenced_languages = {
     "js=javascript",
 }
 
+function set_python3_host_prog()
+    find = false
+    local lines = vim.fn.systemlist({ "python3", "--version" })
+    for _, line in ipairs(lines) do
+        local sub_version = string.match(line, "Python 3.(%d+).*")
+
+        if sub_version then
+            find = true
+        end
+    end
+
+    if find == false then
+        prefix = { "/usr/local/bin/", "/usr/bin/" }
+        for j = 1, #prefix do
+            for i = 20, 10, -1 do -- python3.20 python3.19 .. python3.10 detect
+                p = prefix[j] .. "python3." .. i
+                if vim.fn.filereadable(p) == 1 then
+                    vim.g.python3_host_prog = p
+                    find = true
+                    break
+                end
+            end
+            if find then
+                break
+            end
+        end
+    end
+end
+set_python3_host_prog()
+
 if vim.loop.os_uname().sysname ~= "Windows_NT" then
     vim.cmd("source " .. vim.fn.stdpath("config") .. "/vim/langtemplate.vim")
 else
