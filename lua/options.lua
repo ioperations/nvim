@@ -96,7 +96,7 @@ function set_python3_host_prog()
     for _, line in ipairs(lines) do
         local sub_version = string.match(line, "Python 3.(%d+).*")
 
-        if sub_version then
+        if tonumber(sub_version) >= 10 then
             find = true
         end
     end
