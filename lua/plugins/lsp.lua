@@ -24,14 +24,20 @@ return {
         -- lsp server progress
         {
             "j-hui/fidget.nvim",
-            branch = "legacy",
+            -- branch = "legacy",
+            enabled = false, -- disabled in favor of notice.nvim
+            version = "*",
             opts = {
-                window = {
-                    -- border = "rounded",
-                    blend = 0,
-                },
-                text = {
-                    spinner = sp2,
+                --
+                progress = {
+                    display = {
+                        format_annote = nil,
+                        progress_icon = "Manga",
+
+                        overrides = { -- Override options from the default notification config
+                            rust_analyzer = { name = "rust-analyzer" },
+                        },
+                    },
                 },
             },
         },
