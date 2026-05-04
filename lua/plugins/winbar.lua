@@ -97,7 +97,7 @@ return {
             "InsertLeave",
 
             -- include this if you have set `show_modified` to `true`
-            "BufModifiedSet",
+            -- "BufModifiedSet",
         }, {
             group = vim.api.nvim_create_augroup("barbecue.updater", {}),
             callback = function()
