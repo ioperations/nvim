@@ -4,7 +4,11 @@ return {
     { "whatyouhide/vim-tmux-syntax" },
     {
         "HiPhish/rainbow-delimiters.nvim",
-        enabled = true,
+        cond = function()
+            -- Only load if file is not considered "large"
+            return vim.api.nvim_buf_line_count(0) < 5000
+        end,
+
         config = function()
             -- This module contains a number of default definitions
             local rainbow_delimiters = require("rainbow-delimiters")
@@ -145,7 +149,7 @@ return {
             highlight = {
                 enable = true, -- false will disable the whole extension
                 disable = function(lang, bufnr) -- Disable in large typescript buffers i.e. type definitions
-                    return lang == "typescript" and vim.api.nvim_buf_line_count(bufnr) > 5000
+                    return lang == "typescript" or vim.api.nvim_buf_line_count(bufnr) > 5000
                 end,
             },
 
