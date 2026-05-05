@@ -90,6 +90,10 @@ return {
     },
     {
         "nvim-treesitter/nvim-treesitter",
+        -- cond = function()
+        --     -- Only load if file is not considered "large"
+        --     return vim.fn.getfsize(vim.api.nvim_buf_get_name(0)) < 2048
+        -- end,
         tag = "v0.10.0",
         build = ":TSUpdate",
         event = { "BufReadPost", "BufNewFile" },
