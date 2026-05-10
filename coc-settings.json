@@ -16,9 +16,22 @@
   },
   "codeLens.subseparator": "|",
   "translator.engines": ["bing", "google", "youdao"],
+  "suggest.floatConfig": {
+    "border": true,
+    "shadow": true,
+    "winblend": 1
+  },
+  "signature.floatConfig": {
+    "border": true,
+    "shadow": true
+  },
+  "hover.floatConfig": {
+    "border": true,
+    "shadow": true
+  },
+  "diagnostic.floatConfig": { "border": true, "shadow": true },
   "clangd.disableCompletion": false,
   "rust-analyzer.server.path": "~/.cargo/bin/rust-analyzer",
-  "diagnostic.floatConfig": { "border": true },
   "diagnostic.hintSign": "💡",
   "diagnostic.warningSign": " ",
   "diagnostic.infoSign": " ",
@@ -63,7 +76,6 @@
   },
   "diagnostic.virtualText": false,
   "coc.preferences.formatOnSave": false,
-  "hover.floatConfig": { "border": true },
   "suggest.removeDuplicateItems": true,
   "suggest.labelMaxLength": 60,
   "suggest.triggerAfterInsertEnter": true,
