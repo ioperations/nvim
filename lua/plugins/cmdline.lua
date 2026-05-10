@@ -7,7 +7,15 @@ return {
         -- OPTIONAL:
         --   `nvim-notify` is only needed, if you want to use the notification view.
         --   If not available, we use `mini` as the fallback
-        "rcarriga/nvim-notify",
+        {
+            "rcarriga/nvim-notify",
+            config = {
+                top_down = false,
+                max_width = function()
+                    return 8 * vim.api.nvim_win_get_width(0) / 10
+                end,
+            },
+        },
     },
     config = function()
         require("noice").setup({
@@ -40,6 +48,36 @@ return {
                     opts = { skip = true },
                 },
                 -- ... 这里可能还有你其他的 routes 规则，或者没有
+            },
+            views = {
+                cmdline_popup = {
+                    border = {
+                        style = "none",
+                        padding = { 2, 3 },
+                    },
+                    filter_options = {},
+                    win_options = {
+                        winhighlight = "NormalFloat:NormalFloat,FloatBorder:FloatBorder",
+                    },
+                },
+            },
+            popupmenu = {
+                relative = "editor",
+                position = {
+                    row = 8,
+                    col = "50%",
+                },
+                -- size = {
+                --     width = 60,
+                --     height = 10,
+                -- },
+                border = {
+                    style = "rounded",
+                    padding = { 0, 1 },
+                },
+                win_options = {
+                    winhighlight = { Normal = "Normal", FloatBorder = "DiagnosticInfo" },
+                },
             },
         })
     end,
