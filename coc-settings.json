@@ -18,18 +18,24 @@
   "translator.engines": ["bing", "google", "youdao"],
   "suggest.floatConfig": {
     "border": true,
-    "shadow": true,
-    "winblend": 1
+    "shadow": false,
+    "rounded": true
   },
   "signature.floatConfig": {
     "border": true,
-    "shadow": true
+    "shadow": false,
+    "rounded": true
   },
   "hover.floatConfig": {
     "border": true,
-    "shadow": true
+    "shadow": false,
+    "rounded": true
   },
-  "diagnostic.floatConfig": { "border": true, "shadow": true },
+  "diagnostic.floatConfig": {
+    "border": true,
+    "shadow": false,
+    "rounded": true
+  },
   "clangd.disableCompletion": false,
   "rust-analyzer.server.path": "~/.cargo/bin/rust-analyzer",
   "diagnostic.hintSign": "💡",
