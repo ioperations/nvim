@@ -171,7 +171,7 @@ M.enable = function()
             },
             disable_diagnostics = false,
             disable_signature = false,
-            codelens = { enable = true },
+            codelens = { enable = false },
         },
     })
 end
