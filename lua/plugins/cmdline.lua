@@ -47,18 +47,18 @@ return {
                     -- opts.skip = true 会告诉 Noice 完全忽略这条消息
                     opts = { skip = true },
                 },
-                {
-                    view = "popup",
-                    filter = { event = "msg_show", min_height = 7 },
-                    opts = {
-                        size = {
-                            width = "60%",
-                            height = "auto",
-                            max_height = 20,
-                            -- min_width = 10,
-                        },
-                    },
-                },
+                -- {
+                --     view = "popup",
+                --     filter = { event = "msg_show", min_height = 7 },
+                --     opts = {
+                --         size = {
+                --             width = "60%",
+                --             height = "auto",
+                --             max_height = 20,
+                --             -- min_width = 10,
+                --         },
+                --     },
+                -- },
                 -- ... 这里可能还有你其他的 routes 规则，或者没有
             },
             views = {
