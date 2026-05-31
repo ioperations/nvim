@@ -21,29 +21,6 @@ local sp2 = {
 
 return {
     {
-        "oribarilan/lensline.nvim",
-        branch = "release/2.x",
-        event = "LspAttach",
-        config = function()
-            require("lensline").setup({
-                profiles = {
-                    {
-                        name = "colorful",
-                        providers = {
-                            { name = "usages", enabled = true, highlight = "Comment" },
-                            { name = "last_author", enabled = true, highlight = "Comment" },
-                            { name = "complexity", enabled = true, highlight = "Comment" },
-                            { name = "diagnostics", enabled = true, highlight = "Comment" },
-                        },
-                        style = {
-                            highlight = "Comment", -- fallback for providers without a highlight
-                        },
-                    },
-                },
-            })
-        end,
-    },
-    {
         -- lsp server progress
         {
             "j-hui/fidget.nvim",
