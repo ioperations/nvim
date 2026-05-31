@@ -76,6 +76,11 @@ return {
                     -- detached = false,
                 },
             }
+            dap.adapters.gdb = {
+                type = "executable",
+                command = "gdb",
+                args = { "--interpreter=dap", "--eval-command", "set print pretty on" },
+            }
 
             -- FIXME: expect only one directory in /opt/homebrew/Cellar/llvm/
 
@@ -122,6 +127,15 @@ return {
                             ignoreFailures = false,
                         },
                     },
+                },
+                {
+                    name = "gdb Launch:Native",
+                    type = "gdb",
+                    request = "launch",
+                    program = "${fileDirname}/${fileBasenameNoExtension}",
+                    args = {}, -- provide arguments if needed
+                    cwd = "${workspaceFolder}",
+                    stopAtBeginningOfMainSubprogram = false,
                 },
                 {
                     name = "gdb launch: manually program",
