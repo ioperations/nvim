@@ -44,7 +44,7 @@ function request(method, config)
 
         config = { reuse_win = true, offset_encoding = "utf-32" }
 
-        if vim.tbl_islist(result) then
+        if vim.islist(result) then
             if #result == 1 then
                 -- print("results[1]", json.encode(result))
                 util.jump_to_location(result[1], config.offset_encoding, config.reuse_win)
