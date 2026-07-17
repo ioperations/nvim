@@ -268,7 +268,7 @@ return {
             vim.api.nvim_create_autocmd("User", {
                 group = "CocGroup",
                 pattern = "CocJumpPlaceholder",
-                callback = function()
+                callback = function(ev)
                     if vim.b[ev.buf].coc_enabled == 0 then
                         return
                     end
