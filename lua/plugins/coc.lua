@@ -177,13 +177,64 @@ return {
             -- Highlight the symbol and its references on a CursorHold event(cursor is idle)
             vim.api.nvim_create_augroup("CocGroup", {})
             -- inlay hint got highlight when using Coc's highlight setting
-            vim.api.nvim_create_autocmd("CursorHold", {
-                group = "CocGroup",
-                command = "silent call CocActionAsync('highlight')",
-                desc = "Highlight symbol under cursor on CursorHold",
+            ---
+
+            local max_filesize = 1.5 * 1024 * 1024 -- 1.5 MB threshold
+            local coc_guard_group = vim.api.nvim_create_augroup("CocPerformanceGuard", { clear = true })
+
+            vim.api.nvim_create_autocmd("BufReadPre", {
+                group = coc_guard_group,
+                pattern = "*",
+                callback = function(ev)
+                    local filepath = ev.match
+                    local stat = vim.uv.fs_stat(filepath)
+
+                    -- If the file exists and is larger than our max threshold
+                    if stat and stat.size > max_filesize then
+                        -- 1. Kill CoC for this buffer entirely
+                        vim.b[ev.buf].coc_enabled = 0
+
+                        -- 2. Performance bonus: turn off heavy features for this buffer
+                        vim.opt_local.syntax = "off"
+                        vim.opt_local.undofile = false
+                        vim.opt_local.swapfile = false
+
+                        -- Optional visual indicator so you know why features are off
+                        vim.schedule(function()
+                            vim.notify(
+                                "Large file detected: Disabling CoC and syntax highlighting for performance.",
+                                vim.log.levels.WARN
+                            )
+                        end)
+                    end
+                end,
+                desc = "Disable CoC and heavy buffers features globally for large files.",
             })
 
-            -- Symbol renaming
+            vim.api.nvim_create_autocmd("CursorHold", {
+                group = "CocGroup",
+                callback = function(ev)
+                    -- 1. Performance Guard: If CoC is disabled for this buffer (e.g., large files), do nothing
+                    if vim.b[ev.buf].coc_enabled == 0 then
+                        return
+                    end
+
+                    -- 2. Performance Guard: Double-check file size just in case
+                    local stat = vim.uv.fs_stat(vim.api.nvim_buf_get_name(ev.buf))
+                    if stat and stat.size > max_filesize then
+                        return
+                    end
+
+                    -- 3. Defer the async call to the next event loop tick to prevent UI blocking
+                    vim.schedule(function()
+                        -- Verify the buffer is still valid before calling the action
+                        if vim.api.nvim_buf_is_valid(ev.buf) then
+                            vim.fn.CocActionAsync("highlight")
+                        end
+                    end)
+                end,
+                desc = "Highlight symbol under cursor safely on CursorHold.",
+            })
 
             -- Formatting selected code
             keyset("x", "<leader>lf", "<Plug>(coc-format-selected)", { silent = true })
@@ -191,17 +242,43 @@ return {
             -- Setup formatexpr specified filetype(s)
             vim.api.nvim_create_autocmd("FileType", {
                 group = "CocGroup",
-                pattern = "typescript,json",
-                command = "setl formatexpr=CocAction('formatSelected')",
-                desc = "Setup formatexpr specified filetype(s).",
+                pattern = { "typescript", "json" }, -- Native Lua table pattern
+                callback = function(ev)
+                    if vim.b[ev.buf].coc_enabled == 0 then
+                        return
+                    end
+
+                    local filepath = vim.api.nvim_buf_get_name(ev.buf)
+                    local stat = vim.uv.fs_stat(filepath)
+
+                    -- If the file is larger than 1MB, kill CoC for this buffer and exit
+                    if stat and stat.size > max_filesize then
+                        vim.b[ev.buf].coc_enabled = 0
+                        vim.opt_local.syntax = "off" -- Disabling heavy syntax highlighting also boosts performance
+                        return
+                    end
+
+                    -- Otherwise, safely apply your formatting rule
+                    vim.opt_local.formatexpr = "CocAction('formatSelected')"
+                end,
+                desc = "Setup formatexpr safely for normal sized typescript/json files.",
             })
 
             -- Update signature help on jump placeholder
             vim.api.nvim_create_autocmd("User", {
                 group = "CocGroup",
                 pattern = "CocJumpPlaceholder",
-                command = "call CocActionAsync('showSignatureHelp')",
-                desc = "Update signature help on jump placeholder",
+                callback = function()
+                    if vim.b[ev.buf].coc_enabled == 0 then
+                        return
+                    end
+                    -- Using schedule wraps the execution safely out of the fast input loop
+                    -- to prevent blocking the UI during rapid snippet jumping
+                    vim.schedule(function()
+                        vim.fn.CocActionAsync("showSignatureHelp")
+                    end)
+                end,
+                desc = "Update signature help asynchronously on jump placeholder safely.",
             })
 
             -- Apply codeAction to the selected region
