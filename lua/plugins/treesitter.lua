@@ -98,7 +98,6 @@ return {
         --     -- Only load if file is not considered "large"
         --     return vim.fn.getfsize(vim.api.nvim_buf_get_name(0)) < 2048
         -- end,
-        tag = "v0.10.0",
         build = ":TSUpdate",
         event = { "BufReadPost", "BufNewFile" },
         dependencies = {
@@ -221,7 +220,6 @@ return {
             },
         },
         config = function(_, opts)
-            require("nvim-treesitter.configs").setup(opts)
             -- FIX: for nvim-autotag - not actually working
             -- local ts_utils = require("nvim-treesitter.ts_utils")
             -- ts_utils.get_node_text = vim.treesitter.query.get_node_text
