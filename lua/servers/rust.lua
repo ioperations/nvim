@@ -45,7 +45,7 @@ local Executor = {
         local run = run1 .. flattenAndConcat(args)
         -- exec container . " clang -DTEST_ADQ % " . DotenvGet('CLANG_C_FLAGS') . " -Wall -Wpedantic -g -o %< && time timeout 30 ./%<"
 
-        vim.api.nvim_exec2(run)
+        vim.api.nvim_exec2(run, {})
         -- open quickfix
         --
         -- copen()
