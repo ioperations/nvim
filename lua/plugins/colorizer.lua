@@ -34,6 +34,7 @@ return {
         "NvChad/nvim-colorizer.lua",
         opts = {
             filetypes = { "*", "!cpp", "!c", "!rust", "!go", "!java", "!sh" },
+            lazy_load = true, --- PERF: when BufferWinEnter cause nvim huge cpu usage
             user_default_options = {
                 rgb_fn = true, -- CSS rgb() and rgba() functions
                 hsl_fn = true, -- CSS hsl() and hsla() functions
@@ -52,5 +53,8 @@ return {
             -- all the sub-options of filetypes apply to buftypes
             buftypes = {},
         },
+        config = function(opts)
+            require("colorizer").setup(opts)
+        end,
     },
 }
