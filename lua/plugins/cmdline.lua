@@ -19,7 +19,21 @@ return {
     },
     config = function()
         require("noice").setup({
+            -- THE FIX: Instead of disabling it (which breaks input),
+            -- force it to render layout inside the native bottom row.
+            cmdline = {
+                view = "cmdline", -- Moves the text prompt directly to the absolute bottom left
+            },
+            popupmenu = {
+                enabled = false, -- Disables the pop-up autocompletion dropdown for commands
+            },
+            messages = {
+                enabled = true, -- Leaves the backend on so Noice catches notifications
+            },
             lsp = {
+                progress = {
+                    enabled = true, -- Keeps your LSP loading spinners/popups active
+                },
                 -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
                 override = {
                     ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
@@ -27,69 +41,12 @@ return {
                     ["cmp.entry.get_documentation"] = true, -- requires hrsh7th/nvim-cmp
                 },
             },
-            -- you can enable a preset for easier configuration
             presets = {
-                bottom_search = true, -- use a classic bottom cmdline for search
-                command_palette = true, -- position the cmdline and popupmenu together
+                bottom_search = true, -- Forces / and ? search inputs to stay at the bottom too
+                command_palette = false, -- Stops inputs from ever shifting to the upper center screen
                 long_message_to_split = true, -- long messages will be sent to a split
                 inc_rename = false, -- enables an input dialog for inc-rename.nvim
                 lsp_doc_border = false, -- add a border to hover docs and signature help
-            },
-            -- 在这里添加或修改 routes 配置
-            routes = {
-                {
-                    filter = {
-                        event = "msg_show",
-                        kind = "emsg",
-                        -- 使用这个错误信息中稳定且独特的片段作为过滤关键词
-                        find = "Error in decoration provider",
-                    },
-                    -- opts.skip = true 会告诉 Noice 完全忽略这条消息
-                    opts = { skip = true },
-                },
-                -- {
-                --     view = "popup",
-                --     filter = { event = "msg_show", min_height = 7 },
-                --     opts = {
-                --         size = {
-                --             width = "60%",
-                --             height = "auto",
-                --             max_height = 20,
-                --             -- min_width = 10,
-                --         },
-                --     },
-                -- },
-                -- ... 这里可能还有你其他的 routes 规则，或者没有
-            },
-            views = {
-                cmdline_popup = {
-                    border = {
-                        style = "none",
-                        padding = { 2, 3 },
-                    },
-                    filter_options = {},
-                    win_options = {
-                        winhighlight = "NormalFloat:NormalFloat,FloatBorder:FloatBorder",
-                    },
-                },
-            },
-            popupmenu = {
-                relative = "editor",
-                position = {
-                    row = 8,
-                    col = "50%",
-                },
-                -- size = {
-                --     width = 60,
-                --     height = 10,
-                -- },
-                border = {
-                    style = "rounded",
-                    padding = { 0, 1 },
-                },
-                win_options = {
-                    winhighlight = { Normal = "Normal", FloatBorder = "DiagnosticInfo" },
-                },
             },
         })
     end,
