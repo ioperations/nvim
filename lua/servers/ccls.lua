@@ -19,7 +19,49 @@ function nodeRequest(bufnr, method, params, handler)
     end
 end
 
-local util = require("vim.lsp.util")
+local function custom_jump_to_location(target, offset_encoding, reuse_win)
+    reuse_win = reuse_win or {}
+    local uri = target.uri or target.targetUri
+    local range = target.range or target.targetSelectionRange
+
+    if not uri or not range then
+        return false
+    end
+
+    -- 1. Convert URI to a buffer number
+    local bufnr = vim.uri_to_bufnr(uri)
+
+    -- 2. Ensure the buffer is loaded into memory
+    if not vim.api.nvim_buf_is_loaded(bufnr) then
+        vim.fn.bufload(bufnr)
+    end
+
+    -- 3. Handle window switching (reuse_win logic)
+    local win = vim.api.nvim_get_current_win()
+    if reuse_win then
+        -- Find if this buffer is already open in any window of the current tab
+        local wins = vim.api.nvim_tabpage_list_wins(0)
+        for _, w in ipairs(wins) do
+            if vim.api.nvim_win_get_buf(w) == bufnr then
+                win = w
+                break
+            end
+        end
+    end
+
+    -- 4. Switch to the target window and set the target buffer
+    vim.api.nvim_set_current_win(win)
+    vim.api.nvim_win_set_buf(win, bufnr)
+
+    -- 5. Set the cursor position (LSP lines/chars are 0-indexed)
+    local line = range.start.line
+    local col = range.start.character
+
+    -- nvim_win_set_cursor expects a 1-indexed line and 0-indexed column
+    pcall(vim.api.nvim_win_set_cursor, win, { line + 1, col })
+
+    return true
+end
 
 function request(method, config)
     local bufnr = vim.api.nvim_get_current_buf()
@@ -46,8 +88,8 @@ function request(method, config)
 
         if vim.islist(result) then
             if #result == 1 then
-                -- print("results[1]", json.encode(result))
-                util.jump_to_location(result[1], config.offset_encoding, config.reuse_win)
+                -- print("results[1]", vim.inspect(result))
+                custom_jump_to_location(result[1], config.offset_encoding, config.reuse_win)
             end
         end
     end
