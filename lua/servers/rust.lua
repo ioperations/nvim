@@ -1,23 +1,3 @@
-local function clear_qf()
-    vim.fn.setqflist({}, " ", { title = "cargo" })
-end
-
-local function scroll_qf()
-    if vim.bo.buftype ~= "quickfix" then
-        vim.api.nvim_command("cbottom")
-    end
-end
-
----@param lines string[]
-local function append_qf(lines)
-    vim.fn.setqflist({}, "a", { lines = lines })
-    scroll_qf()
-end
-
-local function copen()
-    vim.cmd("copen")
-end
-
 -- Helper function to flatten and collect table items
 local function flatten(tbl, result)
     result = result or {}
@@ -37,37 +17,20 @@ local function flattenAndConcat(tbl)
     return table.concat(flatList, " ")
 end
 
+vim.g.cargo_run_current_test = "cargo test"
+
 ---@type rustaceanvim.Executor
 local Executor = {
     execute_command = function(command, args, cwd, opts)
         local container = "AsyncRun -position=bottomright -pos=floaterm -mode=term -width=0.8 -height=0.6 "
-        local run1 = container .. command .. " "
-        local run = run1 .. flattenAndConcat(args)
-        -- exec container . " clang -DTEST_ADQ % " . DotenvGet('CLANG_C_FLAGS') . " -Wall -Wpedantic -g -o %< && time timeout 30 ./%<"
+        local run1 = command .. " " .. flattenAndConcat(args)
+        local run = container .. run1
 
         vim.api.nvim_exec2(run, {})
-        -- open quickfix
-        --
-        -- copen()
-        -- -- go back to the previous window
-        -- vim.cmd.wincmd("p")
-        -- -- clear the quickfix
-        -- clear_qf()
 
-        -- -- start compiling
-        -- local cmd = vim.list_extend({ command }, args)
-        --         vim.system(
-        --             cmd,
-        --             { cwd = cwd, env = opts.env },
-        --             vim.schedule_wrap(function(sc)
-        --                 ---@cast sc vim.SystemCompleted
-        --                 local data = ([[
-        -- %s
-        -- %s
-        -- ]]):format(sc.stdout or "", sc.stderr or "")
-        --                 append_qf(vim.split(data, "\n"))
-        --             end)
-        --         )
+        vim.g.cargo_run_current_test = run1
+
+        vim.cmd("set makeprg=cargo")
     end,
 }
 
@@ -113,30 +76,12 @@ M.enable = function()
     --   },
     -- }
 
-    vim.g.cargo_run_current_test = "cargo test"
-
-    local M = {}
-    function M.execute_command(command, args, _)
-        local args_flatten = " "
-        for _, v in pairs(args) do
-            args_flatten = args_flatten .. " "
-            args_flatten = args_flatten .. v
-        end
-
-        local com = command .. args_flatten
-        local running = "!" .. com
-        vim.g.cargo_run_current_test = com
-
-        vim.cmd("set makeprg=cargo")
-
-        vim.cmd(running)
-    end
     local capabilities = vim.lsp.protocol.make_client_capabilities()
 
     return {
         tools = {
             -- executor = require("rust-tools/executors").termopen, -- can be quickfix or termopen
-            executor = M,
+            executor = Executor,
             test_executor = Executor,
             reload_workspace_from_cargo_toml = true,
             runnables = {
