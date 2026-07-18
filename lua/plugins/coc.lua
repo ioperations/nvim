@@ -281,6 +281,42 @@ return {
                 desc = "Update signature help asynchronously on jump placeholder safely.",
             })
 
+            local perf_guard = vim.api.nvim_create_augroup("LargeFilePerfGuard", { clear = true })
+
+            vim.api.nvim_create_autocmd({ "BufReadPre", "BufEnter" }, {
+                group = perf_guard,
+                pattern = "*",
+                callback = function(ev)
+                    local filepath = vim.api.nvim_buf_get_name(ev.buf)
+                    local stat = vim.uv.fs_stat(filepath)
+
+                    if stat and stat.size > max_filesize then
+                        -- 1. Kill CoC & Matchparen
+                        vim.b[ev.buf].coc_enabled = 0
+                        vim.cmd("NoMatchParen")
+                        vim.opt_local.matchpairs = ""
+
+                        -- 2. FORCE SHORT-CIRCUIT BUFFERLINE & LUALINE (Fixes the remaining 31s freeze)
+                        -- Setting these tells UI plugins that this buffer doesn't belong in standard diagnostic updates
+                        vim.b[ev.buf].bufferline_disable = true
+                        vim.b[ev.buf].lualine_disable = true
+
+                        -- 3. Kill Treesitter & Folding
+                        pcall(vim.treesitter.stop, ev.buf)
+                        vim.opt_local.foldmethod = "manual"
+                        vim.opt_local.foldexpr = ""
+                        vim.opt_local.foldlevel = 99
+
+                        -- 4. Strip regular syntax components
+                        vim.opt_local.syntax = "off"
+                        vim.opt_local.undofile = false
+                        vim.opt_local.swapfile = false
+                        vim.opt_local.bufhidden = "unload"
+                    end
+                end,
+                desc = "Complete lockdown including UI plugin blocks for large files.",
+            })
+
             -- Apply codeAction to the selected region
             -- Example: <leader>aap` for current paragraph
             opts = { silent = true, nowait = true }
