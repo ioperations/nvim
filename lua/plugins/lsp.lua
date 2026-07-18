@@ -115,7 +115,7 @@ return {
         {
             "mrcjkb/rustaceanvim",
             version = "^9", -- Recommended
-            config = function()
+            init = function()
                 vim.g.rustaceanvim = require("servers.rust").enable()
             end,
         },
@@ -367,9 +367,9 @@ return {
                 vim.lsp.config("jsonls", {
                     require("servers.json").enable(),
                 })
-                vim.lsp.config("rust_analyzer", {
-                    require("servers.rust").enable(),
-                })
+                -- vim.lsp.config("rust_analyzer", {
+                --     require("servers.rust").enable(),
+                -- })
                 vim.lsp.enable("tsserver")
 
                 vim.lsp.config("tsserver", {

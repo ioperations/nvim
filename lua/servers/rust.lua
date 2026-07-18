@@ -1,3 +1,76 @@
+local function clear_qf()
+    vim.fn.setqflist({}, " ", { title = "cargo" })
+end
+
+local function scroll_qf()
+    if vim.bo.buftype ~= "quickfix" then
+        vim.api.nvim_command("cbottom")
+    end
+end
+
+---@param lines string[]
+local function append_qf(lines)
+    vim.fn.setqflist({}, "a", { lines = lines })
+    scroll_qf()
+end
+
+local function copen()
+    vim.cmd("copen")
+end
+
+-- Helper function to flatten and collect table items
+local function flatten(tbl, result)
+    result = result or {}
+    for _, item in ipairs(tbl) do
+        if type(item) == "table" then
+            flatten(item, result)
+        else
+            table.insert(result, tostring(item))
+        end
+    end
+    return result
+end
+
+-- Main function to flatten and concatenate
+local function flattenAndConcat(tbl)
+    local flatList = flatten(tbl)
+    return table.concat(flatList, " ")
+end
+
+---@type rustaceanvim.Executor
+local Executor = {
+    execute_command = function(command, args, cwd, opts)
+        local container = "AsyncRun -position=bottomright -pos=floaterm -mode=term -width=0.8 -height=0.6 "
+        local run1 = container .. command .. " "
+        local run = run1 .. flattenAndConcat(args)
+        -- exec container . " clang -DTEST_ADQ % " . DotenvGet('CLANG_C_FLAGS') . " -Wall -Wpedantic -g -o %< && time timeout 30 ./%<"
+
+        vim.api.nvim_exec2(run)
+        -- open quickfix
+        --
+        -- copen()
+        -- -- go back to the previous window
+        -- vim.cmd.wincmd("p")
+        -- -- clear the quickfix
+        -- clear_qf()
+
+        -- -- start compiling
+        -- local cmd = vim.list_extend({ command }, args)
+        --         vim.system(
+        --             cmd,
+        --             { cwd = cwd, env = opts.env },
+        --             vim.schedule_wrap(function(sc)
+        --                 ---@cast sc vim.SystemCompleted
+        --                 local data = ([[
+        -- %s
+        -- %s
+        -- ]]):format(sc.stdout or "", sc.stderr or "")
+        --                 append_qf(vim.split(data, "\n"))
+        --             end)
+        --         )
+    end,
+}
+
 M = {}
 
 M.enable = function()
@@ -64,6 +137,7 @@ M.enable = function()
         tools = {
             -- executor = require("rust-tools/executors").termopen, -- can be quickfix or termopen
             executor = M,
+            test_executor = Executor,
             reload_workspace_from_cargo_toml = true,
             runnables = {
                 use_telescope = true,
