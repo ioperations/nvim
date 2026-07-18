@@ -85,7 +85,6 @@ M.enable = function()
                     pattern = { "*.rs" },
                     callback = function()
                         -- local _, _ = pcall(vim.lsp.codelens.refresh)
-
                         -- local ih = require("lsp-inlayhints")
                         -- ih.show()
                     end,
@@ -99,6 +98,7 @@ M.enable = function()
             cmd = { vim.fn.expand("$HOME") .. "/.cargo/bin/rust-analyzer" },
             on_attach = function(client, bufnr)
                 local wk = require("which-key")
+                vim.lsp.codelens.enable(true, { bufnr = bufnr })
                 wk.register({
                     l = {
                         name = "Lsp",

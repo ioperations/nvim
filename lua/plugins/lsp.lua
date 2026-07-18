@@ -114,7 +114,7 @@ return {
         },
         {
             "mrcjkb/rustaceanvim",
-            version = "^7", -- Recommended
+            version = "^9", -- Recommended
             config = function()
                 vim.g.rustaceanvim = require("servers.rust").enable()
             end,
