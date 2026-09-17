@@ -207,14 +207,11 @@ return {
     {
         "honza/vim-snippets",
         { "tpope/vim-dotenv" },
-        { "voldikss/vim-floaterm" },
+        { "voldikss/vim-floaterm", commit = "8498b0592ff6dae8261adb938a1cf31ee568ec7d" },
         { "skywind3000/asynctasks.vim", lazy = true, cmd = "AsyncTask" },
         {
             "skywind3000/asyncrun.vim",
             lazy = true,
-            dependencies = {
-                { "skywind3000/asyncrun.extra" },
-            },
             cmd = "AsyncRun",
         },
     },
