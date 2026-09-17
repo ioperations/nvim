@@ -1,7 +1,7 @@
 vim.api.nvim_exec2(
     [[
 func! CompileRunGcc()
-    let container = "AsyncRun -position=bottomright -pos=floaterm -mode=term -width=0.8 -height=0.6 "
+    let container = "AsyncRun -position=bottomright -pos=bottomright -mode=term -width=0.8 -height=0.6 "
     exec "w"
     if &filetype == 'c'
         " mac has some limit
