@@ -34,7 +34,7 @@ return {
                 "coc-gitignore",
                 "coc-lists",
                 "coc-git",
-                "coc-flutter",
+                "coc-flutter-tools",
                 "coc-todolist",
                 "coc-tasks",
                 "coc-snippets",
@@ -47,7 +47,6 @@ return {
                 "coc-pairs",
                 "coc-lightbulb",
                 "coc-prettier",
-                "coc-flutter",
             }
             -- Always show the signcolumn, otherwise it would shift the text each time
             -- diagnostics appeared/became resolved

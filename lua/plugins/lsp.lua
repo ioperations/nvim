@@ -106,6 +106,10 @@ return {
                 vim.g.OmniSharp_highlighting = 1
             end,
         },
+        -- flutter
+        {
+            "dart-lang/dart-vim-plugin",
+        },
         -- rust
         {
             "rust-lang/rust.vim",
